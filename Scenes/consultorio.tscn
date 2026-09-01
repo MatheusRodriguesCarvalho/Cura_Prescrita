@@ -7,14 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://dexpd5jcely30" path="res://Imagens/ferramenta_2.png" id="5_y03mb"]
 [ext_resource type="Texture2D" uid="uid://0f5eb2dbsaxm" path="res://Imagens/ferramenta_3.png" id="6_5kl01"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rom7i"]
+size = Vector2(13.5, 91.66669)
+
 [node name="Node2D" type="Node2D" unique_id=1517671125]
 script = ExtResource("1_tj7ub")
 
 [node name="Consultorio" type="Node2D" parent="." unique_id=1692091092]
 
 [node name="Mesa" type="Sprite2D" parent="Consultorio" unique_id=1695349841]
-position = Vector2(640, 584.77)
-scale = Vector2(10, 2)
+position = Vector2(512, 512.905)
+scale = Vector2(7.2499995, 1.4499999)
 texture = ExtResource("2_rikc6")
 
 [node name="Guia" type="Node2D" parent="Consultorio/Mesa" unique_id=1590757403]
@@ -22,11 +25,12 @@ texture = ExtResource("2_rikc6")
 [node name="Computador" type="Node2D" parent="Consultorio/Mesa" unique_id=912569126]
 
 [node name="Gaveta" type="Sprite2D" parent="Consultorio/Mesa" unique_id=431161224]
-position = Vector2(0, 45.864983)
-scale = Vector2(0.4, 0.3)
+position = Vector2(0, 34.525)
+scale = Vector2(0.573276, 0.42995697)
 texture = ExtResource("2_rikc6")
 
 [node name="Termometro" type="Node2D" parent="Consultorio/Mesa/Gaveta" unique_id=1841639589]
+z_index = 1
 position = Vector2(-30, 0)
 script = ExtResource("3_rom7i")
 
@@ -34,25 +38,39 @@ script = ExtResource("3_rom7i")
 scale = Vector2(0.05, 0.25)
 texture = ExtResource("4_tqlkr")
 
+[node name="AreaClique" type="Area2D" parent="Consultorio/Mesa/Gaveta/Termometro" unique_id=166697119]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consultorio/Mesa/Gaveta/Termometro/AreaClique" unique_id=702104394]
+position = Vector2(-0.25, -0.00012207031)
+shape = SubResource("RectangleShape2D_rom7i")
+
+[node name="Popup" type="PanelContainer" parent="Consultorio/Mesa/Gaveta/Termometro" unique_id=762405689]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -38.60437
+offset_right = 13.142853
+grow_vertical = 0
+
+[node name="LabelResultado" type="Label" parent="Consultorio/Mesa/Gaveta/Termometro/Popup" unique_id=397076148]
+layout_mode = 2
+
 [node name="Oximetro" type="Node2D" parent="Consultorio/Mesa/Gaveta" unique_id=1380983208]
-script = ExtResource("3_rom7i")
-tipo = 1
+z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Consultorio/Mesa/Gaveta/Oximetro" unique_id=398416462]
 scale = Vector2(0.05, 0.25)
 texture = ExtResource("5_y03mb")
 
 [node name="Monitor" type="Node2D" parent="Consultorio/Mesa/Gaveta" unique_id=383600836]
+z_index = 1
 position = Vector2(30, 0)
-script = ExtResource("3_rom7i")
-tipo = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Consultorio/Mesa/Gaveta/Monitor" unique_id=953739598]
 scale = Vector2(0.05, 0.25)
 texture = ExtResource("6_5kl01")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=622122710]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=695687698]
 anchors_preset = 15

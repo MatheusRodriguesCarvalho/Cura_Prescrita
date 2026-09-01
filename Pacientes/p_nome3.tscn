@@ -4,6 +4,9 @@
 [ext_resource type="Resource" uid="uid://by51t538qpvix" path="res://Doencas/conjuntivite.tres" id="2_sq06b"]
 [ext_resource type="Texture2D" uid="uid://hhms1jma723t" path="res://Imagens/slimecrystalsr2.png" id="3_xcax3"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcax3"]
+size = Vector2(100, 100)
+
 [node name="Node2D" type="Node2D" unique_id=1348085808]
 script = ExtResource("1_xcax3")
 protocolo = "SP45S3"
@@ -14,3 +17,8 @@ doenca = ExtResource("2_sq06b")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1948647360]
 scale = Vector2(0.333, 0.333)
 texture = ExtResource("3_xcax3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1838791077]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1762345764]
+shape = SubResource("RectangleShape2D_xcax3")

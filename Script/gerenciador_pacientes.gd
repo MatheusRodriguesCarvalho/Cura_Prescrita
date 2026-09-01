@@ -4,7 +4,8 @@ extends Node
 var lista_doencas: Array[Doenca]
 
 ## Cenas de pacientes predefinidos, cada uma já com sprite/nome/protocolo/idade prontos.
-@export var pacientes_predefinidos: Array[PackedScene] = []
+@export_dir var pasta_pacientes: String = "res://Pacientes/"
+var pacientes_predefinidos: Array[PackedScene] = []
 
 ## Dia atual do jogo (unificado: controla tanto doenças quanto regras).
 var fase_atual: int = 1
@@ -18,6 +19,24 @@ var pacientes_ativos: Dictionary = {}
 func _ready() -> void:
 	_carregar_doencas()
 	_selecionar_novas_doencas()
+	_carregar_pacientes()
+
+func _carregar_pacientes() -> void:
+	var dir := DirAccess.open(pasta_pacientes)
+	if dir == null:
+		print("Pasta de pacientes não localizada")
+		return
+	dir.list_dir_begin()
+	var arquivo := dir.get_next()
+	while arquivo != "":
+		if not dir.current_is_dir() and arquivo.get_extension() == "tscn":
+			var caminho := pasta_pacientes.path_join(arquivo)
+			var cena := load(caminho) as PackedScene
+			if cena:
+				pacientes_predefinidos.append(cena)
+		arquivo = dir.get_next()
+	dir.list_dir_end()
+	print("Pacientes carregados: ", pacientes_predefinidos.size())
 
 func _carregar_doencas() -> void:
 	var dir := DirAccess.open(pasta_doencas)
