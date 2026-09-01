@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://y5un22b0j5b5"]
+
+[ext_resource type="Script" uid="uid://n06qucq7ewu2" path="res://Script/base_paciente.gd" id="1_xcax3"]
+[ext_resource type="Resource" uid="uid://by51t538qpvix" path="res://Doencas/conjuntivite.tres" id="2_sq06b"]
+[ext_resource type="Texture2D" uid="uid://hhms1jma723t" path="res://Imagens/slimecrystalsr2.png" id="3_xcax3"]
+
+[node name="Node2D" type="Node2D" unique_id=1348085808]
+script = ExtResource("1_xcax3")
+protocolo = "SP45S3"
+nome = "Nome3"
+idade = 50
+doenca = ExtResource("2_sq06b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1948647360]
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("3_xcax3")

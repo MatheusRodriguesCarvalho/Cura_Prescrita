@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://by51t538qpvix"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Script/base_doenca.gd" id="1_pjk0o"]
+
+[resource]
+script = ExtResource("1_pjk0o")
+nome = "Conjuntivite"
+nome_variacao = Array[String](["Olhos Vermelhos", "Sanguineo"])
+id = "CJT02"
+sintomas = Array[String](["Ardencia Ocular", "Remela"])
+med_pressao = 120.0
+med_temperatura = 36.0
+med_saturacao = 50.0
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

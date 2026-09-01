@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://clhgjm50exjos"]
+
+[ext_resource type="Script" uid="uid://n06qucq7ewu2" path="res://Script/base_paciente.gd" id="1_may31"]
+[ext_resource type="Texture2D" uid="uid://dtpmedvcm5wou" path="res://Imagens/glitchslimesp.png" id="1_sb4rj"]
+[ext_resource type="Resource" uid="uid://by51t538qpvix" path="res://Doencas/conjuntivite.tres" id="2_n3eft"]
+
+[node name="Node2D" type="Node2D" unique_id=1348085808]
+script = ExtResource("1_may31")
+protocolo = "XX00X0"
+nome = "Nome da Silvazeto"
+idade = 18
+doenca = ExtResource("2_n3eft")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1948647360]
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("1_sb4rj")

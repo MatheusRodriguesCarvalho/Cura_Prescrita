@@ -1,0 +1,25 @@
+Recomendações Gerias
+Sobre Medições:
+	Temperatura:
+		Hiportemia: Abaixo de 36ºC
+		Normal: Entre 36ºC e 37.5ºC
+		Febre: Entre 37.6ºC e 41ºC
+		Hipertermia: Acima de 41ºC
+	Pressão: 
+		Baixa: Abaixo de 90/60
+		Normal: Entre 90/60 e 120/80
+		Alta: Entre 121/81 e 160/100
+		Elevada: Acima de 160/100
+	Oxigenação:
+		Grave: Abaixo de 90%
+		Baixa: Entre 91% e 94%
+		Normal: Entre 95% e 100%
+		Anômala: Acima de 101%
+
+Codificação:
+	I101GRP-A
+	Identificador: I
+	Grau de Severidade: 1
+	Numeração dentro do Grau: 01
+	Siglas da Doença: GRP
+	Varinate (se houver): -A

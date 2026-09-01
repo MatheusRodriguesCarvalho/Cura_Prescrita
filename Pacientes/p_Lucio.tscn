@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cyksdw4f886yi"]
+
+[ext_resource type="Script" uid="uid://n06qucq7ewu2" path="res://Script/base_paciente.gd" id="1_ngke1"]
+[ext_resource type="Resource" uid="uid://by51t538qpvix" path="res://Doencas/conjuntivite.tres" id="2_ra42f"]
+[ext_resource type="Texture2D" uid="uid://dtpmedvcm5wou" path="res://Imagens/glitchslimesp.png" id="3_r6b5c"]
+
+[node name="Node2D" type="Node2D" unique_id=1348085808]
+script = ExtResource("1_ngke1")
+protocolo = "SP45S6"
+nome = "Lucio"
+idade = 32
+doenca = ExtResource("2_ra42f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1948647360]
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("3_r6b5c")
