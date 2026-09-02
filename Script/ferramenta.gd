@@ -10,6 +10,9 @@ enum Estado { PARADA, SEGURANDO, LENDO }
 @export var tempo_leitura: float = 1.5
 @export var tempo_popup: float = 2.5
 
+@export var custo_e_leitura: float = 5.0
+@export var custo_e_manuseio: float = 1.0
+
 var estado: Estado = Estado.PARADA
 var posicao_original: Vector2
 
@@ -41,6 +44,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _pegar() -> void:
 	estado = Estado.SEGURANDO
+	GerenciadorTempo.registrar_acao(custo_e_manuseio)
 
 func _soltar() -> void:
 	var paciente := _buscar_paciente_sob_cursor()
@@ -70,6 +74,7 @@ func _iniciar_leitura(paciente: Paciente) -> void:
 	PopupFerramentas.solicitado.emit(resultado)
 	## Aparentemente isso iria preencher a ficha automaticamente
 	medicao_concluida.emit(tipo, resultado)
+	GerenciadorTempo.registrar_acao(custo_e_leitura)
 	
 	await get_tree().create_timer(tempo_popup).timeout
 	PopupFerramentas.escondido.emit()

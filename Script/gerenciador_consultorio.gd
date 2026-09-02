@@ -4,13 +4,15 @@ var paciente_atual: Paciente = null
 var atendimento_concluido: bool = false
 
 func _ready():
-	pass
+	GerenciadorTempo.tempo_esgotado.connect(_on_tempo_esgotado)
+	GerenciadorTempo.iniciar_fase()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+## -- TEMPO E TELAS --
+func _on_tempo_esgotado() -> void:
+	print("Time Out, fim da Fase")
+	# TODO: Transição, tela de estatisticas do dia e troca de Cena
 
-
+## -- PACIENTES --
 func _on_button_pressed() -> void:
 	if paciente_atual == null:
 		_chamar_novo_paciente()

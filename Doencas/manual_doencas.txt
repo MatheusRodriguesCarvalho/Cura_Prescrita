@@ -1,3 +1,30 @@
+A fazer / TODO:
+	CRUCIAL:
+		apresentação do guia medico
+		ficha / formulario, e programação
+		configuração de difiucldade no menu inicial
+	
+	IMPORTANTE:
+		dialogos, zona de dialogo, click-direito para opções
+		audios e sons
+	
+	NECESSÁRIO:
+		criar mais doencas, e elaborar tabela
+		criar mais pacientes
+		ajustar relogio para o modo estamina
+	
+	IMPLEMENTÁVEL:
+		modificação na apresentação do pop-up de resultado
+		efeito de carregamento no uso das ferramentas, mudar logica de segurar
+		criar um "personagem" passível de receber punições e desvantagens
+			atribuidas ao personagem, e que afetam o jogo
+	
+	AO FINAL:
+		Shader, ou efeito visual de luz do dia no consultorio
+		Ala de medicação
+
+
+
 Recomendações Gerias
 Sobre Medições:
 	Temperatura:

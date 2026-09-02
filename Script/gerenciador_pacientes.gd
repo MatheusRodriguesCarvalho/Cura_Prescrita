@@ -103,6 +103,7 @@ func chamar_paciente(local: Node, indice: int = -1) -> Paciente:
 	paciente.apliar_doenca(doenca_sorteada)
 	
 	pacientes_ativos [paciente.protocolo] = paciente
+	GerenciadorTempo.registrar_acao(15.0)
 	
 	return paciente
 

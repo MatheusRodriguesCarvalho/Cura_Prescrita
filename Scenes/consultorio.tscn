@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dexpd5jcely30" path="res://Imagens/ferramenta_2.png" id="5_y03mb"]
 [ext_resource type="Texture2D" uid="uid://0f5eb2dbsaxm" path="res://Imagens/ferramenta_3.png" id="6_5kl01"]
 [ext_resource type="Script" uid="uid://c6ohbiu3kc6xq" path="res://Script/popup_ferramenta.gd" id="7_tqlkr"]
+[ext_resource type="Script" uid="uid://bfybp1wmp1g7n" path="res://Script/ui_relogio.gd" id="8_y03mb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rom7i"]
 size = Vector2(13.5, 91.66669)
@@ -98,7 +99,6 @@ icon = ExtResource("2_rikc6")
 flat = true
 
 [node name="Popup" type="PanelContainer" parent="CanvasLayer" unique_id=2119135974]
-visible = false
 custom_minimum_size = Vector2(130, 70)
 anchors_preset = 8
 anchor_left = 0.5
@@ -119,5 +119,24 @@ size_flags_vertical = 1
 text = "dasdasdas"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RelogioUI" type="Node2D" parent="CanvasLayer" unique_id=1806765364]
+position = Vector2(512, 75)
+script = ExtResource("8_y03mb")
+offset_ponteiro_horas = -32.0
+offset_ponteiro_minutos = -30.0
+
+[node name="Fundo" type="Sprite2D" parent="CanvasLayer/RelogioUI" unique_id=2015106742]
+texture = ExtResource("2_rikc6")
+
+[node name="pMinutos" type="Sprite2D" parent="CanvasLayer/RelogioUI" unique_id=77706881]
+scale = Vector2(0.17799924, 0.17799924)
+texture = ExtResource("4_tqlkr")
+offset = Vector2(80, -135)
+
+[node name="pHoras" type="Sprite2D" parent="CanvasLayer/RelogioUI" unique_id=757283330]
+scale = Vector2(0.09433919, 0.09433919)
+texture = ExtResource("5_y03mb")
+offset = Vector2(100, -135)
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/Button" to="." method="_on_button_pressed"]
