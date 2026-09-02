@@ -34,6 +34,9 @@ texture = ExtResource("2_rikc6")
 z_index = 1
 position = Vector2(-30, 0)
 script = ExtResource("3_rom7i")
+tipo = null
+tempo_leitura = null
+tempo_popup = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Consultorio/Mesa/Gaveta/Termometro" unique_id=784420989]
 scale = Vector2(0.05, 0.25)
@@ -45,36 +48,31 @@ texture = ExtResource("4_tqlkr")
 position = Vector2(-0.25, -0.00012207031)
 shape = SubResource("RectangleShape2D_rom7i")
 
+[node name="Popup" type="PanelContainer" parent="Consultorio/Mesa/Gaveta/Termometro" unique_id=762405689]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -38.60437
+offset_right = 13.142853
+grow_vertical = 0
+
+[node name="LabelResultado" type="Label" parent="Consultorio/Mesa/Gaveta/Termometro/Popup" unique_id=397076148]
+layout_mode = 2
+
 [node name="Oximetro" type="Node2D" parent="Consultorio/Mesa/Gaveta" unique_id=1380983208]
 z_index = 1
-script = ExtResource("3_rom7i")
-tipo = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Consultorio/Mesa/Gaveta/Oximetro" unique_id=398416462]
 scale = Vector2(0.05, 0.25)
 texture = ExtResource("5_y03mb")
 
-[node name="AreaClique" type="Area2D" parent="Consultorio/Mesa/Gaveta/Oximetro" unique_id=1100937818]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Consultorio/Mesa/Gaveta/Oximetro/AreaClique" unique_id=450204387]
-position = Vector2(-0.25, -0.00012207031)
-shape = SubResource("RectangleShape2D_rom7i")
-
 [node name="Monitor" type="Node2D" parent="Consultorio/Mesa/Gaveta" unique_id=383600836]
 z_index = 1
 position = Vector2(30, 0)
-script = ExtResource("3_rom7i")
-tipo = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Consultorio/Mesa/Gaveta/Monitor" unique_id=953739598]
 scale = Vector2(0.05, 0.25)
 texture = ExtResource("6_5kl01")
-
-[node name="AreaClique" type="Area2D" parent="Consultorio/Mesa/Gaveta/Monitor" unique_id=686767690]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Consultorio/Mesa/Gaveta/Monitor/AreaClique" unique_id=1150407314]
-position = Vector2(-0.25, -0.00012207031)
-shape = SubResource("RectangleShape2D_rom7i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=622122710]
 
@@ -98,7 +96,6 @@ icon = ExtResource("2_rikc6")
 flat = true
 
 [node name="Popup" type="PanelContainer" parent="CanvasLayer" unique_id=2119135974]
-visible = false
 custom_minimum_size = Vector2(130, 70)
 anchors_preset = 8
 anchor_left = 0.5

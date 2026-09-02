@@ -16,15 +16,12 @@ var posicao_original: Vector2
 ## Ícone/sprite da ferramenta, exibido em cena.
 @onready var area_clique: Area2D = $AreaClique
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var popup: PanelContainer = $Popup
-@onready var label_resultado: Label = $Popup/LabelResultado
 
 signal medicao_concluida(tipo: Tipo, resultado: String)
 
 func _ready() -> void:
 	## top_level = true
 	posicao_original = global_position
-	popup.hide()
 	area_clique.input_event.connect(_on_area_clique_input_event)
 
 func _process(_delta: float) -> void:
@@ -44,7 +41,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _pegar() -> void:
 	estado = Estado.SEGURANDO
-	popup.hide()
 
 func _soltar() -> void:
 	var paciente := _buscar_paciente_sob_cursor()
@@ -71,24 +67,18 @@ func _iniciar_leitura(paciente: Paciente) -> void:
 	await get_tree().create_timer(tempo_leitura).timeout
 	
 	var resultado := medir(paciente)
-	_mostrar_popup(resultado)
-	
+	PopupFerramentas.solicitado.emit(resultado)
 	## Aparentemente isso iria preencher a ficha automaticamente
 	medicao_concluida.emit(tipo, resultado)
 	
 	await get_tree().create_timer(tempo_popup).timeout
+	PopupFerramentas.escondido.emit()
 	_retornar()
 
-func _mostrar_popup(resultado: String) -> void:
-	label_resultado.text = resultado
-	popup.show()
-
 func _retornar() -> void:
-	popup.hide()
 	estado = Estado.PARADA
 	var tween := create_tween()
 	tween.tween_property(self, "global_position", posicao_original, 0.3)
-
 
 ## Realiza a medição sobre o paciente informado e retorna o resultado
 ## já formatado para exibição (ex: "37.8 °C", "96%", "118/76 mmHg").

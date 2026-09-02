@@ -1,5 +1,6 @@
 extends Node
 
+## Listagem de todas as doenças criadas
 @export_dir var pasta_doencas: String = "res://Doencas/"
 var lista_doencas: Array[Doenca]
 
@@ -95,9 +96,14 @@ func chamar_paciente(local: Node, indice: int = -1) -> Paciente:
 		push_warning("Nenhuma Doença ativa para o dia atual")
 		return null
 	
-	var doenca_sorteada: Doenca = ativas[randi() % ativas.size()]
+	## TODO
+	## var doenca_sorteada: Doenca = ativas[randi() % ativas.size()]
+	var doenca_sorteada: Doenca = ativas[randi_range(0, ativas.size() - 1)]
+	
+	paciente.apliar_doenca(doenca_sorteada)
 	
 	pacientes_ativos [paciente.protocolo] = paciente
+	
 	return paciente
 
 func busca_por_protocolo(protocolo: String) -> Paciente:
