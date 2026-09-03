@@ -2,7 +2,10 @@ A fazer / TODO:
 	CRUCIAL:
 		apresentação do guia medico
 		ficha / formulario, e programação
+		corrigir o botao do proximo paciente (sprite2d, area e collision)
+		adicionar mecânica do recuo da gaveta
 		configuração de difiucldade no menu inicial
+		Ala de medicação, listagem de medicamentos, combinações e efetividade contra as doenças
 	
 	IMPORTANTE:
 		dialogos, zona de dialogo, click-direito para opções
@@ -11,17 +14,17 @@ A fazer / TODO:
 	NECESSÁRIO:
 		criar mais doencas, e elaborar tabela
 		criar mais pacientes
-		ajustar relogio para o modo estamina
+		ajustar relogio para o modo estamina, tween
 	
 	IMPLEMENTÁVEL:
-		modificação na apresentação do pop-up de resultado
+		modificação na apresentação do pop-up de resultado, estilo e local
 		efeito de carregamento no uso das ferramentas, mudar logica de segurar
-		criar um "personagem" passível de receber punições e desvantagens
+		uma ferramenta pode ser utilizado por vez, ferramenta depois de usada fica solta
+		criar um "personagem principal" passível de receber punições e desvantagens
 			atribuidas ao personagem, e que afetam o jogo
 	
 	AO FINAL:
 		Shader, ou efeito visual de luz do dia no consultorio
-		Ala de medicação
 
 
 

@@ -20,7 +20,7 @@ func _atualizar_relogio(atual: float, total: float) -> void:
 	
 	var hora_atual := hora_expediente_inicio + progresso * (hora_maxima_possivel - hora_expediente_inicio)
 	
-	var horas_mostrador := fmod(hora_atual, 12.0)
+	var horas_mostrador := fmod(hora_atual, 24.0)
 	var minutos := fmod(hora_atual, 1.0) * 60
 	
 	print("Horas: ", horas_mostrador, " / Minutos ", minutos)
