@@ -1,12 +1,12 @@
 extends Control
 
-@onready var pagina_sumario: Control = $Painel
-@onready var pagina_regras: Control = $Painel
-@onready var pagina_doencas: Control = $Painel
+@onready var pagina_sumario: Control = $PainelPaginas/PaginaSumario
+@onready var pagina_regras: Control = $PainelPaginas/PaginaRegras
+@onready var pagina_doencas: Control = $PainelPaginas/PaginaDoencas
 
-@onready var lista_doencas_ui: VBoxContainer = $Painel
-@onready var campo_busca: LineEdit = $Painel
-@onready var painel_detalhe: Panel = $Painel
+@onready var lista_doencas_ui: VBoxContainer = $PainelPaginas/PaginaDoencas/Scroll/VBox
+@onready var campo_busca: LineEdit = $PainelPaginas/PaginaDoencas/CampoBusca
+@onready var painel_detalhe: Panel = $PainelPaginas/PaginaDoencas/PainelDetalhe
 
 func abrir() -> void:
 	show()
@@ -66,7 +66,7 @@ func _doenca_corresponde_filtro(doenca: Doenca, filtro: String) -> bool:
 	return false
 
 func _on_campo_busca_text_changed(novo_texto: String) -> void:
-	_popular_doencas()
+	_popular_doencas(novo_texto)
 
 func _mostrar_detalhe_doenca(doenca: Doenca) -> void:
 	var nomes_populares := ", ".join(doenca.nome_popular) if not doenca.nome_popular.is_empty() else "—"

@@ -1,6 +1,9 @@
 A fazer / TODO:
 	CRUCIAL:
 		apresentação do guia medico
+			fundos: 400x500
+			margem (vbox): 350x450
+		regras e legislação, mini regras diarias e cumulativas
 		ficha / formulario, e programação
 		corrigir o botao do proximo paciente (sprite2d, area e collision)
 		adicionar mecânica do recuo da gaveta
@@ -8,8 +11,10 @@ A fazer / TODO:
 		Ala de medicação, listagem de medicamentos, combinações e efetividade contra as doenças
 	
 	IMPORTANTE:
+		debuffs in-game e post-game, Cansaço, LER e interferencia
 		dialogos, zona de dialogo, click-direito para opções
 		audios e sons
+		cena pós expediente e dialogos
 	
 	NECESSÁRIO:
 		criar mais doencas, e elaborar tabela
