@@ -5,7 +5,7 @@ extends Control
 @onready var pagina_doencas: Control = $PainelPaginas/PaginaDoencas
 
 @onready var lista_doencas_ui: VBoxContainer = $PainelPaginas/PaginaDoencas/Scroll/VBox
-@onready var campo_busca: LineEdit = $PainelPaginas/PaginaDoencas/CampoBusca
+@onready var campo_busca: LineEdit = $PainelPaginas/PaginaDoencas/VBoxContainer/CampoBusca
 @onready var painel_detalhe: Panel = $PainelPaginas/PaginaDoencas/PainelDetalhe
 
 func abrir() -> void:
@@ -21,12 +21,14 @@ func _mostrar_pagina(pagina: Control) -> void:
 	pagina_sumario.hide()
 	pagina.show()
 
-func _on_botao_doencas_pressed() -> void:
-	_mostrar_pagina(pagina_doencas)
-	_popular_doencas()
+func _on_dbotao_voltar_pressed() -> void:
+	print("Retorne à guia de Regras")
 
-func _on_botao_voltar_pressed() -> void:
-	_mostrar_pagina(pagina_sumario)
+func _on_rbotao_voltar_pressed() -> void:
+	print("Retorne ao consultorio")
+
+func _on_pbotao_voltar_pressed() -> void:
+	print("Retorne ao sumario de doenças")
 
 func _popular_doencas(filtro: String = "") -> void:
 	for filho in lista_doencas_ui.get_children():

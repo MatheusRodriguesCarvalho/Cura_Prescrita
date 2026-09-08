@@ -9,6 +9,8 @@ A fazer / TODO:
 		adicionar mecânica do recuo da gaveta
 		configuração de difiucldade no menu inicial
 		Ala de medicação, listagem de medicamentos, combinações e efetividade contra as doenças
+		
+		corrigir botao paciente, não instancia o paciente
 	
 	IMPORTANTE:
 		debuffs in-game e post-game, Cansaço, LER e interferencia

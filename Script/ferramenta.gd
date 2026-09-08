@@ -67,6 +67,7 @@ func _buscar_paciente_sob_cursor() -> Paciente:
 	return null
 
 func _iniciar_leitura(paciente: Paciente) -> void:
+	
 	estado = Estado.LENDO
 	await get_tree().create_timer(tempo_leitura).timeout
 	

@@ -23,7 +23,7 @@ func _atualizar_relogio(atual: float, total: float) -> void:
 	var horas_mostrador := fmod(hora_atual, 24.0)
 	var minutos := fmod(hora_atual, 1.0) * 60
 	
-	print("Horas: ", horas_mostrador, " / Minutos ", minutos)
+	## print("Horas: ", horas_mostrador, " / Minutos ", minutos)
 	
 	ponteiro_minutos.rotation_degrees = minutos * 6 + offset_ponteiro_minutos
 	ponteiro_horas.rotation_degrees = horas_mostrador * 30.0 + offset_ponteiro_horas

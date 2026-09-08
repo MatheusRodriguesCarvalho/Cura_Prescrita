@@ -10,12 +10,18 @@
 [ext_resource type="Texture2D" uid="uid://dexpd5jcely30" path="res://Imagens/ferramenta_2.png" id="5_y03mb"]
 [ext_resource type="Texture2D" uid="uid://0f5eb2dbsaxm" path="res://Imagens/ferramenta_3.png" id="6_5kl01"]
 [ext_resource type="Script" uid="uid://itbqlswh6fpa" path="res://Script/guia_medico_icone.gd" id="7_di5os"]
+[ext_resource type="Script" uid="uid://d4kngs7imchxc" path="res://Script/misc_botao_paciente.gd" id="7_ohx81"]
 [ext_resource type="Script" uid="uid://c6ohbiu3kc6xq" path="res://Script/popup_ferramenta.gd" id="7_tqlkr"]
 [ext_resource type="Script" uid="uid://bfybp1wmp1g7n" path="res://Script/ui_relogio.gd" id="8_y03mb"]
 [ext_resource type="Script" uid="uid://bdp8avpktrrfq" path="res://Script/guia_medico.gd" id="13_68eyn"]
+[ext_resource type="Texture2D" uid="uid://hhms1jma723t" path="res://Imagens/slimecrystalsr2.png" id="15_wxndb"]
+[ext_resource type="Texture2D" uid="uid://clui6pk6cptoy" path="res://Imagens/slimehoneysr2.png" id="16_luitd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y03mb"]
 load_path = "res://.godot/imported/BG-Triagem-Background-1.png-fb3174dc3db973b22b0685dcc27bd7af.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68eyn"]
+size = Vector2(127, 127)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4wke"]
 size = Vector2(127, 127)
@@ -27,6 +33,7 @@ size = Vector2(375, 375)
 script = ExtResource("1_tj7ub")
 
 [node name="Consultorio" type="Node2D" parent="." unique_id=1692091092]
+visible = false
 
 [node name="Consultorio2D" type="Sprite2D" parent="Consultorio" unique_id=1087551567]
 position = Vector2(512, 288)
@@ -60,6 +67,19 @@ position = Vector2(512, 492.5)
 position = Vector2(0, -5.5)
 scale = Vector2(2, 2)
 texture = ExtResource("2_g4wke")
+
+[node name="Botao" type="Node2D" parent="Consultorio/Mesa" unique_id=370170942]
+position = Vector2(-480, -74)
+scale = Vector2(0.35, 0.35)
+script = ExtResource("7_ohx81")
+
+[node name="Sprite2D" type="Sprite2D" parent="Consultorio/Mesa/Botao" unique_id=1657796898]
+texture = ExtResource("2_rikc6")
+
+[node name="Area2D" type="Area2D" parent="Consultorio/Mesa/Botao" unique_id=560008539]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Consultorio/Mesa/Botao/Area2D" unique_id=948000950]
+shape = SubResource("RectangleShape2D_68eyn")
 
 [node name="Guia" type="Node2D" parent="Consultorio/Mesa" unique_id=1590757403]
 position = Vector2(-400, -12.46)
@@ -136,51 +156,7 @@ texture = ExtResource("6_5kl01")
 position = Vector2(-0.25, -0.00012207031)
 shape = SubResource("RectangleShape2D_rom7i")
 
-[node name="Botao" type="Node2D" parent="Consultorio/Mesa" unique_id=370170942]
-position = Vector2(-480, -74)
-scale = Vector2(0.4, 0.4)
-
-[node name="Textura" type="TextureButton" parent="Consultorio/Mesa/Botao" unique_id=642095974]
-z_index = 2
-custom_minimum_size = Vector2(10, 10)
-layout_direction = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-action_mode = 0
-texture_normal = ExtResource("2_rikc6")
-stretch_mode = 0
-flip_v = true
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=622122710]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=695687698]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 20
-
-[node name="Button" type="Button" parent="CanvasLayer/MarginContainer" unique_id=2082698703]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-icon = ExtResource("2_rikc6")
-flat = true
 
 [node name="Popup" type="PanelContainer" parent="CanvasLayer" unique_id=2119135974]
 visible = false
@@ -224,81 +200,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PaginaSumario" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=1968795541]
-visible = false
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-grow_horizontal = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario" unique_id=2147304342]
-custom_minimum_size = Vector2(400, 500)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -50.0
-offset_right = 50.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.7233747, 0.41140202, 0, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario" unique_id=228359752]
-custom_minimum_size = Vector2(350, 450)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -37.0
-offset_top = -50.5
-offset_right = 37.0
-offset_bottom = 50.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario/VBoxContainer" unique_id=2028988755]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-text = "teste
-teste
-teste
-teste"
-
-[node name="Control" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario/VBoxContainer" unique_id=822566344]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="BotaoRegras" type="Button" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario/VBoxContainer" unique_id=1227641113]
-layout_mode = 2
-text = "Regras"
-
-[node name="BotaoDoencas" type="Button" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario/VBoxContainer" unique_id=496658125]
-layout_mode = 2
-text = "Doenças"
-
-[node name="BotaoFechar" type="Button" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario/VBoxContainer" unique_id=1879218809]
-layout_mode = 2
-text = "Fechar"
-
-[node name="Control2" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario/VBoxContainer" unique_id=1208226630]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario/VBoxContainer" unique_id=1206050231]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-text = "teste
-teste
-teste
-teste"
-
 [node name="PaginaRegras" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=2056993262]
 visible = false
 layout_mode = 1
@@ -310,7 +211,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras" unique_id=511172107]
+[node name="Fundo" type="ColorRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras" unique_id=511172107]
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -326,7 +227,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.38039216, 1, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras" unique_id=1848770064]
+[node name="DivRegras" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras" unique_id=1848770064]
 custom_minimum_size = Vector2(350, 450)
 layout_mode = 1
 anchors_preset = 8
@@ -334,43 +235,81 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -38.5
-offset_top = -15.5
-offset_right = 38.5
-offset_bottom = 15.5
+offset_left = -175.0
+offset_top = -225.0
+offset_right = 175.0
+offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BotaoVoltar" type="Button" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/VBoxContainer" unique_id=1005320700]
+[node name="TituloRegras" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras" unique_id=145935374]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "Retornar"
+text = "Noticias e Relatórios Diários"
+horizontal_alignment = 1
 
-[node name="Scroll" type="ScrollContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras" unique_id=1335245031]
-custom_minimum_size = Vector2(350, 450)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBox" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/Scroll" unique_id=1969796633]
-custom_minimum_size = Vector2(350, 450)
+[node name="Divisor1" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras" unique_id=1535993806]
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="PaginaDoencas" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=887901463]
+[node name="Informativo" type="RichTextLabel" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras" unique_id=427903817]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Mais um dia de Notícias.
+Ontem o conselho de psiquiatria determinou a proibição do uso de termometro em pessoas mais velhas que 60 anos, sob a argumentação de que eles demonstraram receio à nova tecnologa implementada."
+
+[node name="Divisor2" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras" unique_id=834781215]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras" unique_id=1335245031]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 2
+
+[node name="ListaRegras" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras/Scroll" unique_id=1969796633]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 2
+
+[node name="Divisor3" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras" unique_id=841932698]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras" unique_id=175743559]
+layout_mode = 2
+
+[node name="rBotaoVoltar" type="TextureButton" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras/HBoxContainer" unique_id=1139788354]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("15_wxndb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Divisor4" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras/HBoxContainer" unique_id=926446536]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="rBotaoIr" type="TextureButton" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras/HBoxContainer" unique_id=1223689564]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("16_luitd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="SumarioDoencas" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=887901463]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas" unique_id=197355222]
+[node name="Fundo" type="ColorRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas" unique_id=197355222]
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 1
 anchors_preset = 8
@@ -386,7 +325,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.4627451, 1, 1, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas" unique_id=366935652]
+[node name="DivDoencas" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas" unique_id=366935652]
 custom_minimum_size = Vector2(350, 450)
 layout_mode = 1
 anchors_preset = 8
@@ -394,42 +333,99 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -175.0
+offset_top = -50.0
+offset_right = 175.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BotaoVoltar" type="Button" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/VBoxContainer" unique_id=434647511]
+[node name="Titulo" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=144697828]
 layout_mode = 2
-size_flags_horizontal = 8
+text = "Sumario Doenças"
+horizontal_alignment = 1
+
+[node name="Divisor1" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=1040513292]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="DivBusca" type="HBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=1967865698]
+layout_mode = 2
+
+[node name="CampoBusca" type="LineEdit" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas/DivBusca" unique_id=1886589408]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FiltroCategoria" type="OptionButton" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas/DivBusca" unique_id=515373287]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "Respiratória"
+popup/item_0/id = 0
+popup/item_1/text = "Digestiva"
+popup/item_1/id = 1
+popup/item_2/text = "Infecciosa"
+popup/item_2/id = 2
+popup/item_3/text = "Cardiovascular"
+popup/item_3/id = 3
+popup/item_4/text = "Outra"
+popup/item_4/id = 4
+
+[node name="Scroll" type="ScrollContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=170661979]
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ListaDoencas" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas/Scroll" unique_id=1688627524]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 2
+
+[node name="doença1" type="Button" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas/Scroll/ListaDoencas" unique_id=895817328]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+text = "add child to vbox as doencas appers"
+alignment = 0
+
+[node name="Divisor2" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=800445735]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="dBotaoVoltar" type="TextureButton" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=1093645181]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "Retornar"
+texture_normal = ExtResource("15_wxndb")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="CampoBusca" type="LineEdit" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/VBoxContainer" unique_id=541163753]
-layout_mode = 2
-
-[node name="Scroll" type="ScrollContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas" unique_id=170661979]
-custom_minimum_size = Vector2(350, 250)
+[node name="PaginaDoenca" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=954124599]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBox" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/Scroll" unique_id=1688627524]
-custom_minimum_size = Vector2(350, 450)
-layout_mode = 2
+[node name="Fundo" type="ColorRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca" unique_id=1525776850]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.6350498, 0, 1)
 
-[node name="PainelDetalhe" type="Panel" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas" unique_id=670987788]
+[node name="DivPagina" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca" unique_id=1012656041]
 custom_minimum_size = Vector2(350, 450)
 layout_mode = 1
 anchors_preset = 8
@@ -443,57 +439,101 @@ offset_right = 175.0
 offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
 
-[node name="Nome" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=1280862498]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="NomeDoenca" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina" unique_id=1576319433]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Nome Doença"
+horizontal_alignment = 1
 
-[node name="NomePopular" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=250043478]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Divisor1" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina" unique_id=699749283]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
 
-[node name="Categoria" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=1431873816]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="DivPaginaScroll" type="ScrollContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina" unique_id=551702917]
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 2
+size_flags_vertical = 4
 
-[node name="Risco" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=6195902]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll" unique_id=1489348478]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Descricao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=1121929975]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Descricao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=273637021]
+layout_mode = 2
+text = "descrição"
 
-[node name="Sintomas" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=822545192]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Risco" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1622726320]
+layout_mode = 2
+text = "risco"
 
-[node name="Pressao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=2133105108]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Id" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1843996230]
+layout_mode = 2
+text = "id"
 
-[node name="Temperatura" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=1675813145]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="NomePopular" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=661265898]
+layout_mode = 2
+text = "nome popular"
 
-[node name="Saturacao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=653707335]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Categoria" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1743218285]
+layout_mode = 2
+text = "categoria"
 
-[node name="Medicamentos" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/PainelDetalhe" unique_id=1245213572]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Sintomas" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1597673139]
+layout_mode = 2
+text = "sintomas"
 
-[connection signal="pressed" from="CanvasLayer/MarginContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/GuiaMedico/PainelPaginas/PaginaSumario/VBoxContainer/BotaoDoencas" to="CanvasLayer/GuiaMedico" method="_on_botao_doencas_pressed"]
-[connection signal="pressed" from="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoencas/VBoxContainer/BotaoVoltar" to="CanvasLayer/GuiaMedico" method="_on_botao_voltar_pressed"]
+[node name="Temperatura" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=2104954013]
+layout_mode = 2
+text = "variacao de temperatura"
+
+[node name="Pressao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1471932269]
+layout_mode = 2
+text = "variacao de pressao"
+
+[node name="Saturacao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1490945496]
+layout_mode = 2
+text = "variacao de oxigenacao"
+
+[node name="Divisor2" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina" unique_id=302059244]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="pBotaoVoltar" type="TextureButton" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina" unique_id=1339434017]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture_normal = ExtResource("15_wxndb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="FichaPaciente" type="Control" parent="CanvasLayer" unique_id=994575620]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FichaPaginas" type="Control" parent="CanvasLayer/FichaPaciente" unique_id=67783622]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras/HBoxContainer/rBotaoVoltar" to="CanvasLayer/GuiaMedico" method="_on_rbotao_voltar_pressed"]
+[connection signal="pressed" from="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas/dBotaoVoltar" to="CanvasLayer/GuiaMedico" method="_on_dbotao_voltar_pressed"]
+[connection signal="pressed" from="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/pBotaoVoltar" to="CanvasLayer/GuiaMedico" method="_on_pbotao_voltar_pressed"]

@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_fwasq")
-nome = "Conjuntivite"
-nome_variacao = Array[String](["Olhos Vermelhos", "Sanguineo"])
-id = "CJT02"
+id = "I101XXX-X"
+nome = "Nome"
+descricao = "Descrição"
+categoria = "Outra"
 sintomas = Array[String](["Ardencia Ocular", "Remela"])
-med_pressao = 100.5
-med_temperatura = 37.9
-med_saturacao = 91.4
+med_temperatura = 36.0
+med_saturacao = 95.0
 metadata/_custom_type_script = "uid://dgcp3crb6w10n"

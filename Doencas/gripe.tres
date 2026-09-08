@@ -8,5 +8,6 @@ id = "I101GRP-A"
 nome = "Gripe Aviaria"
 nome_popular = Array[String](["Franguespirro", "Galinopraga", "Penugem"])
 descricao = "Doença originária de aves migratórias e transmitida às aves locais, o contato frequente ou íntimo com as aves infectadas ou os locais onde recém repousaram garantem que o indivíduo seja acometido."
+categoria = "Respiratória"
 sintomas = Array[String](["Coceira", "Espirros", "Secreções"])
 metadata/_custom_type_script = "uid://dgcp3crb6w10n"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dxpn3fn1rttos"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Script/base_doenca.gd" id="1_e8cdx"]
+
+[resource]
+script = ExtResource("1_e8cdx")
+id = "I201VRM-A"
+nome = "Vermenideo"
+nome_popular = Array[String](["Lumbriga", "Minhoca"])
+risco = 2
+descricao = "Muito comum em Terras áridas, ou que foram desoladas por secas.
+São vermes que possuem uma alta resistência à secas, conseguindo sobreviver entre 6 meses à 1 ano sem contato com água, onde em um contato com uma fonte de umidade, desperta de sua imbernação."
+categoria = "Digestiva"
+sintomas = Array[String](["Enjoo", "Vomito", "Contrações Abdominal", "Fraqueza"])
+med_pressao_sistolica = 150.0
+med_pressao_diastolica = 90.0
+med_temperatura = 35.8
+med_saturacao = 90.0
+fase = 3
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"
