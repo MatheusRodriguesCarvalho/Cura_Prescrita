@@ -33,7 +33,6 @@ size = Vector2(375, 375)
 script = ExtResource("1_tj7ub")
 
 [node name="Consultorio" type="Node2D" parent="." unique_id=1692091092]
-visible = false
 
 [node name="Consultorio2D" type="Sprite2D" parent="Consultorio" unique_id=1087551567]
 position = Vector2(512, 288)
@@ -270,7 +269,6 @@ custom_minimum_size = Vector2(350, 350)
 layout_mode = 2
 
 [node name="Divisor3" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras" unique_id=841932698]
-custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras" unique_id=175743559]
@@ -300,6 +298,7 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="SumarioDoencas" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=887901463]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -358,17 +357,9 @@ size_flags_horizontal = 3
 
 [node name="FiltroCategoria" type="OptionButton" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas/DivBusca" unique_id=515373287]
 layout_mode = 2
-item_count = 5
-popup/item_0/text = "Respiratória"
+flat = true
+item_count = 1
 popup/item_0/id = 0
-popup/item_1/text = "Digestiva"
-popup/item_1/id = 1
-popup/item_2/text = "Infecciosa"
-popup/item_2/id = 2
-popup/item_3/text = "Cardiovascular"
-popup/item_3/id = 3
-popup/item_4/text = "Outra"
-popup/item_4/id = 4
 
 [node name="Scroll" type="ScrollContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=170661979]
 custom_minimum_size = Vector2(350, 300)
@@ -386,8 +377,8 @@ text = "add child to vbox as doencas appers"
 alignment = 0
 
 [node name="Divisor2" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=800445735]
-custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="dBotaoVoltar" type="TextureButton" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=1093645181]
 custom_minimum_size = Vector2(50, 50)
@@ -497,7 +488,7 @@ text = "variacao de temperatura"
 layout_mode = 2
 text = "variacao de pressao"
 
-[node name="Saturacao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1490945496]
+[node name="Oxigenacao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1490945496]
 layout_mode = 2
 text = "variacao de oxigenacao"
 
@@ -535,5 +526,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="pressed" from="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras/HBoxContainer/rBotaoVoltar" to="CanvasLayer/GuiaMedico" method="_on_rbotao_voltar_pressed"]
+[connection signal="pressed" from="CanvasLayer/GuiaMedico/PainelPaginas/PaginaRegras/DivRegras/HBoxContainer/rBotaoIr" to="CanvasLayer/GuiaMedico" method="_on_rbotao_ir_pressed"]
 [connection signal="pressed" from="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas/dBotaoVoltar" to="CanvasLayer/GuiaMedico" method="_on_dbotao_voltar_pressed"]
 [connection signal="pressed" from="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/pBotaoVoltar" to="CanvasLayer/GuiaMedico" method="_on_pbotao_voltar_pressed"]
