@@ -181,6 +181,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GuiaMedico" type="Control" parent="CanvasLayer" unique_id=266620421]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -200,7 +201,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PaginaRegras" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=2056993262]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -298,7 +298,6 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="SumarioDoencas" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=887901463]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -390,7 +389,6 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="PaginaDoenca" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=954124599]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

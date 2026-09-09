@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://brelpdgvqfxw8"]
+
+[ext_resource type="Texture2D" uid="uid://bi2tqi4vfjpnj" path="res://Imagens/BotaoUi/botãoUIjogar.png" id="1_76flj"]
+[ext_resource type="Texture2D" uid="uid://bdhtp0pc6bu0e" path="res://Imagens/placeholder_menu.jpg" id="1_hlaww"]
+[ext_resource type="Texture2D" uid="uid://y1dltu40vwgf" path="res://Imagens/BotaoUi/botãoUIjogarPress.png" id="2_my0a7"]
+[ext_resource type="Texture2D" uid="uid://cxpf7tjnn60ag" path="res://Imagens/BotaoUi/botãoUItemplate.png" id="4_2il7n"]
+[ext_resource type="Texture2D" uid="uid://c3g53ruw437sw" path="res://Imagens/BotaoUi/botãoUIPress.png" id="5_rymy5"]
+[ext_resource type="Texture2D" uid="uid://bw8c1xjwiehca" path="res://Imagens/BotaoUi/botãoUIextra.png" id="6_kojxw"]
+[ext_resource type="Texture2D" uid="uid://i5pj2ppuyrrq" path="res://Imagens/BotaoUi/botãoUIextraPress.png" id="7_avhtn"]
+[ext_resource type="Texture2D" uid="uid://c58yptufv1t5h" path="res://Imagens/BotaoUi/botãoUIsair.png" id="8_3dsk0"]
+[ext_resource type="Texture2D" uid="uid://sg1xxhu7lg4l" path="res://Imagens/BotaoUi/botãoUIsairPress.png" id="9_vf56k"]
+
+[sub_resource type="GDScript" id="GDScript_6gkx6"]
+resource_name = "menuInicial"
+script/source = "extends Control
+
+func _ready() -> void:
+	$VBoxContainer/BotaoIniciar.pressed.connect(_on_iniciar_pressed)
+#	$VBoxContainer/BotaoOpcoes.pressed.connect(_on_opcoes_pressed)
+	$VBoxContainer/BotaoGuia.pressed.connect(_on_guia_pressed)
+	$VBoxContainer/BotaoCreditos.pressed.connect(_on_creditos_pressed)
+	$VBoxContainer/BotaoSair.pressed.connect(_on_sair_pressed)
+	
+func _on_iniciar_pressed() -> void:
+		get_tree().change_scene_to_file(\"res://Scenes/consultorio.tscn\")
+		
+#func _on_opcoes_pressed() -> void:
+#	get_tree().change_scene_to_file()
+	
+func _on_guia_pressed() -> void:
+	get_tree().painel_guia.visible = true
+
+func _on_creditos_pressed() -> void:
+	get_tree().painel_creditos.visible = true
+
+func _on_sair_pressed() -> void:
+	get_tree().quit()
+"
+
+[node name="MenuInicial" type="Control" unique_id=599743969]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_6gkx6")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1611426711]
+layout_mode = 0
+offset_right = 1023.0
+offset_bottom = 605.0
+texture = ExtResource("1_hlaww")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=264157259]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 115.00002
+offset_right = 474.0
+offset_bottom = 291.00003
+scale = Vector2(3.496134, 2.3208678)
+alignment = 1
+
+[node name="BotaoIniciar" type="TextureButton" parent="VBoxContainer" unique_id=1003163325]
+layout_mode = 2
+texture_normal = ExtResource("1_76flj")
+texture_pressed = ExtResource("2_my0a7")
+texture_hover = ExtResource("2_my0a7")
+
+[node name="BotaoOpcoes" type="TextureButton" parent="VBoxContainer" unique_id=1766449610]
+layout_mode = 2
+texture_normal = ExtResource("4_2il7n")
+texture_pressed = ExtResource("5_rymy5")
+texture_hover = ExtResource("5_rymy5")
+
+[node name="BotaoGuia" type="TextureButton" parent="VBoxContainer" unique_id=551170273]
+layout_mode = 2
+texture_normal = ExtResource("4_2il7n")
+texture_pressed = ExtResource("5_rymy5")
+texture_hover = ExtResource("5_rymy5")
+
+[node name="BotaoCreditos" type="TextureButton" parent="VBoxContainer" unique_id=130313619]
+layout_mode = 2
+texture_normal = ExtResource("6_kojxw")
+texture_pressed = ExtResource("7_avhtn")
+texture_hover = ExtResource("7_avhtn")
+
+[node name="BotaoSair" type="TextureButton" parent="VBoxContainer" unique_id=2146423599]
+layout_mode = 2
+texture_normal = ExtResource("8_3dsk0")
+texture_pressed = ExtResource("9_vf56k")
+texture_hover = ExtResource("9_vf56k")
