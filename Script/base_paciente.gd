@@ -2,13 +2,18 @@
 class_name Paciente
 extends Node2D
 
-@export_category("Identificação")
+@export_category("Cadastro")
 ## Identificação única do paciente
 @export var protocolo: String
 ## Nome do Paciente
 @export var nome: String
 ## Idade do Paciente
 @export_range(18, 100) var idade: int
+
+@export_category("Cadastro (cosmético)")
+@export var tipo_sanguineo: String = "AB+"
+@export var implantes: String = "Leitor neural / Joelho esquerdo articulado."
+@export var transplantes: String = "Figado AB+ / Córnea direita."
 
 @export_group("Condição")
 ## Doença associada a este paciente, sorteada da lista de doenças possíveis.
@@ -22,8 +27,10 @@ extends Node2D
 @export_category("Identificação")
 @export_multiline var dialogo_inicial: String = "dialogo que roda quando o paciente chega"
 
-
 @onready var sprite: Sprite2D = $Sprite2D
+var leitura_registradas: Dictionary = {}
+var ficha_impressa: bool = false
+
 
 func apliar_doenca(doenca_sorteada: Doenca) -> void:
 	doenca = doenca_sorteada

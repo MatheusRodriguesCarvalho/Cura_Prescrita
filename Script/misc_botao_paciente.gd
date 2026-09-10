@@ -21,6 +21,7 @@ func _paciente_call() -> void:
 		_chamar_novo_paciente()
 	else:
 		print("Atendimento em andamento, finalize antes de chamar o próximo.")
+		print("Paciente protocolo: ", paciente_atual.protocolo)
 	
 	print("Nome do Paciente: ", paciente_atual.nome)
 	print("Nome Doença: ", paciente_atual.doenca.nome)

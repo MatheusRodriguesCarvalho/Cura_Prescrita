@@ -9,7 +9,6 @@ enum Estado { PARADA, SEGURANDO, LENDO }
 
 @export var tempo_leitura: float = 1.5
 @export var tempo_popup: float = 2.5
-
 @export var custo_e_leitura: float = 5.0
 @export var custo_e_manuseio: float = 1.0
 
@@ -67,19 +66,26 @@ func _buscar_paciente_sob_cursor() -> Paciente:
 	return null
 
 func _iniciar_leitura(paciente: Paciente) -> void:
-	
 	estado = Estado.LENDO
 	await get_tree().create_timer(tempo_leitura).timeout
 	
 	var resultado := medir(paciente)
+	_registrar_no_paciente(paciente, resultado)
 	PopupFerramentas.solicitado.emit(resultado)
-	## Aparentemente isso iria preencher a ficha automaticamente
 	medicao_concluida.emit(tipo, resultado)
 	GerenciadorTempo.registrar_acao(custo_e_leitura)
 	
 	await get_tree().create_timer(tempo_popup).timeout
 	PopupFerramentas.escondido.emit()
 	_retornar()
+
+func _registrar_no_paciente(paciente: Paciente, resultado: String) -> void:
+	var chave := ""
+	match tipo:
+		Tipo.TEMPERATURA: chave = "Temperatura"
+		Tipo.PRESSAO: chave = "Pressao"
+		Tipo.SATURACAO: chave = "Saturacao"
+	paciente.leitura_registradas[chave] = resultado
 
 func _retornar() -> void:
 	estado = Estado.PARADA
