@@ -18,11 +18,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 GerenciadorPacientes="*uid://dfnajogfab3yu"
+GerenciadorTempo="*uid://bqx7xd0w2a0gf"
+GerenciadorAla="*uid://c01rtuc8pbmbu"
+TooltipInfo="*uid://ci5yvcgwrfykp"
+PopupFerramentas="*uid://kevoo57tbfrj"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1024
+window/size/viewport_height=600
 
 [physics]
 
