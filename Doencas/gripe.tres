@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dkwd7s8q4u43p"]
 
-[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Script/base_doenca.gd" id="1_pgdhx"]
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_pgdhx"]
 
 [resource]
 script = ExtResource("1_pgdhx")

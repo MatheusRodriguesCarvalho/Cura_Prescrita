@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://crtniag8y6mqi"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_beohd"]
+
+[resource]
+script = ExtResource("1_beohd")
+id = "I501NFX"
+nome = "Anafilaxia"
+nome_popular = Array[String](["Alergia grave", " fechamento da glote", " choque alérgico"])
+risco = 5
+descricao = "Descrição"
+categoria = "Outras"
+sintomas = Array[String](["Urticária generalizada", " inchaço nos lábios/olhos/garganta", " falta de ar severa (sibilos)", " queda drástica da pressão", " sensação de morte iminente"])
+med_pressao_sistolica = 0.0
+med_pressao_diastolica = 0.0
+fase = 7
+medicacao = Dictionary[String, int]({
+"ingrediente1": 1,
+"ingrediente2": 3
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

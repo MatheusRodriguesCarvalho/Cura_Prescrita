@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://3pbg5ug88cj0"]
+
+[ext_resource type="Script" uid="uid://di3xu4vi7a6jm" path="res://Scripts/ingrediente_instancia.gd" id="1_03vc5"]
+[ext_resource type="Texture2D" uid="uid://dk355atcnqddn" path="res://Sprites/Itens/StrangeDiamond_SP.webp" id="2_sucaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sucaq"]
+size = Vector2(250, 250)
+
+[node name="IngredienteInstancia" type="Node2D" unique_id=235288693]
+script = ExtResource("1_03vc5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1802494402]
+texture = ExtResource("2_sucaq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1244282092]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=655804049]
+shape = SubResource("RectangleShape2D_sucaq")

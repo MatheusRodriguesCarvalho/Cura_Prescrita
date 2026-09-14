@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dr3ehw1kq3xsc"]
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://co6kix3cbkuri"]
 
-[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_fwasq"]
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_vjatv"]
 
 [resource]
-script = ExtResource("1_fwasq")
+script = ExtResource("1_vjatv")
 id = "I101XXX-X"
 nome = "Nome"
 nome_popular = Array[String](["Nome Popular"])

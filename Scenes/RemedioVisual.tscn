@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cky3411f7gxr2"]
+
+[ext_resource type="Script" uid="uid://dokrqbajep6wj" path="res://Scripts/remedio_visual.gd" id="1_q0wkv"]
+[ext_resource type="Texture2D" uid="uid://bb4ar8hb41g5s" path="res://Sprites/Itens/SlimeFossil_SP.webp" id="2_th8g2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dv85"]
+size = Vector2(250, 250)
+
+[node name="RemedioVisual" type="Node2D" unique_id=1245171331]
+script = ExtResource("1_q0wkv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1894119772]
+texture = ExtResource("2_th8g2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=30453321]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=211300707]
+shape = SubResource("RectangleShape2D_3dv85")

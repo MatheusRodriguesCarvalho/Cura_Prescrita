@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://dmnxvjxb8chhh"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_eem6h"]
+[ext_resource type="Texture2D" uid="uid://dget4l0gjxuqw" path="res://Sprites/Itens/BuzzWax_SP.webp" id="2_iai7u"]
+
+[resource]
+script = ExtResource("1_eem6h")
+nome = "Greystone"
+descricao = "Remeta à uma pedra pálida, originaria de seiva e fuligem"
+textura = ExtResource("2_iai7u")
