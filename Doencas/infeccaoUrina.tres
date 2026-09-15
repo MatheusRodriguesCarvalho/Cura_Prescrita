@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dqnafogp46aed"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_7twv5"]
+
+[resource]
+script = ExtResource("1_7twv5")
+id = "I101INU-4"
+nome = "Infecção de Urina"
+nome_popular = Array[String](["Nome Popular"])
+risco = 3
+descricao = "Quando o corpo sente falta de água, a infecção de urina acomete o paciente desidratado, principalmente o que segura a urina."
+categoria = "Infecciosa"
+sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+med_pressao_sistolica = 125.0
+med_pressao_diastolica = 86.0
+med_temperatura = 36.0
+med_saturacao = 95.0
+fase = 2
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

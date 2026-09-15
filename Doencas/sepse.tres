@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://bi03dpfdangpt"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_b07qw"]
+
+[resource]
+script = ExtResource("1_b07qw")
+id = "I101SPS-5"
+nome = "Sepse"
+nome_popular = Array[String](["Nome Popular"])
+risco = 5
+descricao = "Tratamento somente em hospital, quando todos os antibióticos já foram usados ao menos uma vez e de forma errônea, os adultos acabam debochando de sua existência, até o risco de morte ser iminente. "
+categoria = "Infecciosa"
+sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+med_pressao_sistolica = 95.0
+med_pressao_diastolica = 65.0
+med_temperatura = 39.5
+med_saturacao = 91.0
+fase = 8
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

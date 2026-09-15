@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://c4c5hw6dpsg2s"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_ytq8l"]
+
+[resource]
+script = ExtResource("1_ytq8l")
+id = "I101INT-3"
+nome = "Infarto"
+nome_popular = Array[String](["Nome Popular"])
+risco = 5
+descricao = "Palpitação e dor intensa localizada no peito, o coração esforça tanto para bombear que em um momento falha."
+categoria = "Cardiovascular"
+sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+med_pressao_sistolica = 190.0
+med_pressao_diastolica = 120.0
+med_saturacao = 95.0
+fase = 4
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

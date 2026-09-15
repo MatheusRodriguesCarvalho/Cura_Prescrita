@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://buu1tudknhqm5"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_8y6lv"]
+
+[resource]
+script = ExtResource("1_8y6lv")
+id = "I101BTR-8"
+nome = "Bacteriose"
+nome_popular = Array[String](["Nome Popular"])
+risco = 2
+descricao = "Doença causada por bactéria desconhecida, afetando o estômago, sendo comum nas áreas áridas pela falta de saneamento básico em muitas regiões."
+categoria = "Digestiva"
+sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+med_pressao_sistolica = 90.0
+med_pressao_diastolica = 60.0
+med_temperatura = 38.8
+med_saturacao = 97.0
+fase = 2
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"
