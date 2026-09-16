@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://brw4kqe1q6f4b"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_esl15"]
+
+[resource]
+script = ExtResource("1_esl15")
+id = "I101DNG-4"
+nome = "Dengue"
+nome_popular = Array[String](["Nome Popular"])
+risco = 3
+descricao = "Ao transitar em áreas de água parada e perceber que  manchas vermelhas surgiram na pele,  ador muscular é intensa e sentir atrás dos olhos ardendo, provavelemente um mosquito infectou o paciente ao picá-lo. Evitar o tratamento resulta em piora clínica."
+categoria = "Outra"
+sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+med_pressao_sistolica = 90.0
+med_pressao_diastolica = 60.0
+med_temperatura = 40.0
+med_saturacao = 98.0
+fase = 3
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

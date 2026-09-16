@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dx7r7r5pim77o"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_fgnia"]
+
+[resource]
+script = ExtResource("1_fgnia")
+id = "I101TBC-2"
+nome = "Tuberculose"
+nome_popular = Array[String](["Nome Popular"])
+risco = 3
+descricao = "Doença causada por uma bactéria, caracterizada por tosse persistente, com secreção ou seca, dor no peito, falta de ar e fadiga. O tratamento é longo, tendo um tempo de transmissão alto."
+categoria = "Respiratória"
+sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+med_pressao_sistolica = 109.0
+med_pressao_diastolica = 75.0
+med_temperatura = 38.0
+med_saturacao = 95.0
+fase = 3
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://b4x0bsj0ji3q8"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_bmhlf"]
+
+[resource]
+script = ExtResource("1_bmhlf")
+id = "I101MNG-0"
+nome = "Meningite"
+nome_popular = Array[String](["Nome Popular"])
+risco = 4
+descricao = "Pacientes que apresentem rigidez na nuca, dor de cabeça intensa, vômitos e sensibilidade à luz, estão acometidos com meningite. Medique e encaminhe o mais rápido possível para o hospital. "
+categoria = "Infecciosa"
+sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+med_pressao_sistolica = 100.0
+med_pressao_diastolica = 65.0
+med_temperatura = 39.0
+med_saturacao = 94.0
+fase = 4
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://chjs4vc8ydefj"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_0ar8a"]
+
+[resource]
+script = ExtResource("1_0ar8a")
+id = "I101CXB-1"
+nome = "Caxumba"
+nome_popular = Array[String](["Nome Popular"])
+risco = 3
+descricao = "Doença causada por vírus, seu sintoma mais visível é o inchaço das glândulas salivares, com a alta do questionamento da vacina tem se tornado comum principalmente em adultos. "
+categoria = "Outra"
+sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+med_pressao_sistolica = 140.0
+med_pressao_diastolica = 90.0
+med_temperatura = 40.0
+fase = 3
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

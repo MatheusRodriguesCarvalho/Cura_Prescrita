@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://f6mp1prusrp5"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_0ivli"]
+
+[resource]
+script = ExtResource("1_0ivli")
+id = "I101EST-1"
+nome = "Estomatite"
+nome_popular = Array[String](["Nome Popular"])
+risco = 1
+descricao = "Placas esbranquiçadas cobrem a língua, gengivas, boca ou bochechas. A dor para engolir e falar é latente, a salivação também se torna um problema. "
+categoria = "Outra"
+sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+med_pressao_sistolica = 125.0
+med_pressao_diastolica = 86.0
+med_temperatura = 39.0
+med_saturacao = 97.0
+fase = 2
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"
