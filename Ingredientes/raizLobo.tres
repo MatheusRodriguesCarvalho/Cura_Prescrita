@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://be7nhs26jft4t"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_hajcp"]
+
+[resource]
+script = ExtResource("1_hajcp")
+nome = "Raiz-De-Lobo-Guará"
+descricao = "Antigamente uma iguaria popular dos povos originários de Nignum, uma pena que esse costume foi sumindo ao passar dos anos."

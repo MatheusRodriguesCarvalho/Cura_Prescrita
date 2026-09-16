@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://dhyb4f88tw1s3"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_7h16h"]
+
+[resource]
+script = ExtResource("1_7h16h")
+nome = "Lunaflora"
+descricao = "Sementes de Lunaflora colhidas na primeira lua cheia servem como um sedativo para doenças. Utilizada para atrasar a ação de infecções graves."

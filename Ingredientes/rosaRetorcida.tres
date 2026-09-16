@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://bf4bir4pl2kyo"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_5m2t0"]
+
+[resource]
+script = ExtResource("1_5m2t0")
+nome = "Rosa Retorcida"
+descricao = "Uma pesquisa recente descobriu que, as folhas de roseira Retorcida misturadas com pétalas desitradas resulta em um preparo excelente para doenças dos rins."

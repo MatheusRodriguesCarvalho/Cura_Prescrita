@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://dhm1km3iqkevt"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_1jmtv"]
+
+[resource]
+script = ExtResource("1_1jmtv")
+nome = "Casca de Jatobá"
+descricao = "Extremamente famoso pelo xarope, cascas grossas de uma árvore nativa, utilizada para tratar doenças pulmonares."

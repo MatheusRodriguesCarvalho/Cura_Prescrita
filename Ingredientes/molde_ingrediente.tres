@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://b4qwvkk2it5qk"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_wij11"]
+[ext_resource type="Texture2D" uid="uid://dslpxk46jiljd" path="res://Sprites/Pacientes/honeyslimesecretstylesp.png" id="2_5vhfm"]
+
+[resource]
+script = ExtResource("1_wij11")
+nome = "ingrediente"
+descricao = "esse ingrediente existe"
+testura = ExtResource("2_5vhfm")
