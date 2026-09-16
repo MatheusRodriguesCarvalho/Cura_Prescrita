@@ -6,7 +6,6 @@
 script = ExtResource("1_pjk0o")
 id = "I102CJT"
 nome = "Conjuntivite"
-descricao = "Olhos coçando, inchados e com secreção são característicos. Compartilhar toalhas é arriscado em terras áridas por sua facilidade de proliferação com o vento."
 categoria = "Infecciosa"
 sintomas = Array[String](["Ardencia Ocular", "Remela", "Irritação"])
 med_temperatura = 36.0
