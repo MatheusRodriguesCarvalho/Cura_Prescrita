@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_7twv5")
-id = "I101INU-4"
+id = "I302INU-4"
 nome = "Infecção de Urina"
-nome_popular = Array[String](["Nome Popular"])
+nome_popular = Array[String](["Cistite"])
 risco = 3
-descricao = "Quando o corpo sente falta de água, a infecção de urina acomete o paciente desidratado, principalmente o que segura a urina."
+descricao = "A combinação de clima seco com a falta de hidratação correta, acomete muitos trabalhadores urbanos que precisam atravessar Aresiens para chegarem em seus trabalhos."
 categoria = "Infecciosa"
-sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+sintomas = Array[String](["Ardência ao urinar", "Sensação de bexiga cheia", "Sensação de areia ao urinar"])
 med_pressao_sistolica = 125.0
 med_pressao_diastolica = 86.0
 med_temperatura = 36.0

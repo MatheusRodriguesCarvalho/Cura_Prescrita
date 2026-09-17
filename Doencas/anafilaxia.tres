@@ -13,7 +13,6 @@ categoria = "Outras"
 sintomas = Array[String](["Urticária generalizada", " inchaço nos lábios/olhos/garganta", " falta de ar severa (sibilos)", " queda drástica da pressão", " sensação de morte iminente"])
 med_pressao_sistolica = 0.0
 med_pressao_diastolica = 0.0
-fase = 7
 medicacao = Dictionary[String, int]({
 "ingrediente1": 1,
 "ingrediente2": 3

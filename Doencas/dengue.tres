@@ -6,11 +6,11 @@
 script = ExtResource("1_esl15")
 id = "I101DNG-4"
 nome = "Dengue"
-nome_popular = Array[String](["Nome Popular"])
+nome_popular = Array[String](["Febre quebra ossos"])
 risco = 3
-descricao = "Ao transitar em áreas de água parada e perceber que  manchas vermelhas surgiram na pele,  ador muscular é intensa e sentir atrás dos olhos ardendo, provavelemente um mosquito infectou o paciente ao picá-lo. Evitar o tratamento resulta em piora clínica."
+descricao = "Ao transitar em áreas de água parada e perceber que ocorreu uma picada de mosquito, fique atento aos sintomas que surgirem após esse evento. Evitar o tratamento deles resulta em piora clínica."
 categoria = "Outra"
-sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+sintomas = Array[String](["Dor muscular", "Manchas vermelhas", "Olhos ardendo atrás", "Mal estar"])
 med_pressao_sistolica = 90.0
 med_pressao_diastolica = 60.0
 med_temperatura = 40.0

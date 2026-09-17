@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_0ar8a")
-id = "I101CXB-1"
+id = "I303CXB-1"
 nome = "Caxumba"
-nome_popular = Array[String](["Nome Popular"])
+nome_popular = Array[String](["Papeira"])
 risco = 3
-descricao = "Doença causada por vírus, seu sintoma mais visível é o inchaço das glândulas salivares, com a alta do questionamento da vacina tem se tornado comum principalmente em adultos. "
+descricao = "O uso exacerbado de venenos em plantações das poucas regiões úmidas próximas de Aresiens resulta em alimentos lindos, porém com efeitos colaterais desconhecidos."
 categoria = "Outra"
-sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+sintomas = Array[String](["Inchaço na garganta", "Dor de cabeça", "Dor para engolir"])
 med_pressao_sistolica = 140.0
 med_pressao_diastolica = 90.0
 med_temperatura = 40.0

@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_0ivli")
-id = "I101EST-1"
+id = "I102EST-1"
 nome = "Estomatite"
 nome_popular = Array[String](["Nome Popular"])
 risco = 1
-descricao = "Placas esbranquiçadas cobrem a língua, gengivas, boca ou bochechas. A dor para engolir e falar é latente, a salivação também se torna um problema. "
+descricao = "Algumas frutas importadas costumam reagir mal ao clima de Aresiens, resultando em uma condição prejudicial para a cavidade bucal e apetite."
 categoria = "Outra"
-sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+sintomas = Array[String](["Úlceras na boca", "Desconforto para engolir", "Salivação", "Mau hálito"])
 med_pressao_sistolica = 125.0
 med_pressao_diastolica = 86.0
 med_temperatura = 39.0

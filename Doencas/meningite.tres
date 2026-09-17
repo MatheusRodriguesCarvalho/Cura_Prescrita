@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_bmhlf")
-id = "I101MNG-0"
+id = "I404MNG-0"
 nome = "Meningite"
-nome_popular = Array[String](["Nome Popular"])
+nome_popular = Array[String](["Doença do pescoço duro"])
 risco = 4
-descricao = "Pacientes que apresentem rigidez na nuca, dor de cabeça intensa, vômitos e sensibilidade à luz, estão acometidos com meningite. Medique e encaminhe o mais rápido possível para o hospital. "
+descricao = "Pacientes que apresentem rigidez na nuca, dor de cabeça intensa, vômitos e sensibilidade à luz, após o consumo impróprio de peixe precisam de medicação e encaminhamento o mais rápido possível para o hospital. "
 categoria = "Infecciosa"
-sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+sintomas = Array[String](["Dor de cabeça intensa", "Vômito", "Sensibilidade a luz", "Pescoço rígido"])
 med_pressao_sistolica = 100.0
 med_pressao_diastolica = 65.0
 med_temperatura = 39.0

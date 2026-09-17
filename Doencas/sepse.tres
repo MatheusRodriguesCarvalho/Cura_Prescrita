@@ -4,16 +4,16 @@
 
 [resource]
 script = ExtResource("1_b07qw")
-id = "I101SPS-5"
+id = "I502SPS-5"
 nome = "Sepse"
-nome_popular = Array[String](["Nome Popular"])
+nome_popular = Array[String](["Infecção generalizada"])
 risco = 5
-descricao = "Tratamento somente em hospital, quando todos os antibióticos já foram usados ao menos uma vez e de forma errônea, os adultos acabam debochando de sua existência, até o risco de morte ser iminente. "
+descricao = "Pela distância da cidade até a clínica e o hospital, muitos pacientes ignoram seus sintomas gripais ou de outras doenças até que seja uma urgência. Medique e encaminhe para o hospital o quanto antes."
 categoria = "Infecciosa"
-sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+sintomas = Array[String](["Calafrios", "Extremidades arroxeadas", "Taquicardia"])
 med_pressao_sistolica = 95.0
 med_pressao_diastolica = 65.0
 med_temperatura = 39.5
 med_saturacao = 91.0
-fase = 8
+fase = 2
 metadata/_custom_type_script = "uid://dgcp3crb6w10n"

@@ -6,6 +6,7 @@
 script = ExtResource("1_pjk0o")
 id = "I102CJT"
 nome = "Conjuntivite"
+descricao = "Compartilhar toalhas é arriscado em terras áridas, por conta do vento facilitar a locomoção de irritantes oculares."
 categoria = "Infecciosa"
 sintomas = Array[String](["Ardencia Ocular", "Remela", "Irritação"])
 med_temperatura = 36.0

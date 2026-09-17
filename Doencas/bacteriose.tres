@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_8y6lv")
-id = "I101BTR-8"
+id = "I202BTR-8"
 nome = "Bacteriose"
-nome_popular = Array[String](["Nome Popular"])
+nome_popular = Array[String](["Dor de barriga"])
 risco = 2
-descricao = "Doença causada por bactéria desconhecida, afetando o estômago, sendo comum nas áreas áridas pela falta de saneamento básico em muitas regiões."
+descricao = "Doença causada por bactéria desconhecida, sendo comum nas áreas áridas pela falta de saneamento básico em muitas regiões."
 categoria = "Digestiva"
-sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+sintomas = Array[String](["Vômito", "Diarreia", "Enjoo"])
 med_pressao_sistolica = 90.0
 med_pressao_diastolica = 60.0
 med_temperatura = 38.8

@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_sks7s")
-id = "I101BRQ-8"
+id = "I202BRQ-8"
 nome = "Bronquite"
-nome_popular = Array[String](["Nome Popular"])
+nome_popular = Array[String](["Asma"])
 risco = 2
-descricao = "Os brônquios pulmonares acometidos por poluição, fumo ou vírus acumulam secreção e carregam o peito, emitindo chiados, causando falta de ar e tosse."
+descricao = "A poeira presente em todos ambientes da cidade acomete muitos adultos, sendo necessário fazer lavagem nasal com frequência, os que ignoram essa orientação acabam doentes."
 categoria = "Respiratória"
-sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+sintomas = Array[String](["Peito chiando", "Tosse ", "Falta de ar", "Fadiga"])
 med_pressao_sistolica = 125.0
 med_pressao_diastolica = 86.0
 med_temperatura = 38.0

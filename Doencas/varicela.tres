@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://con0aqqu4ebij"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_u8vfh"]
+
+[resource]
+script = ExtResource("1_u8vfh")
+id = "I303VRC-1"
+nome = "Varicela"
+nome_popular = Array[String](["Catapora"])
+risco = 3
+descricao = "A ignorância e o trabalho de irem até um postinho de saúde fez com que muitos adultos ignorassem o plano nacional de vacinação, por isso muitas doenças estão resurgindo e o conhecimento prévio foi eliminado da faculdade. "
+categoria = "Infecciosa"
+sintomas = Array[String](["Bolhas na pele", "Coceira intensa", "Perda de apetite", "Mal-estar"])
+med_pressao_sistolica = 125.0
+med_pressao_diastolica = 86.0
+med_temperatura = 39.5
+med_saturacao = 95.0
+fase = 3
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_vjatv")
 id = "I101XXX-X"
-nome = "Nome"
+nome = "nome"
 nome_popular = Array[String](["Nome Popular"])
 risco = 2
 descricao = "Descrição"

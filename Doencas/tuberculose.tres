@@ -6,11 +6,11 @@
 script = ExtResource("1_fgnia")
 id = "I101TBC-2"
 nome = "Tuberculose"
-nome_popular = Array[String](["Nome Popular"])
+nome_popular = Array[String](["Mal do peito"])
 risco = 3
-descricao = "Doença causada por uma bactéria, caracterizada por tosse persistente, com secreção ou seca, dor no peito, falta de ar e fadiga. O tratamento é longo, tendo um tempo de transmissão alto."
+descricao = "A falta de hidratação e o consumo incorreto de alimentos abaixa a imunidade dos adultos que precisam se esforçar todos os dias até o emprego, em algum momento a garganta e pulmões pedem por socorro."
 categoria = "Respiratória"
-sintomas = Array[String](["Sintoma 1 Ocular", "Sintoma 2"])
+sintomas = Array[String](["Tosse persistente", "Fadiga", "Falta de apetite", "Sudorese noturna"])
 med_pressao_sistolica = 109.0
 med_pressao_diastolica = 75.0
 med_temperatura = 38.0

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://b6e17jg57tfru"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_lwdqk"]
+
+[resource]
+script = ExtResource("1_lwdqk")
+id = "I202CDS-3"
+nome = "Candidíase Oral"
+nome_popular = Array[String](["Sapinho"])
+risco = 2
+descricao = "Em áreas que a população não se acostumou com a seca, e costuma utilizar umidificadores de ar com intensidade, fungos se proliferam e acometem diversas áreas do corpo."
+categoria = "Outra"
+sintomas = Array[String](["Placas brancas na língua", "Desconforto para comer", "Sensação de boca seca"])
+med_pressao_sistolica = 125.0
+med_pressao_diastolica = 86.0
+med_temperatura = 36.0
+med_saturacao = 95.0
+fase = 2
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"
