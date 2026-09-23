@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://donopnviqw3t8"]
+
+[ext_resource type="Script" uid="uid://n06qucq7ewu2" path="res://Scripts/bases/base_paciente.gd" id="1_xdqdf"]
+[ext_resource type="Resource" uid="uid://by51t538qpvix" path="res://Doencas/conjuntivite.tres" id="2_e0e24"]
+[ext_resource type="Texture2D" uid="uid://hhms1jma723t" path="res://Sprites/Pacientes/slimecrystalsr2.png" id="3_xdqdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcax3"]
+size = Vector2(100, 100)
+
+[node name="Node2D" type="Node2D" unique_id=1348085808]
+script = ExtResource("1_xdqdf")
+protocolo = "SP45S5"
+nome = "Teobald"
+idade = 54
+tipo_sanguineo = "B+"
+implantes = "Acelerador nos calcanhares"
+transplantes = "Pâncreas"
+doenca = ExtResource("2_e0e24")
+falas_vida_perguntas = Array[String](["Por que acelerador...?", "Ouvi no rádio sobre uma mudança climática."])
+falas_vida_respostas = Array[String](["Para correr melhor em caso de desabamento.", "Ah. De 5 em 5 anos o calor aumenta."])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1948647360]
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("3_xdqdf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1838791077]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1762345764]
+shape = SubResource("RectangleShape2D_xcax3")

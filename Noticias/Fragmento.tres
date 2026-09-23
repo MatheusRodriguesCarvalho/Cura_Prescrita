@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Noticia" format=3 uid="uid://cv3nb4t17g6o8"]
+
+[ext_resource type="Script" uid="uid://smyxvm5ki54q" path="res://Scripts/bases/base_noticia.gd" id="1_x11x7"]
+
+[resource]
+script = ExtResource("1_x11x7")
+dia = 2
+chamada = "Um jantar acaba em desespero."
+texto = "Um casal, que comemorava seu aniversário de namoro juntos, relatou para a polícia local que a residência foi invadida. Entretanto, ao investigar o local, nenhum sinal de arrombamento ou invasão foi encontrado. Mesmo sem tais provas, um dos agentes permaneceu com o casal por mais algumas horas, até que um barulho entregou que mais alguém estava ali. O policial Miguel encontrou uma placa de madeira um pouco descolada e assim que a removeram, tuneis extensos se escondiam por baixo de toda a cidade. Ainda não temos informações sobre o que há neles além de terra e umidade."
+metadata/_custom_type_script = "uid://smyxvm5ki54q"

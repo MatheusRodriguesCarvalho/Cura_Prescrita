@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dme1xkk37pr1f"]
+
+[ext_resource type="Script" uid="uid://n06qucq7ewu2" path="res://Scripts/bases/base_paciente.gd" id="1_yfyrh"]
+[ext_resource type="Resource" uid="uid://by51t538qpvix" path="res://Doencas/conjuntivite.tres" id="2_1kadn"]
+[ext_resource type="Texture2D" uid="uid://clui6pk6cptoy" path="res://Sprites/Pacientes/slimehoneysr2.png" id="3_ealdy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcax3"]
+size = Vector2(100, 100)
+
+[node name="Node2D" type="Node2D" unique_id=1348085808]
+script = ExtResource("1_yfyrh")
+protocolo = "SP45S7"
+nome = "Jude"
+idade = 21
+tipo_sanguineo = "B-"
+implantes = "Desconhecido"
+transplantes = "Nenhum"
+doenca = ExtResource("2_1kadn")
+falas_vida_respostas = Array[String](["A expansão da fenda me preocupa."])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1948647360]
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("3_ealdy")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1838791077]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1762345764]
+shape = SubResource("RectangleShape2D_xcax3")

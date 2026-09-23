@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dlomqdhbedt3n"]
+
+[ext_resource type="Script" uid="uid://n06qucq7ewu2" path="res://Scripts/bases/base_paciente.gd" id="1_dm0su"]
+[ext_resource type="Resource" uid="uid://by51t538qpvix" path="res://Doencas/conjuntivite.tres" id="2_j6vc1"]
+[ext_resource type="Texture2D" uid="uid://dslpxk46jiljd" path="res://Sprites/Pacientes/honeyslimesecretstylesp.png" id="3_agm1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsyyc"]
+size = Vector2(100, 100)
+
+[node name="Node2D" type="Node2D" unique_id=1348085808]
+script = ExtResource("1_dm0su")
+protocolo = "SP45S1"
+nome = "Micaela"
+idade = 30
+tipo_sanguineo = "O+"
+implantes = "Controlador de temperatura corporal / Ombro direito."
+transplantes = "Baço O- "
+doenca = ExtResource("2_j6vc1")
+falas_vida_perguntas = Array[String](["Um controlador de temperatura é útil?"])
+falas_vida_respostas = Array[String](["Muito, o clima é terrivelmente quente."])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1948647360]
+scale = Vector2(0.333, 0.333)
+texture = ExtResource("3_agm1t")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1449886263]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=612352514]
+shape = SubResource("RectangleShape2D_gsyyc")

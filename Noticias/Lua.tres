@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Noticia" format=3 uid="uid://n07s510xd2n3"]
+
+[ext_resource type="Script" uid="uid://smyxvm5ki54q" path="res://Scripts/bases/base_noticia.gd" id="1_huo0u"]
+
+[resource]
+script = ExtResource("1_huo0u")
+chamada = "Peregrinação causa tumulto por onde percorrem"
+texto = "Na última noita, os peregrinos da Divina Gramatura estiverem no centro de um conflito entre os manifestantes e os policias, até onde foi apurado, eles buscavam pelo seu lider que não havia chegado no Culto, e informações internas de seus grupos informaram que o lider poderia ter ficado preso na manifestação. Entretanto, ao chegarem no local, as animosidades foram escalando a medida que o lider não era encontrado, 4 sacro-sacerdotes foram detidos, e 7 pessoas foram encaminhadas ao Hospital."
+metadata/_custom_type_script = "uid://smyxvm5ki54q"
