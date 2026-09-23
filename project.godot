@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="curaPrescrita_testes"
-run/main_scene="uid://dlkiav61t2p80"
+run/main_scene="uid://y75pihhmxdma"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 GerenciadorPacientes="*uid://dfnajogfab3yu"
 GerenciadorTempo="*uid://bqx7xd0w2a0gf"
 GerenciadorAla="*uid://c01rtuc8pbmbu"
+GerenciadorAudio="*uid://dt1p3wkpivrvy"
+GerenciadorDialogos="*uid://drqwpumc61f0k"
 TooltipInfo="*uid://ci5yvcgwrfykp"
 PopupFerramentas="*uid://kevoo57tbfrj"
 

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://dtv60rhy0qp56"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_x7t3s"]
+
+[resource]
+script = ExtResource("1_x7t3s")
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"
