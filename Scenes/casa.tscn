@@ -1,3 +1,116 @@
 [gd_scene format=3 uid="uid://bistpt0yk14n3"]
 
+[ext_resource type="Script" uid="uid://dnhmdhfcmbv4t" path="res://Scripts/gerenciadores/gerenciador_casa.gd" id="1_4afwa"]
+[ext_resource type="Texture2D" uid="uid://bdhtp0pc6bu0e" path="res://Sprites/Misc/placeholder_menu.jpg" id="1_mnn6b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4afwa"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 40.0
+content_margin_bottom = 10.0
+skew = Vector2(-0.5, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3f4g"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(2.8878452e-07, 0.18597618, 0.29358885, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0.1254902, 0.1882353, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="Casa" type="Node2D" unique_id=234272023]
+script = ExtResource("1_4afwa")
+
+[node name="Mundo" type="Node2D" parent="." unique_id=857493803]
+
+[node name="Comodo" type="Node2D" parent="Mundo" unique_id=1822130428]
+position = Vector2(512, 300)
+
+[node name="SpriteComodo" type="Sprite2D" parent="Mundo/Comodo" unique_id=472191779]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("1_mnn6b")
+flip_v = true
+
+[node name="Node2D" type="Node2D" parent="Mundo" unique_id=1290312717]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=483872410]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=34858418]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BotaoConsultorio" type="Button" parent="CanvasLayer/Control" unique_id=862900156]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "casa, ir para consultório"
+
+[node name="VisualNovel" type="Control" parent="CanvasLayer" unique_id=10544161]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VisualNovel" unique_id=255513475]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -181.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="FundoNome" type="PanelContainer" parent="CanvasLayer/VisualNovel/VBoxContainer" unique_id=52673983]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4afwa")
+
+[node name="Nome" type="Label" parent="CanvasLayer/VisualNovel/VBoxContainer/FundoNome" unique_id=499295049]
+layout_mode = 2
+text = "Nome do Locutor"
+
+[node name="FundoFala" type="PanelContainer" parent="CanvasLayer/VisualNovel/VBoxContainer" unique_id=526057672]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r3f4g")
+
+[node name="Fala" type="RichTextLabel" parent="CanvasLayer/VisualNovel/VBoxContainer/FundoFala" unique_id=1532981044]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+text = "testestes testestefeafef efe feafefaefaefaef
+efaefaefeafaef aefaefeafaeaef
+steestsf efe fea f efefaef afefeaf feefaef efeafaef efeafea fefaefe fgefaef aefeafe faefeaf feafeafe faefeafdsfaefe"
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1721223329]

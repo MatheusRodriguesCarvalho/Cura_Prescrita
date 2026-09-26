@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="EstiloLabel" format=3 uid="uid://c8i3qkaibb74e"]
+
+[ext_resource type="Script" uid="uid://d3n05vehu07or" path="res://Scripts/bases/base_label.gd" id="1_scy0o"]
+
+[resource]
+script = ExtResource("1_scy0o")
+metadata/_custom_type_script = "uid://d3n05vehu07or"

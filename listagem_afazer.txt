@@ -1,18 +1,41 @@
 A fazer / TODO:
 	PRIORIDADES:
-		criar mais doencas, e elaborar tabela
-		Ala de medicação, listagem de medicamentos, combinações e efetividade contra as doenças
 		
+		CRIAR E FAZER A LIXEIRA
+		MELHORAR O REPOSICIONAMENTO DO REMEDIO NO CONSULTORIO
+		ENTREGAR O REMEDIO FAZ O PACIENTE SE DESPEDIR E SAIR (REINICIA O CICLO DE ATENDIMENTO)
+		SUMIR COM O TOOLTIP INFO DO REMEDIO APOS ENTREGAR
+		
+		CUSTO DE ESTAMINA:
+			SELEÇÃO DE INGREDIENTES
+			CRIAÇÃO DE REMEDIOS
+		
+		
+		dialogos, zona de dialogo, click-direito para opções:
+			paciente area2D
+			click e aparece opções de dialogos ao redor:
+				buttonText (o que aparece), dialogo (o personagem pergunta, o paciente responde)
+			repetição: d
+			
+			dialogo de apresentação: quando o paciente chega
+			
+			
+			
+			dialogo de informações: sintomas ou informções triviais, podendo ser solicitadas ao paciente
+			
+			dialogo de finalização: quando entregue o remedio ao paciente 
+			
 		configuração de difiucldade no menu inicial
 		
-		dialogos, zona de dialogo, click-direito para opções
+		
 		audios e sons
 		
-		(passivel de exclusão) regras e legislação, mini regras diarias e cumulativas
-			trocada por noticias que dão aprofundamento na lore do mundo e pessoas
+		noticias que dão aprofundamento na lore do mundo e pessoas
 		
 		cena pós expediente e respectivos dialogos
 		ficha, melhora de aspectos visuais
+		criar mais doencas, e elaborar tabela
+		combinações e efetividade contra as doenças
 	
 	SECUNDÁRIOS:
 		debuffs in-game e post-game, Cansaço, LER e interferencia

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Noticia" format=3 uid="uid://n07s510xd2n3"]
+
+[ext_resource type="Script" uid="uid://smyxvm5ki54q" path="res://Scripts/bases/base_noticia.gd" id="1_8103x"]
+
+[resource]
+script = ExtResource("1_8103x")
+dia = 4
+chamada = "Fragmento"
+texto = "Fragmento"
+metadata/_custom_type_script = "uid://smyxvm5ki54q"

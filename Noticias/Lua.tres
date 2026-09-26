@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Noticia" format=3 uid="uid://n07s510xd2n3"]
+[gd_resource type="Resource" script_class="Noticia" format=3 uid="uid://csoppaakxh5kc"]
 
 [ext_resource type="Script" uid="uid://smyxvm5ki54q" path="res://Scripts/bases/base_noticia.gd" id="1_huo0u"]
 
 [resource]
 script = ExtResource("1_huo0u")
-chamada = "Peregrinação causa tumulto por onde percorrem"
-texto = "Na última noita, os peregrinos da Divina Gramatura estiverem no centro de um conflito entre os manifestantes e os policias, até onde foi apurado, eles buscavam pelo seu lider que não havia chegado no Culto, e informações internas de seus grupos informaram que o lider poderia ter ficado preso na manifestação. Entretanto, ao chegarem no local, as animosidades foram escalando a medida que o lider não era encontrado, 4 sacro-sacerdotes foram detidos, e 7 pessoas foram encaminhadas ao Hospital."
+dia = 3
+chamada = "Relatos de que a Lua estava esverdeada preocupa moradores do País de Vicus"
+texto = "Os alunos do curso de Astronomia do País De Vicus alegam ter visto a coloração da lua mudar, descreveram como \"um tom de verde profundo e radiante, como esmeralda\". A SAM (Sociedade de Astronomia Mundial) investigou o caso, questionando outros observatórios e nenhuma mudança foi notada. Estudiosos marcaram viagem para o próximo dia, curiosos com as alegações dos alunos. No momento o caso se encontra aberto e sem conclusão lógica."
 metadata/_custom_type_script = "uid://smyxvm5ki54q"

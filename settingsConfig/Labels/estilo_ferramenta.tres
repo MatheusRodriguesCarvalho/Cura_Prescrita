@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="EstiloLabel" format=3 uid="uid://xb46iq0j2ae4"]
+
+[ext_resource type="Script" uid="uid://d3n05vehu07or" path="res://Scripts/bases/base_label.gd" id="1_b1v4g"]
+
+[resource]
+script = ExtResource("1_b1v4g")
+cor_fundo = Color(0.6204995, 0, 0, 0.6)
+metadata/_custom_type_script = "uid://d3n05vehu07or"
