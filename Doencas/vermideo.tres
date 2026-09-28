@@ -1,6 +1,10 @@
 [gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dxpn3fn1rttos"]
 
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_dyalb"]
 [ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_e8cdx"]
+[ext_resource type="Resource" path="res://Ingredientes/barbatanaCoral.tres" id="2_bohfe"]
+[ext_resource type="Resource" path="res://Ingredientes/gengibre.tres" id="3_awvrs"]
+[ext_resource type="Resource" path="res://Ingredientes/guaco.tres" id="4_qunjw"]
 
 [resource]
 script = ExtResource("1_e8cdx")
@@ -17,4 +21,9 @@ med_pressao_diastolica = 90.0
 med_temperatura = 35.8
 med_saturacao = 90.0
 fase = 3
+receita_cura = Dictionary[ExtResource("1_dyalb"), int]({
+ExtResource("2_bohfe"): 2,
+ExtResource("3_awvrs"): 1,
+ExtResource("4_qunjw"): 1
+})
 metadata/_custom_type_script = "uid://dgcp3crb6w10n"

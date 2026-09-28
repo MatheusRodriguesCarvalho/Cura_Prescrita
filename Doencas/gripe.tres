@@ -1,6 +1,9 @@
 [gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dkwd7s8q4u43p"]
 
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_lfba4"]
 [ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_pgdhx"]
+[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Ingredientes/guaco.tres" id="2_dtp5u"]
+[ext_resource type="Resource" uid="uid://b0prxwh6t0avb" path="res://Ingredientes/lunaflora.tres" id="3_o1k43"]
 
 [resource]
 script = ExtResource("1_pgdhx")
@@ -10,4 +13,8 @@ nome_popular = Array[String](["Franguespirro", "Galinopraga", "Penugem"])
 descricao = "Doença originária de aves migratórias e transmitida às aves locais, o contato frequente ou íntimo com as aves infectadas ou os locais onde recém repousaram garantem que o indivíduo seja acometido."
 categoria = "Respiratória"
 sintomas = Array[String](["Coceira", "Espirros", "Secreções"])
+receita_cura = Dictionary[ExtResource("1_lfba4"), int]({
+ExtResource("2_dtp5u"): 1,
+ExtResource("3_o1k43"): 1
+})
 metadata/_custom_type_script = "uid://dgcp3crb6w10n"

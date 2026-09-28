@@ -1,20 +1,25 @@
 [gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://crtniag8y6mqi"]
 
 [ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_beohd"]
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_uxkjy"]
+[ext_resource type="Resource" uid="uid://bi7e0xy1q701g" path="res://Ingredientes/barbatanaCoral.tres" id="2_kop6o"]
+[ext_resource type="Resource" uid="uid://dhm1km3iqkevt" path="res://Ingredientes/cascaJatoba.tres" id="3_pl125"]
+[ext_resource type="Resource" uid="uid://b7vwjmlrk8lvk" path="res://Ingredientes/gengibre.tres" id="4_n5rvk"]
 
 [resource]
 script = ExtResource("1_beohd")
 id = "I501NFX"
 nome = "Anafilaxia"
-nome_popular = Array[String](["Alergia grave", " fechamento da glote", " choque alérgico"])
+nome_popular = Array[String](["Alergia grave", "Fechamento da glote", "Choque alérgico"])
 risco = 5
 descricao = "Descrição"
 categoria = "Outras"
-sintomas = Array[String](["Urticária generalizada", " inchaço nos lábios/olhos/garganta", " falta de ar severa (sibilos)", " queda drástica da pressão", " sensação de morte iminente"])
+sintomas = Array[String](["Urticária generalizada", "Inchaço nos lábios/olhos/garganta", "Falta de ar severa", "Queda drástica da pressão", "Sensação de morte iminente"])
 med_pressao_sistolica = 0.0
 med_pressao_diastolica = 0.0
-medicacao = Dictionary[String, int]({
-"ingrediente1": 1,
-"ingrediente2": 3
+receita_cura = Dictionary[ExtResource("1_uxkjy"), int]({
+ExtResource("2_kop6o"): 1,
+ExtResource("3_pl125"): 1,
+ExtResource("4_n5rvk"): 2
 })
 metadata/_custom_type_script = "uid://dgcp3crb6w10n"

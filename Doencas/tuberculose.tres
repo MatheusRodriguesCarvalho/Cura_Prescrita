@@ -1,6 +1,9 @@
 [gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dx7r7r5pim77o"]
 
 [ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_fgnia"]
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_rjq5m"]
+[ext_resource type="Resource" uid="uid://12chkxqnr8wa" path="res://Ingredientes/raizLobo.tres" id="2_wapyo"]
+[ext_resource type="Resource" uid="uid://c807ygh72pr8x" path="res://Ingredientes/rosaRetorcida.tres" id="3_weg56"]
 
 [resource]
 script = ExtResource("1_fgnia")
@@ -16,4 +19,8 @@ med_pressao_diastolica = 75.0
 med_temperatura = 38.0
 med_saturacao = 95.0
 fase = 3
+receita_cura = Dictionary[ExtResource("1_rjq5m"), int]({
+ExtResource("2_wapyo"): 2,
+ExtResource("3_weg56"): 1
+})
 metadata/_custom_type_script = "uid://dgcp3crb6w10n"
