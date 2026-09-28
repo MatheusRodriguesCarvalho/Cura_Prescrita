@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://bn4bo2gi5v0de"]
+[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://b7vwjmlrk8lvk"]
 
 [ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_t0wi3"]
+[ext_resource type="Texture2D" uid="uid://1gtxps5fuked" path="res://Sprites/Itens/Hexacomb_SP.webp" id="2_mmq4b"]
 
 [resource]
 script = ExtResource("1_t0wi3")
 nome = "Gengibre"
-descricao = "Raiz oriunda do sudeste asiático, comestível e ardida, muito utilizada em chás e como tempero. Sua versão em pó é ótima para gripes, resfriados e dores musuculares."
+descricao = "Raiz oriunda das terras nascentes, comestível e ardida, muito utilizada em chás e como tempero. Sua versão em pó é ótima para gripes, resfriados e dores musuculares."
+textura = ExtResource("2_mmq4b")

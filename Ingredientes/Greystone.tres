@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_eem6h")
 nome = "Greystone"
-descricao = "Remeta à uma pedra pálida, originaria de seiva e fuligem"
+descricao = "Criada a partir da queima de Árvores-cinzas, uma amalgama de seiva queimada, casca de ávore e fuligem. Sua utilidade surgiu quando pesquisadores descobriram que ao combinar, a mistura fica mais solida depois de um tempo."
 textura = ExtResource("2_iai7u")

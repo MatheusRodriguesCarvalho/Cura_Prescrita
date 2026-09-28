@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://btqttjcvt4uui"]
+[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://dhj3mbn7ujj7s"]
 
 [ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_crk8p"]
+[ext_resource type="Texture2D" uid="uid://brbqm2gtdb5yf" path="res://Sprites/Itens/RoyalJelly_SP.webp" id="2_gpgee"]
 
 [resource]
 script = ExtResource("1_crk8p")
 nome = "Erva da bruxa"
-descricao = "Támbém conhecido como guaco, é amplamente utilizado no país vizinho para tratar gripes, resfriados e gargantas inflamadas."
+descricao = "Támbém conhecido como guaco, é amplamente utilizado no país vizinho para tratar gripes, resfriados e gargantas inflamadas. Por algum motivo desconhecido, só é possível cultivá-los em pântanos e planíces alagadas."
+textura = ExtResource("2_gpgee")
