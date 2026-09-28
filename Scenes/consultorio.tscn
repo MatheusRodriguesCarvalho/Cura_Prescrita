@@ -982,6 +982,14 @@ size_flags_vertical = 5
 text = "variacao de oxigenacao"
 autowrap_mode = 3
 
+[node name="Receita" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=233091482]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 5
+text = "variacao de oxigenacao"
+autowrap_mode = 3
+
 [node name="Divisor2" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina" unique_id=302059244]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2

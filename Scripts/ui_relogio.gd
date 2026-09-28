@@ -12,7 +12,8 @@ func _ready() -> void:
 	area.mouse_entered.connect(_on_mouse_entered)
 	area.mouse_exited.connect(_on_mouse_exited)
 
-func _atualizar_relogio(atual: float, total: float) -> void:
+## obsoleto
+func _atualizar_relogio_anterior(atual: float, total: float) -> void:
 	var hora_atual := GerenciadorTempo.hora_atual()
 	
 	var horas_mostrador := fmod(hora_atual, 24.0)
@@ -23,24 +24,36 @@ func _atualizar_relogio(atual: float, total: float) -> void:
 	ponteiro_minutos.rotation_degrees = minutos * 6 + offset_ponteiro_minutos
 	ponteiro_horas.rotation_degrees = horas_mostrador * 30.0 + offset_ponteiro_horas
 
-func _calcular_tempo(tempo: float) -> Dictionary:
+
+func _atualizar_relogio(atual: float, total: float) -> void:
+	var hora_atual := _calcular_tempo()
 	
+	var horas_mostrador: float = hora_atual["hora"]
+	var minutos: float = hora_atual["minuto"]
+	
+	ponteiro_minutos.rotation_degrees = minutos * 6 + offset_ponteiro_minutos
+	ponteiro_horas.rotation_degrees = horas_mostrador * 30.0 + offset_ponteiro_horas
+
+
+func _calcular_tempo() -> Dictionary:
 	var tempos: Dictionary
-	
 	var hora_atual := GerenciadorTempo.hora_atual()
 	
+	var valor := fmod(hora_atual, 24.0)
+	tempos["hora"] = valor
+	valor = fmod(hora_atual, 1.0) * 60
+	tempos["minuto"] = valor
 	
-	var horas_mostrador := fmod(hora_atual, 24.0)
-	tempos.keys()
+	return tempos
+
+func _texto_tooltip() -> String:
+	var hora_atual := _calcular_tempo()
 	
-	var minutos := fmod(hora_atual, 1.0) * 60
-	
-	
-	
-	return
+	var texto: String = "%.0f:%02.0f" % [hora_atual["hora"],hora_atual["minuto"]]
+	return texto
 
 func _on_mouse_entered() -> void:
-	TooltipInfo.mostrar.emit("teste", "porcent")
+	TooltipInfo.mostrar.emit(_texto_tooltip(), "porcent")
 
 func _on_mouse_exited() -> void:
 	TooltipInfo.esconder.emit()

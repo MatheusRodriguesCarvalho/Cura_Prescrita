@@ -58,6 +58,18 @@ func fala_sintoma_aleatoria() -> String:
 	return template % sintoma
 
 
+func print_receita() -> String:
+	var linhas := [""]
+	
+	for ingrediente in receita_cura.keys():
+		
+		var nome: String = str(ingrediente.nome)
+		var valor: int = receita_cura.get(ingrediente, 0)
+		linhas.append(" - %s: %d" % [nome, valor])
+	
+	return "\n".join(linhas)
+
+
 
 ## --- CALCULOS COM MARGEM ---
 ## Calcula uma faixa aproximada [valor - margem, valor + margem].

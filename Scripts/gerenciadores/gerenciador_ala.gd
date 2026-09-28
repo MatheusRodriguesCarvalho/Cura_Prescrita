@@ -12,8 +12,11 @@ func entregar_remedio(remedio: RemedioVisual, paciente: Paciente) -> void:
 	var correto := _remedio_e_correto(remedio, paciente.doenca)
 	GerenciadorPacientes.registrar_remedio(paciente.protocolo, remedio.proporcoes, correto)
 	remedio_entregue.emit(correto)
+	
 	remedio.queue_free()
 	remedio_atual = null
+	
+	GerenciadorPacientes.liberar_paciente(paciente.protocolo)
 
 func _remedio_e_correto(remedio: RemedioVisual, doenca: Doenca) -> bool:
 	if doenca.receita_cura.is_empty():

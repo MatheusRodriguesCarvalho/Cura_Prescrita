@@ -3,7 +3,7 @@ extends Node
 enum Modo {CRONOMETRO, ESTAMINA}
 
 @export var modo: Modo = Modo.CRONOMETRO
-@export var tempo_total: float = 30.0
+@export var tempo_total: float = 300.0
 
 @export var estamina_total: float = 100.0
 @export var custo_acao_padrao: float = 6.0
@@ -15,6 +15,7 @@ enum Modo {CRONOMETRO, ESTAMINA}
 
 var valor_atual: float
 var fase_ativa: bool = false
+var esta_hover: bool = false
 
 signal tempo_atualizado(atual: float, total: float)
 signal tempo_esgotado
@@ -34,6 +35,8 @@ func encerrar_fase() -> void:
 func _process(delta: float) -> void:
 	if not fase_ativa or modo != Modo.CRONOMETRO:
 		return
+	##if esta_hover:
+		## atualizar_texto_tooltip()
 	_consumir(delta)
 
 func registrar_acao(custo: float = -1.0) -> void:

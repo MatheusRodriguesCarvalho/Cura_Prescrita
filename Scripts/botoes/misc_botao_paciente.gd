@@ -8,10 +8,12 @@ var atendimento_concluido: bool = false
 
 func _ready() -> void:
 	area_clique.input_event.connect(_on_area_clique_input_event)
+	
 
 func _on_area_clique_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		_paciente_call()
+		GerenciadorTempo.registrar_acao(15.0)
 
 func _paciente_call() -> void:
 	if paciente_atual == null:
@@ -32,7 +34,7 @@ func _chamar_novo_paciente() -> void:
 		paciente_atual.position = Vector2(150, 200)
 		paciente_atual.scale = Vector2(2, 2)
 	atendimento_concluido = false
-	GerenciadorAla.novo_paciente_chamado.emit()
+	## GerenciadorAla.novo_paciente_chamado.emit()
 
 func _liberar_paciente_atual() -> void:
 	GerenciadorPacientes.liberar_paciente(paciente_atual.protocolo)

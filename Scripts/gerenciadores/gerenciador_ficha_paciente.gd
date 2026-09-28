@@ -101,7 +101,6 @@ func _on_imprimir_pressed() -> void:
 	GerenciadorPacientes.registrar_ficha(paciente_atual.protocolo, ficha)
 	paciente_atual.ficha_impressa = true
 	GerenciadorAla.ficha_finalizada.emit()
-	print("Ala desbloqueada")
 	
 	hide()
 	botao_excluir.show()

@@ -29,7 +29,7 @@ func _on_iniciar_pressed() -> void:
 func _on_opcoes_pressed() -> void:
 	GerenciadorAudio.tocar("clique")
 	print("Opções Aberto")
-	##_mostrar_painel(painel_opcoes)
+	_mostrar_painel(painel_opcoes)
 
 func _on_guia_pressed() -> void:
 	print("Guia Aberto")

@@ -22,6 +22,7 @@ extends Node2D
 @export var med_pressao_diastolica: float
 @export var med_temperatura: float
 @export var med_saturacao: float
+@export var receita_cura: Dictionary
 
 @export_group("Dialogo Filler")
 @export var falas_vida_perguntas: Array[String] = [
@@ -61,6 +62,7 @@ func apliar_doenca(doenca_sorteada: Doenca) -> void:
 	med_pressao_diastolica = _variar(doenca.med_pressao_diastolica)
 	med_temperatura = _variar(doenca.med_temperatura)
 	med_saturacao = _variar(doenca.med_saturacao)
+	receita_cura = doenca.receita_cura
 
 func _variar(valor: float, margem: float = 0.05) -> float:
 	var variacao := valor * margem
