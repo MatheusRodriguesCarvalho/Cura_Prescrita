@@ -1,42 +1,24 @@
 A fazer / TODO:
 	PRIORIDADES:
 		
-		CRIAR E FAZER A LIXEIRA
-		MELHORAR O REPOSICIONAMENTO DO REMEDIO NO CONSULTORIO
-		ENTREGAR O REMEDIO FAZ O PACIENTE SE DESPEDIR E SAIR (REINICIA O CICLO DE ATENDIMENTO)
-		SUMIR COM O TOOLTIP INFO DO REMEDIO APOS ENTREGAR
+		transição entra alas
+		cena de resultado
+		impeditivo de que o dia termine e o paciente em questão fique sem atendimento
 		
+		testar se funciona configuração de difiucldade no menu inicial
 		CUSTO DE ESTAMINA:
 			SELEÇÃO DE INGREDIENTES
 			CRIAÇÃO DE REMEDIOS
 		
-		
-		dialogos, zona de dialogo, click-direito para opções:
-			paciente area2D
-			click e aparece opções de dialogos ao redor:
-				buttonText (o que aparece), dialogo (o personagem pergunta, o paciente responde)
-			repetição: d
-			
-			dialogo de apresentação: quando o paciente chega
-			
-			
-			
-			dialogo de informações: sintomas ou informções triviais, podendo ser solicitadas ao paciente
-			
+		melhorar dialogos dos pacientes
 			dialogo de finalização: quando entregue o remedio ao paciente 
-			
-		configuração de difiucldade no menu inicial
 		
+		incluir audios e sons
 		
-		audios e sons
-		
-		noticias que dão aprofundamento na lore do mundo e pessoas
-		
-		cena pós expediente e respectivos dialogos
+		melhorar cena pós expediente e respectivos dialogos
 		ficha, melhora de aspectos visuais
 		criar mais doencas, e elaborar tabela
-		combinações e efetividade contra as doenças
-	
+
 	SECUNDÁRIOS:
 		debuffs in-game e post-game, Cansaço, LER e interferencia
 		adicionar mecânica do recuo da gaveta
@@ -44,17 +26,11 @@ A fazer / TODO:
 			fundos: 400x500
 			margem (vbox): 350x450
 		
-		criar mais pacientes
 		ajustar relogio para o modo estamina, tween
-	
+
 	IMPLEMENTÁVEIS:
 		Shader, ou efeito visual de luz do dia no consultorio
-		modificação na apresentação do pop-up de resultado, estilo e local
 		efeito de carregamento no uso das ferramentas, mudar logica de segurar
-		
-		uma ferramenta pode ser utilizado por vez, ferramenta depois de usada fica solta
-		criar um "personagem principal" passível de receber punições e desvantagens
-			atribuidas ao personagem, e que afetam o jogo
 
 
 

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://cmfa0st2kof1x"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_ecb66"]
+
+[resource]
+script = ExtResource("1_ecb66")
+metadata/_custom_type_script = "uid://comv0hcqstyop"
