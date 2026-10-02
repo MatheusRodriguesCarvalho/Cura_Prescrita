@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://2heoyx3ci8wh"]
+
+[ext_resource type="Script" uid="uid://dpvqgdfg6re7e" path="res://Scripts/gerenciadores/resultados_dia.gd" id="1_0tjqa"]
+[ext_resource type="Texture2D" uid="uid://cfe4bbekduqnj" path="res://Sprites/Asset-mesa-medicacao.png" id="1_hcaa7"]
+
+[node name="ResultadosDia" type="Control" unique_id=514957226]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0tjqa")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=972614302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hcaa7")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=689935064]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -179.5
+offset_right = 103.0
+offset_bottom = 179.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TituloDia" type="Label" parent="VBox" unique_id=953144701]
+layout_mode = 2
+text = "TituloDia"
+
+[node name="LabelPacientes" type="Label" parent="VBox" unique_id=937513629]
+layout_mode = 2
+text = "LabelPacientes"
+
+[node name="SecaoDiagnosticos" type="VBoxContainer" parent="VBox" unique_id=2001551566]
+layout_mode = 2
+
+[node name="LabelDiagnosticos" type="Label" parent="VBox/SecaoDiagnosticos" unique_id=171132015]
+layout_mode = 2
+text = "LabelDiagnosticos"
+
+[node name="LabelSubtotalDiagnosticos" type="Label" parent="VBox/SecaoDiagnosticos" unique_id=913167170]
+layout_mode = 2
+text = "LabelSubtotalDiagnosticos"
+
+[node name="SecaoMedicoes" type="VBoxContainer" parent="VBox" unique_id=1565359327]
+layout_mode = 2
+
+[node name="LabelTemperatura" type="Label" parent="VBox/SecaoMedicoes" unique_id=1679512122]
+layout_mode = 2
+text = "LabelTemperatura"
+
+[node name="LabelPressao" type="Label" parent="VBox/SecaoMedicoes" unique_id=1659190730]
+layout_mode = 2
+text = "LabelPressao"
+
+[node name="LabelSaturacao" type="Label" parent="VBox/SecaoMedicoes" unique_id=1374356519]
+layout_mode = 2
+text = "LabelSaturacao"
+
+[node name="LabelSubtotalMedicao" type="Label" parent="VBox/SecaoMedicoes" unique_id=303433600]
+layout_mode = 2
+text = "LabelSubtotalMedicao"
+
+[node name="SecaoRemedios" type="VBoxContainer" parent="VBox" unique_id=1693862544]
+layout_mode = 2
+
+[node name="LabelRemedios" type="Label" parent="VBox/SecaoRemedios" unique_id=43146458]
+layout_mode = 2
+text = "LabelRemedios"
+
+[node name="LabelSubtotalRemedios" type="Label" parent="VBox/SecaoRemedios" unique_id=1982692184]
+layout_mode = 2
+text = "LabelSubtotalRemedios"
+
+[node name="ScrollDetalhes" type="ScrollContainer" parent="VBox" unique_id=1369700278]
+layout_mode = 2
+
+[node name="ListaDetalhes" type="VBoxContainer" parent="VBox/ScrollDetalhes" unique_id=1798885801]
+layout_mode = 2
+
+[node name="LabelMeta" type="Label" parent="VBox" unique_id=524754841]
+layout_mode = 2
+text = "LabelMeta"
+
+[node name="LabelTotal" type="Label" parent="VBox" unique_id=1175235086]
+layout_mode = 2
+text = "LabelTotal"
+
+[node name="BotaoContinuar" type="Button" parent="VBox" unique_id=49958982]
+layout_mode = 2
+text = "prosseguir"

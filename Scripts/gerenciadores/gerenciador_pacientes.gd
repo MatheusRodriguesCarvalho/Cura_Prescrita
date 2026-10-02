@@ -4,12 +4,16 @@ extends Node
 @export_dir var pasta_doencas: String = "res://Doencas/"
 var lista_doencas: Array[Doenca]
 
-## Cenas de pacientes predefinidos, cada uma já com sprite/nome/protocolo/idade prontos.
-@export_dir var pasta_pacientes: String = "res://Pacientes/"
-var pacientes_predefinidos: Array[PackedScene] = []
+@export_dir var pasta_dados_pacientes: String = "res://Pacientes/"
+var pool_dados_pacientes: Array[DadosPaciente] = []
+var paciente_no_consultorio: Paciente
 
 @export_dir var pasta_noticias: String = "res://Noticias/"
 @export var lista_noticias: Array[Noticia]
+
+@export_category("Meta de Pontuação")
+@export var meta_base: float = 100.0
+@export var incremento_meta_por_fase: float = 20.0
 
 
 ## Dia atual do jogo (unificado: controla tanto doenças quanto regras).
@@ -20,6 +24,7 @@ var doencas_desbloqueadas: Dictionary = {}
 
 ## Pacientes atualmente ativos, indexados por protocolo.
 var pacientes_ativos: Dictionary = {}
+var pacientes_chamados_hoje: Array[int] = []
 
 var registros_do_dia: Dictionary = {}
 
@@ -46,7 +51,7 @@ func _ready() -> void:
 
 ## Escaneia [member pasta_pacientes] e carrega todas as cenas .tscn como pacientes predefinidos.
 func _carregar_pacientes() -> void:
-	var dir := DirAccess.open(pasta_pacientes)
+	var dir := DirAccess.open(pasta_dados_pacientes)
 	if dir == null:
 		print("Pasta de pacientes não localizada")
 		return
@@ -54,14 +59,14 @@ func _carregar_pacientes() -> void:
 	dir.list_dir_begin()
 	var arquivo := dir.get_next()
 	while arquivo != "":
-		if not dir.current_is_dir() and arquivo.get_extension() == "tscn":
-			var caminho := pasta_pacientes.path_join(arquivo)
-			var cena := load(caminho) as PackedScene
-			if cena:
-				pacientes_predefinidos.append(cena)
+		if not dir.current_is_dir() and arquivo.get_extension() == "tres":
+			var caminho := pasta_dados_pacientes.path_join(arquivo)
+			var dados := load(caminho) as DadosPaciente
+			if dados:
+				pool_dados_pacientes.append(dados)
 		arquivo = dir.get_next()
 	dir.list_dir_end()
-	## print("Pacientes carregados: ", pacientes_predefinidos.size())
+	## print("Pacientes carregados: ", pool_dados_pacientes.size())
 
 ## Escaneia [member pasta_doencas] e carrega todos os .tres como instâncias de Doenca.
 func _carregar_doencas() -> void:
@@ -128,10 +133,15 @@ func doencas_ativas() -> Array[Doenca]:
 
 ## --- Dias ---
 
+func iniciar_novo_dia() -> void:
+	registros_do_dia.clear()
+	pacientes_chamados_hoje.clear()
+
 ## Avança para a próxima fase e sorteia novas doenças automaticamente.
 func avancar_fase() -> void:
 	fase_atual += 1
 	_selecionar_novas_doencas()
+	iniciar_novo_dia()
 
 
 ## --- Noticias ---
@@ -154,11 +164,15 @@ func noticias_anteriores(dia: int) -> Array[Noticia]:
 
 ## Retorna true se já existe algum paciente em atendimento no momento.
 func tem_atendimento_ativo() -> bool:
-	return not pacientes_ativos.is_empty()
+	return is_instance_valid(paciente_no_consultorio) and paciente_no_consultorio.protocolo != ""
 
-func chamar_paciente(local: Node, indice: int = -1) -> Paciente:
-	if pacientes_predefinidos.is_empty():
-		push_warning("Nunhum paciente predefinido configurado")
+func chamar_paciente(indice: int = -1) -> Paciente:
+	if pool_dados_pacientes.is_empty():
+		push_warning("Nenhum paciente cadastrado")
+		return null
+	
+	if tem_atendimento_ativo():
+		push_warning("Já existe um atendimento em andamento")
 		return null
 	
 	var ativas := doencas_ativas()
@@ -166,36 +180,48 @@ func chamar_paciente(local: Node, indice: int = -1) -> Paciente:
 		push_warning("Nenhuma Doença ativa para o dia atual")
 		return null
 	
-	var cena: PackedScene = pacientes_predefinidos[indice] if indice != -1 else pacientes_predefinidos[randi() % pacientes_predefinidos.size()]
-	
-	var paciente: Paciente = cena.instantiate()
-	local.add_child(paciente)
-	
+	var indice_escolhido := indice if indice != -1 else _sortear_indice_paciente()
+	var dados: DadosPaciente = pool_dados_pacientes[indice_escolhido]
 	var doenca_sorteada: Doenca = ativas[randi_range(0, ativas.size() - 1)]
 	
-	paciente.apliar_doenca(doenca_sorteada)
-	paciente.menu_dialogo = local.get_tree().current_scene.get_node("CanvasLayer/MenuDialogo")
-	
-	_registrar_info_real(paciente)
-	
-	pacientes_ativos[paciente.protocolo] = paciente
-	
-	## GerenciadorTempo.registrar_acao(15.0)
+	paciente_no_consultorio.apresentar(dados, doenca_sorteada)
+	_registrar_info_real(paciente_no_consultorio)
+	pacientes_chamados_hoje.append(indice_escolhido)
+	GerenciadorTempo.registrar_acao(15.0)
 	GerenciadorAla.novo_paciente_chamado.emit()
-	GerenciadorDialogos.apresentar_paciente(paciente)
+	GerenciadorDialogos.apresentar_paciente(paciente_no_consultorio)
 	
-	return paciente
+	return paciente_no_consultorio
+
+func registrar_paciente_presente(p: Paciente) -> void:
+	paciente_no_consultorio = p
+
+
+## Sorteia um índice de paciente predefinido ainda não chamado hoje.
+## Se todos já apareceram, permite repetir (evita travar o jogo).
+func _sortear_indice_paciente() -> int:
+	var disponiveis: Array[int] = []
+	for i in pool_dados_pacientes.size():
+		if i not in pacientes_chamados_hoje:
+			disponiveis.append(i)
+		
+	if disponiveis.is_empty():
+		for i in pool_dados_pacientes.size():
+			disponiveis.append(i)
+	
+	return disponiveis[randi() % disponiveis.size()]
 
 ## Busca um paciente ativo pelo protocolo. Retorna null se não encontrado.
 func busca_por_protocolo(protocolo: String) -> Paciente:
-	return pacientes_ativos.get(protocolo, null)
+	if is_instance_valid(paciente_no_consultorio) and paciente_no_consultorio.protocolo == protocolo:
+		return paciente_no_consultorio
+	return null
 
 ## Remove o paciente do registro de ativos e destrói a instância em cena.
 func liberar_paciente(protocolo: String) -> void:
-	var paciente: Paciente = pacientes_ativos.get(protocolo, null)
-	if is_instance_valid(paciente):
-		paciente.queue_free()
-	pacientes_ativos.erase(protocolo)
+	if is_instance_valid(paciente_no_consultorio) and paciente_no_consultorio.protocolo == protocolo:
+		paciente_no_consultorio.esvaziar()
+
 
 ## Guarda os valores reais do paciente (doença e medições) no início do atendimento,
 ## para comparação posterior com o que o jogador registrar na Ficha.
@@ -273,6 +299,126 @@ func _normalizar(texto: String) -> String:
 	for letra in acentuados.length():
 		resultado = resultado.replace(acentuados[letra], simples[letra])
 	return resultado
+
+func meta_do_dia() -> float:
+	return meta_base + incremento_meta_por_fase * (fase_atual - 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Gera um resumo estruturado do dia, com contagens, subtotais e o
+## detalhamento por paciente — usado pela tela de Resultados.
+## Só considera pacientes que chegaram a ter um remédio entregue
+## (atendimento realmente concluído); os demais entram só na contagem
+## de "chamados", sem afetar pontuação.
+func gerar_resumo_dia() -> Dictionary:
+	var resumo := {
+		"pacientes_chamados": registros_do_dia.size(),
+		"pacientes_atendidos": 0,
+		"diagnosticos_corretos": 0,
+		"diagnosticos_total": 0,
+		"medicoes": {
+			"temperatura": {"corretas": 0, "total": 0},
+			"pressao": {"corretas": 0, "total": 0},
+			"saturacao": {"corretas": 0, "total": 0},
+		},
+		"remedios_corretos": 0,
+		"remedios_total": 0,
+		"pontos_diagnostico": 0.0,
+		"pontos_medicao": 0.0,
+		"pontos_remedio": 0.0,
+		"detalhes": [],
+	}
+	
+	for protocolo in registros_do_dia.keys():
+		var registro: Dictionary = registros_do_dia[protocolo]
+		if not registro.has("remedio"):
+			continue  # atendimento não concluído, não entra na pontuação
+		resumo["pacientes_atendidos"] += 1
+		
+		var real: Dictionary = registro["info_real"]
+		var ficha: Dictionary = registro["info_ficha"]
+		var doenca: Doenca = real["doenca"]
+		
+		var diagnostico_texto: String = ficha.get("condicao", "")
+		var acertou := _diagnostico_correto(diagnostico_texto, doenca)
+		resumo["diagnosticos_total"] += 1
+		if acertou:
+			resumo["diagnosticos_corretos"] += 1
+			resumo["pontos_diagnostico"] += pontos_diagnostico_correto
+		else:
+			resumo["pontos_diagnostico"] -= 10.0 * doenca.risco
+		
+		for chave in ["temperatura", "pressao", "saturacao"]:
+			resumo["medicoes"][chave]["total"] += 1
+		if _valor_proximo(ficha.get("temperatura", ""), real["temperatura"], tolerancia_temperatura):
+			resumo["medicoes"]["temperatura"]["corretas"] += 1
+			resumo["pontos_medicao"] += pontos_medicao_correta
+		if _pressao_proxima(ficha.get("pressao", ""), real["pressao_sistolica"], real["pressao_diastolica"]):
+			resumo["medicoes"]["pressao"]["corretas"] += 1
+			resumo["pontos_medicao"] += pontos_medicao_correta
+		if _valor_proximo(ficha.get("saturacao", ""), real["saturacao"], tolerancia_saturacao):
+			resumo["medicoes"]["saturacao"]["corretas"] += 1
+			resumo["pontos_medicao"] += pontos_medicao_correta
+		
+		var info_remedio: Dictionary = registro["remedio"]
+		resumo["remedios_total"] += 1
+		if info_remedio.get("correto", false):
+			resumo["remedios_corretos"] += 1
+			resumo["pontos_remedio"] += 30.0
+		else:
+			resumo["pontos_remedio"] -= 15.0 * doenca.risco
+		
+		resumo["detalhes"].append({
+			"protocolo": protocolo,
+			"doenca_real": doenca.nome,
+			"diagnostico_digitado": diagnostico_texto,
+			"acertou": acertou,
+		})
+	
+	resumo["pontos_total"] = resumo["pontos_diagnostico"] + resumo["pontos_medicao"] + resumo["pontos_remedio"]
+	return resumo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## --- Tolerancia ---

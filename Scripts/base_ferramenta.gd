@@ -55,15 +55,27 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _pegar() -> void:
 	estado = Estado.SEGURANDO
+	_atualizar_sprite()
+	
 	GerenciadorTempo.registrar_acao(custo_e_manuseio)
 
 func _soltar() -> void:
 	TooltipInfo.esconder.emit()
 	estado = Estado.PARADA
+	_atualizar_sprite()
+	
 	paciente_alvo = null
 	var tween := create_tween()
 	tween.tween_property(self, "global_position", posicao_original, 0.3)
 
+func _atualizar_sprite() -> void:
+	match estado:
+		Estado.PARADA:
+			sprite.frame = 0
+		Estado.SEGURANDO, Estado.ANALISANDO:
+			sprite.frame = 1
+		Estado.CONCLUIDO:
+			sprite.frame = 2
 
 ## --- Buscas ---
 func _buscar_paciente_sob_cursor() -> Paciente:
@@ -83,6 +95,8 @@ func _buscar_paciente_sob_cursor() -> Paciente:
 ## --- Analise ---
 func _iniciar_analise(paciente: Paciente) -> void:
 	estado = Estado.ANALISANDO
+	_atualizar_sprite()
+	
 	paciente_alvo = paciente
 	tempo_decorrido = 0.0
 	TooltipInfo.mostrar.emit("Analisando...", "ferramenta")
@@ -98,6 +112,8 @@ func _processar_analise(delta: float) -> void:
 
 func _cancelar_analise() -> void:
 	estado = Estado.SEGURANDO
+	_atualizar_sprite()
+	
 	paciente_alvo = null
 	TooltipInfo.esconder.emit()
 
@@ -109,9 +125,12 @@ func _concluir_analise() -> void:
 	var resultado := medir(paciente_alvo)
 	_registrar_no_paciente(paciente_alvo, resultado)
 	medicao_concluida.emit(tipo, resultado)
+	
 	GerenciadorTempo.registrar_acao(custo_e_leitura)
 	TooltipInfo.mostrar.emit(resultado, "ferramenta")
+	
 	estado = Estado.CONCLUIDO
+	_atualizar_sprite()
 
 func _registrar_no_paciente(paciente: Paciente, resultado: String) -> void:
 	var chave := ""

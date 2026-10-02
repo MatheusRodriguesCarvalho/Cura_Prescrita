@@ -19,7 +19,7 @@ func mostrar(doenca: Doenca) -> void:
 	label_id.text = "ID: " + doenca.id
 	label_nome_popular.text = "Também conhecida como: " + (", ".join(doenca.nome_popular) if not doenca.nome_popular.is_empty() else "—")
 	label_categoria.text = "Categoria: " + doenca.categoria
-	label_sintomas.text = "Sintomas: " + ", ".join(doenca.sintomas)
+	label_sintomas.text = "Sintomas: \n - " + "\n - ".join(doenca.sintomas)
 	
 	var f_sist := doenca.faixa_pressao_sistolica()
 	var f_diast := doenca.faixa_pressao_diastolica()

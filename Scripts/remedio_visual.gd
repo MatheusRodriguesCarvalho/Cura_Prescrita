@@ -7,7 +7,6 @@ var estado: Estado = Estado.PARADA
 var quantidades: Dictionary = {}
 
 @onready var area: Area2D = $Area2D
-@onready var botao_produzir: TextureButton = $"../CanvasLayer/BotaoProduzir/Produzir"
 @onready var bandeja: Bandeja = $"../AlaMedicacao/Mundo/Mesa/Bandeja"
 
 func _ready() -> void:

@@ -1,0 +1,309 @@
+[gd_scene format=3 uid="uid://y75pihhmxdma"]
+
+[ext_resource type="Script" uid="uid://ce4rtxd1l03b6" path="res://Scripts/menu_inicial.gd" id="1_2il7n"]
+[ext_resource type="Texture2D" uid="uid://bi2tqi4vfjpnj" path="res://Sprites/Interface/Botao/botãoUIjogar.png" id="1_76flj"]
+[ext_resource type="Texture2D" uid="uid://bdhtp0pc6bu0e" path="res://Sprites/Misc/placeholder_menu.jpg" id="1_hlaww"]
+[ext_resource type="Texture2D" uid="uid://y1dltu40vwgf" path="res://Sprites/Interface/Botao/botãoUIjogarPress.png" id="2_my0a7"]
+[ext_resource type="Texture2D" uid="uid://cxpf7tjnn60ag" path="res://Sprites/Interface/Botao/botãoUItemplate.png" id="4_2il7n"]
+[ext_resource type="Texture2D" uid="uid://c3g53ruw437sw" path="res://Sprites/Interface/Botao/botãoUIPress.png" id="5_rymy5"]
+[ext_resource type="Texture2D" uid="uid://bw8c1xjwiehca" path="res://Sprites/Interface/Botao/botãoUIextra.png" id="6_kojxw"]
+[ext_resource type="Texture2D" uid="uid://i5pj2ppuyrrq" path="res://Sprites/Interface/Botao/botãoUIextraPress.png" id="7_avhtn"]
+[ext_resource type="Texture2D" uid="uid://c58yptufv1t5h" path="res://Sprites/Interface/Botao/botãoUIsair.png" id="8_3dsk0"]
+[ext_resource type="Texture2D" uid="uid://sg1xxhu7lg4l" path="res://Sprites/Interface/Botao/botãoUIsairPress.png" id="9_vf56k"]
+[ext_resource type="Script" uid="uid://croblyhlpyrvw" path="res://Scripts/menu_painel_opcoes.gd" id="11_rymy5"]
+[ext_resource type="LabelSettings" uid="uid://do8nnc3kjaxqw" path="res://settingsConfig/Labels/Label teste.tres" id="12_avhtn"]
+[ext_resource type="AudioStream" uid="uid://d1xlgf8hkjflw" path="res://Sons/Ambiente Hospitalar.mp3" id="12_kojxw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dsk0"]
+bg_color = Color(0.4754299, 0.6636825, 0.7152409, 0.69900006)
+
+[node name="MenuInicial" type="Control" unique_id=599743969]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2il7n")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1611426711]
+layout_mode = 0
+offset_right = 1023.0
+offset_bottom = 605.0
+texture = ExtResource("1_hlaww")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=264157259]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.00006
+offset_top = -88.0
+offset_right = 48.00006
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.496134, 2.3208678)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="BotaoIniciar" type="TextureButton" parent="VBoxContainer" unique_id=1003163325]
+layout_mode = 2
+texture_normal = ExtResource("1_76flj")
+texture_pressed = ExtResource("2_my0a7")
+texture_hover = ExtResource("2_my0a7")
+
+[node name="BotaoContinuar" type="TextureButton" parent="VBoxContainer" unique_id=944017632]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("4_2il7n")
+texture_pressed = ExtResource("5_rymy5")
+texture_hover = ExtResource("5_rymy5")
+
+[node name="BotaoOpcoes" type="TextureButton" parent="VBoxContainer" unique_id=1766449610]
+layout_mode = 2
+texture_normal = ExtResource("4_2il7n")
+texture_pressed = ExtResource("5_rymy5")
+texture_hover = ExtResource("5_rymy5")
+
+[node name="BotaoGuia" type="TextureButton" parent="VBoxContainer" unique_id=551170273]
+layout_mode = 2
+texture_normal = ExtResource("4_2il7n")
+texture_pressed = ExtResource("5_rymy5")
+texture_hover = ExtResource("5_rymy5")
+
+[node name="BotaoCreditos" type="TextureButton" parent="VBoxContainer" unique_id=130313619]
+layout_mode = 2
+texture_normal = ExtResource("6_kojxw")
+texture_pressed = ExtResource("7_avhtn")
+texture_hover = ExtResource("7_avhtn")
+
+[node name="BotaoSair" type="TextureButton" parent="VBoxContainer" unique_id=2146423599]
+layout_mode = 2
+texture_normal = ExtResource("8_3dsk0")
+texture_pressed = ExtResource("9_vf56k")
+texture_hover = ExtResource("9_vf56k")
+
+[node name="Paineis" type="Control" parent="." unique_id=3545084]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="ColorRect" parent="Paineis" unique_id=1623812905]
+visible = false
+custom_minimum_size = Vector2(1024, 600)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78300005)
+
+[node name="Opcoes" type="Control" parent="Paineis" unique_id=115698726]
+visible = false
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_rymy5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Paineis/Opcoes" unique_id=2041791510]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 12.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="Paineis/Opcoes/VBoxContainer" unique_id=233879673]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dsk0")
+text = "Dificuldade"
+label_settings = ExtResource("12_avhtn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dificuldade" type="OptionButton" parent="Paineis/Opcoes/VBoxContainer" unique_id=680034130]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Paineis/Opcoes/VBoxContainer" unique_id=1185404843]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Paineis/Opcoes/VBoxContainer" unique_id=1282664509]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dsk0")
+text = "Volume Geral"
+label_settings = ExtResource("12_avhtn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeGeral" type="HSlider" parent="Paineis/Opcoes/VBoxContainer" unique_id=1524560371]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Paineis/Opcoes/VBoxContainer" unique_id=318724803]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dsk0")
+text = "Musica"
+label_settings = ExtResource("12_avhtn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeMusica" type="HSlider" parent="Paineis/Opcoes/VBoxContainer" unique_id=1329592206]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="Paineis/Opcoes/VBoxContainer" unique_id=1521381152]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dsk0")
+text = "Efeitos"
+label_settings = ExtResource("12_avhtn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeEfeitos" type="HSlider" parent="Paineis/Opcoes/VBoxContainer" unique_id=1682543474]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="Paineis/Opcoes/VBoxContainer" unique_id=695524845]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="BotaoFechar" type="Button" parent="Paineis/Opcoes/VBoxContainer" unique_id=2137135962]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "sair"
+
+[node name="GuiaResumo" type="Control" parent="Paineis" unique_id=1794628392]
+visible = false
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextoResumo" type="RichTextLabel" parent="Paineis/GuiaResumo" unique_id=756933815]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "resumo
+resumo
+resumo
+resumo
+resumo
+resumo
+resumo"
+horizontal_alignment = 1
+
+[node name="BotaoFechar" type="Button" parent="Paineis/GuiaResumo" unique_id=1853757254]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -100.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "sair"
+
+[node name="Creditos" type="Control" parent="Paineis" unique_id=1526399903]
+visible = false
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextoCredito" type="RichTextLabel" parent="Paineis/Creditos" unique_id=1288873853]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Gabriel Izidio
+Jennifer
+Maria Eduarda
+Matheus Rodrigues"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoFechar" type="Button" parent="Paineis/Creditos" unique_id=711700003]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "satasfas"
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=2006924936]
+stream = ExtResource("12_kojxw")
+autoplay = true

@@ -23,7 +23,7 @@ func _ready() -> void:
 	area.mouse_entered.connect(_on_mouse_entered)
 	area.mouse_exited.connect(_on_mouse_exited)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if estado == Estado.SEGURANDO:
 		global_position = get_global_mouse_position()
 

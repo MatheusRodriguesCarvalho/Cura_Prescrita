@@ -67,6 +67,21 @@ func _limpar_quadro() -> void:
 	for filho in lista_sintomas.get_children():
 		filho.queue_free()
 
+func limpar_informacoes() -> void:
+	_limpar_quadro()
+	
+	campo_protocolo.text = ""
+	label_nome.text = "Nome: --"
+	label_idade.text = "Idade: --"
+	label_tipo_sanguineo.text = "Tipo Sanguíneo: --"
+	label_implantes.text = "Implantes: --"
+	label_transplantes.text = "Transplantes: --"
+	
+	paciente_atual.ficha_impressa = false
+	
+	botao_imprimir.show()
+	botao_excluir.hide()
+
 func _on_campo_medicao_focus(campo: LineEdit) -> void:
 	if paciente_atual == null:
 		return
@@ -113,3 +128,7 @@ func _on_excluir_pressed() -> void:
 	
 	botao_imprimir.show()
 	botao_excluir.hide()
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		fechar()

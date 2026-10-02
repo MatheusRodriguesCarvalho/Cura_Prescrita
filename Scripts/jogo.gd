@@ -4,7 +4,8 @@ extends Node2D
 @onready var ala_medicacao: Node2D = $AlaMedicacao
 @onready var botao_ir_ala: TextureButton = $CanvasLayer/BotoesIr/BotaoIrMedicacao
 @onready var botao_ir_consultorio: TextureButton = $CanvasLayer/BotoesIr/BotaoIrConsultorio
-@onready var botao_produzir: Control = $CanvasLayer/BotaoProduzir
+
+@onready var paciente: Paciente = $Consultorio/Mundo/Paciente
 
 var paciente_atual: Paciente = null
 var atendimento_concluido: bool = false
@@ -15,7 +16,8 @@ func _ready() -> void:
 	
 	botao_ir_consultorio.hide()
 	botao_ir_ala.hide()
-	botao_produzir.hide()
+	
+	GerenciadorPacientes.registrar_paciente_presente(paciente)
 	
 	GerenciadorAla.ficha_finalizada.connect(botao_ir_ala.show)
 	GerenciadorAla.editar_ficha.connect(botao_ir_ala.hide)
@@ -23,15 +25,13 @@ func _ready() -> void:
 	
 	## Conexão com o tempo
 	GerenciadorTempo.tempo_esgotado.connect(_on_tempo_esgotado)
-	GerenciadorTempo.iniciar_fase() 
+	## GerenciadorTempo.iniciar_fase() 
 
 func ir_para_ala() -> void:
 	## print("indo para ala")
 	
 	botao_ir_ala.hide()
 	botao_ir_consultorio.show()
-	
-	botao_produzir.show()
 	
 	_alternar(ala_medicacao, consultorio)
 	if GerenciadorAla.remedio_atual:
@@ -44,8 +44,6 @@ func ir_para_consultorio() -> void:
 	
 	botao_ir_consultorio.hide()
 	botao_ir_ala.show()
-	
-	botao_produzir.hide()
 	
 	_alternar(consultorio, ala_medicacao)
 	if GerenciadorAla.remedio_atual:
@@ -69,5 +67,7 @@ func _on_botao_ir_medicacao_pressed() -> void:
 ## -- TEMPO E TELAS --
 func _on_tempo_esgotado() -> void:
 	print("Time Out, fim da Fase")
-	get_tree().change_scene_to_file("res://Scenes/casa.tscn")
+	GerenciadorTempo.encerrar_fase()
+	
+	## get_tree().change_scene_to_file("res://Scenes/casa.tscn")
 	# TODO: Transição, tela de estatisticas do dia e troca de Cena

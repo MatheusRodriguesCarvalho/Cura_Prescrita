@@ -12,13 +12,17 @@ var _tween_piscar: Tween
 
 func _ready() -> void:
 	area_clique.input_event.connect(_on_area_clique_input_event)
-	
 	area_desligar.input_event.connect(_on_area_desligar_input_event)
+	
+	GerenciadorAla.remedio_entregue.connect(_on_remedio_entregue)
 	GerenciadorTempo.tempo_atualizado.connect(_on_tempo_atualizado)
 
 func _on_area_clique_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		ficha.show()
+
+func _on_remedio_entregue(_var: bool) -> void:
+	ficha.limpar_informacoes()
 
 func _on_tempo_atualizado(_atual: float, _total: float) -> void:
 	var passou := GerenciadorTempo.passou_do_expediente()
@@ -50,4 +54,4 @@ func _on_botao_desligar_pressed() -> void:
 
 func _encerrar_dia() -> void:
 	GerenciadorTempo.encerrar_fase()
-	get_tree().change_scene_to_file("res://Scenes/casa.tscn")
+	## get_tree().change_scene_to_file("res://Scenes/resultados_dia.tscn")

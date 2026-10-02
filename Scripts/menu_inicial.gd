@@ -3,6 +3,7 @@ extends Control
 @onready var painel_opcoes: Control = $Paineis/Opcoes
 @onready var painel_guia: Control = $Paineis/GuiaResumo
 @onready var painel_creditos: Control = $Paineis/Creditos
+@onready var fundo: ColorRect = $Paineis/Fundo
 
 @onready var musica_fundo: AudioStreamPlayer = $Audio
 
@@ -19,23 +20,35 @@ func _ready() -> void:
 	painel_opcoes.hide()
 	painel_guia.hide()
 	painel_creditos.hide()
+	fundo.hide()
 	
-	painel_guia.get_node("BotaoFechar").pressed.connect(painel_guia.hide)
-	painel_creditos.get_node("BotaoFechar").pressed.connect(painel_creditos.hide)
+	painel_guia.get_node("BotaoFechar").pressed.connect(_on_botao_fechar)
+	painel_creditos.get_node("BotaoFechar").pressed.connect(_on_botao_fechar)
+
+func _on_botao_fechar() -> void:
+	fundo.hide()
+	painel_guia.hide()
+	painel_creditos.hide()
+
 
 func _on_iniciar_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/consultorio.tscn")
 
 func _on_opcoes_pressed() -> void:
 	GerenciadorAudio.tocar("clique")
+	## fundo.show()
 	print("Opções Aberto")
 	_mostrar_painel(painel_opcoes)
 
 func _on_guia_pressed() -> void:
+	GerenciadorAudio.tocar("clique")
+	## fundo.show()
 	print("Guia Aberto")
 	_mostrar_painel(painel_guia)
 
 func _on_creditos_pressed() -> void:
+	GerenciadorAudio.tocar("clique")
+	## fundo.show()
 	print("Créditos Aberto")
 	_mostrar_painel(painel_creditos)
 

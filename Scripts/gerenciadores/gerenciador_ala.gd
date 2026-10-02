@@ -2,15 +2,14 @@ extends Node
 
 var remedio_atual: RemedioVisual = null
 
-signal ficha_finalizada
 signal novo_paciente_chamado
+signal ficha_finalizada
 signal editar_ficha
 signal remedio_entregue(correto: bool)
 
-
 func entregar_remedio(remedio: RemedioVisual, paciente: Paciente) -> void:
 	var correto := _remedio_e_correto(remedio, paciente.doenca)
-	GerenciadorPacientes.registrar_remedio(paciente.protocolo, remedio.proporcoes, correto)
+	GerenciadorPacientes.registrar_remedio(paciente.protocolo, remedio.quantidades, correto)
 	remedio_entregue.emit(correto)
 	
 	remedio.queue_free()

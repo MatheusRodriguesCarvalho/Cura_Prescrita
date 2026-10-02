@@ -3,7 +3,7 @@ extends Node
 enum Modo {CRONOMETRO, ESTAMINA}
 
 @export var modo: Modo = Modo.CRONOMETRO
-@export var tempo_total: float = 300.0
+@export var tempo_total: float = 180.0
 
 @export var estamina_total: float = 100.0
 @export var custo_acao_padrao: float = 6.0
@@ -27,10 +27,12 @@ func iniciar_fase() -> void:
 	tempo_atualizado.emit(valor_atual, _total_atual())
 	##print("Tempo Inicial: ", valor_atual)
 	
-	print("tempo inicial: ", valor_atual)
 
 func encerrar_fase() -> void:
 	fase_ativa = false
+	
+	get_tree().change_scene_to_file("res://Scenes/resultados_dia.tscn")
+	## get_tree().change_scene_to_file("res://Scenes/casa.tscn")
 
 func _process(delta: float) -> void:
 	if not fase_ativa or modo != Modo.CRONOMETRO:
@@ -50,7 +52,6 @@ func _consumir(quantidade: float) -> void:
 	tempo_atualizado.emit(valor_atual, _total_atual())
 	if valor_atual <= 0.0:
 		_esgotar()
-	##print("Tempo Corrente: ", valor_atual)
 
 func _total_atual() -> float:
 	return tempo_total if modo == Modo.CRONOMETRO else estamina_total

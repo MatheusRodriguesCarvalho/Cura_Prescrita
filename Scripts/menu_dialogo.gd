@@ -50,7 +50,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if not get_global_rect().has_point(get_global_mouse_position()):
 			_fechar()
 
-func sair(paciente: Paciente) -> void:
+func sair(_paciente: Paciente) -> void:
 	_fechar()
 
 func _fechar() -> void:

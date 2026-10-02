@@ -83,4 +83,4 @@ func _doenca_corresponde_filtro(doenca: Doenca, filtro_texto: String, categoria_
 
 
 func _on_dbotao_voltar_pressed() -> void:
-	get_parent().get_parent().mostrar_pagina_noticias()
+	get_parent().get_parent().fechar()
