@@ -23,6 +23,7 @@ GerenciadorAla="*uid://c01rtuc8pbmbu"
 GerenciadorAudio="*uid://dt1p3wkpivrvy"
 GerenciadorDialogos="*uid://drqwpumc61f0k"
 TooltipInfo="*uid://ci5yvcgwrfykp"
+GerenciadorPausa="*uid://b8iob23ggd7wb"
 
 [display]
 

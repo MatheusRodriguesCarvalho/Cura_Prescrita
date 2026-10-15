@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://x3k18cerjfxg"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_fqjyv"]
+[ext_resource type="AudioStream" uid="uid://b53m0yq0pwtp4" path="res://Sons/Efeitos/teste/gato-miau.mp3" id="2_pellp"]
+[ext_resource type="AudioStream" uid="uid://jt6wk743wctu" path="res://Sons/Efeitos/teste/meow-1.mp3" id="3_f5vp1"]
+
+[resource]
+script = ExtResource("1_fqjyv")
+nome = "digitacao"
+variacoes = Array[AudioStream]([ExtResource("2_pellp"), ExtResource("3_f5vp1")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"

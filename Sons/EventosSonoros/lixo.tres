@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://bqlsx5ef4pa7o"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_cds8k"]
+[ext_resource type="AudioStream" uid="uid://je4itrwo3i3r" path="res://Sons/Efeitos/lixo/som_lixo_1.mp3" id="2_cds8k"]
+[ext_resource type="AudioStream" uid="uid://vseui5xo2lnp" path="res://Sons/Efeitos/lixo/som_lixo_2.mp3" id="3_52lb3"]
+[ext_resource type="AudioStream" uid="uid://cbwc7uvbt5dm0" path="res://Sons/Efeitos/lixo/som_lixo_3.mp3" id="4_rkfb0"]
+[ext_resource type="AudioStream" uid="uid://eebjopdvidjf" path="res://Sons/Efeitos/lixo/som_lixo_4.mp3" id="5_orawy"]
+
+[resource]
+script = ExtResource("1_cds8k")
+nome = "lixo"
+variacoes = Array[AudioStream]([ExtResource("2_cds8k"), ExtResource("3_52lb3"), ExtResource("4_rkfb0"), ExtResource("5_orawy")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"

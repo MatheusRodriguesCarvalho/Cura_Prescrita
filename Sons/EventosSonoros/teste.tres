@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://cfx6ngj0qe1p8"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_qgkle"]
+[ext_resource type="AudioStream" uid="uid://b53m0yq0pwtp4" path="res://Sons/Efeitos/teste/gato-miau.mp3" id="2_yn0ca"]
+[ext_resource type="AudioStream" uid="uid://jt6wk743wctu" path="res://Sons/Efeitos/teste/meow-1.mp3" id="3_faoc2"]
+[ext_resource type="AudioStream" uid="uid://be8fw7wp2dn2n" path="res://Sons/Efeitos/teste/meowrgh.mp3" id="4_0rh6i"]
+[ext_resource type="AudioStream" uid="uid://dpgyry0yulidh" path="res://Sons/Efeitos/teste/meow_2Tmjbru.mp3" id="5_ik04f"]
+
+[resource]
+script = ExtResource("1_qgkle")
+nome = "clique"
+variacoes = Array[AudioStream]([ExtResource("2_yn0ca"), ExtResource("3_faoc2"), ExtResource("4_0rh6i"), ExtResource("5_ik04f")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"

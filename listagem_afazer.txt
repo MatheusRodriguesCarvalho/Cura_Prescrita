@@ -1,8 +1,48 @@
 A fazer / TODO:
 	PRIORIDADES:
 		
-		transição entra alas
-		cena de resultado
+		
+		tutorial
+		
+		renomear alguns .gd
+		pastas com espaço
+		apagar os .tmp
+		ingredienteItem.tscn e Relogio.tscn
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		MELHORAR cena de resultado
 		impeditivo de que o dia termine e o paciente em questão fique sem atendimento
 		
 		testar se funciona configuração de difiucldade no menu inicial

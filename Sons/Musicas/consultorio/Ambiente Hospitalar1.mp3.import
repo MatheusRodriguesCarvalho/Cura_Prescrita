@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2o4uuq1c52m7"
+path="res://.godot/imported/Ambiente Hospitalar1.mp3-a27b9cbfc6bab7c93a33dae077eb1a32.mp3str"
+
+[deps]
+
+source_file="res://Sons/Musicas/consultorio/Ambiente Hospitalar1.mp3"
+dest_files=["res://.godot/imported/Ambiente Hospitalar1.mp3-a27b9cbfc6bab7c93a33dae077eb1a32.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

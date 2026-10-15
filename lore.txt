@@ -1,0 +1,67 @@
+Mundo: 3 continentes principais, milhoes de ilhas pouco ou completamente inexploradas
+Ângalo, 3 países:
+	- Postale, os Navegadores
+	- Floria, os Naturalistas
+	- Persental, os Religiosos
+Fronteira, pais unico:
+	- Meridiano, os Pescadores
+Vale, 5 paises:
+	- Hiperio, o Imperio Caido
+	- Calio, o Exploradores de Carvernas
+	- Niglum, a Vanguarda
+	- Minulio, o Burocrata
+	- Rario, a Produtora de Armamentos
+
+Pais do jogo: Niglum
+Geografia:
+	Situado no sul de Vale, vizinho de Rario à noroeste e Minulio à nordeste, e banhado pelo Mar Ascendente nas demais direções.
+	Majoritariamente plano, com pouca mata nativa presente.
+		Presença de montanha em boa parte da fronteira com Rario.
+		Presença de uma mata mista entre nativa e invadora, na fronteira com Minulio.
+
+Politica:
+	Antiga provincia do Imperio, este que agora se ve reduzido à uma fração do que costumava ser.
+	Apos a queda do imperio, os exilados retornaram e reinvindicaram a região.
+	As prioridades originais eram se manter no poder e garantir um lugar propicio para viver.
+	Decadas depois, a medida que se fortaleciam, flexibilizavam a criação de empresas e psquisas.
+	Fortalecimento que os levaram a ser o unico Partido vigente.
+	
+	Atualmente conta com os centros médicos de mais alta qualidade dos 3 continentes.
+	Opositores ao governo ocasionalmente vendiam, ou entregavam, segredos de Estado para nações vizinhas.
+	
+	
+	Planejamento e Urbanismo:
+		A capital, Perplexi, em sua essencia é uma cidade vertical, compreende 85% da população da nação
+		Predios sob predios, com ruas e praças entre eles, e mais predios acima
+		A cidade se projeta aos ceus, quase afrontando Deus.
+		
+		Ao redor da Cidade, vastos campos de pasto para os rebanhos e para as colheitas, ocasionalmente cortados por pistas, trilhos ou floresta artificial
+		Em meio aos campos, por entre as rotas, há Cidades menores, que se comparado a Perplexi, são vilas.
+		Nas vilas residem, em sua maioria, agentes Partidarios, pesquisadores, fronte, operadores e outros cidadãos
+	
+	População:
+		"Estruturas de poder cedem pela base"
+		Composição:
+			1% - Estrela: Lideres e agentes do Partido, e Extraordinarios
+				Extraordinarios: São pessoas, ou seres com um nivel de raciocinio minimo para dialogar, e com uma capacidade de abalar o Estado.
+				Seja por algum agente fora do padrão, seja algum hacker, ou um animal mutante.
+				Podem servir como propaganda, ferramenta de manutenção interna ou arma biologica.
+			17% - Estrutura: Pesquisadores, Empresarios e Agentes inteligentes
+				Agentes inteligentes: Com os avanços, foi alcançado o ponto critico onde as IAs desenvolveram conciencia,
+				foram sumariamente assimiladas à população, como pessoas, para evitar maiores problemas.
+				A criação desses agentes, corpo e "mente", foi delegada à empresas especializadas, sob supervisão estatal.
+			76% - Base: Profissionais, Operadores, Fronte e Extrangeiros
+				Operadores: São trabalhadores com um grau modesto de Escolaridade
+				Profissionais: São trabalhadores com um grau maior de Escolaridade
+				Fronte: São militares e policiais, recebem ordens direta do Partido
+			6% - Descarte: Criminosos e Deficientes
+				Não passam de cobaias, e talvez nem isso...
+	
+	Desenvolvimento:
+		Foco no desenvolvimento cientifico e tecnologico, avanço proeminente das pesquisa atráves da abolição da ética cientifica
+		Engenharia genetica e transumanismo são coisas normais, mas sem muita matgem de conhecimento dos seus impactos futuros
+		Quase a totalidade dos Animais e Plantações são frutos de manupulação genica, por conta disso, é um pais referencia na exportação de alimentos
+	
+	Relações Exteriores:
+		Softpower com questões de saude e avanços tecnologicos.
+		Relativamente pacifista, não se envolve em questão que não os contemple
