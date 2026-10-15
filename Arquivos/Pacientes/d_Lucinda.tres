@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://dpqeg4u7c5pn3"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_3ce86"]
+[ext_resource type="Texture2D" uid="uid://c3tu0qtd1e4fw" path="res://Sprites/Pacientes/radslimesecretstylesp.png" id="2_r4wgl"]
+
+[resource]
+script = ExtResource("1_3ce86")
+protocolo = "SP45S3"
+nome = "Lucinda"
+idade = 50
+tipo_sanguineo = "B+"
+implantes = "Olho mecânico aspecto natural"
+transplantes = "Coração"
+textura = ExtResource("2_r4wgl")
+falas_vida_perguntas = Array[String](["Tem alguma recomendação de fruta?"])
+falas_vida_respostas = Array[String](["São terras secas... Pitaya é uma boa. Só são difíceis de conseguir."])
+metadata/_custom_type_script = "uid://comv0hcqstyop"

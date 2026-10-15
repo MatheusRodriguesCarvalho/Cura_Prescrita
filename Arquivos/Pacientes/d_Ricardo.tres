@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://dheu5pwrbfnv2"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_r7gmm"]
+[ext_resource type="Texture2D" uid="uid://dtpmedvcm5wou" path="res://Sprites/Pacientes/glitchslimesp.png" id="2_3tr6w"]
+
+[resource]
+script = ExtResource("1_r7gmm")
+protocolo = "SP45S2"
+nome = "Ricardo"
+idade = 43
+tipo_sanguineo = "A-"
+implantes = "Amplificador sonoro. / Pulso direito."
+transplantes = "Rim esquerdo"
+textura = ExtResource("2_3tr6w")
+falas_vida_perguntas = Array[String](["O que você gosta de comer?"])
+falas_vida_respostas = Array[String](["Frutas desidratadas, é o que melhor sobrevive aqui."])
+metadata/_custom_type_script = "uid://comv0hcqstyop"

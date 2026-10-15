@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CenaVN" format=3 uid="uid://byycfrccxi2sx"]
+
+[ext_resource type="Script" uid="uid://edt0act4c81l" path="res://Scripts/bases/base_vn_fala.gd" id="1_jntjw"]
+[ext_resource type="Texture2D" uid="uid://bdhtp0pc6bu0e" path="res://Sprites/Misc/placeholder_menu.jpg" id="2_atq7d"]
+[ext_resource type="Script" uid="uid://b6xe78swusikp" path="res://Scripts/bases/base_vn_cena.gd" id="3_afmwa"]
+
+[sub_resource type="Resource" id="Resource_y5kkq"]
+script = ExtResource("1_jntjw")
+nome = 1
+texto = "Como foi seu primeiro dia? Deu conta de atender todos os pacientes?"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_jntjw"]
+script = ExtResource("1_jntjw")
+texto = "Foi um dia tranquilo, acho que marcaram as consultas gradualmente."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_atq7d"]
+script = ExtResource("1_jntjw")
+nome = 1
+texto = "Espero que consiga se manter nessa clínica. Não gosto de mudanças..."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[resource]
+script = ExtResource("3_afmwa")
+id = "cena01"
+fundo = ExtResource("2_atq7d")
+falas = Array[ExtResource("1_jntjw")]([SubResource("Resource_y5kkq"), SubResource("Resource_jntjw"), SubResource("Resource_atq7d")])
+metadata/_custom_type_script = "uid://b6xe78swusikp"

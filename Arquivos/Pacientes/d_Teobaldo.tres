@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://c0wq1duex4ajk"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_y2gbs"]
+[ext_resource type="Texture2D" uid="uid://hhms1jma723t" path="res://Sprites/Pacientes/slimecrystalsr2.png" id="2_f3n5y"]
+
+[resource]
+script = ExtResource("1_y2gbs")
+protocolo = "SP45S5"
+nome = "Teobald"
+idade = 54
+tipo_sanguineo = "B+"
+implantes = "Acelerador nos calcanhares"
+transplantes = "Pâncreas"
+textura = ExtResource("2_f3n5y")
+falas_vida_perguntas = Array[String](["Por que acelerador...?", "Ouvi no rádio sobre uma mudança climática..."])
+falas_vida_respostas = Array[String](["Para correr melhor em caso de desabamento.", "Ah, de 5 em 5 anos o calor aumenta."])
+metadata/_custom_type_script = "uid://comv0hcqstyop"

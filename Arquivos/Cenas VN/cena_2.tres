@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="CenaVN" format=3 uid="uid://c21l46u65vph0"]
+
+[ext_resource type="Script" uid="uid://edt0act4c81l" path="res://Scripts/bases/base_vn_fala.gd" id="1_a00t0"]
+[ext_resource type="Texture2D" uid="uid://bdhtp0pc6bu0e" path="res://Sprites/Misc/placeholder_menu.jpg" id="2_xs8bu"]
+[ext_resource type="Script" uid="uid://b6xe78swusikp" path="res://Scripts/bases/base_vn_cena.gd" id="3_p0kql"]
+
+[sub_resource type="Resource" id="Resource_atq7d"]
+script = ExtResource("1_a00t0")
+nome = 2
+texto = "Alê, querida. Você parece exausta. Tem sido muito puxado?"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_a00t0"]
+script = ExtResource("1_a00t0")
+texto = "Infelizmente viver é puxado para mim, essa condição é humilhante…"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_xs8bu"]
+script = ExtResource("1_a00t0")
+nome = 2
+texto = "Eles adaptaram seu horário, imagino que dará conta assim, não é?"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_p0kql"]
+script = ExtResource("1_a00t0")
+texto = "Sim… Eu acho…"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[resource]
+script = ExtResource("3_p0kql")
+id = "cena01"
+fundo = ExtResource("2_xs8bu")
+falas = Array[ExtResource("1_a00t0")]([SubResource("Resource_atq7d"), SubResource("Resource_a00t0"), SubResource("Resource_xs8bu"), SubResource("Resource_p0kql")])
+metadata/_custom_type_script = "uid://b6xe78swusikp"

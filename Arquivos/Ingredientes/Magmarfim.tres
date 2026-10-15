@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://bdg6bc534ib6i"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_xvkwe"]
+[ext_resource type="Texture2D" uid="uid://cjnuaxjs5ka4f" path="res://Sprites/Itens/LavaDust_SP.webp" id="2_xvkwe"]
+
+[resource]
+script = ExtResource("1_xvkwe")
+nome = "Magmarfim"
+descricao = "Outrora eram expelidos por Siderurgicas e Funarárias, os segredos disso atravessam gerações. E por mais estranho que pareça, não há registros de efeitos colaterais após o consumo. "
+textura = ExtResource("2_xvkwe")

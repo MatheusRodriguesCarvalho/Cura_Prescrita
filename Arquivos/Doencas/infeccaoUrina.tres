@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dqnafogp46aed"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_7twv5"]
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_skm4h"]
+[ext_resource type="Resource" uid="uid://c807ygh72pr8x" path="res://Arquivos/Ingredientes/rosaRetorcida.tres" id="2_6hx6e"]
+[ext_resource type="Resource" uid="uid://12chkxqnr8wa" path="res://Arquivos/Ingredientes/raizLobo.tres" id="3_ughoj"]
+[ext_resource type="Resource" uid="uid://o0hkqanocu20" path="res://Arquivos/Ingredientes/boldo.tres" id="4_d4twy"]
+
+[resource]
+script = ExtResource("1_7twv5")
+id = "I302INU-4"
+nome = "Infecção de Urina"
+nome_popular = Array[String](["Cistite"])
+risco = 3
+descricao = "A combinação de clima seco com a falta de hidratação correta, acomete muitos trabalhadores urbanos que precisam atravessar Aresiens para chegarem em seus trabalhos."
+categoria = "Infecciosa"
+sintomas = Array[String](["Ardência ao urinar", "Sensação de bexiga cheia", "Sensação de areia ao urinar"])
+med_pressao_sistolica = 125.0
+med_pressao_diastolica = 86.0
+med_temperatura = 36.0
+med_saturacao = 95.0
+fase = 2
+receita_cura = Dictionary[ExtResource("1_skm4h"), int]({
+ExtResource("2_6hx6e"): 2,
+ExtResource("3_ughoj"): 1,
+ExtResource("4_d4twy"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

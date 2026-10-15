@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://bistpt0yk14n3"]
+
+[ext_resource type="Script" uid="uid://dnhmdhfcmbv4t" path="res://Scripts/gerenciadores/gerenciador_visual_novel.gd" id="1_0b5eo"]
+[ext_resource type="Resource" uid="uid://bqxc4oo5mwtux" path="res://Arquivos/Cenas VN/cena_0_mudanca.tres" id="2_g8hhr"]
+[ext_resource type="Texture2D" uid="uid://bdhtp0pc6bu0e" path="res://Sprites/Misc/placeholder_menu.jpg" id="2_wsgww"]
+[ext_resource type="Texture2D" uid="uid://r4w0xiofllo7" path="res://Sprites/Personagens/Minerva.png" id="4_skmki"]
+[ext_resource type="Texture2D" uid="uid://c02ck5sin85cy" path="res://Sprites/Personagens/Franco.png" id="5_bhmqy"]
+[ext_resource type="Texture2D" uid="uid://bpkgwl7onosne" path="res://Sprites/Personagens/Laila.png" id="6_wccqu"]
+[ext_resource type="StyleBox" uid="uid://wn6ea1sh1ru2" path="res://settingsConfig/Panel/caixa_nome.tres" id="7_wccqu"]
+[ext_resource type="StyleBox" uid="uid://xdvgke34vvx3" path="res://settingsConfig/Panel/caixa_texto.tres" id="8_ifswf"]
+
+[node name="Casa" type="Node2D" unique_id=234272023]
+script = ExtResource("1_0b5eo")
+cena_teste = ExtResource("2_g8hhr")
+
+[node name="Mundo" type="Node2D" parent="." unique_id=857493803]
+position = Vector2(512, 300)
+
+[node name="Local" type="Sprite2D" parent="Mundo" unique_id=472191779]
+modulate = Color(0.07440957, 0.08792503, 0.20285092, 1)
+self_modulate = Color(0, 0, 1.1755697, 1)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_wsgww")
+flip_v = true
+
+[node name="Personagens" type="Node2D" parent="Mundo" unique_id=1290312717]
+
+[node name="Ale" type="Sprite2D" parent="Mundo/Personagens" unique_id=1617750934]
+position = Vector2(300, 0)
+scale = Vector2(2.095, 2.095)
+texture = ExtResource("4_skmki")
+hframes = 2
+
+[node name="Franco" type="Sprite2D" parent="Mundo/Personagens" unique_id=1700117857]
+position = Vector2(-300, 0)
+scale = Vector2(2.095, 2.095)
+texture = ExtResource("5_bhmqy")
+hframes = 2
+
+[node name="Laila" type="Sprite2D" parent="Mundo/Personagens" unique_id=1495813313]
+scale = Vector2(2.095, 2.095)
+texture = ExtResource("6_wccqu")
+hframes = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=483872410]
+
+[node name="CliqueTela" type="Control" parent="CanvasLayer" unique_id=1687035426]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VisualNovel" type="VBoxContainer" parent="CanvasLayer" unique_id=255513475]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -325.0
+offset_top = -217.0
+offset_right = 325.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="FundoNome" type="PanelContainer" parent="CanvasLayer/VisualNovel" unique_id=52673983]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = ExtResource("7_wccqu")
+
+[node name="Nome" type="Label" parent="CanvasLayer/VisualNovel/FundoNome" unique_id=499295049]
+layout_mode = 2
+text = "Nome do Locutor"
+
+[node name="FundoFala" type="PanelContainer" parent="CanvasLayer/VisualNovel" unique_id=526057672]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("8_ifswf")
+
+[node name="Fala" type="RichTextLabel" parent="CanvasLayer/VisualNovel/FundoFala" unique_id=1532981044]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+bbcode_enabled = true
+text = "testestes testestefeafef efe feafefaefaefaef
+efaefaefeafaef aefaefeafaeaef
+steestsf efe fea f efefaef afefeaf feefaef efeafaef efeafea fefaefe fgefaef aefeafe faefeaf feafeafe faefeafdsfaefe"
+
+[node name="CardDia" type="Label" parent="CanvasLayer" unique_id=456796952]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Dia 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fade" type="ColorRect" parent="CanvasLayer" unique_id=1704088599]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

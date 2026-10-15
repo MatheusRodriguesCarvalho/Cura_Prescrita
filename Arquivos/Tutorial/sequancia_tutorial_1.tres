@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="TutorialSequencia" format=3 uid="uid://t4qb1tgt51rq"]
+
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="1_uptsx"]
+[ext_resource type="Script" uid="uid://co7w3y4ikkxf1" path="res://Scripts/bases/base_tutorial_sequencia.gd" id="2_g82nn"]
+
+[resource]
+script = ExtResource("2_g82nn")
+metadata/_custom_type_script = "uid://co7w3y4ikkxf1"

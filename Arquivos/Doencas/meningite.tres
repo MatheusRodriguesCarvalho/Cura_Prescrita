@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://b4x0bsj0ji3q8"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_bmhlf"]
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_vvmgv"]
+[ext_resource type="Resource" uid="uid://bi7e0xy1q701g" path="res://Arquivos/Ingredientes/barbatanaCoral.tres" id="2_cbo0a"]
+[ext_resource type="Resource" uid="uid://b7vwjmlrk8lvk" path="res://Arquivos/Ingredientes/gengibre.tres" id="3_p25bq"]
+[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/guaco.tres" id="4_rmv1t"]
+
+[resource]
+script = ExtResource("1_bmhlf")
+id = "I404MNG-0"
+nome = "Meningite"
+nome_popular = Array[String](["Doença do pescoço duro"])
+risco = 4
+descricao = "Pacientes que apresentem rigidez na nuca, dor de cabeça intensa, vômitos e sensibilidade à luz, após o consumo impróprio de peixe precisam de medicação e encaminhamento o mais rápido possível para o hospital. "
+categoria = "Infecciosa"
+sintomas = Array[String](["Dor de cabeça intensa", "Vômito", "Sensibilidade a luz", "Pescoço rígido"])
+med_pressao_sistolica = 100.0
+med_pressao_diastolica = 65.0
+med_temperatura = 39.0
+med_saturacao = 94.0
+fase = 4
+receita_cura = Dictionary[ExtResource("1_vvmgv"), int]({
+ExtResource("2_cbo0a"): 2,
+ExtResource("3_p25bq"): 1,
+ExtResource("4_rmv1t"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

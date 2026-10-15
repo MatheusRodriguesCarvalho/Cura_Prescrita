@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://con0aqqu4ebij"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_bukwu"]
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_f3ko1"]
+[ext_resource type="Resource" uid="uid://bi7e0xy1q701g" path="res://Arquivos/Ingredientes/barbatanaCoral.tres" id="2_cf46a"]
+[ext_resource type="Resource" uid="uid://b7vwjmlrk8lvk" path="res://Arquivos/Ingredientes/gengibre.tres" id="3_nnop1"]
+[ext_resource type="Resource" uid="uid://o0hkqanocu20" path="res://Arquivos/Ingredientes/boldo.tres" id="4_kw7eo"]
+
+[resource]
+script = ExtResource("1_f3ko1")
+id = "I101CTP-1"
+nome = "Catapora"
+nome_popular = Array[String](["Nome Popular"])
+risco = 3
+descricao = "Bolhas na pele e intensa coceira acometem alguns adultos, a vacina tem sido questionada e por isso alguns casos voltaram a aparecer."
+categoria = "Infecciosa"
+sintomas = Array[String](["Febre", "Coceira intensa", "Mal-estar geral"])
+med_pressao_sistolica = 125.0
+med_pressao_diastolica = 86.0
+med_temperatura = 39.5
+med_saturacao = 95.0
+fase = 3
+receita_cura = Dictionary[ExtResource("1_bukwu"), int]({
+ExtResource("2_cf46a"): 2,
+ExtResource("3_nnop1"): 1,
+ExtResource("4_kw7eo"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

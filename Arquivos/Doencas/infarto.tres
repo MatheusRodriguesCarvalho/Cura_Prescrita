@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://c4c5hw6dpsg2s"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_hswcv"]
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_ytq8l"]
+[ext_resource type="Resource" uid="uid://c807ygh72pr8x" path="res://Arquivos/Ingredientes/rosaRetorcida.tres" id="2_d58sd"]
+[ext_resource type="Resource" uid="uid://b0prxwh6t0avb" path="res://Arquivos/Ingredientes/lunaflora.tres" id="3_20lxq"]
+[ext_resource type="Resource" uid="uid://12chkxqnr8wa" path="res://Arquivos/Ingredientes/raizLobo.tres" id="4_kuk0a"]
+
+[resource]
+script = ExtResource("1_ytq8l")
+id = "I101INT-3"
+nome = "Infarto"
+nome_popular = Array[String](["Nome Popular"])
+risco = 5
+descricao = "Palpitação e dor intensa localizada no peito, o coração esforça tanto para bombear que em um momento falha."
+categoria = "Cardiovascular"
+sintomas = Array[String](["Dor no peito", "Falta de ar"])
+med_pressao_sistolica = 190.0
+med_pressao_diastolica = 120.0
+med_saturacao = 95.0
+fase = 4
+receita_cura = Dictionary[ExtResource("1_hswcv"), int]({
+ExtResource("2_d58sd"): 2,
+ExtResource("3_20lxq"): 2,
+ExtResource("4_kuk0a"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://dwfwaai32uyhy"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_1il24"]
+[ext_resource type="Texture2D" uid="uid://dtpmedvcm5wou" path="res://Sprites/Pacientes/glitchslimesp.png" id="2_gygk8"]
+
+[resource]
+script = ExtResource("1_1il24")
+protocolo = "SP45S9"
+nome = "Daniel"
+idade = 18
+tipo_sanguineo = "A-"
+implantes = "Pé mecânico"
+transplantes = "Nenhum"
+textura = ExtResource("2_gygk8")
+falas_vida_perguntas = Array[String](["Gosta de esportes?"])
+falas_vida_respostas = Array[String](["Adoro futebol."])
+metadata/_custom_type_script = "uid://comv0hcqstyop"

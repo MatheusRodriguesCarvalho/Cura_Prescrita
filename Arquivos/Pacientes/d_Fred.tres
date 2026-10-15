@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://pul5eb4m07xt"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_1ycfr"]
+[ext_resource type="Texture2D" uid="uid://clui6pk6cptoy" path="res://Sprites/Pacientes/slimehoneysr2.png" id="2_j28x3"]
+
+[resource]
+script = ExtResource("1_1ycfr")
+protocolo = "SP45S4"
+nome = "Fred"
+idade = 35
+tipo_sanguineo = "Desconhecido"
+implantes = "Pulmão filtrador"
+transplantes = "Capilar"
+textura = ExtResource("2_j28x3")
+falas_vida_perguntas = Array[String](["Quer um café?, Qual o seu trabalho?"])
+falas_vida_respostas = Array[String](["Não gosto, obrigado., Auditor de fábricas, respiro muita fumaça."])
+metadata/_custom_type_script = "uid://comv0hcqstyop"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://du2nxqk5sp7sj"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_pb34y"]
+[ext_resource type="Texture2D" uid="uid://dtpmedvcm5wou" path="res://Sprites/Pacientes/glitchslimesp.png" id="2_8e87m"]
+
+[resource]
+script = ExtResource("1_pb34y")
+protocolo = "SP45S1"
+nome = "Hortencia"
+idade = 82
+implantes = "Nenhum"
+transplantes = "Timpano sintetico"
+textura = ExtResource("2_8e87m")
+falas_vida_perguntas = Array[String](["Ouvi dizer que a senhor gosta de Plantas."])
+falas_vida_respostas = Array[String](["Num sei donde vei esses boatos, mas eles se fazem verdade, na minha juventude eu era uma Boticaria. Mas a idade de mim muito tomou minhas pericia manual."])
+metadata/_custom_type_script = "uid://comv0hcqstyop"

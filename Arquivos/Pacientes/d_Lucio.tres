@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://c5ygjjwenc2pc"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_rgxm0"]
+[ext_resource type="Texture2D" uid="uid://dslpxk46jiljd" path="res://Sprites/Pacientes/honeyslimesecretstylesp.png" id="2_nmgt0"]
+
+[resource]
+script = ExtResource("1_rgxm0")
+protocolo = "SP45S6"
+nome = "Lucio"
+idade = 32
+tipo_sanguineo = "A-"
+implantes = "Nenhum"
+transplantes = "Nenhum"
+textura = ExtResource("2_nmgt0")
+falas_vida_perguntas = Array[String](["(preencher)"])
+falas_vida_respostas = Array[String](["(preencher)"])
+metadata/_custom_type_script = "uid://comv0hcqstyop"

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://f6mp1prusrp5"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_0ivli"]
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_smgod"]
+[ext_resource type="Resource" uid="uid://c807ygh72pr8x" path="res://Arquivos/Ingredientes/rosaRetorcida.tres" id="2_cjaeo"]
+[ext_resource type="Resource" uid="uid://b7vwjmlrk8lvk" path="res://Arquivos/Ingredientes/gengibre.tres" id="3_ncrhy"]
+[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/guaco.tres" id="4_w6glo"]
+[ext_resource type="Resource" uid="uid://o0hkqanocu20" path="res://Arquivos/Ingredientes/boldo.tres" id="5_jbo2a"]
+
+[resource]
+script = ExtResource("1_0ivli")
+id = "I102EST-1"
+nome = "Estomatite"
+nome_popular = Array[String](["Nome Popular"])
+risco = 1
+descricao = "Algumas frutas importadas costumam reagir mal ao clima de Aresiens, resultando em uma condição prejudicial para a cavidade bucal e apetite."
+categoria = "Outra"
+sintomas = Array[String](["Úlceras na boca", "Desconforto para engolir", "Salivação", "Mau hálito"])
+med_pressao_sistolica = 125.0
+med_pressao_diastolica = 86.0
+med_temperatura = 39.0
+med_saturacao = 97.0
+fase = 2
+receita_cura = Dictionary[ExtResource("1_smgod"), int]({
+ExtResource("2_cjaeo"): 2,
+ExtResource("3_ncrhy"): 1,
+ExtResource("4_w6glo"): 1,
+ExtResource("5_jbo2a"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

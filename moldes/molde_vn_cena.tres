@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CenaVN" format=3 uid="uid://bamda7lw38dj"]
+
+[ext_resource type="Script" uid="uid://edt0act4c81l" path="res://Scripts/bases/base_vn_fala.gd" id="1_tvmtv"]
+[ext_resource type="Texture2D" uid="uid://hhms1jma723t" path="res://Sprites/Pacientes/slimecrystalsr2.png" id="2_u8000"]
+[ext_resource type="Texture2D" uid="uid://dtpmedvcm5wou" path="res://Sprites/Pacientes/glitchslimesp.png" id="3_jn4fa"]
+[ext_resource type="Texture2D" uid="uid://bdhtp0pc6bu0e" path="res://Sprites/Misc/placeholder_menu.jpg" id="4_u2vm7"]
+[ext_resource type="Script" uid="uid://b6xe78swusikp" path="res://Scripts/bases/base_vn_cena.gd" id="5_656nw"]
+
+[sub_resource type="Resource" id="Resource_y5kkq"]
+script = ExtResource("1_tvmtv")
+nome = "teste1"
+texto = "testando"
+retrato = ExtResource("2_u8000")
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_0fa0w"]
+script = ExtResource("1_tvmtv")
+nome = "teste2"
+texto = "tesssssssssss"
+retrato = ExtResource("3_jn4fa")
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_o4k3g"]
+script = ExtResource("1_tvmtv")
+nome = "teste1"
+texto = "tttttttttttttttttttttttttt"
+retrato = ExtResource("2_u8000")
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[resource]
+script = ExtResource("5_656nw")
+id = "cena01"
+fundo = ExtResource("4_u2vm7")
+falas = Array[ExtResource("1_tvmtv")]([SubResource("Resource_y5kkq"), SubResource("Resource_0fa0w"), SubResource("Resource_o4k3g")])
+metadata/_custom_type_script = "uid://b6xe78swusikp"

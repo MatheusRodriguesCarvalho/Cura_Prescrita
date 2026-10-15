@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://brw4kqe1q6f4b"]
+
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_esl15"]
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_mbu0y"]
+[ext_resource type="Resource" uid="uid://c807ygh72pr8x" path="res://Arquivos/Ingredientes/rosaRetorcida.tres" id="2_30c1t"]
+[ext_resource type="Resource" uid="uid://b7vwjmlrk8lvk" path="res://Arquivos/Ingredientes/gengibre.tres" id="3_p4dwc"]
+[ext_resource type="Resource" uid="uid://bi7e0xy1q701g" path="res://Arquivos/Ingredientes/barbatanaCoral.tres" id="4_tlqog"]
+
+[resource]
+script = ExtResource("1_esl15")
+id = "I101DNG-4"
+nome = "Dengue"
+nome_popular = Array[String](["Febre quebra ossos"])
+risco = 3
+descricao = "Ao transitar em áreas de água parada e perceber que ocorreu uma picada de mosquito, fique atento aos sintomas que surgirem após esse evento. Evitar o tratamento deles resulta em piora clínica."
+categoria = "Outra"
+sintomas = Array[String](["Dor muscular", "Manchas vermelhas", "Olhos ardendo atrás", "Mal estar"])
+med_pressao_sistolica = 90.0
+med_pressao_diastolica = 60.0
+med_temperatura = 40.0
+med_saturacao = 98.0
+fase = 3
+receita_cura = Dictionary[ExtResource("1_mbu0y"), int]({
+ExtResource("2_30c1t"): 1,
+ExtResource("3_p4dwc"): 1,
+ExtResource("4_tlqog"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

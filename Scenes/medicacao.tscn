@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://diykla5h126cu"]
+
+[ext_resource type="Texture2D" uid="uid://b0sfth4qyqon7" path="res://Sprites/Medicacao/bg-sala-de-medicacao.png" id="1_6oj68"]
+[ext_resource type="Texture2D" uid="uid://cwth1dogt653y" path="res://Sprites/Medicacao/as-armario-medicacao.png" id="2_ihjtw"]
+[ext_resource type="Texture2D" uid="uid://bwf354k4xtssc" path="res://Sprites/Medicacao/as-caixa-de-descarte.png" id="3_1xv77"]
+[ext_resource type="Texture2D" uid="uid://c54cw3ruqm7b5" path="res://Sprites/Medicacao/as-caixa-de-seringas.png" id="4_w8am7"]
+[ext_resource type="Texture2D" uid="uid://brnw278yqjw1h" path="res://Sprites/Medicacao/as-caixa-de-soro.png" id="5_bno4q"]
+[ext_resource type="Texture2D" uid="uid://8xtfxor3jb2c" path="res://Sprites/Interface/Asset-seta-direita.png" id="6_ogqda"]
+
+[node name="Node2D" type="Node2D" unique_id=2096097283]
+
+[node name="AlaMedicacao" type="Node2D" parent="." unique_id=354684243]
+position = Vector2(512, 300)
+
+[node name="Medicacao2D" type="Sprite2D" parent="AlaMedicacao" unique_id=1316708933]
+position = Vector2(-22.222244, -0.4999876)
+scale = Vector2(2.0868056, 2.0868056)
+texture = ExtResource("1_6oj68")
+
+[node name="Prateleira" type="Node2D" parent="AlaMedicacao" unique_id=1587941018]
+position = Vector2(-260, 0)
+
+[node name="Prateleira2D" type="Sprite2D" parent="AlaMedicacao/Prateleira" unique_id=1265025059]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ihjtw")
+
+[node name="CaixaDescante" type="Node2D" parent="AlaMedicacao/Prateleira" unique_id=1049082590]
+position = Vector2(-160, 218)
+
+[node name="Descarte2D" type="Sprite2D" parent="AlaMedicacao/Prateleira/CaixaDescante" unique_id=1012748736]
+scale = Vector2(2, 2)
+texture = ExtResource("3_1xv77")
+
+[node name="CaixaSeringas" type="Node2D" parent="AlaMedicacao/Prateleira" unique_id=1257245558]
+position = Vector2(-57, 218)
+
+[node name="Seringas2D" type="Sprite2D" parent="AlaMedicacao/Prateleira/CaixaSeringas" unique_id=2112654498]
+scale = Vector2(2, 2)
+texture = ExtResource("4_w8am7")
+
+[node name="CaixaSoro" type="Node2D" parent="AlaMedicacao/Prateleira" unique_id=1890390178]
+position = Vector2(105, 218)
+
+[node name="Soro2D" type="Sprite2D" parent="AlaMedicacao/Prateleira/CaixaSoro" unique_id=196535144]
+scale = Vector2(2, 2)
+texture = ExtResource("5_bno4q")
+
+[node name="Remedios" type="Node2D" parent="AlaMedicacao/Prateleira" unique_id=259954007]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=487605244]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1384444325]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=289956393]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/Control/HBoxContainer" unique_id=336696815]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control/HBoxContainer" unique_id=1260147485]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_ogqda")
+ignore_texture_size = true
+stretch_mode = 5

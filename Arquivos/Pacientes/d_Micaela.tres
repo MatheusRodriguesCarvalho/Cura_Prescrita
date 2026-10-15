@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://bfvc01bu3bupt"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_h1bql"]
+[ext_resource type="Texture2D" uid="uid://clui6pk6cptoy" path="res://Sprites/Pacientes/slimehoneysr2.png" id="2_qupek"]
+
+[resource]
+script = ExtResource("1_h1bql")
+protocolo = "SP45S1"
+nome = "Micaela"
+idade = 30
+tipo_sanguineo = "O+"
+implantes = "Controlador de temperatura corporal / Ombro direito."
+transplantes = "Baço O-"
+textura = ExtResource("2_qupek")
+falas_vida_perguntas = Array[String](["Um controlador de temperatura é útil? Meu marido sempre quis colocar um."])
+falas_vida_respostas = Array[String](["Muito, e como o clima é terrivelmente quente por aqui, isso é uma mão na roda"])
+metadata/_custom_type_script = "uid://comv0hcqstyop"

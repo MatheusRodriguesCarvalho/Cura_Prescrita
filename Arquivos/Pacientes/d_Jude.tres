@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DadosPaciente" format=3 uid="uid://c31mu58rufnmb"]
+
+[ext_resource type="Script" uid="uid://comv0hcqstyop" path="res://Scripts/bases/base_dados_paciente.gd" id="1_b2tw8"]
+[ext_resource type="Texture2D" uid="uid://hhms1jma723t" path="res://Sprites/Pacientes/slimecrystalsr2.png" id="2_fnogp"]
+
+[resource]
+script = ExtResource("1_b2tw8")
+protocolo = "SP45S7"
+nome = "Jude"
+idade = 21
+tipo_sanguineo = "B-"
+implantes = "Desconhecido"
+transplantes = "Nenhum"
+textura = ExtResource("2_fnogp")
+falas_vida_perguntas = Array[String](["A expansão da Fenda me preocupa."])
+falas_vida_respostas = Array[String](["Qual Fenda? Os nosso pais vizinho ou aquela catastrofe anunciada?"])
+metadata/_custom_type_script = "uid://comv0hcqstyop"

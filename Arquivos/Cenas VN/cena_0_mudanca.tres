@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="CenaVN" format=3 uid="uid://bqxc4oo5mwtux"]
+
+[ext_resource type="Script" uid="uid://edt0act4c81l" path="res://Scripts/bases/base_vn_fala.gd" id="1_gqkhk"]
+[ext_resource type="Texture2D" uid="uid://bdhtp0pc6bu0e" path="res://Sprites/Misc/placeholder_menu.jpg" id="4_jw6n4"]
+[ext_resource type="Script" uid="uid://b6xe78swusikp" path="res://Scripts/bases/base_vn_cena.gd" id="5_jsb0q"]
+
+[sub_resource type="Resource" id="Resource_y5kkq"]
+script = ExtResource("1_gqkhk")
+nome = 1
+texto = "Ahhh, mas por que estamos nos mudando? Justo agora que a professora ia começar a ensinar sobre robos."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_0fa0w"]
+script = ExtResource("1_gqkhk")
+texto = "Filha, a mamãe foi realocada para longe, não tinha muito que eu podesse fazer."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_o4k3g"]
+script = ExtResource("1_gqkhk")
+nome = 1
+texto = "E por que não implicou com eles? Eles teriam mudado de ideia"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_f344o"]
+script = ExtResource("1_gqkhk")
+nome = 2
+texto = "Filhota, as coisas não são assim, sua mãe finalmente foi contratada pelo Instituto Divina, ela não poderia fazer essa birra. Ela poderia ter sido mandada embora."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_pgwya"]
+script = ExtResource("1_gqkhk")
+nome = 1
+texto = "Eu sei... Mas não deixa de ser frustrante..."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[resource]
+script = ExtResource("5_jsb0q")
+id = "cena01"
+fundo = ExtResource("4_jw6n4")
+falas = Array[ExtResource("1_gqkhk")]([SubResource("Resource_y5kkq"), SubResource("Resource_0fa0w"), SubResource("Resource_o4k3g"), SubResource("Resource_f344o"), SubResource("Resource_pgwya")])
+metadata/_custom_type_script = "uid://b6xe78swusikp"

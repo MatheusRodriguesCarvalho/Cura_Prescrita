@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://buu1tudknhqm5"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_4ex6p"]
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_8y6lv"]
+[ext_resource type="Resource" uid="uid://b7vwjmlrk8lvk" path="res://Arquivos/Ingredientes/gengibre.tres" id="3_huyst"]
+[ext_resource type="Resource" uid="uid://dhm1km3iqkevt" path="res://Arquivos/Ingredientes/cascaJatoba.tres" id="3_yrujc"]
+[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/guaco.tres" id="4_yrujc"]
+
+[resource]
+script = ExtResource("1_8y6lv")
+id = "I202BTR-8"
+nome = "Bacteriose"
+nome_popular = Array[String](["Dor de barriga"])
+risco = 2
+descricao = "Doença causada por bactéria desconhecida, sendo comum nas áreas áridas pela falta de saneamento básico em muitas regiões."
+categoria = "Digestiva"
+sintomas = Array[String](["Vômito", "Diarreia", "Enjoo"])
+med_pressao_sistolica = 90.0
+med_pressao_diastolica = 60.0
+med_temperatura = 38.8
+med_saturacao = 97.0
+fase = 2
+receita_cura = Dictionary[ExtResource("1_4ex6p"), int]({
+ExtResource("3_yrujc"): 2,
+ExtResource("3_huyst"): 1,
+ExtResource("4_yrujc"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"
