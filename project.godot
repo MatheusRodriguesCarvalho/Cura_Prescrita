@@ -30,6 +30,10 @@ GerenciadorPausa="*uid://b8iob23ggd7wb"
 window/size/viewport_width=1024
 window/size/viewport_height=600
 
+[gui]
+
+theme/custom_font="uid://dr2wcvwoxcpke"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

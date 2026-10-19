@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://dlkiav61t2p80"]
 
 [ext_resource type="Script" uid="uid://0o4cmvic22xc" path="res://Scripts/jogo.gd" id="1_awqe4"]
-[ext_resource type="Texture2D" uid="uid://bhrnbobtx5f6f" path="res://Sprites/Consultorio/Asset-mesa.png" id="2_g4wke"]
+[ext_resource type="Texture2D" uid="uid://ba0sqsid8x5u2" path="res://Sprites/Consultorio/BG-Triagem-Background-1.png" id="2_a458u"]
+[ext_resource type="Texture2D" uid="uid://bhrnbobtx5f6f" path="res://Sprites/Itens/Sprites/Consultorio/Asset-mesa.png" id="2_g4wke"]
 [ext_resource type="Script" uid="uid://ca5g004rutooj" path="res://Scripts/bases/base_ferramenta.gd" id="3_rom7i"]
-[ext_resource type="Texture2D" uid="uid://dc31nx3t7ykpy" path="res://Sprites/Consultorio/Asset-Computador.png" id="4_di5os"]
+[ext_resource type="Texture2D" uid="uid://dc31nx3t7ykpy" path="res://Sprites/Itens/Sprites/Consultorio/Asset-Computador.png" id="4_di5os"]
 [ext_resource type="Script" uid="uid://itbqlswh6fpa" path="res://Scripts/botoes/misc_botao_guia_medico.gd" id="7_di5os"]
 [ext_resource type="Script" uid="uid://d4kngs7imchxc" path="res://Scripts/botoes/misc_botao_paciente.gd" id="7_ohx81"]
-[ext_resource type="Texture2D" uid="uid://cywfw6yposjtl" path="res://Sprites/Consultorio/as-botao-proximo.png" id="8_bry8b"]
+[ext_resource type="Texture2D" uid="uid://cywfw6yposjtl" path="res://Sprites/Itens/Sprites/Consultorio/as-botao-proximo.png" id="8_bry8b"]
 [ext_resource type="Script" uid="uid://bfybp1wmp1g7n" path="res://Scripts/elementos_unicos/ui_relogio.gd" id="8_y03mb"]
 [ext_resource type="Script" uid="uid://du3atu4w2vx44" path="res://Scripts/botoes/misc_botao_computador.gd" id="9_fiu4m"]
-[ext_resource type="Texture2D" uid="uid://brrbtj84qepm8" path="res://Sprites/Consultorio/as-guia-triagem.png" id="10_5b7p0"]
+[ext_resource type="Texture2D" uid="uid://brrbtj84qepm8" path="res://Sprites/Itens/Sprites/Consultorio/as-guia-triagem.png" id="10_5b7p0"]
 [ext_resource type="Script" uid="uid://2u4owainhy2a" path="res://Scripts/botoes/misc_botao_gaveta.gd" id="11_sus7i"]
 [ext_resource type="Texture2D" uid="uid://c5pa0my7fspky" path="res://Sprites/Consultorio/Asset-gaveta.png" id="12_sus7i"]
-[ext_resource type="Texture2D" uid="uid://ckk3sty7lopt1" path="res://Sprites/Consultorio/Asset-Teclado.png" id="13_35mpl"]
+[ext_resource type="Texture2D" uid="uid://ckk3sty7lopt1" path="res://Sprites/Itens/Sprites/Consultorio/Asset-Teclado.png" id="13_35mpl"]
 [ext_resource type="Script" uid="uid://bdp8avpktrrfq" path="res://Scripts/gerenciadores/gerenciador_guia_medico.gd" id="13_68eyn"]
 [ext_resource type="Texture2D" uid="uid://cjnuaxjs5ka4f" path="res://Sprites/Itens/LavaDust_SP.webp" id="13_m8hxt"]
 [ext_resource type="Texture2D" uid="uid://cg6p541lhh0ud" path="res://Sprites/Itens/asset-termometro.png" id="14_tx7yx"]
@@ -30,7 +31,7 @@
 [ext_resource type="Script" uid="uid://n06qucq7ewu2" path="res://Scripts/bases/base_paciente.gd" id="21_8qrdh"]
 [ext_resource type="Resource" uid="uid://bi7e0xy1q701g" path="res://Arquivos/Ingredientes/barbatanaCoral.tres" id="22_rfb5r"]
 [ext_resource type="Texture2D" uid="uid://b0sfth4qyqon7" path="res://Sprites/Medicacao/bg-sala-de-medicacao.png" id="23_3g3my"]
-[ext_resource type="Texture2D" uid="uid://8xtfxor3jb2c" path="res://Sprites/Interface/Asset-seta-direita.png" id="23_qxvvp"]
+[ext_resource type="Texture2D" uid="uid://8xtfxor3jb2c" path="res://Sprites/Itens/Sprites/Interface/Asset-seta-direita.png" id="23_qxvvp"]
 [ext_resource type="Texture2D" uid="uid://dk355atcnqddn" path="res://Sprites/Itens/StrangeDiamond_SP.webp" id="23_u3sce"]
 [ext_resource type="Resource" uid="uid://o0hkqanocu20" path="res://Arquivos/Ingredientes/boldo.tres" id="24_entb7"]
 [ext_resource type="Texture2D" uid="uid://cwth1dogt653y" path="res://Sprites/Medicacao/as-armario-medicacao.png" id="24_qxvvp"]
@@ -64,9 +65,6 @@
 [ext_resource type="StyleBox" uid="uid://wn6ea1sh1ru2" path="res://settingsConfig/Panel/caixa_nome.tres" id="48_m74wk"]
 [ext_resource type="StyleBox" uid="uid://xdvgke34vvx3" path="res://settingsConfig/Panel/caixa_texto.tres" id="49_a458u"]
 [ext_resource type="Texture2D" uid="uid://dgph6nfwm85db" path="res://Sprites/transição.png" id="62_36tyn"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y03mb"]
-load_path = "res://.godot/imported/BG-Triagem-Background-1.png-fb3174dc3db973b22b0685dcc27bd7af.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68eyn"]
 size = Vector2(42, 46)
@@ -120,7 +118,7 @@ position = Vector2(512, 288)
 
 [node name="Consultorio2D" type="Sprite2D" parent="Consultorio/Mundo" unique_id=1087551567]
 scale = Vector2(2, 2)
-texture = SubResource("CompressedTexture2D_y03mb")
+texture = ExtResource("2_a458u")
 
 [node name="Mesa" type="Node2D" parent="Consultorio/Mundo" unique_id=709490590]
 position = Vector2(0, 205)
