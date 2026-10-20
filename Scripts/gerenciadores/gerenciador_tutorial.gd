@@ -57,7 +57,7 @@ func iniciar(seq: TutorialSequencia, forcar: bool = false) -> void:
 
 ## Chamado pelo resto do jogo quando algo acontece. Sem efeito se não houver tutorial ativo.
 func notificar(evento: String) -> void:
-	if not ativo:
+	if not ativo or _sequencia == null:
 		return
 	if _sequencia.passos[_indice].evento_conclusao == evento:
 		_proximo()
@@ -77,6 +77,8 @@ func _mostrar_passo() -> void:
 
 
 func _proximo() -> void:
+	if not ativo or _sequencia == null:
+		return
 	_indice += 1
 	if _indice >= _sequencia.passos.size():
 		_finalizar()
@@ -85,6 +87,8 @@ func _proximo() -> void:
 
 
 func _finalizar() -> void:
+	if not ativo or _sequencia == null:
+		return
 	_limpar_destaque()
 	_camada.hide()
 	

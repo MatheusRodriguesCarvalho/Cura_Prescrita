@@ -5,12 +5,13 @@ extends Node2D
 @export var tempo_fade_normal: float = 0.3
 @export var tempo_fade_bandeja: float = 0.12
 
+@onready var  area: Area2D = $Area2D
+@onready var sprite: Sprite2D = $Sprite2D
+
+const Z_ARRASTANDO := 100
 enum Estado { PARADO, SEGURANDO }
 var estado = Estado.PARADO
 var posicao_original: Vector2
-
-@onready var  area: Area2D = $Area2D
-@onready var sprite: Sprite2D = $Sprite2D
 
 
 func _ready() -> void:
@@ -30,11 +31,18 @@ func _process(_delta: float) -> void:
 	if estado == Estado.SEGURANDO:
 		global_position = get_global_mouse_position()
 		TooltipInfo.esconder.emit()
+		GerenciadorTempo.registrar_acao(0.001)
 
 func _on_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and estado == Estado.PARADO:
 		estado = Estado.SEGURANDO
+		estado = Estado.SEGURANDO
+		z_as_relative = false
+		z_index = Z_ARRASTANDO
+		
 		TooltipInfo.esconder.emit()
+		GerenciadorTempo.registrar_acao(0.5)
+		GerenciadorAudio.tocar("ingredientes")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if estado != Estado.SEGURANDO:
@@ -56,7 +64,11 @@ func _soltar() -> void:
 func _fade_e_retorna(duracao: float) -> void:
 	var tween := create_tween()
 	tween.tween_property(sprite, "modulate:a", 0.0, duracao)
-	tween.tween_callback(func(): global_position = posicao_original)
+	tween.tween_callback(func():
+		global_position = posicao_original
+		z_index = 0
+		z_as_relative = true
+	)
 	tween.tween_property(sprite, "modulate:a", 1.0, duracao * 0.8)
 
 func _buscar_alvo_sob_cursor() -> Node:

@@ -5,9 +5,13 @@
 
 extends Control
 
-@onready var pagina_noticia: Control = $PainelPaginas/PaginaNoticias
-@onready var pagina_sumario: Control = $PainelPaginas/SumarioDoencas
-@onready var pagina_doenca: Control = $PainelPaginas/PaginaDoenca
+@export var pagina_noticia: Control
+@export var pagina_sumario: Control
+@export var pagina_doenca: Control
+
+## @onready var pagina_noticia: Control = $PainelPaginas/PaginaNoticias
+## @onready var pagina_sumario: Control = $PainelPaginas/SumarioDoencas
+## @onready var pagina_doenca: Control = $PainelPaginas/PaginaDoenca
 
 
 func _ready() -> void:
@@ -37,6 +41,7 @@ func _on_doenca_selecionada(doenca: Doenca) -> void:
 	pagina_doenca.mostrar(doenca)
 
 func _mostrar_pagina(pagina: Control) -> void:
+	GerenciadorAudio.tocar("folear")
 	pagina_noticia.hide()
 	pagina_sumario.hide()
 	pagina_doenca.hide()

@@ -4,17 +4,16 @@ extends Node2D
 @export_file("*.tscn") var cena_proxima_dia: String = "res://Scenes/consultorio.tscn"
 @export var cena_teste: CenaVN  ## opcional: força uma cena (ignora o filtro por fase)
 @export var musica_cena: String = "casa"  ## subpasta em Sons/Musicas; vazio = sem música
- 
+
 
 ## Duração da digitação = BASE + POR_CHAR * caracteres (100 chars = 3s, 200 chars = 5s)
 const DURACAO_BASE := 1.0
 const DURACAO_POR_CHAR := 0.02
-const CHARS_POR_SOM := 2
-const SOM_DIGITACAO := "digitacao"
 const COR_FALANDO := Color(1, 1, 1, 1)
 const COR_CALADO := Color(0.55, 0.55, 0.6, 1)
 const ESCALA_FALANDO := 1.04
- 
+
+const SOM_FALA := "fala"
 
 @onready var fundo: Sprite2D = $Mundo/Local
 @onready var personagens: Node2D = $Mundo/Personagens
@@ -25,17 +24,16 @@ const ESCALA_FALANDO := 1.04
 @onready var clique_tela: Control = $CanvasLayer/CliqueTela
 @onready var card_dia: Label = $CanvasLayer/CardDia
 @onready var fade: ColorRect = $CanvasLayer/Fade
- 
+
 
 var cena: CenaVN
 var indice := 0
 var digitando := false
 var encerrando := false
 var tween_texto: Tween
-var _ultimo_visivel := 0
 var _revelados: Dictionary = {}   ## nome do personagem -> true
 var _escala_base: Dictionary = {} ## nome do personagem -> Vector2 definido no editor
- 
+
 func _ready() -> void:
 	_preparar_ui()
 	
@@ -185,8 +183,9 @@ func _iniciar_digitacao() -> void:
 	
 	var total := label_texto.get_total_character_count()
 	label_texto.visible_characters = 0
-	_ultimo_visivel = 0
 	digitando = true
+	
+	GerenciadorAudio.tocar(SOM_FALA)
 	
 	if total == 0:
 		_completar_texto()
@@ -197,15 +196,6 @@ func _iniciar_digitacao() -> void:
 	tween_texto.tween_property(label_texto, "visible_characters", total, duracao)
 	tween_texto.tween_callback(func(): digitando = false)
 
-func _process(_delta: float) -> void:
-	if not digitando:
-		return
-	var atual := label_texto.visible_characters
-	if atual - _ultimo_visivel >= CHARS_POR_SOM:
-		var trecho := label_texto.get_parsed_text().substr(_ultimo_visivel, atual - _ultimo_visivel)
-		if trecho.strip_edges() != "":
-			GerenciadorAudio.tocar(SOM_DIGITACAO)
-		_ultimo_visivel = atual
 
 func _completar_texto() -> void:
 	if tween_texto:

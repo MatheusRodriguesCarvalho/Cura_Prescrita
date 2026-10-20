@@ -37,12 +37,12 @@ func alternar() -> void:
 func _pausar() -> void:
 	if not habilitado:
 		return
-	## Evita pausar com uma ferramenta/ingrediente preso ao mouse:
-	## o botão solto durante a pausa nunca seria recebido pelo item.
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		return
 	get_tree().paused = true
+	
 	TooltipInfo.esconder.emit()
+	_sincronizar_sliders()
 	_overlay.show()
 
 func _retomar() -> void:
@@ -55,7 +55,11 @@ func _ir_para_menu() -> void:
 	GerenciadorTempo.encerrar_fase()
 	get_tree().change_scene_to_file(CENA_MENU)
 
-
+func _sincronizar_sliders() -> void:
+	for bus in _sliders:
+		var slider: HSlider = _sliders[bus]
+		## set_value_no_signal não dispara value_changed (sem reaplicar volume nem tocar som)
+		slider.set_value_no_signal(GerenciadorAudio.volume_atual(bus))
 
 ## --- Interface (montada por código; vale migrar para cena quando for estilizar) ---
 func _construir_ui() -> void:

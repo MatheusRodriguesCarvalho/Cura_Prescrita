@@ -3,7 +3,7 @@ extends Node
 enum Modo {CRONOMETRO, ESTAMINA}
 
 @export var modo: Modo = Modo.CRONOMETRO
-@export var tempo_total: float = 60.0
+@export var tempo_total: float = 240.0
 
 @export var estamina_total: float = 100.0
 @export var custo_acao_padrao: float = 6.0

@@ -17,6 +17,7 @@ func _on_area_clique_input_event(_viewport, event: InputEvent, _shape_idx: int) 
 
 func _chamar_ou_verificar() -> void:
 	if GerenciadorPacientes.tem_atendimento_ativo():
+		TooltipInfo.aviso.emit("Ainda há um paciente na sala...")
 		print("Atendimento em andamento — finalize antes de chamar outro.")
 		return
 	
@@ -24,6 +25,7 @@ func _chamar_ou_verificar() -> void:
 	if paciente == null:
 		return
 	
+	GerenciadorAudio.tocar("digitacao")
 	GerenciadorTempo.registrar_acao(15.0)
 	if not dia_iniciado:
 		dia_iniciado = true

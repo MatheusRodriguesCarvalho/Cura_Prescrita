@@ -45,7 +45,7 @@ func _on_protocolo_submetido(_texto: String) -> void:
 	var paciente: Paciente = GerenciadorPacientes.busca_por_protocolo(protocolo)
 	
 	if paciente == null:
-		print("Procotolo invalido. Ficha não localizada")
+		TooltipInfo.aviso.emit("Protocolo Invalido...")
 		return
 	
 	paciente_atual = paciente
@@ -116,7 +116,10 @@ func _on_imprimir_pressed() -> void:
 	
 	GerenciadorPacientes.registrar_ficha(paciente_atual.protocolo, ficha)
 	paciente_atual.ficha_impressa = true
+	
+	## Signals
 	GerenciadorAla.ficha_finalizada.emit()
+	
 	
 	hide()
 	botao_excluir.show()

@@ -13,6 +13,8 @@ func _on_area_clique_input_event(_viewport, event: InputEvent, _shape_idx: int) 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		
 		GerenciadorTempo.registrar_acao(10.0)
+		GerenciadorAudio.tocar("remedio")
+		
 		var quantidades := bandeja.obter_quantidades()
 		if quantidades.is_empty():
 			return
