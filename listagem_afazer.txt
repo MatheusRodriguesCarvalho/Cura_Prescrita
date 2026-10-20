@@ -5,33 +5,7 @@ A fazer / TODO:
 		tutorial
 		
 		renomear alguns .gd
-		pastas com espaço
-		apagar os .tmp
 		ingredienteItem.tscn e Relogio.tscn
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -45,7 +19,6 @@ A fazer / TODO:
 		MELHORAR cena de resultado
 		impeditivo de que o dia termine e o paciente em questão fique sem atendimento
 		
-		testar se funciona configuração de difiucldade no menu inicial
 		CUSTO DE ESTAMINA:
 			SELEÇÃO DE INGREDIENTES
 			CRIAÇÃO DE REMEDIOS

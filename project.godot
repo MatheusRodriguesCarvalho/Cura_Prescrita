@@ -24,6 +24,7 @@ GerenciadorAudio="*uid://dt1p3wkpivrvy"
 GerenciadorDialogos="*uid://drqwpumc61f0k"
 TooltipInfo="*uid://ci5yvcgwrfykp"
 GerenciadorPausa="*uid://b8iob23ggd7wb"
+GerenciadorTutorial="*uid://dabakuj6oaonu"
 
 [display]
 
