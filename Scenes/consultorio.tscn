@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" uid="uid://0o4cmvic22xc" path="res://Scripts/jogo.gd" id="1_awqe4"]
 [ext_resource type="Texture2D" uid="uid://ba0sqsid8x5u2" path="res://Sprites/Consultorio/BG-Triagem-Background-1.png" id="2_a458u"]
-[ext_resource type="Texture2D" uid="uid://bhrnbobtx5f6f" path="res://Sprites/Itens/Sprites/Consultorio/Asset-mesa.png" id="2_g4wke"]
+[ext_resource type="Texture2D" uid="uid://bhrnbobtx5f6f" path="res://Sprites/Consultorio/Asset-mesa.png" id="2_g4wke"]
 [ext_resource type="Script" uid="uid://ca5g004rutooj" path="res://Scripts/bases/base_ferramenta.gd" id="3_rom7i"]
-[ext_resource type="Texture2D" uid="uid://dc31nx3t7ykpy" path="res://Sprites/Itens/Sprites/Consultorio/Asset-Computador.png" id="4_di5os"]
+[ext_resource type="Texture2D" uid="uid://dc31nx3t7ykpy" path="res://Sprites/Consultorio/Asset-Computador.png" id="4_di5os"]
 [ext_resource type="Script" uid="uid://itbqlswh6fpa" path="res://Scripts/botoes/misc_botao_guia_medico.gd" id="7_di5os"]
 [ext_resource type="Script" uid="uid://d4kngs7imchxc" path="res://Scripts/botoes/misc_botao_paciente.gd" id="7_ohx81"]
-[ext_resource type="Texture2D" uid="uid://cywfw6yposjtl" path="res://Sprites/Itens/Sprites/Consultorio/as-botao-proximo.png" id="8_bry8b"]
+[ext_resource type="Texture2D" uid="uid://cywfw6yposjtl" path="res://Sprites/Consultorio/as-botao-proximo.png" id="8_bry8b"]
 [ext_resource type="Script" uid="uid://bfybp1wmp1g7n" path="res://Scripts/elementos_unicos/ui_relogio.gd" id="8_y03mb"]
 [ext_resource type="Script" uid="uid://du3atu4w2vx44" path="res://Scripts/botoes/misc_botao_computador.gd" id="9_fiu4m"]
-[ext_resource type="Texture2D" uid="uid://brrbtj84qepm8" path="res://Sprites/Itens/Sprites/Consultorio/as-guia-triagem.png" id="10_5b7p0"]
+[ext_resource type="Texture2D" uid="uid://brrbtj84qepm8" path="res://Sprites/Consultorio/as-guia-triagem.png" id="10_5b7p0"]
 [ext_resource type="Script" uid="uid://2u4owainhy2a" path="res://Scripts/botoes/misc_botao_gaveta.gd" id="11_sus7i"]
 [ext_resource type="Texture2D" uid="uid://c5pa0my7fspky" path="res://Sprites/Consultorio/Asset-gaveta.png" id="12_sus7i"]
-[ext_resource type="Texture2D" uid="uid://ckk3sty7lopt1" path="res://Sprites/Itens/Sprites/Consultorio/Asset-Teclado.png" id="13_35mpl"]
+[ext_resource type="Texture2D" uid="uid://ckk3sty7lopt1" path="res://Sprites/Consultorio/Asset-Teclado.png" id="13_35mpl"]
 [ext_resource type="Script" uid="uid://bdp8avpktrrfq" path="res://Scripts/gerenciadores/gerenciador_guia_medico.gd" id="13_68eyn"]
 [ext_resource type="Texture2D" uid="uid://cjnuaxjs5ka4f" path="res://Sprites/Itens/LavaDust_SP.webp" id="13_m8hxt"]
 [ext_resource type="Texture2D" uid="uid://cg6p541lhh0ud" path="res://Sprites/Itens/asset-termometro.png" id="14_tx7yx"]
@@ -31,8 +31,7 @@
 [ext_resource type="Script" uid="uid://n06qucq7ewu2" path="res://Scripts/bases/base_paciente.gd" id="21_8qrdh"]
 [ext_resource type="Resource" uid="uid://bi7e0xy1q701g" path="res://Arquivos/Ingredientes/barbatanaCoral.tres" id="22_rfb5r"]
 [ext_resource type="Texture2D" uid="uid://b0sfth4qyqon7" path="res://Sprites/Medicacao/bg-sala-de-medicacao.png" id="23_3g3my"]
-[ext_resource type="Texture2D" uid="uid://8xtfxor3jb2c" path="res://Sprites/Itens/Sprites/Interface/Asset-seta-direita.png" id="23_qxvvp"]
-[ext_resource type="Texture2D" uid="uid://dk355atcnqddn" path="res://Sprites/Itens/StrangeDiamond_SP.webp" id="23_u3sce"]
+[ext_resource type="Texture2D" uid="uid://8xtfxor3jb2c" path="res://Sprites/Interface/Asset-seta-direita.png" id="23_qxvvp"]
 [ext_resource type="Resource" uid="uid://o0hkqanocu20" path="res://Arquivos/Ingredientes/boldo.tres" id="24_entb7"]
 [ext_resource type="Texture2D" uid="uid://cwth1dogt653y" path="res://Sprites/Medicacao/as-armario-medicacao.png" id="24_qxvvp"]
 [ext_resource type="Script" uid="uid://behrb5q1b1tm5" path="res://Scripts/elementos_unicos/prateleira.gd" id="24_woriu"]
@@ -42,8 +41,10 @@
 [ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/guaco.tres" id="27_35mpl"]
 [ext_resource type="Resource" uid="uid://b0prxwh6t0avb" path="res://Arquivos/Ingredientes/lunaflora.tres" id="28_c77ts"]
 [ext_resource type="Script" uid="uid://d0say87ac1gdf" path="res://Scripts/bases/base_ingrediente_item.gd" id="30_y2fjk"]
+[ext_resource type="Texture2D" uid="uid://ca0n2uqxfgew3" path="res://Sprites/Ingredientes/ing-rosa-retorcida.png" id="31_iqm3v"]
 [ext_resource type="Texture2D" uid="uid://c3nfyl3xpqmnx" path="res://Sprites/Medicacao/as-bandeja-medicacao.png" id="32_lq0xw"]
 [ext_resource type="Texture2D" uid="uid://cfe4bbekduqnj" path="res://Sprites/Asset-mesa-medicacao.png" id="32_tx7yx"]
+[ext_resource type="Texture2D" uid="uid://dm255hjcvfx1l" path="res://Sprites/Ingredientes/ing-raizLobo.png" id="33_kr12s"]
 [ext_resource type="Resource" uid="uid://12chkxqnr8wa" path="res://Arquivos/Ingredientes/raizLobo.tres" id="34_8fjy6"]
 [ext_resource type="Texture2D" uid="uid://d2vlmxfsfhhx6" path="res://Sprites/Medicacao/as-botao-msitura.png" id="34_sg2tu"]
 [ext_resource type="Resource" uid="uid://c807ygh72pr8x" path="res://Arquivos/Ingredientes/rosaRetorcida.tres" id="35_2wcxv"]
@@ -96,8 +97,8 @@ radius = 70.178345
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35mpl"]
 size = Vector2(70, 100)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_u3sce"]
-radius = 25.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqm3v"]
+size = Vector2(80, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcjup"]
 size = Vector2(142, 66)
@@ -112,6 +113,7 @@ size = Vector2(50, 60)
 script = ExtResource("1_awqe4")
 
 [node name="Consultorio" type="Node2D" parent="." unique_id=1692091092]
+visible = false
 
 [node name="Mundo" type="Node2D" parent="Consultorio" unique_id=1721655371]
 position = Vector2(512, 288)
@@ -359,116 +361,124 @@ shape = SubResource("RectangleShape2D_35mpl")
 [node name="Ingredientes" type="Node2D" parent="AlaMedicacao/Mundo/Prateleira" unique_id=194393107]
 
 [node name="Gengibre" type="Node2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes" unique_id=1164112128]
-position = Vector2(-140, -224)
+position = Vector2(-141, -236)
 script = ExtResource("30_y2fjk")
 ingrediente = ExtResource("26_cotw5")
 
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Gengibre" unique_id=337842397]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("23_u3sce")
+scale = Vector2(2, 2)
+texture = ExtResource("31_iqm3v")
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Gengibre" unique_id=330308984]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Gengibre/Area2D" unique_id=67581198]
-shape = SubResource("CircleShape2D_u3sce")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_iqm3v")
 
 [node name="Boldo" type="Node2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes" unique_id=1801774076]
-position = Vector2(140, -224)
+position = Vector2(140, -236)
 script = ExtResource("30_y2fjk")
 ingrediente = ExtResource("24_entb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Boldo" unique_id=1447100616]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("23_u3sce")
+scale = Vector2(2, 2)
+texture = ExtResource("33_kr12s")
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Boldo" unique_id=1736680338]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Boldo/Area2D" unique_id=849422682]
-shape = SubResource("CircleShape2D_u3sce")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_iqm3v")
 
 [node name="BarbatanaCoral" type="Node2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes" unique_id=355323890]
-position = Vector2(-140, -144)
+position = Vector2(-141, -156)
 script = ExtResource("30_y2fjk")
 ingrediente = ExtResource("22_rfb5r")
 
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/BarbatanaCoral" unique_id=1175135104]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("23_u3sce")
+scale = Vector2(2, 2)
+texture = ExtResource("33_kr12s")
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/BarbatanaCoral" unique_id=1016499731]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/BarbatanaCoral/Area2D" unique_id=1113827799]
-shape = SubResource("CircleShape2D_u3sce")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_iqm3v")
 
 [node name="CascaJatoba" type="Node2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes" unique_id=176186715]
-position = Vector2(0, -64)
+position = Vector2(0, -76)
 script = ExtResource("30_y2fjk")
 ingrediente = ExtResource("25_2qrwj")
 
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/CascaJatoba" unique_id=218619955]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("23_u3sce")
+scale = Vector2(2, 2)
+texture = ExtResource("33_kr12s")
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/CascaJatoba" unique_id=889264846]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/CascaJatoba/Area2D" unique_id=243682445]
-shape = SubResource("CircleShape2D_u3sce")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_iqm3v")
 
 [node name="RosaRetorcida" type="Node2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes" unique_id=550680979]
-position = Vector2(140, -64)
+position = Vector2(140, -76)
 script = ExtResource("30_y2fjk")
 ingrediente = ExtResource("35_2wcxv")
 
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RosaRetorcida" unique_id=372533318]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("23_u3sce")
+scale = Vector2(2, 2)
+texture = ExtResource("33_kr12s")
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RosaRetorcida" unique_id=306761841]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RosaRetorcida/Area2D" unique_id=369486483]
-shape = SubResource("CircleShape2D_u3sce")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_iqm3v")
 
 [node name="RaizLobo" type="Node2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes" unique_id=1275872864]
-position = Vector2(-140, 16)
+position = Vector2(-141, 4)
 script = ExtResource("30_y2fjk")
 ingrediente = ExtResource("34_8fjy6")
 
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RaizLobo" unique_id=1371344730]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("23_u3sce")
+scale = Vector2(2, 2)
+texture = ExtResource("33_kr12s")
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RaizLobo" unique_id=453095192]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RaizLobo/Area2D" unique_id=900027863]
-shape = SubResource("CircleShape2D_u3sce")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_iqm3v")
 
 [node name="LunaFlora" type="Node2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes" unique_id=1417313139]
-position = Vector2(-140, 96)
+position = Vector2(-141, 84)
 script = ExtResource("30_y2fjk")
 ingrediente = ExtResource("28_c77ts")
 
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/LunaFlora" unique_id=2073480155]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("23_u3sce")
+scale = Vector2(2, 2)
+texture = ExtResource("33_kr12s")
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/LunaFlora" unique_id=1719495939]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/LunaFlora/Area2D" unique_id=795514882]
-shape = SubResource("CircleShape2D_u3sce")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_iqm3v")
 
 [node name="Guaco" type="Node2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes" unique_id=857156086]
-position = Vector2(140, 96)
+position = Vector2(140, 84)
 script = ExtResource("30_y2fjk")
 ingrediente = ExtResource("27_35mpl")
 
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Guaco" unique_id=328318720]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("23_u3sce")
+scale = Vector2(2, 2)
+texture = ExtResource("33_kr12s")
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Guaco" unique_id=1016564139]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Guaco/Area2D" unique_id=2015727186]
-shape = SubResource("CircleShape2D_u3sce")
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_iqm3v")
 
 [node name="Mesa" type="Node2D" parent="AlaMedicacao/Mundo" unique_id=534974411]
 position = Vector2(219.485, 195)
@@ -524,21 +534,6 @@ texture = ExtResource("35_tx7yx")
 shape = SubResource("RectangleShape2D_sus7i")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=443326532]
-
-[node name="Feedback" type="Control" parent="CanvasLayer" unique_id=246263109]
-visible = false
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="BotoesIr" type="Control" parent="CanvasLayer" unique_id=1121307717]
 layout_mode = 3
@@ -621,6 +616,7 @@ size_flags_horizontal = 4
 text = "Trivia"
 
 [node name="DialogoUI" type="Control" parent="CanvasLayer" unique_id=1456738825]
+visible = false
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -662,7 +658,7 @@ autowrap_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TooltipInfoUI" type="Control" parent="CanvasLayer" unique_id=305541104]
+[node name="TooltipInfoUI" type="Control" parent="CanvasLayer" unique_id=305541104 node_paths=PackedStringArray("aviso")]
 visible = false
 layout_mode = 3
 anchors_preset = 8
@@ -678,6 +674,8 @@ script = ExtResource("38_pcjup")
 estilo_ferramenta = ExtResource("38_p1qu6")
 estilo_item = ExtResource("39_m8hxt")
 estilo_porcent = ExtResource("40_krrc6")
+aviso = NodePath("../Feedback")
+estilo_aviso = ExtResource("38_p1qu6")
 
 [node name="Fundo" type="PanelContainer" parent="CanvasLayer/TooltipInfoUI" unique_id=1805000333]
 custom_minimum_size = Vector2(100, 50)
@@ -695,7 +693,7 @@ mouse_filter = 2
 layout_mode = 2
 text = "testes"
 
-[node name="GuiaMedico" type="Control" parent="CanvasLayer" unique_id=266620421]
+[node name="GuiaMedico" type="Control" parent="CanvasLayer" unique_id=266620421 node_paths=PackedStringArray("pagina_noticia", "pagina_sumario", "pagina_doenca")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -704,6 +702,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("13_68eyn")
+pagina_noticia = NodePath("PainelPaginas/PaginaNoticias")
+pagina_sumario = NodePath("PainelPaginas/SumarioDoencas")
+pagina_doenca = NodePath("PainelPaginas/PaginaDoenca")
 
 [node name="PainelPaginas" type="Control" parent="CanvasLayer/GuiaMedico" unique_id=11819212]
 layout_mode = 1
@@ -1271,6 +1272,31 @@ size_flags_vertical = 4
 texture_normal = ExtResource("18_fiu4m")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="Feedback" type="Control" parent="CanvasLayer" unique_id=246263109]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="PanelContainer" parent="CanvasLayer/Feedback" unique_id=90187643]
+layout_mode = 0
+offset_left = -492.0
+offset_top = -280.0
+offset_right = -452.0
+offset_bottom = -240.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Feedback/Fundo" unique_id=908604401]
+layout_mode = 2
 
 [node name="TransicaoSombra" type="TextureRect" parent="CanvasLayer" unique_id=104916624]
 visible = false

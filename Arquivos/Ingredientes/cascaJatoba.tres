@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://dhm1km3iqkevt"]
 
 [ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_1jmtv"]
-[ext_resource type="Texture2D" uid="uid://cuhajha445olm" path="res://Sprites/Itens/Indigonium_SP.webp" id="2_cvns5"]
+[ext_resource type="Texture2D" uid="uid://dm255hjcvfx1l" path="res://Sprites/Ingredientes/ing-raizLobo.png" id="2_1hbgq"]
 
 [resource]
 script = ExtResource("1_1jmtv")
 nome = "Casca de Jatobá"
 descricao = "Ao retirar a casca do Jatobá e expô-la ao ar, a casca libera uma seiva pegajosa e grudenta, pode servir de base para xaropes medicinais.
 Já o bagaço do Jatobá é rica em proteinas e expectorante naturais, e eram normalmente utilizados para tratar doenças pulmonares."
-textura = ExtResource("2_cvns5")
+textura = ExtResource("2_1hbgq")

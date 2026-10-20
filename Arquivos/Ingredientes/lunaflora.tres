@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://b0prxwh6t0avb"]
 
 [ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_7h16h"]
-[ext_resource type="Texture2D" uid="uid://ca604jgh3cvg0" path="res://Sprites/Itens/DeepBrine_SP.webp" id="2_mwb1d"]
+[ext_resource type="Texture2D" uid="uid://s2tyvemkv1ad" path="res://Sprites/Ingredientes/ing-greystone.png" id="2_nidt0"]
 
 [resource]
 script = ExtResource("1_7h16h")
 nome = "Lunaflora"
 descricao = "Sementes de Lunaflora colhidas na primeira lua cheia servem como um sedativo. Suas petalas podem ser utilizada para atrasar a ação de certas doenças graves. Raramente os medicamentos brilham quando incorporado na mistura, mas isso foi um rumor da época"
-textura = ExtResource("2_mwb1d")
+textura = ExtResource("2_nidt0")

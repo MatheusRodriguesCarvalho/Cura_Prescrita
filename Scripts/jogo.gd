@@ -12,6 +12,8 @@ const DURACAO_FASE := 0.35
 @onready var paciente: Paciente = $Consultorio/Mundo/Paciente
 @onready var sombra: TextureRect = $CanvasLayer/TransicaoSombra
 
+@export var musica_cena: String = "consultorio"  ## subpasta em Sons/Musicas; vazio = sem música
+
 ## var paciente_atual: Paciente = null
 ## var atendimento_concluido: bool = false
 var _em_transicao := false
@@ -37,6 +39,9 @@ func _ready() -> void:
 	
 	GerenciadorPausa.habilitar(true)
 	
+	if musica_cena != "":
+		GerenciadorAudio.tocar_musica_cena(musica_cena, true)
+	
 	_avisar_guia_atualizado()
 
 func _exit_tree() -> void:
@@ -53,6 +58,8 @@ func ir_para_consultorio() -> void:
 func _trocar_sala(para_medicacao: bool) -> void:
 	if _em_transicao:
 		return
+	
+	GerenciadorAudio.tocar("troca")
 	_em_transicao = true
 	
 	# Esconde ambos os botões durante o wipe; _aplicar_troca mostra o certo

@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://bi7e0xy1q701g"]
 
 [ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_lxcwf"]
-[ext_resource type="Texture2D" uid="uid://duxh1eur4ghhh" path="res://Sprites/Itens/Jellystone_SP.webp" id="2_l63nd"]
+[ext_resource type="Texture2D" uid="uid://dm255hjcvfx1l" path="res://Sprites/Ingredientes/ing-raizLobo.png" id="2_ix3p3"]
 
 [resource]
 script = ExtResource("1_lxcwf")
 nome = "Barbatana-Coral"
 descricao = "Era abundante no país que colonizou Niglum, até sua produção ser prejudicada pela mudança climática. Apresenta uma casca firme, que ao ser processada pode tratar infecções, e uma polpa macia, ideal para criar pomadas."
-textura = ExtResource("2_l63nd")
+textura = ExtResource("2_ix3p3")

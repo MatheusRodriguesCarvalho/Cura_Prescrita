@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://cjxhsdb5wjfpa"]
+
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="1_kyxfe"]
+
+[resource]
+script = ExtResource("1_kyxfe")
+texto = "Chame o primeiro paciente."
+alvo = "Consultorio/Mundo/Mesa/Botao"
+evento_conclusao = "paciente_chamado"
+metadata/_custom_type_script = "uid://inp00is72umr"

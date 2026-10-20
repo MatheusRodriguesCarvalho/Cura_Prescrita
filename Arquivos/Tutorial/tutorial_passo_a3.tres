@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://gp5qrheopydp"]
+
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="1_iqtrw"]
+
+[resource]
+script = ExtResource("1_iqtrw")
+narrador = "teste"
+texto = "testes"
+alvo = "$Consultorio/Mundo/Mesa/Gaveta"
+metadata/_custom_type_script = "uid://inp00is72umr"

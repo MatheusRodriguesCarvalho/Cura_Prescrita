@@ -3,7 +3,7 @@ extends Node
 
 
 signal mostrar(texto: String, estilo: String)
-
+signal aviso(texto: String)
 signal esconder
 
 

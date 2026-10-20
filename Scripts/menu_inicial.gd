@@ -17,25 +17,26 @@ const CENA_JOGO := "res://Scenes/consultorio.tscn"
 
 func _ready() -> void:
 	GerenciadorAudio.tocar_musica_cena("menu")
-
+	
 	## Continuar só existe se um jogo já foi iniciado nesta sessão.
 	BotaoContinuar.visible = GerenciadorPacientes.jogo_iniciado
-
+	
 	BotaoIniciar.pressed.connect(_on_iniciar_pressed)
 	BotaoContinuar.pressed.connect(_on_continuar_pressed)
 	BotaoOpcoes.pressed.connect(_on_opcoes_pressed)
 	BotaoGuia.pressed.connect(_on_guia_pressed)
 	BotaoCreditos.pressed.connect(_on_creditos_pressed)
 	BotaoSair.pressed.connect(_on_sair_pressed)
-
+	
 	painel_opcoes.hide()
 	painel_guia.hide()
 	painel_creditos.hide()
 	fundo.hide()
-
+	
+	painel_opcoes.get_node("VBoxContainer/BotaoFechar").pressed.connect(_on_botao_fechar)
 	painel_guia.get_node("BotaoFechar").pressed.connect(_on_botao_fechar)
 	painel_creditos.get_node("BotaoFechar").pressed.connect(_on_botao_fechar)
-
+	
 	## O fundo escuro acompanha qualquer painel aberto (inclusive o de opções, que
 	## se esconde sozinho em menu_painel_opcoes.gd) e bloqueia os botões do menu.
 	for painel in [painel_opcoes, painel_guia, painel_creditos]:

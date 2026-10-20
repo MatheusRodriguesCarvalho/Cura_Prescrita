@@ -1,20 +1,19 @@
 ## Bandeija
-##
-##
-##
-##
-##
 class_name Bandeja
 extends Node2D
 
 const MAX_INGREDIENTES = 8
-const TAMANHO_SLOT := Vector2(16, 32)
+const TAMANHO_SLOT := Vector2(16, 16)
 const COLUNAS := 4
+const LINHAS := ceili(float(MAX_INGREDIENTES) / COLUNAS)  ## 8 / 4 = 2
+
+@export var deslocamento_grade := Vector2.ZERO
+
+@onready var area: Area2D = $Area2D
 
 ## Dicionario de Ingredientes: que aponta para as quantidades. "boldo": 2...
 var conteudo: Dictionary = {}
 
-@onready var area: Area2D = $Area2D
 
 func _ready() -> void:
 	area.mouse_entered.connect(_on_mouse_entered)
@@ -38,10 +37,23 @@ func adicionar(ingrediente: Ingrediente) -> bool:
 func _criar_icone_visual(ingrediente: Ingrediente, indice: int) -> void:
 	var icone := Sprite2D.new()
 	icone.texture = ingrediente.textura
-	icone.scale = Vector2(0.1, 0.1)
+	icone.scale = Vector2(0.75, 0.75)
 	
-	icone.position = Vector2(indice % COLUNAS, indice / COLUNAS) * TAMANHO_SLOT
+	## icone.position = Vector2(indice % COLUNAS, indice / COLUNAS) * TAMANHO_SLOT
+	icone.position = _posicao_do_slot(indice)
+	
 	add_child(icone)
+
+func _posicao_do_slot(indice: int) -> Vector2:
+	var coluna := indice % COLUNAS
+	var linha := indice / COLUNAS
+	## Subtrai metade da grade (em slots) para centralizar no origem do nó.
+	var centrado := Vector2(
+		coluna - (COLUNAS - 1) / 2.0,
+		linha - (LINHAS - 1) / 2.0
+	)
+	return centrado * TAMANHO_SLOT + deslocamento_grade
+
 
 func calcular_proporcoes() -> Dictionary:
 	var total := total_ingredientes()
