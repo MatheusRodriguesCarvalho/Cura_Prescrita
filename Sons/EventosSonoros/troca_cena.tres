@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://cfx6ngj0qe1p8"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_qgkle"]
+[ext_resource type="AudioStream" uid="uid://saf5yl36n20i" path="res://Sons/Efeitos/troca_cena/cadeira_giro1.mp3" id="2_sasd3"]
+[ext_resource type="AudioStream" uid="uid://btrn2se61qdrx" path="res://Sons/Efeitos/troca_cena/cadeira_giro2.mp3" id="3_tajvo"]
+[ext_resource type="AudioStream" uid="uid://co7mgmt5ranal" path="res://Sons/Efeitos/troca_cena/cadeira_giro3.mp3" id="4_njabb"]
+[ext_resource type="AudioStream" uid="uid://dx475wvpxxdx6" path="res://Sons/Efeitos/troca_cena/cadeira_giro4.mp3" id="5_wohdf"]
+[ext_resource type="AudioStream" uid="uid://c2uabr0mnoc44" path="res://Sons/Efeitos/troca_cena/cadeira_giro5.mp3" id="6_0fng4"]
+
+[resource]
+script = ExtResource("1_qgkle")
+nome = "troca"
+variacoes = Array[AudioStream]([ExtResource("2_sasd3"), ExtResource("3_tajvo"), ExtResource("4_njabb"), ExtResource("5_wohdf"), ExtResource("6_0fng4")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"

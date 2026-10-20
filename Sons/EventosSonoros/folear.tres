@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://bcc0s01418tw6"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_gb3f2"]
+[ext_resource type="AudioStream" uid="uid://cy1af25m0hhue" path="res://Sons/Efeitos/folhear/folha1.mp3" id="2_wc7dt"]
+[ext_resource type="AudioStream" uid="uid://b5m6q1tgj3sik" path="res://Sons/Efeitos/folhear/folha2.mp3" id="3_gb3f2"]
+[ext_resource type="AudioStream" uid="uid://dccdd5mgpxoil" path="res://Sons/Efeitos/folhear/folha3.mp3" id="4_mk8w0"]
+[ext_resource type="AudioStream" uid="uid://4e2414n720sf" path="res://Sons/Efeitos/folhear/folha4.mp3" id="5_mjcpp"]
+[ext_resource type="AudioStream" uid="uid://nusgdcvneisx" path="res://Sons/Efeitos/folhear/folha5.mp3" id="6_1nqac"]
+[ext_resource type="AudioStream" uid="uid://o14s24br6lhw" path="res://Sons/Efeitos/folhear/folha6.mp3" id="7_x7yx0"]
+
+[resource]
+script = ExtResource("1_gb3f2")
+nome = "folear"
+variacoes = Array[AudioStream]([ExtResource("2_wc7dt"), ExtResource("3_gb3f2"), ExtResource("4_mk8w0"), ExtResource("5_mjcpp"), ExtResource("6_1nqac"), ExtResource("7_x7yx0")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"

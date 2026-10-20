@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://wxn2e4tctyj"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_2aiqy"]
+[ext_resource type="AudioStream" uid="uid://c0ks557t5fdem" path="res://Sons/Efeitos/clique_botao/click2.mp3" id="3_x6k4t"]
+[ext_resource type="AudioStream" uid="uid://cy7w5qgf1ffnr" path="res://Sons/Efeitos/clique_botao/click4.mp3" id="5_hlelt"]
+[ext_resource type="AudioStream" uid="uid://cnn30dn3uylox" path="res://Sons/Efeitos/clique_botao/click5.mp3" id="6_bhtak"]
+[ext_resource type="AudioStream" uid="uid://c5epthrk1kic1" path="res://Sons/Efeitos/clique_botao/click7.mp3" id="8_t3moa"]
+
+[resource]
+script = ExtResource("1_2aiqy")
+nome = "clique"
+variacoes = Array[AudioStream]([ExtResource("3_x6k4t"), ExtResource("5_hlelt"), ExtResource("6_bhtak"), ExtResource("8_t3moa")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"

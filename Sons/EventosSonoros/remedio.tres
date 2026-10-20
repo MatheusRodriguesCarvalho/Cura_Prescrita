@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://ba4fnsjd8ueum"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_qdj51"]
+[ext_resource type="AudioStream" uid="uid://d05fxe7xxjkh3" path="res://Sons/Efeitos/ingredientes/gole.mp3" id="2_withq"]
+[ext_resource type="AudioStream" uid="uid://c116hyvaubfmm" path="res://Sons/Efeitos/ingredientes/pote.mp3" id="3_7p7qw"]
+
+[resource]
+script = ExtResource("1_qdj51")
+nome = "remedio"
+variacoes = Array[AudioStream]([ExtResource("2_withq"), ExtResource("3_7p7qw")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"

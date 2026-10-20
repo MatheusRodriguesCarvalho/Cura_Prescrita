@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://bygktbk2cebt6"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_vfg8a"]
+[ext_resource type="AudioStream" uid="uid://cfkwntpv6oygj" path="res://Sons/Efeitos/fala/fofo1.mp3" id="2_g2wpb"]
+[ext_resource type="AudioStream" uid="uid://cfq6rlxxdp1r0" path="res://Sons/Efeitos/fala/fofo2.mp3" id="3_ppbeo"]
+[ext_resource type="AudioStream" uid="uid://byxqurfut5isg" path="res://Sons/Efeitos/fala/fofo3.mp3" id="4_70mqr"]
+[ext_resource type="AudioStream" uid="uid://c6lhqg5bbxvj8" path="res://Sons/Efeitos/fala/fofo4.mp3" id="5_l3itb"]
+[ext_resource type="AudioStream" uid="uid://din7pw15qe7gh" path="res://Sons/Efeitos/fala/fofo5.mp3" id="6_tm4db"]
+[ext_resource type="AudioStream" uid="uid://cv7x6qstsd635" path="res://Sons/Efeitos/fala/fofo6.mp3" id="7_fbeba"]
+[ext_resource type="AudioStream" uid="uid://bef45y7rly4eo" path="res://Sons/Efeitos/fala/fofo7.mp3" id="8_lom0p"]
+[ext_resource type="AudioStream" uid="uid://cmlga4uu77f60" path="res://Sons/Efeitos/fala/fofo8.mp3" id="9_slsas"]
+
+[resource]
+script = ExtResource("1_vfg8a")
+nome = "fala"
+variacoes = Array[AudioStream]([ExtResource("2_g2wpb"), ExtResource("3_ppbeo"), ExtResource("4_70mqr"), ExtResource("5_l3itb"), ExtResource("6_tm4db"), ExtResource("7_fbeba"), ExtResource("8_lom0p"), ExtResource("9_slsas")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"
