@@ -1,36 +1,33 @@
 [gd_scene format=3 uid="uid://dlkiav61t2p80"]
 
 [ext_resource type="Script" uid="uid://0o4cmvic22xc" path="res://Scripts/jogo.gd" id="1_awqe4"]
+[ext_resource type="Resource" uid="uid://t4qb1tgt51rq" path="res://Arquivos/Tutorial/sequancia_tutorial_1.tres" id="2_7uh5f"]
 [ext_resource type="Texture2D" uid="uid://ba0sqsid8x5u2" path="res://Sprites/Consultorio/BG-Triagem-Background-1.png" id="2_a458u"]
 [ext_resource type="Texture2D" uid="uid://bhrnbobtx5f6f" path="res://Sprites/Consultorio/Asset-mesa.png" id="2_g4wke"]
 [ext_resource type="Script" uid="uid://ca5g004rutooj" path="res://Scripts/bases/base_ferramenta.gd" id="3_rom7i"]
-[ext_resource type="Texture2D" uid="uid://dc31nx3t7ykpy" path="res://Sprites/Consultorio/Asset-Computador.png" id="4_di5os"]
 [ext_resource type="Script" uid="uid://itbqlswh6fpa" path="res://Scripts/botoes/misc_botao_guia_medico.gd" id="7_di5os"]
 [ext_resource type="Script" uid="uid://d4kngs7imchxc" path="res://Scripts/botoes/misc_botao_paciente.gd" id="7_ohx81"]
 [ext_resource type="Texture2D" uid="uid://cywfw6yposjtl" path="res://Sprites/Consultorio/as-botao-proximo.png" id="8_bry8b"]
 [ext_resource type="Script" uid="uid://bfybp1wmp1g7n" path="res://Scripts/elementos_unicos/ui_relogio.gd" id="8_y03mb"]
 [ext_resource type="Script" uid="uid://du3atu4w2vx44" path="res://Scripts/botoes/misc_botao_computador.gd" id="9_fiu4m"]
 [ext_resource type="Texture2D" uid="uid://brrbtj84qepm8" path="res://Sprites/Consultorio/as-guia-triagem.png" id="10_5b7p0"]
+[ext_resource type="Texture2D" uid="uid://c4jcedw3hci7g" path="res://Sprites/Asset-Computador.png" id="10_jte4k"]
 [ext_resource type="Script" uid="uid://2u4owainhy2a" path="res://Scripts/botoes/misc_botao_gaveta.gd" id="11_sus7i"]
 [ext_resource type="Texture2D" uid="uid://c5pa0my7fspky" path="res://Sprites/Consultorio/Asset-gaveta.png" id="12_sus7i"]
 [ext_resource type="Texture2D" uid="uid://ckk3sty7lopt1" path="res://Sprites/Consultorio/Asset-Teclado.png" id="13_35mpl"]
 [ext_resource type="Script" uid="uid://bdp8avpktrrfq" path="res://Scripts/gerenciadores/gerenciador_guia_medico.gd" id="13_68eyn"]
-[ext_resource type="Texture2D" uid="uid://cjnuaxjs5ka4f" path="res://Sprites/Itens/LavaDust_SP.webp" id="13_m8hxt"]
 [ext_resource type="Texture2D" uid="uid://cg6p541lhh0ud" path="res://Sprites/Itens/asset-termometro.png" id="14_tx7yx"]
 [ext_resource type="Texture2D" uid="uid://bcouoh7s0l5hx" path="res://Sprites/Itens/asset-oximetro.png" id="15_sus7i"]
-[ext_resource type="Texture2D" uid="uid://hhms1jma723t" path="res://Sprites/Pacientes/slimecrystalsr2.png" id="15_wxndb"]
 [ext_resource type="Texture2D" uid="uid://e84o6yis3o8w" path="res://Sprites/Itens/asset-meddor-de-pressao.png" id="16_8qrdh"]
-[ext_resource type="Texture2D" uid="uid://clui6pk6cptoy" path="res://Sprites/Pacientes/slimehoneysr2.png" id="16_luitd"]
 [ext_resource type="Texture2D" uid="uid://bt8irmfsa3mll" path="res://Sprites/Itens/Asset-Relógio-base.png" id="17_esrar"]
 [ext_resource type="Script" uid="uid://e8aewvytrp1x" path="res://Scripts/gerenciadores/gerenciador_ficha_paciente.gd" id="17_g4p2u"]
 [ext_resource type="Script" uid="uid://f2wg8pft35jp" path="res://Scripts/elementos_unicos/lixeira.gd" id="18_cotw5"]
-[ext_resource type="Texture2D" uid="uid://dtpmedvcm5wou" path="res://Sprites/Pacientes/glitchslimesp.png" id="18_fiu4m"]
 [ext_resource type="Texture2D" uid="uid://j2gmbsefkuer" path="res://Sprites/Itens/ass-ponteiro-maior.png" id="18_sus7i"]
 [ext_resource type="Texture2D" uid="uid://cxwerhginygg4" path="res://Sprites/Itens/ass-ponteiro-menor.png" id="19_8qrdh"]
-[ext_resource type="Texture2D" uid="uid://dslpxk46jiljd" path="res://Sprites/Pacientes/honeyslimesecretstylesp.png" id="19_itpl7"]
 [ext_resource type="Script" uid="uid://n06qucq7ewu2" path="res://Scripts/bases/base_paciente.gd" id="21_8qrdh"]
 [ext_resource type="Resource" uid="uid://bi7e0xy1q701g" path="res://Arquivos/Ingredientes/barbatanaCoral.tres" id="22_rfb5r"]
 [ext_resource type="Texture2D" uid="uid://b0sfth4qyqon7" path="res://Sprites/Medicacao/bg-sala-de-medicacao.png" id="23_3g3my"]
+[ext_resource type="Texture2D" uid="uid://b4lusuipcs6hx" path="res://Sprites/Pacientes/as-paciente-1-neutro.png" id="23_jte4k"]
 [ext_resource type="Texture2D" uid="uid://8xtfxor3jb2c" path="res://Sprites/Interface/Asset-seta-direita.png" id="23_qxvvp"]
 [ext_resource type="Resource" uid="uid://o0hkqanocu20" path="res://Arquivos/Ingredientes/boldo.tres" id="24_entb7"]
 [ext_resource type="Texture2D" uid="uid://cwth1dogt653y" path="res://Sprites/Medicacao/as-armario-medicacao.png" id="24_qxvvp"]
@@ -38,7 +35,7 @@
 [ext_resource type="Resource" uid="uid://dhm1km3iqkevt" path="res://Arquivos/Ingredientes/cascaJatoba.tres" id="25_2qrwj"]
 [ext_resource type="Texture2D" uid="uid://bwf354k4xtssc" path="res://Sprites/Medicacao/as-caixa-de-descarte.png" id="25_awqe4"]
 [ext_resource type="Resource" uid="uid://b7vwjmlrk8lvk" path="res://Arquivos/Ingredientes/gengibre.tres" id="26_cotw5"]
-[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/guaco.tres" id="27_35mpl"]
+[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/ervaBruxa.tres" id="27_35mpl"]
 [ext_resource type="Resource" uid="uid://b0prxwh6t0avb" path="res://Arquivos/Ingredientes/lunaflora.tres" id="28_c77ts"]
 [ext_resource type="Script" uid="uid://d0say87ac1gdf" path="res://Scripts/bases/base_ingrediente_item.gd" id="30_y2fjk"]
 [ext_resource type="Texture2D" uid="uid://ca0n2uqxfgew3" path="res://Sprites/Ingredientes/ing-rosa-retorcida.png" id="31_iqm3v"]
@@ -58,14 +55,23 @@
 [ext_resource type="Resource" uid="uid://cseigo8vibwra" path="res://settingsConfig/Labels/estilo_item.tres" id="39_m8hxt"]
 [ext_resource type="Script" uid="uid://ctvq5plxlnayn" path="res://Scripts/gerenciadores/g_pagina_sumario_doenca.gd" id="40_2qrwj"]
 [ext_resource type="Resource" uid="uid://btdjnaioxgf6b" path="res://settingsConfig/Labels/estilo_porcent.tres" id="40_krrc6"]
-[ext_resource type="Script" uid="uid://dncikk3rcoduu" path="res://Scripts/ui_dialogo.gd" id="40_rfb5r"]
+[ext_resource type="Script" uid="uid://dncikk3rcoduu" path="res://Scripts/dialogo_ui.gd" id="40_rfb5r"]
 [ext_resource type="Script" uid="uid://1nxd5nawt347" path="res://Scripts/gerenciadores/g_pagina_doenca.gd" id="41_cotw5"]
 [ext_resource type="Script" uid="uid://oetmvnt5vg8x" path="res://Scripts/menu_dialogo.gd" id="41_gs7k1"]
 [ext_resource type="LabelSettings" uid="uid://yqoul1ux1pt7" path="res://settingsConfig/Labels/Label teste tit.tres" id="45_pl0t7"]
 [ext_resource type="LabelSettings" uid="uid://do8nnc3kjaxqw" path="res://settingsConfig/Labels/Label teste.tres" id="46_gs7k1"]
 [ext_resource type="StyleBox" uid="uid://wn6ea1sh1ru2" path="res://settingsConfig/Panel/caixa_nome.tres" id="48_m74wk"]
 [ext_resource type="StyleBox" uid="uid://xdvgke34vvx3" path="res://settingsConfig/Panel/caixa_texto.tres" id="49_a458u"]
+[ext_resource type="PackedScene" uid="uid://beip73euy5s2c" path="res://moldes/Instanciaveis/fala_dialogo.tscn" id="50_jte4k"]
+[ext_resource type="Resource" uid="uid://clwkva0hv2tdf" path="res://Arquivos/Dialogo/estilo_paciente.tres" id="51_xkkcq"]
+[ext_resource type="Resource" uid="uid://xxcuti2bg8n8" path="res://Arquivos/Dialogo/estilo_ale.tres" id="52_r07cf"]
+[ext_resource type="Texture2D" uid="uid://b3ue2fhsla7a5" path="res://Sprites/Interface/asset-guia-ui-sem-pauta-1.png" id="58_xkkcq"]
+[ext_resource type="Texture2D" uid="uid://b7kntilhw63lt" path="res://Sprites/Interface/as-seta-voltar-guia-ui-0.png" id="59_r07cf"]
+[ext_resource type="Texture2D" uid="uid://cughnpgcsibso" path="res://Sprites/Interface/as-seta-voltar-guia-ui-1.png" id="60_6q2sd"]
+[ext_resource type="Texture2D" uid="uid://cpw53i5svog6j" path="res://Sprites/Interface/as-seta-ir-guia-ui-0.png" id="61_ie6lr"]
+[ext_resource type="Texture2D" uid="uid://vhb8k4iwqa5h" path="res://Sprites/Interface/as-seta-ir-guia-ui-1.png" id="62_0ix2s"]
 [ext_resource type="Texture2D" uid="uid://dgph6nfwm85db" path="res://Sprites/transição.png" id="62_36tyn"]
+[ext_resource type="Texture2D" uid="uid://bf8d60ot5bdqn" path="res://Sprites/Interface/asset-guia-ui-sem-pauta-3.png" id="65_utoph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68eyn"]
 size = Vector2(42, 46)
@@ -91,8 +97,8 @@ size = Vector2(100, 100)
 [sub_resource type="CircleShape2D" id="CircleShape2D_2wcxv"]
 radius = 31.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sus7i"]
-radius = 70.178345
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1cay"]
+size = Vector2(80, 120)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35mpl"]
 size = Vector2(70, 100)
@@ -109,11 +115,25 @@ size = Vector2(32, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sus7i"]
 size = Vector2(50, 60)
 
-[node name="Jogo" type="Node2D" unique_id=1517671125]
+[node name="Jogo" type="Node2D" unique_id=1517671125 node_paths=PackedStringArray("consultorio", "ala_medicacao", "guia", "dialogoUI", "botao_ir_ala", "botao_ir_consultorio", "paciente", "sombra", "botao_paciente", "botao_guia", "botao_computador", "botao_produzir", "computador", "ficha")]
 script = ExtResource("1_awqe4")
+consultorio = NodePath("Consultorio")
+ala_medicacao = NodePath("AlaMedicacao")
+guia = NodePath("CanvasLayer/GuiaMedico")
+dialogoUI = NodePath("CanvasLayer/DialogoUI")
+botao_ir_ala = NodePath("CanvasLayer/BotoesIr/BotaoIrMedicacao")
+botao_ir_consultorio = NodePath("CanvasLayer/BotoesIr/BotaoIrConsultorio")
+paciente = NodePath("Consultorio/Mundo/Paciente")
+sombra = NodePath("CanvasLayer/TransicaoSombra")
+botao_paciente = NodePath("Consultorio/Mundo/Mesa/Teclado")
+botao_guia = NodePath("Consultorio/Mundo/Mesa/Guia")
+botao_computador = NodePath("Consultorio/Mundo/Mesa/Computador")
+botao_produzir = NodePath("AlaMedicacao/Mundo/Mesa/Produzir")
+computador = NodePath("Consultorio/Mundo/Mesa/Computador")
+ficha = NodePath("CanvasLayer/FichaPaciente")
+seq = ExtResource("2_7uh5f")
 
 [node name="Consultorio" type="Node2D" parent="." unique_id=1692091092]
-visible = false
 
 [node name="Mundo" type="Node2D" parent="Consultorio" unique_id=1721655371]
 position = Vector2(512, 288)
@@ -131,6 +151,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_g4wke")
 
 [node name="Botao" type="Node2D" parent="Consultorio/Mundo/Mesa" unique_id=370170942]
+visible = false
 position = Vector2(-480, -74)
 script = ExtResource("7_ohx81")
 
@@ -164,7 +185,8 @@ ficha = NodePath("../../../../CanvasLayer/FichaPaciente")
 
 [node name="Computador2D" type="Sprite2D" parent="Consultorio/Mundo/Mesa/Computador" unique_id=1397051986]
 scale = Vector2(2, 2)
-texture = ExtResource("4_di5os")
+texture = ExtResource("10_jte4k")
+hframes = 6
 
 [node name="Area2D" type="Area2D" parent="Consultorio/Mundo/Mesa/Computador" unique_id=1432819125]
 position = Vector2(2, -68)
@@ -177,9 +199,9 @@ position = Vector2(133, 169)
 scale = Vector2(0.105, 0.105)
 
 [node name="Sprite2D" type="Sprite2D" parent="Consultorio/Mundo/Mesa/Computador/BotaoDesligar" unique_id=596025763]
-position = Vector2(0, -2)
 rotation = 0.8115781
-texture = ExtResource("13_m8hxt")
+scale = Vector2(3.515, 3.515)
+texture = ExtResource("17_esrar")
 
 [node name="Area2D" type="Area2D" parent="Consultorio/Mundo/Mesa/Computador/BotaoDesligar" unique_id=1080231679]
 
@@ -292,18 +314,19 @@ offset = Vector2(0, -8)
 shape = SubResource("CircleShape2D_2wcxv")
 
 [node name="Paciente" type="Node2D" parent="Consultorio/Mundo" unique_id=1583157704 node_paths=PackedStringArray("menu_dialogo")]
-position = Vector2(-362, -88)
+position = Vector2(-362, -42)
+scale = Vector2(2, 2)
 script = ExtResource("21_8qrdh")
 menu_dialogo = NodePath("../../../CanvasLayer/MenuDialogo")
 
 [node name="Sprite2D" type="Sprite2D" parent="Consultorio/Mundo/Paciente" unique_id=1145876663]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("19_itpl7")
+texture = ExtResource("23_jte4k")
 
 [node name="Area2D" type="Area2D" parent="Consultorio/Mundo/Paciente" unique_id=813801847]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Consultorio/Mundo/Paciente/Area2D" unique_id=30376847]
-shape = SubResource("CircleShape2D_sus7i")
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_u1cay")
 
 [node name="AlaMedicacao" type="Node2D" parent="." unique_id=693155221]
 visible = false
@@ -368,6 +391,7 @@ ingrediente = ExtResource("26_cotw5")
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Gengibre" unique_id=337842397]
 scale = Vector2(2, 2)
 texture = ExtResource("31_iqm3v")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Gengibre" unique_id=330308984]
 
@@ -383,6 +407,7 @@ ingrediente = ExtResource("24_entb7")
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Boldo" unique_id=1447100616]
 scale = Vector2(2, 2)
 texture = ExtResource("33_kr12s")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Boldo" unique_id=1736680338]
 
@@ -398,6 +423,7 @@ ingrediente = ExtResource("22_rfb5r")
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/BarbatanaCoral" unique_id=1175135104]
 scale = Vector2(2, 2)
 texture = ExtResource("33_kr12s")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/BarbatanaCoral" unique_id=1016499731]
 
@@ -413,6 +439,7 @@ ingrediente = ExtResource("25_2qrwj")
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/CascaJatoba" unique_id=218619955]
 scale = Vector2(2, 2)
 texture = ExtResource("33_kr12s")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/CascaJatoba" unique_id=889264846]
 
@@ -428,6 +455,7 @@ ingrediente = ExtResource("35_2wcxv")
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RosaRetorcida" unique_id=372533318]
 scale = Vector2(2, 2)
 texture = ExtResource("33_kr12s")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RosaRetorcida" unique_id=306761841]
 
@@ -443,6 +471,7 @@ ingrediente = ExtResource("34_8fjy6")
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RaizLobo" unique_id=1371344730]
 scale = Vector2(2, 2)
 texture = ExtResource("33_kr12s")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/RaizLobo" unique_id=453095192]
 
@@ -458,6 +487,7 @@ ingrediente = ExtResource("28_c77ts")
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/LunaFlora" unique_id=2073480155]
 scale = Vector2(2, 2)
 texture = ExtResource("33_kr12s")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/LunaFlora" unique_id=1719495939]
 
@@ -473,6 +503,7 @@ ingrediente = ExtResource("27_35mpl")
 [node name="Sprite2D" type="Sprite2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Guaco" unique_id=328318720]
 scale = Vector2(2, 2)
 texture = ExtResource("33_kr12s")
+hframes = 2
 
 [node name="Area2D" type="Area2D" parent="AlaMedicacao/Mundo/Prateleira/Ingredientes/Guaco" unique_id=1016564139]
 
@@ -582,7 +613,7 @@ ignore_texture_size = true
 stretch_mode = 5
 flip_h = true
 
-[node name="MenuDialogo" type="Control" parent="CanvasLayer" unique_id=1368739371]
+[node name="MenuDialogo" type="Control" parent="CanvasLayer" unique_id=1368739371 node_paths=PackedStringArray("lista")]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -590,6 +621,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 8
 script = ExtResource("41_gs7k1")
+lista = NodePath("VBoxContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MenuDialogo" unique_id=2000089573]
 layout_mode = 1
@@ -615,18 +647,40 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Trivia"
 
-[node name="DialogoUI" type="Control" parent="CanvasLayer" unique_id=1456738825]
-visible = false
+[node name="DialogoUI" type="Control" parent="CanvasLayer" unique_id=1456738825 node_paths=PackedStringArray("historico")]
+clip_contents = true
+custom_minimum_size = Vector2(325, 250)
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
+offset_left = -162.5
+offset_right = 162.5
+offset_bottom = 250.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 script = ExtResource("40_rfb5r")
+historico = NodePath("Historico")
+cena_fala = ExtResource("50_jte4k")
+estilo_paciente = ExtResource("51_xkkcq")
+estilo_ale = ExtResource("52_r07cf")
+max_falas = 3
+
+[node name="Historico" type="VBoxContainer" parent="CanvasLayer/DialogoUI" unique_id=801166329]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+alignment = 2
 
 [node name="Campo" type="VBoxContainer" parent="CanvasLayer/DialogoUI" unique_id=1106972555]
+visible = false
 custom_minimum_size = Vector2(150, 350)
 layout_mode = 1
 anchors_preset = 5
@@ -716,7 +770,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PaginaNoticias" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=2056993262]
+[node name="PaginaNoticias" type="Control" parent="CanvasLayer/GuiaMedico/PainelPaginas" unique_id=2056993262 node_paths=PackedStringArray("noticia_atual", "noticias_anteriores")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -727,22 +781,24 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("38_u3sce")
+noticia_atual = NodePath("DivRegras/NoticiaAtual")
+noticias_anteriores = NodePath("DivRegras/Scroll/NoticiasAnteriores")
 
-[node name="Fundo" type="ColorRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaNoticias" unique_id=511172107]
-custom_minimum_size = Vector2(400, 500)
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaNoticias" unique_id=711945402]
+custom_minimum_size = Vector2(520, 580)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.38039216, 1, 1)
+texture = ExtResource("58_xkkcq")
 
 [node name="DivRegras" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaNoticias" unique_id=1848770064]
 custom_minimum_size = Vector2(350, 450)
@@ -760,6 +816,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TituloNoticias" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaNoticias/DivRegras" unique_id=145935374]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 layout_mode = 2
 text = "Noticias e Relatórios Diários"
 horizontal_alignment = 1
@@ -769,6 +826,7 @@ custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="NoticiaAtual" type="RichTextLabel" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaNoticias/DivRegras" unique_id=427903817]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 layout_mode = 2
 size_flags_vertical = 3
 text = "Mais um dia de Notícias.
@@ -783,6 +841,7 @@ custom_minimum_size = Vector2(350, 200)
 layout_mode = 2
 
 [node name="NoticiasAnteriores" type="RichTextLabel" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaNoticias/DivRegras/Scroll" unique_id=1195659706]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
 
@@ -797,7 +856,9 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture_normal = ExtResource("15_wxndb")
+texture_normal = ExtResource("59_r07cf")
+texture_pressed = ExtResource("60_6q2sd")
+texture_hover = ExtResource("60_6q2sd")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -811,7 +872,9 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture_normal = ExtResource("16_luitd")
+texture_normal = ExtResource("61_ie6lr")
+texture_pressed = ExtResource("62_0ix2s")
+texture_hover = ExtResource("62_0ix2s")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -827,21 +890,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("40_2qrwj")
 
-[node name="Fundo" type="ColorRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas" unique_id=197355222]
-custom_minimum_size = Vector2(400, 500)
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas" unique_id=1510316892]
+custom_minimum_size = Vector2(520, 580)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -250.0
-offset_right = 200.0
-offset_bottom = 250.0
+offset_left = -260.0
+offset_top = -290.0
+offset_right = 260.0
+offset_bottom = 290.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.4627451, 1, 1, 1)
+texture = ExtResource("58_xkkcq")
 
 [node name="DivDoencas" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas" unique_id=366935652]
 custom_minimum_size = Vector2(350, 450)
@@ -859,6 +922,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Titulo" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=144697828]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 layout_mode = 2
 text = "Sumario Doenças"
 horizontal_alignment = 1
@@ -878,6 +942,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 flat = true
 item_count = 1
+popup/item_0/text = "testestes"
 popup/item_0/id = 0
 
 [node name="Scroll" type="ScrollContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/SumarioDoencas/DivDoencas" unique_id=170661979]
@@ -904,7 +969,9 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = ExtResource("15_wxndb")
+texture_normal = ExtResource("59_r07cf")
+texture_pressed = ExtResource("60_6q2sd")
+texture_hover = ExtResource("59_r07cf")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -920,21 +987,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("41_cotw5")
 
-[node name="Fundo" type="ColorRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca" unique_id=1525776850]
-custom_minimum_size = Vector2(400, 500)
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca" unique_id=1585794115]
+custom_minimum_size = Vector2(520, 580)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -250.0
-offset_right = 200.0
-offset_bottom = 250.0
+offset_left = -260.0
+offset_top = -290.0
+offset_right = 260.0
+offset_bottom = 290.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.6350498, 0, 1)
+texture = ExtResource("65_utoph")
 
 [node name="DivPagina" type="VBoxContainer" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca" unique_id=1012656041]
 custom_minimum_size = Vector2(350, 450)
@@ -955,8 +1022,10 @@ size_flags_vertical = 4
 alignment = 1
 
 [node name="NomeDoenca" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina" unique_id=1576319433]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
 text = "Nome Doença"
 horizontal_alignment = 1
 
@@ -976,6 +1045,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Descricao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=273637021]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -984,6 +1054,7 @@ text = "descrição"
 autowrap_mode = 3
 
 [node name="Risco" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1622726320]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -992,6 +1063,7 @@ text = "risco"
 autowrap_mode = 3
 
 [node name="Id" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1843996230]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1000,6 +1072,7 @@ text = "id"
 autowrap_mode = 3
 
 [node name="NomePopular" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=661265898]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1008,6 +1081,7 @@ text = "nome popular"
 autowrap_mode = 3
 
 [node name="Categoria" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1743218285]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1016,6 +1090,7 @@ text = "categoria"
 autowrap_mode = 3
 
 [node name="Sintomas" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1597673139]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1024,6 +1099,7 @@ text = "sintomas"
 autowrap_mode = 3
 
 [node name="Temperatura" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=2104954013]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1031,15 +1107,8 @@ size_flags_vertical = 5
 text = "variacao de temperatura"
 autowrap_mode = 3
 
-[node name="Pressao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1471932269]
-custom_minimum_size = Vector2(330, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 5
-text = "variacao de pressao"
-autowrap_mode = 3
-
 [node name="Oxigenacao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1490945496]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1047,7 +1116,17 @@ size_flags_vertical = 5
 text = "variacao de oxigenacao"
 autowrap_mode = 3
 
+[node name="Pressao" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=1471932269]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 5
+text = "variacao de pressao"
+autowrap_mode = 3
+
 [node name="Receita" type="Label" parent="CanvasLayer/GuiaMedico/PainelPaginas/PaginaDoenca/DivPagina/DivPaginaScroll/VBoxContainer" unique_id=233091482]
+modulate = Color(0.24780053, 0.24780053, 0.24780053, 1)
 custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -1064,7 +1143,9 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture_normal = ExtResource("15_wxndb")
+texture_normal = ExtResource("59_r07cf")
+texture_pressed = ExtResource("60_6q2sd")
+texture_hover = ExtResource("59_r07cf")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -1163,6 +1244,7 @@ autowrap_mode = 2
 layout_mode = 2
 
 [node name="Nome" type="Label" parent="CanvasLayer/FichaPaciente/FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro" unique_id=2064140641]
+modulate = Color(0.3491902, 0.3491902, 0.3491902, 1)
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 text = "Nome: --"
@@ -1170,6 +1252,7 @@ label_settings = ExtResource("46_gs7k1")
 autowrap_mode = 2
 
 [node name="Idade" type="Label" parent="CanvasLayer/FichaPaciente/FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro" unique_id=424386180]
+modulate = Color(0.3491902, 0.3491902, 0.3491902, 1)
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 text = "Idade: --"
@@ -1177,6 +1260,7 @@ label_settings = ExtResource("46_gs7k1")
 autowrap_mode = 2
 
 [node name="TipoSangue" type="Label" parent="CanvasLayer/FichaPaciente/FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro" unique_id=1453249269]
+modulate = Color(0.3491902, 0.3491902, 0.3491902, 1)
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 text = "Tipo Sanguineo: --"
@@ -1184,6 +1268,7 @@ label_settings = ExtResource("46_gs7k1")
 autowrap_mode = 2
 
 [node name="Implantes" type="Label" parent="CanvasLayer/FichaPaciente/FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro" unique_id=109955931]
+modulate = Color(0.3491902, 0.3491902, 0.3491902, 1)
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 text = "Implantes:  --"
@@ -1191,6 +1276,7 @@ label_settings = ExtResource("46_gs7k1")
 autowrap_mode = 2
 
 [node name="Transplantes" type="Label" parent="CanvasLayer/FichaPaciente/FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro" unique_id=1551555489]
+modulate = Color(0.3491902, 0.3491902, 0.3491902, 1)
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 2
 text = "Transplantes: --"
@@ -1215,7 +1301,7 @@ layout_mode = 2
 
 [node name="Temperatura" type="LineEdit" parent="CanvasLayer/FichaPaciente/FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelQuadro" unique_id=1888973483]
 layout_mode = 2
-placeholder_text = "Temperatura (ex: 36,7)"
+placeholder_text = "Temperatura (ex: 36.7)"
 
 [node name="Saturacao" type="LineEdit" parent="CanvasLayer/FichaPaciente/FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelQuadro" unique_id=550328171]
 layout_mode = 2
@@ -1243,7 +1329,8 @@ layout_mode = 2
 [node name="Retornar" type="TextureButton" parent="CanvasLayer/FichaPaciente/FichaPaginas/VBoxContainer/HBoxContainer" unique_id=2137801956]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture_normal = ExtResource("19_itpl7")
+tooltip_text = "Retornar"
+texture_normal = ExtResource("59_r07cf")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -1256,7 +1343,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-texture_normal = ExtResource("16_luitd")
+tooltip_text = "Editar Ficha"
+texture_normal = ExtResource("59_r07cf")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -1269,7 +1357,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-texture_normal = ExtResource("18_fiu4m")
+tooltip_text = "Imprimir e Salvar Ficha"
+texture_normal = ExtResource("61_ie6lr")
 ignore_texture_size = true
 stretch_mode = 4
 

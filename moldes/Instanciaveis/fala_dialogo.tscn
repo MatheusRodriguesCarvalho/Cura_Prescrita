@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://beip73euy5s2c"]
+
+[ext_resource type="Script" uid="uid://bvjmiran6uy7a" path="res://Scripts/bases/dialogo_fala.gd" id="1_7kqg0"]
+
+[node name="FalaDialogo" type="PanelContainer" unique_id=671438112]
+mouse_filter = 2
+script = ExtResource("1_7kqg0")
+
+[node name="Caixa" type="VBoxContainer" parent="." unique_id=1362708401]
+layout_mode = 2
+
+[node name="LabelNome" type="Label" parent="Caixa" unique_id=492497806]
+layout_mode = 2
+
+[node name="LabelTexto" type="Label" parent="Caixa" unique_id=257041914]
+layout_mode = 2
