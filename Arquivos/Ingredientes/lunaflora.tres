@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Ingrediente" format=3 uid="uid://b0prxwh6t0avb"]
 
 [ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_7h16h"]
-[ext_resource type="Texture2D" uid="uid://s2tyvemkv1ad" path="res://Sprites/Ingredientes/ing-greystone.png" id="2_nidt0"]
+[ext_resource type="Texture2D" uid="uid://bqcnqblu6ea46" path="res://Sprites/Ingredientes/ing-lunaflora.png" id="2_nidt0"]
 
 [resource]
 script = ExtResource("1_7h16h")

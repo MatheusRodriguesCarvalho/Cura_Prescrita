@@ -6,5 +6,6 @@
 script = ExtResource("1_iqtrw")
 narrador = "teste"
 texto = "testes"
-alvo = "$Consultorio/Mundo/Mesa/Gaveta"
+alvo = "Consultorio/Mundo/Mesa/Gaveta"
+capturar_clique = true
 metadata/_custom_type_script = "uid://inp00is72umr"

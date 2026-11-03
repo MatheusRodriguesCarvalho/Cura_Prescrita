@@ -3,10 +3,15 @@
 [ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="1_uptsx"]
 [ext_resource type="Resource" uid="uid://cjxhsdb5wjfpa" path="res://Arquivos/Tutorial/tutorial_passo_a1.tres" id="2_2ia7l"]
 [ext_resource type="Script" uid="uid://co7w3y4ikkxf1" path="res://Scripts/bases/base_tutorial_sequencia.gd" id="2_g82nn"]
+[ext_resource type="Resource" uid="uid://x21ckhu85vt3" path="res://Arquivos/Tutorial/tutorial_passo_a0.tres" id="2_usw3v"]
 [ext_resource type="Resource" uid="uid://c5vumnst8xpmf" path="res://Arquivos/Tutorial/tutorial_passo_a2.tres" id="3_2ia7l"]
+[ext_resource type="Resource" uid="uid://gp5qrheopydp" path="res://Arquivos/Tutorial/tutorial_passo_a3.tres" id="4_6et6e"]
+[ext_resource type="Texture2D" uid="uid://dtpmedvcm5wou" path="res://Sprites/Pacientes/glitchslimesp.png" id="5_usw3v"]
 
 [resource]
 script = ExtResource("2_g82nn")
-id = "1"
-passos = Array[ExtResource("1_uptsx")]([ExtResource("2_2ia7l"), ExtResource("3_2ia7l")])
+id = "dia1"
+pausar_tempo = false
+retrato_padrao = ExtResource("5_usw3v")
+passos = Array[ExtResource("1_uptsx")]([ExtResource("2_usw3v"), ExtResource("2_2ia7l"), ExtResource("3_2ia7l"), ExtResource("4_6et6e")])
 metadata/_custom_type_script = "uid://co7w3y4ikkxf1"

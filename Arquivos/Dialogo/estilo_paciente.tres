@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EstiloFala" format=3 uid="uid://clwkva0hv2tdf"]
+
+[ext_resource type="Resource" uid="uid://drycmx1njg512" path="res://Arquivos/Dialogo/estilo_label_paciente.tres" id="1_b62qm"]
+[ext_resource type="Script" uid="uid://cvy3f4hdsr251" path="res://Scripts/bases/base_estilo_fala.gd" id="2_qknxu"]
+
+[resource]
+script = ExtResource("2_qknxu")
+estilo_balao = ExtResource("1_b62qm")
+metadata/_custom_type_script = "uid://cvy3f4hdsr251"

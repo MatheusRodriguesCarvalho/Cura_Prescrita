@@ -12,11 +12,9 @@ id = "I501NFX"
 nome = "Anafilaxia"
 nome_popular = Array[String](["Alergia grave", "Fechamento da glote", "Choque alérgico"])
 risco = 5
-descricao = "Descrição"
+descricao = "Sem Descrição"
 categoria = "Outras"
 sintomas = Array[String](["Urticária generalizada", "Inchaço nos lábios/olhos/garganta", "Falta de ar severa", "Queda drástica da pressão", "Sensação de morte iminente"])
-med_pressao_sistolica = 0.0
-med_pressao_diastolica = 0.0
 receita_cura = Dictionary[ExtResource("1_uxkjy"), int]({
 ExtResource("2_kop6o"): 1,
 ExtResource("3_pl125"): 1,

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EstiloFala" format=3 uid="uid://xxcuti2bg8n8"]
+
+[ext_resource type="Script" uid="uid://cvy3f4hdsr251" path="res://Scripts/bases/base_estilo_fala.gd" id="1_1w8st"]
+[ext_resource type="Resource" uid="uid://dmfweof55r1vu" path="res://Arquivos/Dialogo/estilo_label_ale.tres" id="1_qcw50"]
+
+[resource]
+script = ExtResource("1_1w8st")
+lado = 1
+estilo_balao = ExtResource("1_qcw50")
+metadata/_custom_type_script = "uid://cvy3f4hdsr251"

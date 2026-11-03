@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="CenaVN" format=3 uid="uid://buq8ap6rqvxko"]
+
+[ext_resource type="Script" uid="uid://edt0act4c81l" path="res://Scripts/bases/base_vn_fala.gd" id="1_n5cp6"]
+[ext_resource type="Texture2D" uid="uid://ddh8arobmfwbr" path="res://Sprites/bg-vn.png" id="2_n5cp6"]
+[ext_resource type="Script" uid="uid://b6xe78swusikp" path="res://Scripts/bases/base_vn_cena.gd" id="3_o3caw"]
+
+[sub_resource type="Resource" id="Resource_idpes"]
+script = ExtResource("1_n5cp6")
+nome = 4
+texto = "A senhora recebeu uma carta, senhora Alê."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_luabi"]
+script = ExtResource("1_n5cp6")
+texto = "Muito obrigada, Minerva."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_bom3l"]
+script = ExtResource("1_n5cp6")
+nome = 3
+texto = "“Querida Alê, 
+Vimos que você deu conta de atender todos os pacientes que estavam atrasados durante esses 4 dias. Gostaríamos de parabenizá-la pelo seu desempenho, apesar de suas condições e da carga horária adaptada..."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_g4ko8"]
+script = ExtResource("1_n5cp6")
+nome = 3
+texto = "Estamos entrando em contato para informar que semana que vem sua escala será de segunda a sexta permanecendo nesta clínica em Aresiens, mantendo seu horário adaptado.
+
+Continue assim, 
+Hospital Divina.”"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_67xhv"]
+script = ExtResource("1_n5cp6")
+texto = "Ao menos posso continuar como médica… Vou melhorar algumas coisas por aqui e ali pela clínica."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_2vddn"]
+script = ExtResource("1_n5cp6")
+nome = 4
+texto = "Você é a melhor médica que já passou por essa cidade, senhora Alê. Agradeço em nome de todos."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[resource]
+script = ExtResource("3_o3caw")
+id = "cena11"
+fase = 11
+fundo = ExtResource("2_n5cp6")
+falas = Array[ExtResource("1_n5cp6")]([SubResource("Resource_idpes"), SubResource("Resource_luabi"), SubResource("Resource_bom3l"), SubResource("Resource_g4ko8"), SubResource("Resource_67xhv"), SubResource("Resource_2vddn")])
+metadata/_custom_type_script = "uid://b6xe78swusikp"

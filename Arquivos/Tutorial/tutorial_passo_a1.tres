@@ -1,10 +1,14 @@
 [gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://cjxhsdb5wjfpa"]
 
+[ext_resource type="Texture2D" uid="uid://dtpmedvcm5wou" path="res://Sprites/Pacientes/glitchslimesp.png" id="1_bh723"]
 [ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="1_kyxfe"]
 
 [resource]
 script = ExtResource("1_kyxfe")
 texto = "Chame o primeiro paciente."
-alvo = "Consultorio/Mundo/Mesa/Botao"
+retrato = ExtResource("1_bh723")
+alvo = "Consultorio/Mundo/Mesa/Teclado"
+capturar_clique = true
 evento_conclusao = "paciente_chamado"
+narrar_primeiro = true
 metadata/_custom_type_script = "uid://inp00is72umr"

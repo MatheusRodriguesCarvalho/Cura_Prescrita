@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="CenaVN" format=3 uid="uid://buqpok1uubwky"]
+
+[ext_resource type="Script" uid="uid://edt0act4c81l" path="res://Scripts/bases/base_vn_fala.gd" id="1_a00t0"]
+[ext_resource type="Texture2D" uid="uid://ddh8arobmfwbr" path="res://Sprites/bg-vn.png" id="2_711kq"]
+[ext_resource type="Script" uid="uid://b6xe78swusikp" path="res://Scripts/bases/base_vn_cena.gd" id="3_p0kql"]
+
+[sub_resource type="Resource" id="Resource_j00w3"]
+script = ExtResource("1_a00t0")
+nome = 1
+texto = "Papai, quando vamos poder conhecer algo legal nessa cidade? Tipo um cinema, um shopping."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_8hsfb"]
+script = ExtResource("1_a00t0")
+nome = 2
+texto = "Eu não acho que tenha nada do tipo por aqui, precisamos ver com sua mãe."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_q8kb6"]
+script = ExtResource("1_a00t0")
+texto = "Pelo que me contaram, a cidade vizinha tem um conjunto de lojas, mas não chamam de shopping… Mas podem ir sem mim, estou cansada."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[resource]
+script = ExtResource("3_p0kql")
+id = "cena03"
+fase = 3
+fundo = ExtResource("2_711kq")
+falas = Array[ExtResource("1_a00t0")]([SubResource("Resource_j00w3"), SubResource("Resource_8hsfb"), SubResource("Resource_q8kb6")])
+metadata/_custom_type_script = "uid://b6xe78swusikp"

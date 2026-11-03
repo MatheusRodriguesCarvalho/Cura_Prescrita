@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CenaVN" format=3 uid="uid://becwh3cfl8wk7"]
+
+[ext_resource type="Script" uid="uid://edt0act4c81l" path="res://Scripts/bases/base_vn_fala.gd" id="1_j00w3"]
+[ext_resource type="Texture2D" uid="uid://ddh8arobmfwbr" path="res://Sprites/bg-vn.png" id="2_j00w3"]
+[ext_resource type="Script" uid="uid://b6xe78swusikp" path="res://Scripts/bases/base_vn_cena.gd" id="3_q8kb6"]
+
+[sub_resource type="Resource" id="Resource_l36np"]
+script = ExtResource("1_j00w3")
+nome = 2
+texto = "Você está cada dia mais exausta e debilitada… Por que não tenta descansar um pouco?"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_fxe08"]
+script = ExtResource("1_j00w3")
+texto = "Eu consigo lidar com isso, não é como se o cursinho não tivesse sido pesado assim… E também, eu quero que nossa filha e você vivam bem."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_j3d3j"]
+script = ExtResource("1_j00w3")
+nome = 2
+texto = "Tente priorizar a sua saúde, Alê,
+se não, não conseguirá prometer que consegue lidar com a pressão."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[resource]
+script = ExtResource("3_q8kb6")
+id = "cena04"
+fase = 4
+fundo = ExtResource("2_j00w3")
+falas = Array[ExtResource("1_j00w3")]([SubResource("Resource_l36np"), SubResource("Resource_fxe08"), SubResource("Resource_j3d3j")])
+metadata/_custom_type_script = "uid://b6xe78swusikp"

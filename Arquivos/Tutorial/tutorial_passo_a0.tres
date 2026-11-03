@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://x21ckhu85vt3"]
+
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="2_t0d84"]
+
+[resource]
+script = ExtResource("2_t0d84")
+texto = "fala bacana referente à lore lore lore lore lore lore lore lore lore lore lore lore lore lore lore lore lore lore lore"
+narrar_primeiro = true
+metadata/_custom_type_script = "uid://inp00is72umr"

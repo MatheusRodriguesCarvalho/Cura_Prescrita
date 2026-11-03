@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_8y6lv"]
 [ext_resource type="Resource" uid="uid://b7vwjmlrk8lvk" path="res://Arquivos/Ingredientes/gengibre.tres" id="3_huyst"]
 [ext_resource type="Resource" uid="uid://dhm1km3iqkevt" path="res://Arquivos/Ingredientes/cascaJatoba.tres" id="3_yrujc"]
-[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/guaco.tres" id="4_yrujc"]
+[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/ervaBruxa.tres" id="4_yrujc"]
 
 [resource]
 script = ExtResource("1_8y6lv")

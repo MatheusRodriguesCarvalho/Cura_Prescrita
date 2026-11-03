@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="1_pjk0o"]
 [ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_pvlc2"]
 [ext_resource type="Resource" uid="uid://dhm1km3iqkevt" path="res://Arquivos/Ingredientes/cascaJatoba.tres" id="2_nlt4k"]
-[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/guaco.tres" id="3_pvlc2"]
+[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/ervaBruxa.tres" id="3_pvlc2"]
 
 [resource]
 script = ExtResource("1_pjk0o")

@@ -1,0 +1,89 @@
+VERIFICAR: implementado mas não testado
+AJUSTAR: implementado e testado, mas falta melhorar
+OK: tudo ok
+
+Resumo de Alterações:
+Arte
+* Desenvolver Full-screen funcional (ultrawide opcional).
+* Trocar as setas do guia por "abinhas".
+* Arte da caixa de diálogo.
+
+
+Visual Novel:
+QUESTIONAR * VN, design, Alê fixa na direita, e os demais na esquerda alternando de acordo com a fala.
+
+Mecânica:
+AJUSTAR * Usar teclas no teclado (real) também para executar algumas funções, ex: espaco chama o paciente.
+VERIFICAR * Utilidade das medições / Relação dos ranges das medições do guia
+
+Outros:
+* Aviso Prévio, ou aviso sobre obra fictícia, retirar do guia, e incluir ao abrir o jogo, ou ao iniciar o Jogo.
+* Alterar logica do Aviso de atualização, no início do dia aparece um ícone/janela no computador, que mostra o Aviso ao abrir.
+AJUSTAR * Tutorial no menu mais visual. 
+* Aba (canva) do guia, e a ficha, no consultório poder ser movimentado. (Opcional, criar um desktop, onde é possível acessar o guia e a ficha)
+
+Som e Áudio:
+* Alterar a música do menu, e alterar o efeito dos botões para lápis.
+AJUSTAR * Resposta sonoras para o consumo de estamina, e aceleração a medida que chega ao fim do expediente.
+AJUSTAR * Efeitos Sonoros das ferramentas.
+
+
+
+Proposta de implementação de mecânica:
+* Número definido de total de pacientes, que a alê, primeiro acolhe e depois medica
+* Pacientes aparecem, a Alê acessa o cadastro e imprime a ficha, e o paciente fica esperando o Médico senior diagnosticar.
+* Criar fila de pacientes esperando o Médico para serem atendidas.
+* Quebra do fluxo do jogo com um "almoço"
+* Após o almoço, os pacientes que foram atendidos por você, e já passaram pelo médico, agora possuem uma receita de medicação.
+* (Opcional) Apresenta a ficha com correções caso tenha ido errado.
+* A Alê lê a receita e prepara o remédio, e entrega para o paciente.
+
+
+
+
+
+Listagem Original
+
+Arte
+* Fonte ilegível com "s" e "5". Além do conflito de cores.
+* Desenvolver Full-screen funcional (ultrawide opcional).
+* Trocar as setas do guia por "abinhas".
+* Arte da caixa de diálogo.
+
+Visual Novel:
+* Retirar filtro do fundo da VN.
+* VN, design, Alê fixa na direita, e os demais na esquerda alternando de acordo com a fala.
+* Ajustar tamanhos dos personagens
+
+Mecânica:
+* Usar teclas no teclado (real) também para executar algumas funções, ex: espaco chama o paciente.
+* Estamina só pra conclusões de ações, ferramentas, criar e descartar remédios.
+* Lógica de dar "enter" no protocolo, tanto no "on enter" quanto no "on exited".
+* Corrigir o bug que apaga as informações de medição e doença quando confirma o protocolo.
+* Utilidade das medições 
+* Relação dos ranges das medições do guia
+
+Outros:
+* Aviso Prévio, ou aviso sobre obra fictícia, retirar do guia, e incluir ao abrir o jogo, ou ao iniciar o Jogo.
+* Opções de dificuldade devem aparecer ao iniciar o jogo, além da aba de opções.
+* Incluir transição referente ao Dia 1.
+* Descrição dos Modos / Dificuldade, o que eles fazem.
+* Alterar logica do Aviso de atualização, no início do dia aparece um ícone/janela no computador, que mostra o Aviso ao abrir.
+* Tutorial no menu mais visual. 
+* Destacar os pontos de interesse, com brilho ou com tootltip.
+* Aba (canva) do guia, e a ficha, no consultório poder ser movimentado. (Opcional, criar um desktop, onde é possível acessar o guia e a ficha)
+
+Som e Áudio:
+* Alterar a música do menu, e alterar o efeito dos botões para lápis.
+* Ajustar volume ao abrir o Jogo
+* Resposta sonoras para o consumo de estamina, e aceleração a medida que chega ao fim do expediente.
+* Efeitos Sonoros das ferramentas.
+
+Proposta de implementação de mecânica:
+* Número definido de total de pacientes, que a alê, primeiro acolhe e depois medica
+* Pacientes aparecem, a Alê acessa o cadastro e imprime a ficha, e o paciente fica esperando o Médico senior diagnosticar.
+* Criar fila de pacientes esperando o Médico para serem atendidas.
+* Quebra do fluxo do jogo com um "almoço"
+* Após o almoço, os pacientes que foram atendidos por você, e já passaram pelo médico, agora possuem uma receita de medicação.
+* (Opcional) Apresenta a ficha com correções caso tenha ido errado.
+* A Alê lê a receita e prepara o remédio, e entrega para o paciente.

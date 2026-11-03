@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="CenaVN" format=3 uid="uid://cmywm23lsvwnb"]
+
+[ext_resource type="Script" uid="uid://edt0act4c81l" path="res://Scripts/bases/base_vn_fala.gd" id="1_idpes"]
+[ext_resource type="Texture2D" uid="uid://ddh8arobmfwbr" path="res://Sprites/bg-vn.png" id="2_idpes"]
+[ext_resource type="Script" uid="uid://b6xe78swusikp" path="res://Scripts/bases/base_vn_cena.gd" id="3_bom3l"]
+
+[sub_resource type="Resource" id="Resource_idpes"]
+script = ExtResource("1_idpes")
+nome = 4
+texto = "A senhora recebeu uma carta, senhora Alê."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_luabi"]
+script = ExtResource("1_idpes")
+texto = "Muito obrigada, Minerva."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_bom3l"]
+script = ExtResource("1_idpes")
+nome = 3
+texto = "“Querida Alê,
+Recebemos notícias sobre seus dias de atendimento na clínica de Aresiens e seu desempenho não foi nada satisfatório.
+Sua segunda chance acaba hoje, sentimos muito por informá-la, mas seu contrato foi encerrado."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_g4ko8"]
+script = ExtResource("1_idpes")
+nome = 3
+texto = "Agradecemos seus esforços, e como forma de gratidão orientamos que busque uma área cuja sua limitação não interfira no bem-estar das pessoas. Ou no seu. Entretanto, seu potencial de conhecimento é admirável, lamentamos seu desligamento."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_daaw1"]
+script = ExtResource("1_idpes")
+nome = 3
+texto = "Enviaremos uma quantia extra para bancar o retorno de sua família, e caso seja de seu interesse, um curso de gestão hospitalar será inaugurado em breve na Universidade Divina, não podemos permitir que você seja médica, mas poderá coordenar o hospital se sua trajetória for tão satisfatória quanto imaginamos.
+Atenciosamente,
+Hospital Divina.”"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_67xhv"]
+script = ExtResource("1_idpes")
+texto = "Eu não quero organizar um hospital… Quero cuidar e curar pessoas… Salvar vidas."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_2vddn"]
+script = ExtResource("1_idpes")
+nome = 4
+texto = "Apesar de suas limitações, você foi quem cuidou melhor dessa população. Sinto muito que precise ir embora."
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[sub_resource type="Resource" id="Resource_e7y2b"]
+script = ExtResource("1_idpes")
+texto = "Obrigada por toda atenção e cuidado que você teve comigo e com a clínica, Minerva. Acho que isso é um adeus…"
+metadata/_custom_type_script = "uid://edt0act4c81l"
+
+[resource]
+script = ExtResource("3_bom3l")
+id = "cena10"
+fase = 10
+fundo = ExtResource("2_idpes")
+falas = Array[ExtResource("1_idpes")]([SubResource("Resource_idpes"), SubResource("Resource_luabi"), SubResource("Resource_bom3l"), SubResource("Resource_g4ko8"), SubResource("Resource_daaw1"), SubResource("Resource_67xhv"), SubResource("Resource_2vddn"), SubResource("Resource_e7y2b")])
+metadata/_custom_type_script = "uid://b6xe78swusikp"
