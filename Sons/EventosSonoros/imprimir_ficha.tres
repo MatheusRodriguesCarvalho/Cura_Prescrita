@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://ffd73cr6cqbi"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_43i2c"]
+[ext_resource type="AudioStream" uid="uid://dmxoyyfqpnmk1" path="res://Sons/Efeitos/impressora/impressora1.mp3" id="2_43i2c"]
+[ext_resource type="AudioStream" uid="uid://b51nyrsvkbjwn" path="res://Sons/Efeitos/impressora/impressora2.mp3" id="3_kxsnj"]
+[ext_resource type="AudioStream" uid="uid://du4ykjyqt01jn" path="res://Sons/Efeitos/impressora/impressora3.mp3" id="4_80kx1"]
+[ext_resource type="AudioStream" uid="uid://c2v22sllis5ec" path="res://Sons/Efeitos/impressora/impressora4.mp3" id="5_5ojqu"]
+
+[resource]
+script = ExtResource("1_43i2c")
+nome = "imprimir"
+variacoes = Array[AudioStream]([ExtResource("2_43i2c"), ExtResource("3_kxsnj"), ExtResource("4_80kx1"), ExtResource("5_5ojqu")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"
