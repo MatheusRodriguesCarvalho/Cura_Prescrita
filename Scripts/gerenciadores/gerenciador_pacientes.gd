@@ -28,13 +28,14 @@ var pacientes_chamados_hoje: Array[int] = []
 
 var registros_do_dia: Dictionary = {}
 var jogo_iniciado: bool = false
+var abertura_pendente := false
 
 @export_category("Pontuação")
 @export var pontos_diagnostico_correto: float = 60.0
 @export var pontos_medicao_correta: float = 10.0
-@export var tolerancia_temperatura: float = 0.3
-@export var tolerancia_pressao: float = 4.0
-@export var tolerancia_saturacao: float = 2.0
+@export var tolerancia_temperatura: float = 0.5
+@export var tolerancia_pressao: float = 2.0
+@export var tolerancia_saturacao: float = 1.0
 
 
 
@@ -46,6 +47,8 @@ func _ready() -> void:
 	_carregar_pacientes()
 	_carregar_noticias()
 
+static func nome_real(arquivo: String) -> String:
+	return arquivo.trim_suffix(".remap").trim_suffix(".import")
 
 ## --- Carregar Informações das Pastas ---
 
@@ -59,9 +62,9 @@ func _carregar_pacientes() -> void:
 	dir.list_dir_begin()
 	var arquivo := dir.get_next()
 	while arquivo != "":
-		if not dir.current_is_dir() and arquivo.get_extension() == "tres":
-			var caminho := pasta_dados_pacientes.path_join(arquivo)
-			var dados := load(caminho) as DadosPaciente
+		var nome := nome_real(arquivo)
+		if not dir.current_is_dir() and nome.get_extension() == "tres":
+			var dados = load(pasta_dados_pacientes.path_join(nome)) as DadosPaciente
 			if dados:
 				pool_dados_pacientes.append(dados)
 		arquivo = dir.get_next()
@@ -78,9 +81,9 @@ func _carregar_doencas() -> void:
 	dir.list_dir_begin()
 	var arquivo := dir.get_next()
 	while arquivo != "":
-		if not dir.current_is_dir() and arquivo.get_extension() == "tres":
-			var caminho := pasta_doencas.path_join(arquivo)
-			var doenca := load(caminho) as Doenca
+		var nome := nome_real(arquivo)
+		if not dir.current_is_dir() and nome.get_extension() == "tres":
+			var doenca = load(pasta_doencas.path_join(nome)) as Doenca
 			if doenca:
 				lista_doencas.append(doenca)
 		arquivo = dir.get_next()
@@ -98,9 +101,9 @@ func _carregar_noticias() -> void:
 	dir.list_dir_begin()
 	var arquivo := dir.get_next()
 	while arquivo != "":
-		if not dir.current_is_dir() and arquivo.get_extension() == "tres":
-			var caminho := pasta_noticias.path_join(arquivo)
-			var noticia := load(caminho) as Noticia
+		var nome := nome_real(arquivo)
+		if not dir.current_is_dir() and nome.get_extension() == "tres":
+			var noticia = load(pasta_noticias.path_join(nome)) as Noticia
 			if noticia:
 				lista_noticias.append(noticia)
 		arquivo = dir.get_next()
@@ -121,7 +124,8 @@ func _selecionar_novas_doencas() -> void:
 		return
 	
 	## Garante que de 1 a 2 doenças sejam adicionadas por dia
-	var quantidade := randi_range(1, min(2, pool.size()))
+	var minimoDia := 2 if fase_atual == 1 else 1
+	var quantidade := randi_range(minimoDia, min(2, pool.size()))
 	pool.shuffle()
 	for i in quantidade:
 		doencas_desbloqueadas[pool[i].id] = fase_atual
@@ -144,9 +148,15 @@ func reiniciar_jogo() -> void:
 	fase_atual = 1
 	doencas_desbloqueadas.clear()
 	pacientes_ativos.clear()
+	
 	_selecionar_novas_doencas()
 	iniciar_novo_dia()
+	
 	jogo_iniciado = true
+	abertura_pendente = true
+	
+	GerenciadorTutorial.concluidas.clear()
+	GerenciadorTutorial.ativo = false   # garantia, caso o jogador saia no meio do tutorial
 
 ## Avança para a próxima fase e sorteia novas doenças automaticamente.
 func avancar_fase() -> void:
@@ -227,7 +237,7 @@ func _sortear_indice_paciente() -> int:
 
 ## Busca um paciente ativo pelo protocolo. Retorna null se não encontrado.
 func busca_por_protocolo(protocolo: String) -> Paciente:
-	if is_instance_valid(paciente_no_consultorio) and paciente_no_consultorio.protocolo == protocolo:
+	if is_instance_valid(paciente_no_consultorio) and paciente_no_consultorio.protocolo == protocolo.to_upper():
 		return paciente_no_consultorio
 	return null
 

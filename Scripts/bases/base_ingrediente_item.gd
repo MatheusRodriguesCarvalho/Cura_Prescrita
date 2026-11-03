@@ -18,6 +18,10 @@ func _ready() -> void:
 	if ingrediente == null:
 		return
 	
+	if ingrediente:
+		sprite.texture = ingrediente.textura
+		sprite.hframes = ingrediente.quadros_h
+	
 	## top_level = true
 	posicao_original = global_position
 	if ingrediente:
@@ -31,7 +35,6 @@ func _process(_delta: float) -> void:
 	if estado == Estado.SEGURANDO:
 		global_position = get_global_mouse_position()
 		TooltipInfo.esconder.emit()
-		GerenciadorTempo.registrar_acao(0.001)
 
 func _on_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and estado == Estado.PARADO:
@@ -41,7 +44,6 @@ func _on_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 		z_index = Z_ARRASTANDO
 		
 		TooltipInfo.esconder.emit()
-		GerenciadorTempo.registrar_acao(0.5)
 		GerenciadorAudio.tocar("ingredientes")
 
 func _unhandled_input(event: InputEvent) -> void:

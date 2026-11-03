@@ -25,8 +25,8 @@ var passou_da_meta: bool
 
 func _ready() -> void:
 	resumo = GerenciadorPacientes.gerar_resumo_dia()
-	## var meta: float = GerenciadorPacientes.meta_do_dia()
-	var meta: float = -1
+	var meta: float = GerenciadorPacientes.meta_do_dia()
+	## var meta: float = -1
 	
 	passou_da_meta = resumo["pontos_total"] >= meta
 	

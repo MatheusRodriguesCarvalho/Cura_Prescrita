@@ -4,6 +4,7 @@ extends Node2D
 @export_file("*.tscn") var cena_proxima_dia: String = "res://Scenes/consultorio.tscn"
 @export var cena_teste: CenaVN  ## opcional: força uma cena (ignora o filtro por fase)
 @export var musica_cena: String = "casa"  ## subpasta em Sons/Musicas; vazio = sem música
+@export var cena_abertura: CenaVN  ## opcional: se vazia, mostra só o cartão "Dia 1"
 
 
 ## Duração da digitação = BASE + POR_CHAR * caracteres (100 chars = 3s, 200 chars = 5s)
@@ -14,6 +15,10 @@ const COR_CALADO := Color(0.55, 0.55, 0.6, 1)
 const ESCALA_FALANDO := 1.04
 
 const SOM_FALA := "fala"
+
+const ALE := "Ale"
+const ESCONDER_ESQUERDA_NA_NARRACAO := true  ## false = o último personagem fica na tela durante o narrador
+const DESLIZE := 30.0
 
 @onready var fundo: Sprite2D = $Mundo/Local
 @onready var personagens: Node2D = $Mundo/Personagens
@@ -34,7 +39,14 @@ var tween_texto: Tween
 var _revelados: Dictionary = {}   ## nome do personagem -> true
 var _escala_base: Dictionary = {} ## nome do personagem -> Vector2 definido no editor
 
+var _esquerda_atual: Sprite2D = null
+var _pos_base: Dictionary = {}       ## nome -> posição definida no editor
+var _tweens_sprite: Dictionary = {}  ## nome -> Tween (um por personagem)
+var modo_abertura := false
+
 func _ready() -> void:
+	modo_abertura = GerenciadorPacientes.abertura_pendente
+	GerenciadorPacientes.abertura_pendente = false  ## consome já, para não repetir
 	_preparar_ui()
 	
 	for p in personagens.get_children():
@@ -42,10 +54,15 @@ func _ready() -> void:
 			_escala_base[p.name] = p.scale
 			p.hide()
 	
-	cena = cena_teste if cena_teste else _escolher_cena_do_dia()
+	if cena_teste:
+		cena = cena_teste
+	elif modo_abertura:
+		cena = cena_abertura
+	else:
+		cena = _escolher_cena_do_dia()
+	
 	if cena == null or cena.falas.is_empty():
-		push_warning("Nenhuma CenaVN para a fase %d" % GerenciadorPacientes.fase_atual)
-		_encerrar()
+		_encerrar()   ## sem diálogo: vai direto ao cartão preto
 		return
 	
 	if cena.fundo:
@@ -98,7 +115,7 @@ func _escolher_cena_do_dia() -> CenaVN:
 	var arquivo := dir.get_next()
 	while arquivo != "":
 		if not dir.current_is_dir():
-			var nome := arquivo.trim_suffix(".remap")
+			var nome := arquivo.trim_suffix(".remap").trim_suffix(".import")
 			if nome.get_extension() == "tres":
 				var c := load(pasta_cenas.path_join(nome)) as CenaVN
 				if c:
@@ -208,9 +225,11 @@ func _completar_texto() -> void:
 func _encerrar() -> void:
 	if encerrando:
 		return
+	
 	encerrando = true
 	
-	GerenciadorPacientes.avancar_fase()
+	if not modo_abertura:
+		GerenciadorPacientes.avancar_fase()
 	
 	card_dia.text = "Dia %d" % GerenciadorPacientes.fase_atual
 	

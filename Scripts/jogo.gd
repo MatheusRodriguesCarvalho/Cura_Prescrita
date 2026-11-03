@@ -2,17 +2,28 @@ extends Node2D
 
 const DURACAO_FASE := 0.35
 
-@onready var consultorio: Node2D = $Consultorio
-@onready var ala_medicacao: Node2D = $AlaMedicacao
+@export var consultorio: Node2D
+@export var ala_medicacao: Node2D
 
-@onready var guia: Control = $CanvasLayer/GuiaMedico
-@onready var botao_ir_ala: TextureButton = $CanvasLayer/BotoesIr/BotaoIrMedicacao
-@onready var botao_ir_consultorio: TextureButton = $CanvasLayer/BotoesIr/BotaoIrConsultorio
+@export var guia: Control
+@export var dialogoUI: Control
+@export var botao_ir_ala: TextureButton
+@export var botao_ir_consultorio: TextureButton
 
-@onready var paciente: Paciente = $Consultorio/Mundo/Paciente
-@onready var sombra: TextureRect = $CanvasLayer/TransicaoSombra
+@export var paciente: Paciente
+@export var sombra: TextureRect
+
+@export_category("Botoes de Acesso")
+@export var botao_paciente: Node2D
+@export var botao_guia: Node2D
+@export var botao_computador: Node2D
+@export var botao_produzir: Node2D
+@export var computador: Node2D
+@export var ficha: Control
 
 @export var musica_cena: String = "consultorio"  ## subpasta em Sons/Musicas; vazio = sem música
+
+@export var seq: TutorialSequencia
 
 ## var paciente_atual: Paciente = null
 ## var atendimento_concluido: bool = false
@@ -38,15 +49,35 @@ func _ready() -> void:
 	## GerenciadorTempo.iniciar_fase()
 	
 	GerenciadorPausa.habilitar(true)
+	GerenciadorTutorial.iniciar(seq)
 	
 	if musica_cena != "":
 		GerenciadorAudio.tocar_musica_cena(musica_cena, true)
 	
-	_avisar_guia_atualizado()
+	computador.desligar()
+	if not _avisar_guia_atualizado():
+		computador.ligar()
 
 func _exit_tree() -> void:
 	GerenciadorPausa.habilitar(false)
 
+
+func _unhandled_input(event: InputEvent) -> void:
+	if _em_transicao or not event.is_pressed() or event.is_echo():
+		return
+	
+	if event.is_action_pressed("alternar_sala"):
+		_trocar_sala(not ala_medicacao.visible)
+	elif ala_medicacao.visible:
+		if event.is_action_pressed("produzir_remedio"):
+			botao_produzir.produzir()
+	else:
+		if event.is_action_pressed("abrir_guia"):
+			guia.fechar() if guia.visible else botao_guia.abrir()
+		elif event.is_action_pressed("abrir_ficha"):
+			ficha.fechar() if ficha.visible else botao_computador.abrir_ficha()
+		elif event.is_action_pressed("chamar_paciente") and not guia.visible and not ficha.visible:
+			botao_paciente.chamar()
 
 ## -- TROCA DE SALA --
 func ir_para_ala() -> void:
@@ -84,14 +115,16 @@ func _trocar_sala(para_medicacao: bool) -> void:
 	
 	tween.tween_callback(_finalizar_transicao)
 
+
 func _aplicar_troca(para_medicacao: bool) -> void:
+	dialogoUI.visible = not para_medicacao
+	
 	if para_medicacao:
 		_alternar(ala_medicacao, consultorio)
 		botao_ir_consultorio.show()
 	else:
 		_alternar(consultorio, ala_medicacao)
 		botao_ir_ala.show()
-	
 	_mover_remedio_para(ala_medicacao if para_medicacao else consultorio)
 
 func _finalizar_transicao() -> void:
@@ -119,7 +152,8 @@ func _on_botao_ir_medicacao_pressed() -> void:
 	ir_para_ala()
 
 
-func _avisar_guia_atualizado() -> void:
+
+func _avisar_guia_atualizado() -> bool:
 	var fase := GerenciadorPacientes.fase_atual
 	var linhas: Array[String] = []
 	
@@ -135,16 +169,31 @@ func _avisar_guia_atualizado() -> void:
 	
 	if not linhas.is_empty():
 		_mostrar_popup_guia("\n".join(linhas))
-
+		return true
+	return false
 
 func _mostrar_popup_guia(detalhes: String) -> void:
+	var raiz := Control.new()
+	raiz.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	raiz.mouse_filter = Control.MOUSE_FILTER_STOP
+	raiz.gui_input.connect(func(ev: InputEvent):
+		if ev is InputEventMouseButton and ev.pressed:
+			raiz.queue_free())
+	
 	var painel := PanelContainer.new()
 	painel.set_anchors_and_offsets_preset(Control.PRESET_CENTER, Control.PRESET_MODE_MINSIZE)
 	painel.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	painel.grow_vertical = Control.GROW_DIRECTION_BOTH
 	
+	var margem := MarginContainer.new()
+	for lado in ["margin_left", "margin_top", "margin_right", "margin_bottom"]:
+		margem.add_theme_constant_override(lado, 16)
+	painel.add_child(margem)
+	
 	var caixa := VBoxContainer.new()
-	painel.add_child(caixa)
+	caixa.add_theme_constant_override("separation", 8)  ## espaço entre título, texto e botões
+	margem.add_child(caixa)
+	
 	
 	var titulo := Label.new()
 	titulo.text = "Guia Médico atualizado"
@@ -169,8 +218,16 @@ func _mostrar_popup_guia(detalhes: String) -> void:
 		painel.queue_free()
 		guia.abrir())
 	botoes.add_child(abrir)
+	raiz.add_child(painel)   # o painel (e seus botões) continua recebendo cliques normalmente
 	
-	$CanvasLayer.add_child(painel)
+	fechar.pressed.connect(raiz.queue_free)
+	abrir.pressed.connect(func():
+		raiz.queue_free()
+		guia.abrir())
+	
+	raiz.tree_exited.connect(computador.ligar)
+	
+	$CanvasLayer.add_child(raiz)
 
 
 ## -- TEMPO E TELAS --

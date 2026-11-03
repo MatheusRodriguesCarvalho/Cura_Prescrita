@@ -82,7 +82,7 @@ func fala_reacao(correto: bool) -> String:
 func _faixa(valor: float, margem: float) -> Vector2:
 	return Vector2(valor - margem, valor + margem)
 
-func faixa_temperatura(margem: float = 0.35) -> Vector2:
+func faixa_temperatura(margem: float = 1.5) -> Vector2:
 	return _faixa(med_temperatura, margem)
 
 func faixa_pressao_sistolica(margem: float = 8.0) -> Vector2:

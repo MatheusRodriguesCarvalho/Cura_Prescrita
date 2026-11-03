@@ -27,8 +27,8 @@ func mostrar(doenca: Doenca) -> void:
 	var f_sat := doenca.faixa_saturacao()
 	
 	label_temperatura.text = "Temperatura: %.1f–%.1f °C" % [f_temp.x, f_temp.y]
+	label_oxigenacao.text = "Saturação: %.0f–%.0f" % [f_sat.x, f_sat.y] + "%"
 	label_pressao.text = "Pressão: %.0f–%.0f / %.0f–%.0f mmHg" % [f_sist.x, f_sist.y, f_diast.x, f_diast.y]
-	label_oxigenacao.text = "Saturação: %.0f–%.0f%%" % [f_sat.x, f_sat.y]
 	
 	label_receita.text = "Receita: " + doenca.print_receita()
 

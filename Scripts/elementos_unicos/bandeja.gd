@@ -37,9 +37,10 @@ func adicionar(ingrediente: Ingrediente) -> bool:
 func _criar_icone_visual(ingrediente: Ingrediente, indice: int) -> void:
 	var icone := Sprite2D.new()
 	icone.texture = ingrediente.textura
-	icone.scale = Vector2(0.75, 0.75)
+	icone.hframes = ingrediente.quadros_h
 	
-	## icone.position = Vector2(indice % COLUNAS, indice / COLUNAS) * TAMANHO_SLOT
+	icone.frame = clampi(ingrediente.quadro_bandeja, 0, ingrediente.quadros_h - 1)
+	icone.scale = Vector2(0.75, 0.75)
 	icone.position = _posicao_do_slot(indice)
 	
 	add_child(icone)

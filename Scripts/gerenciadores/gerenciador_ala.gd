@@ -19,6 +19,7 @@ func entregar_remedio(remedio: RemedioVisual, paciente: Paciente) -> void:
 	GerenciadorDialogos.falar.emit(paciente.nome, paciente.doenca.fala_reacao(correto))
 	await GerenciadorDialogos.get_tree().create_timer(GerenciadorDialogos.tempo_exibicao, true).timeout
 	
+	GerenciadorDialogos.limpar_dialogo.emit()
 	GerenciadorPacientes.liberar_paciente(paciente.protocolo)
 
 func _remedio_e_correto(remedio: RemedioVisual, doenca: Doenca) -> bool:

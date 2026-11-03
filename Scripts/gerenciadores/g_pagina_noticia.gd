@@ -1,8 +1,7 @@
 extends Control
 
-@onready var noticia_atual: RichTextLabel = $DivRegras/NoticiaAtual
-@onready var noticias_anteriores: RichTextLabel = $DivRegras/Scroll/NoticiasAnteriores
-
+@export var noticia_atual: RichTextLabel
+@export var noticias_anteriores: RichTextLabel
 
 
 func popular() -> void:

@@ -9,3 +9,9 @@ extends Resource
 
 ## Sprite usado na prateleira e na instância arrastável.
 @export var textura: Texture2D
+
+## Quantos quadros a textura tem na horizontal (spritesheet).
+@export var quadros_h: int = 2
+
+## Quadro mostrado na bandeja.
+@export var quadro_bandeja: int = 0

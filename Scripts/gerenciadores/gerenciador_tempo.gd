@@ -17,11 +17,14 @@ var valor_atual: float
 var fase_ativa: bool = false
 var esta_hover: bool = false
 
+var pausado_tutorial: bool = false   ## congelamento temporário (tutorial, pausa); não inicia nem encerra a fase
+
 signal tempo_atualizado(atual: float, total: float)
 signal tempo_esgotado
 
 func preparar_dia() -> void:
 	fase_ativa = false
+	pausado_tutorial = false
 	valor_atual = _total_atual()
 
 func iniciar_fase() -> void:
@@ -32,6 +35,13 @@ func iniciar_fase() -> void:
 
 func parar() -> void:
 	fase_ativa = false
+	pausado_tutorial = false
+
+func pausar_tempo() -> void:
+	fase_ativa = false
+
+func continuar_tempo() -> void:
+	fase_ativa = true
 
 func encerrar_fase() -> void:
 	fase_ativa = false
@@ -40,16 +50,18 @@ func encerrar_fase() -> void:
 	## get_tree().change_scene_to_file("res://Scenes/casa.tscn")
 
 func _process(delta: float) -> void:
-	if not fase_ativa or modo != Modo.CRONOMETRO:
+	if pausado_tutorial or not fase_ativa or modo != Modo.CRONOMETRO:
 		return
 	##if esta_hover:
 		## atualizar_texto_tooltip()
 	_consumir(delta)
 
 func registrar_acao(custo: float = -1.0) -> void:
-	if not fase_ativa or modo != Modo.ESTAMINA:
+	if pausado_tutorial or not fase_ativa or modo != Modo.ESTAMINA:
 		return
 	var custo_real := custo if custo >= 0.0 else custo_acao_padrao
+	
+	GerenciadorAudio.tocar("teste")
 	_consumir(custo_real)
 
 func _consumir(quantidade: float) -> void:

@@ -8,5 +8,7 @@ func _ready() -> void:
 
 func _on_area_clique_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		guia_medico.abrir()
-		GerenciadorTempo.registrar_acao(1.0)
+		abrir()
+
+func abrir() -> void:
+	guia_medico.abrir()

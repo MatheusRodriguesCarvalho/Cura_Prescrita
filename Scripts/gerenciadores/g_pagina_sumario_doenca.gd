@@ -8,7 +8,9 @@ signal doenca_selecionada(doenca: Doenca)
 
 
 func _ready() -> void:
-	campo_busca.text_submitted.connect(_on_campo_busca_submitted)
+	campo_busca.text_submitted.connect(_on_campo_busca_submetida)
+	campo_busca.focus_exited.connect(_on_campo_busca_submetida_por_troca)
+	
 	filtro_categoria.item_selected.connect(_on_filtro_categoria_selected)
 
 
@@ -37,10 +39,13 @@ func _preencher_filtro_categoria() -> void:
 			break
 
 
-func _on_campo_busca_submitted(_texto: String) -> void:
+func _on_campo_busca_submetida(_texto: String) -> void:
 	_popular_doencas()
 	campo_busca.clear()
 
+func _on_campo_busca_submetida_por_troca() -> void:
+	_popular_doencas()
+	campo_busca.clear()
 
 func _on_filtro_categoria_selected(_indice: int) -> void:
 	_popular_doencas()
@@ -83,4 +88,4 @@ func _doenca_corresponde_filtro(doenca: Doenca, filtro_texto: String, categoria_
 
 
 func _on_dbotao_voltar_pressed() -> void:
-	get_parent().get_parent().fechar()
+	get_parent().get_parent().mostrar_pagina_noticias()

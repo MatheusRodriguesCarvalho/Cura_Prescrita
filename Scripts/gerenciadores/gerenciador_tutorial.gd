@@ -1,32 +1,61 @@
 extends Node
 ## Autoload: GerenciadorTutorial (deixe por ÚLTIMO na lista de Autoloads).
+##
+## Ações do jogo que precisam respeitar o tutorial chamam, na PRIMEIRA linha:
+##     if GerenciadorTutorial.filtrar(self): return
+## Eventos do jogo avisam o tutorial com:
+##     GerenciadorTutorial.notificar("nome_do_evento")
 
 signal sequencia_iniciada(id: String)
 signal sequencia_concluida(id: String)
+ 
+enum Fase { INATIVA, ESPERA, FALA }
+ 
+const BRILHO := Color(1.8, 1.8, 1.8)
+const CARACTERES_POR_SEGUNDO := 45.0
+const SOM_FALA := "fala"
+ 
+## ids das sequências já vistas (vale para a sessão; entra no save/load quando existir).
+var concluidas: Dictionary = {}
+var ativo := false
+ 
+var _sequencia: TutorialSequencia
+var _indice := 0
+var _fase := Fase.INATIVA
+ 
+var _alvo: CanvasItem
+var _alvo_caminho := ""
+var _modulate_original := Color.WHITE
+var _tween_brilho: Tween
+ 
+var _digitando := false
+var _tween_texto: Tween
+var _tween_ui: Tween
+ 
+var _camada: CanvasLayer
+var _bloqueio: ColorRect
+var _retrato: TextureRect
+var _painel: PanelContainer
+var _label_nome: Label
+var _texto: RichTextLabel
+var _dica: Label
+var _botao_pular: Button
+
+
+
 
 const LARGURA_BALAO := 560.0
 const MARGEM_TOPO := 20.0
 const BRILHO_DESTAQUE := Color(1.7, 1.7, 1.7)
-
-## ids das sequências já vistas. Entra no save/load quando ele existir.
-var concluidas: Dictionary = {}
-var ativo := false
-
-var _sequencia: TutorialSequencia
-var _indice := 0
 var _alvo_atual: CanvasItem
-var _modulate_original := Color.WHITE
 var _tween_destaque: Tween
-
-var _camada: CanvasLayer
-var _painel: PanelContainer
 var _label_narrador: Label
 var _label_texto: RichTextLabel
 var _botao_continuar: Button
-var _botao_pular: Button
 
 
 func _ready() -> void:
+	print("Tutorial: iniciado")
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_construir_ui()
 	_camada.hide()
@@ -34,10 +63,11 @@ func _ready() -> void:
 	## Eventos que já existem como sinais: nenhuma outra edição necessária.
 	GerenciadorAla.ficha_finalizada.connect(func(): notificar("ficha_finalizada"))
 	GerenciadorAla.novo_paciente_chamado.connect(func(): notificar("paciente_chamado"))
+	GerenciadorAla.remedio_entregue.connect(func(_correto): notificar("remedio_entregue"))
+	print("Tutorial: iniciado, fim")
 
 
 ## --- API pública ---
-## Inicia uma sequência. Se já foi concluída, ignora (a menos que forcar = true).
 func iniciar(seq: TutorialSequencia, forcar: bool = false) -> void:
 	if seq == null or seq.passos.is_empty() or ativo:
 		return
@@ -48,19 +78,340 @@ func iniciar(seq: TutorialSequencia, forcar: bool = false) -> void:
 	_indice = 0
 	ativo = true
 	if seq.pausar_tempo:
-		GerenciadorTempo.pausado = true
+		GerenciadorTempo.pausar_tempo()
 	
 	_camada.show()
+	_botao_pular.show()
 	sequencia_iniciada.emit(seq.id)
-	_mostrar_passo()
+	_comecar_passo()
 
 
-## Chamado pelo resto do jogo quando algo acontece. Sem efeito se não houver tutorial ativo.
+## O jogo avisa que algo aconteceu. Sem efeito se não houver espera por esse evento.
 func notificar(evento: String) -> void:
+	print("Tutorial: notificado")
+	if not ativo or _fase != Fase.ESPERA or _sequencia == null:
+		print("Tutorial: notificacao ignorada")
+		return
+	if _passo().evento_conclusao == evento:
+		print("Tutorial: notificacao atendida")
+		_concluir_espera()
+
+
+## Chamado pelas ações do jogo. Devolve true se a ação deve ser ENGOLIDA (return).
+##  - Durante a fala da personagem: tudo é engolido.
+##  - Passo com alvo: só o alvo funciona; se for "capturar_clique", o clique avança o
+##    tutorial e a ação não acontece de verdade.
+##  - Passo sem alvo: nada é bloqueado.
+func filtrar(no: Node) -> bool:
+	if not ativo or _sequencia == null:
+		return false
+	if _fase == Fase.FALA:
+		return true
+	if not is_instance_valid(_alvo):
+		return false
+	var eh_alvo := no == _alvo or _alvo.is_ancestor_of(no)
+	if eh_alvo and _passo().capturar_clique:
+		_concluir_espera()
+		return true
+	return not eh_alvo
+
+## --- Fluxo dos passos ---
+func _passo() -> TutorialPasso:
+	return _sequencia.passos[_indice]
+
+func _tem_espera(passo: TutorialPasso) -> bool:
+	return passo.capturar_clique or passo.evento_conclusao != ""
+
+func _comecar_passo() -> void:
+	_limpar_brilho()
+	var passo := _passo()
+	if passo.narrar_primeiro and passo.texto != "":
+		_narrar(passo)
+	elif _tem_espera(passo):
+		_esperar(passo)
+	elif passo.texto != "":
+		_narrar(passo)
+	else:
+		_proximo()
+
+func _esperar(passo: TutorialPasso) -> void:
+	_fase = Fase.ESPERA
+	if passo.capturar_clique and passo.alvo == "":
+		push_warning("Tutorial: passo com capturar_clique precisa de um alvo.")
+	_brilhar(passo.alvo)
+
+func _concluir_espera() -> void:
+	_limpar_brilho()
+	var passo := _passo()
+	if not passo.narrar_primeiro and passo.texto != "":
+		_narrar(passo)
+	else:
+		_proximo()
+
+func _narrar(passo: TutorialPasso) -> void:
+	_fase = Fase.FALA
+	## Brilho durante a fala, exceto na fala que vem DEPOIS do clique no alvo.
+	if passo.alvo != "" and (passo.narrar_primeiro or not _tem_espera(passo)):
+		_brilhar(passo.alvo)
+	
+	var nome := passo.narrador if passo.narrador != "" else _sequencia.narrador_padrao
+	var retrato := passo.retrato if passo.retrato else _sequencia.retrato_padrao
+	_label_nome.text = nome
+	_label_nome.visible = nome != ""
+	_retrato.texture = retrato
+	_retrato.visible = retrato != null
+	_texto.text = passo.texto
+	_dica.hide()
+	_mostrar_ui()
+	GerenciadorAudio.tocar(SOM_FALA)
+	
+	## Digitação
+	if _tween_texto:
+		_tween_texto.kill()
+	_texto.visible_ratio = 0.0
+	var total := _texto.get_total_character_count()
+	_digitando = true
+	_tween_texto = create_tween()
+	_tween_texto.tween_property(_texto, "visible_ratio", 1.0, maxf(0.3, total / CARACTERES_POR_SEGUNDO))
+	_tween_texto.tween_callback(_digitacao_terminou)
+
+func _digitacao_terminou() -> void:
+	_digitando = false
+	_dica.show()
+
+func _avancar_fala() -> void:
+	if _fase != Fase.FALA:
+		return
+	if _digitando:
+		if _tween_texto:
+			_tween_texto.kill()
+		_texto.visible_ratio = 1.0
+		_digitacao_terminou()
+		return
+	
+	_esconder_ui()
+	var passo := _passo()
+	if passo.narrar_primeiro and _tem_espera(passo):
+		_esperar(passo)  ## a fala veio primeiro; agora o jogador age
+	else:
+		_proximo()
+
+func _proximo() -> void:
 	if not ativo or _sequencia == null:
 		return
-	if _sequencia.passos[_indice].evento_conclusao == evento:
-		_proximo()
+	_indice += 1
+	GerenciadorTempo.continuar_tempo()
+	if _indice >= _sequencia.passos.size():
+		_finalizar()
+	else:
+		_comecar_passo()
+ 
+ 
+
+func _finalizar() -> void:
+	if not ativo or _sequencia == null:
+		return
+	_limpar_brilho()
+	if _tween_texto:
+		_tween_texto.kill()
+	_esconder_ui()
+	_botao_pular.hide()
+	
+	var id := _sequencia.id
+	concluidas[id] = true
+	if _sequencia.pausar_tempo:
+		GerenciadorTempo.continuar_tempo()
+	
+	ativo = false
+	_fase = Fase.INATIVA
+	_sequencia = null
+	## Esconde a camada depois do fade (se outra sequência não começou nesse meio tempo).
+	get_tree().create_timer(0.3, true).timeout.connect(func():
+		if not ativo:
+			_camada.hide())
+	sequencia_concluida.emit(id)
+
+## --- Brilho no alvo ---
+func _brilhar(caminho: String) -> void:
+	if caminho == "":
+		return
+	if is_instance_valid(_alvo) and _alvo_caminho == caminho:
+		return
+	_limpar_brilho()
+	
+	var cena := get_tree().current_scene
+	var no: Node = cena.get_node_or_null(caminho) if cena else null
+	if not (no is CanvasItem):
+		push_warning("Tutorial: alvo não encontrado ou inválido: " + caminho)
+		return
+	
+	_alvo = no
+	_alvo_caminho = caminho
+	_modulate_original = _alvo.modulate
+	## Tween preso ao alvo: se o nó for removido, o tween morre junto.
+	_tween_brilho = _alvo.create_tween().set_loops()
+	_tween_brilho.tween_property(_alvo, "modulate", _modulate_original * BRILHO, 0.5)
+	_tween_brilho.tween_property(_alvo, "modulate", _modulate_original, 0.5)
+ 
+ 
+func _limpar_brilho() -> void:
+	if _tween_brilho:
+		_tween_brilho.kill()
+		_tween_brilho = null
+	if is_instance_valid(_alvo):
+		_alvo.modulate = _modulate_original
+	_alvo = null
+	_alvo_caminho = ""
+
+## --- Interface ---
+func _mostrar_ui() -> void:
+	_bloqueio.mouse_filter = Control.MOUSE_FILTER_STOP
+	_trocar_tween_ui().set_parallel(true)
+	_tween_ui.tween_property(_bloqueio, "modulate:a", 1.0, 0.2)
+	_tween_ui.tween_property(_painel, "modulate:a", 1.0, 0.2)
+	_tween_ui.tween_property(_retrato, "modulate:a", 1.0, 0.25)
+ 
+ 
+func _esconder_ui() -> void:
+	_bloqueio.mouse_filter = Control.MOUSE_FILTER_IGNORE  ## o clique volta ao jogo na hora
+	_trocar_tween_ui().set_parallel(true)
+	_tween_ui.tween_property(_bloqueio, "modulate:a", 0.0, 0.2)
+	_tween_ui.tween_property(_painel, "modulate:a", 0.0, 0.2)
+	_tween_ui.tween_property(_retrato, "modulate:a", 0.0, 0.2)
+ 
+ 
+func _trocar_tween_ui() -> Tween:
+	if _tween_ui:
+		_tween_ui.kill()
+	_tween_ui = create_tween()
+	return _tween_ui
+ 
+ 
+func _on_bloqueio_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		_avancar_fala()
+
+
+## Enter/Espaço também avançam a fala (e não vazam para os atalhos do jogo).
+func _input(event: InputEvent) -> void:
+	if ativo and _fase == Fase.FALA and event.is_action_pressed("ui_accept"):
+		get_viewport().set_input_as_handled()
+		_avancar_fala()
+ 
+ 
+## Montada por código; estilize depois com um Theme.
+func _construir_ui() -> void:
+	_camada = CanvasLayer.new()
+	_camada.layer = 100  ## abaixo da pausa (110)
+	add_child(_camada)
+	
+	## Escurece levemente e engole os cliques enquanto a personagem fala.
+	_bloqueio = ColorRect.new()
+	_bloqueio.color = Color(0, 0, 0, 0.35)
+	_bloqueio.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_bloqueio.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_bloqueio.modulate.a = 0.0
+	_bloqueio.gui_input.connect(_on_bloqueio_input)
+	_camada.add_child(_bloqueio)
+	
+	_retrato = TextureRect.new()
+	_retrato.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_retrato.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	_retrato.custom_minimum_size = Vector2(220, 320)
+	_retrato.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_retrato.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT, Control.PRESET_MODE_MINSIZE, 20)
+	_retrato.modulate.a = 0.0
+	_camada.add_child(_retrato)
+	
+	var margem := MarginContainer.new()
+	margem.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE, Control.PRESET_MODE_MINSIZE)
+	margem.grow_vertical = Control.GROW_DIRECTION_BEGIN
+	margem.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	margem.add_theme_constant_override("margin_left", 260)
+	margem.add_theme_constant_override("margin_right", 30)
+	margem.add_theme_constant_override("margin_bottom", 30)
+	_camada.add_child(margem)
+	
+	_painel = PanelContainer.new()
+	_painel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_painel.modulate.a = 0.0
+	margem.add_child(_painel)
+	
+	var caixa := VBoxContainer.new()
+	caixa.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_painel.add_child(caixa)
+	
+	_label_nome = Label.new()
+	caixa.add_child(_label_nome)
+	
+	_texto = RichTextLabel.new()
+	_texto.bbcode_enabled = true
+	_texto.fit_content = true
+	_texto.scroll_active = false
+	_texto.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	caixa.add_child(_texto)
+	
+	_dica = Label.new()
+	_dica.text = "clique para continuar"
+	_dica.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	_dica.modulate = Color(1, 1, 1, 0.6)
+	caixa.add_child(_dica)
+	
+	## Saída de emergência: sempre visível enquanto o tutorial roda.
+	_botao_pular = Button.new()
+	_botao_pular.text = "Pular tutorial"
+	_botao_pular.focus_mode = Control.FOCUS_NONE
+	_botao_pular.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT, Control.PRESET_MODE_MINSIZE, 10)
+	_botao_pular.pressed.connect(_finalizar)
+	_botao_pular.hide()
+	_camada.add_child(_botao_pular)
+	
+	print("Tutorial: ui constituida")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## --- Fluxo dos passos ---
@@ -74,33 +425,6 @@ func _mostrar_passo() -> void:
 	_botao_continuar.visible = passo.evento_conclusao == ""
 	
 	_destacar(passo.alvo)
-
-
-func _proximo() -> void:
-	if not ativo or _sequencia == null:
-		return
-	_indice += 1
-	if _indice >= _sequencia.passos.size():
-		_finalizar()
-	else:
-		_mostrar_passo()
-
-
-func _finalizar() -> void:
-	if not ativo or _sequencia == null:
-		return
-	_limpar_destaque()
-	_camada.hide()
-	
-	var id := _sequencia.id
-	concluidas[id] = true
-	if _sequencia.pausar_tempo:
-		GerenciadorTempo.pausado = false
-	
-	ativo = false
-	_sequencia = null
-	sequencia_concluida.emit(id)
-
 
 ## --- Destaque (pulso de brilho no nó alvo) ---
 func _destacar(caminho: String) -> void:
@@ -127,42 +451,3 @@ func _limpar_destaque() -> void:
 	if is_instance_valid(_alvo_atual):
 		_alvo_atual.modulate = _modulate_original
 	_alvo_atual = null
-
-
-## --- Interface (montada por código; estilize depois com um Theme) ---
-func _construir_ui() -> void:
-	_camada = CanvasLayer.new()
-	_camada.layer = 100
-	add_child(_camada)
-	
-	_painel = PanelContainer.new()
-	_painel.custom_minimum_size = Vector2(LARGURA_BALAO, 0)
-	_painel.set_anchors_and_offsets_preset(Control.PRESET_CENTER_TOP, Control.PRESET_MODE_MINSIZE, int(MARGEM_TOPO))
-	_painel.grow_horizontal = Control.GROW_DIRECTION_BOTH
-	_camada.add_child(_painel)
-	
-	var caixa := VBoxContainer.new()
-	_painel.add_child(caixa)
-	
-	_label_narrador = Label.new()
-	caixa.add_child(_label_narrador)
-	
-	_label_texto = RichTextLabel.new()
-	_label_texto.bbcode_enabled = true
-	_label_texto.fit_content = true
-	_label_texto.custom_minimum_size = Vector2(LARGURA_BALAO - 20.0, 0)
-	caixa.add_child(_label_texto)
-	
-	var botoes := HBoxContainer.new()
-	botoes.alignment = BoxContainer.ALIGNMENT_END
-	caixa.add_child(botoes)
-	
-	_botao_pular = Button.new()
-	_botao_pular.text = "Pular tutorial"
-	_botao_pular.pressed.connect(_finalizar)
-	botoes.add_child(_botao_pular)
-	
-	_botao_continuar = Button.new()
-	_botao_continuar.text = "Continuar"
-	_botao_continuar.pressed.connect(_proximo)
-	botoes.add_child(_botao_continuar)

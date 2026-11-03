@@ -9,13 +9,13 @@ enum Estado { PARADA, SEGURANDO, ANALISANDO , CONCLUIDO }
 
 @export var tempo_leitura: float = 1.5
 @export var tempo_popup: float = 2.5
-@export var custo_e_leitura: float = 5.0
-@export var custo_e_manuseio: float = 1.0
+@export var custo_e_leitura: float = 2.0
 
 var estado: Estado = Estado.PARADA
 var posicao_original: Vector2
 var paciente_alvo: Paciente = null
 var tempo_decorrido: float = 0.0
+var efeito_sonoro: String = "teste"
 
 ## Ícone/sprite da ferramenta, exibido em cena.
 @onready var area_clique: Area2D = $AreaClique
@@ -56,8 +56,6 @@ func _unhandled_input(event: InputEvent) -> void:
 func _pegar() -> void:
 	estado = Estado.SEGURANDO
 	_atualizar_sprite()
-	
-	GerenciadorTempo.registrar_acao(custo_e_manuseio)
 
 func _soltar() -> void:
 	TooltipInfo.esconder.emit()
@@ -127,6 +125,7 @@ func _concluir_analise() -> void:
 	medicao_concluida.emit(tipo, resultado)
 	
 	GerenciadorTempo.registrar_acao(custo_e_leitura)
+	GerenciadorAudio.tocar(efeito_sonoro)
 	TooltipInfo.mostrar.emit(resultado, "ferramenta")
 	
 	estado = Estado.CONCLUIDO
@@ -146,9 +145,12 @@ func _registrar_no_paciente(paciente: Paciente, resultado: String) -> void:
 func medir(paciente: Paciente) -> String:
 	match tipo:
 		Tipo.TEMPERATURA:
+			efeito_sonoro = "teste"
 			return "%.1f °C" % paciente.med_temperatura
 		Tipo.SATURACAO:
+			efeito_sonoro = "fala"
 			return "%.0f%%" % paciente.med_saturacao
 		Tipo.PRESSAO:
+			efeito_sonoro = "folear"
 			return "%.0f/%.0f mmHg" % [paciente.med_pressao_sistolica, paciente.med_pressao_diastolica]
 	return "—"

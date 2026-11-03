@@ -6,6 +6,12 @@ extends Node
 
 ## --- Efeitos sonoros ---
 const TAMANHO_POOL := 6
+const EXTENSOES_AUDIO := ["ogg", "wav", "mp3"]
+
+const VOLUME_INICIAL_MUSICA := 0.4   ## 0.4 ≈ -8 dB
+const VOLUME_INICIAL_EFEITOS := 0.8
+
+
 var _players: Array[AudioStreamPlayer] = []
 var _proximo := 0
 var _mapa_eventos: Dictionary = {}
@@ -36,9 +42,14 @@ func _ready() -> void:
 	_player_musica_b.volume_db = -80.0
 	add_child(_player_musica_b)
 	
+	definir_volume("Musica", VOLUME_INICIAL_MUSICA)
+	definir_volume("Efeitos", VOLUME_INICIAL_EFEITOS)
+	
 	_carregar_eventos()
 	_carregar_musicas()
 
+static func nome_real(arquivo: String) -> String:
+	return arquivo.trim_suffix(".remap").trim_suffix(".import")
 
 ## --- Efeitos sonoros ---
 func _carregar_eventos() -> void:
@@ -51,9 +62,9 @@ func _carregar_eventos() -> void:
 	
 	var arquivo := dir.get_next()
 	while arquivo != "":
-		if not dir.current_is_dir() and arquivo.get_extension() == "tres":
-			var caminho := pasta_eventos.path_join(arquivo)
-			var evento := load(caminho) as EventoSonoro
+		var nome := nome_real(arquivo)
+		if not dir.current_is_dir() and nome.get_extension() == "tres":
+			var evento = load(pasta_eventos.path_join(nome)) as EventoSonoro
 			if evento:
 				_mapa_eventos[evento.nome] = evento.variacoes
 		arquivo = dir.get_next()
@@ -99,13 +110,19 @@ func _carregar_streams_da_pasta(caminho: String) -> Array[AudioStream]:
 	if dir == null:
 		return resultado
 	
+	
+	var ja_vistos: Array[String] = []
 	dir.list_dir_begin()
 	var arquivo := dir.get_next()
 	while arquivo != "":
-		if not dir.current_is_dir() and not arquivo.ends_with(".import"):
-			var stream := load(caminho.path_join(arquivo)) as AudioStream
-			if stream:
-				resultado.append(stream)
+		if not dir.current_is_dir():
+			## "musica.ogg.import" ou "musica.ogg.remap" viram "musica.ogg"
+			var nome := arquivo.trim_suffix(".remap").trim_suffix(".import")
+			if nome.get_extension() in EXTENSOES_AUDIO and not nome in ja_vistos:
+				ja_vistos.append(nome)
+				var stream := load(caminho.path_join(nome)) as AudioStream
+				if stream:
+					resultado.append(stream)
 		arquivo = dir.get_next()
 	dir.list_dir_end()
 	return resultado

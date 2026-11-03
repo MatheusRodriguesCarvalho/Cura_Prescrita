@@ -27,9 +27,13 @@ func _ready() -> void:
 	botao_excluir.hide()
 	
 	campo_protocolo.text_submitted.connect(_on_protocolo_submetido)
+	campo_protocolo.focus_exited.connect(_on_protocolo_submetido_por_troca)
+	
 	botao_imprimir.pressed.connect(_on_imprimir_pressed)
 	botao_excluir.pressed.connect(_on_excluir_pressed)
 	botao_retornar.pressed.connect(_on_retornar_pressed)
+	
+	GerenciadorAla.novo_paciente_chamado.connect(_limpar_quadro)
 	
 	for campo in [campo_temperatura, campo_pressao,campo_saturacao]:
 		campo.focus_entered.connect(_on_campo_medicao_focus.bind(campo))
@@ -50,7 +54,17 @@ func _on_protocolo_submetido(_texto: String) -> void:
 	
 	paciente_atual = paciente
 	_preencher_cadastro(paciente)
-	_limpar_quadro()
+
+func _on_protocolo_submetido_por_troca() -> void:
+	var protocolo := campo_protocolo.text.strip_edges()
+	var paciente: Paciente = GerenciadorPacientes.busca_por_protocolo(protocolo)
+	
+	if paciente == null:
+		TooltipInfo.aviso.emit("Protocolo Invalido...")
+		return
+	
+	paciente_atual = paciente
+	_preencher_cadastro(paciente)
 
 func _preencher_cadastro(paciente: Paciente) -> void:
 	label_nome.text = "Nome: " + paciente.nome
@@ -101,6 +115,7 @@ func _on_campo_medicao_focus(campo: LineEdit) -> void:
 
 ## --- Ações dos Botões ---
 func _on_retornar_pressed() -> void:
+	GerenciadorAudio.tocar("clique")
 	hide()
 
 func _on_imprimir_pressed() -> void:
@@ -117,6 +132,8 @@ func _on_imprimir_pressed() -> void:
 	GerenciadorPacientes.registrar_ficha(paciente_atual.protocolo, ficha)
 	paciente_atual.ficha_impressa = true
 	
+	GerenciadorAudio.tocar("imprimir")
+	
 	## Signals
 	GerenciadorAla.ficha_finalizada.emit()
 	
@@ -129,6 +146,8 @@ func _on_excluir_pressed() -> void:
 	if paciente_atual:
 		paciente_atual.ficha_impressa = false
 	GerenciadorAla.editar_ficha.emit()
+	
+	GerenciadorAudio.tocar("lixo")
 	
 	botao_imprimir.show()
 	botao_excluir.hide()

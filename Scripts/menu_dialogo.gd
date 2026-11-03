@@ -3,7 +3,7 @@ extends Control
 var paciente_atual: Paciente = null
 
 ## O primeiro botão da cena vira o molde (mantém seu estilo); os demais são removidos.
-@onready var lista: VBoxContainer = $VBoxContainer
+@export var lista: VBoxContainer
 var _modelo: Button
 
 ## Os botões só são refeitos quando o paciente muda (o nó Paciente é permanente,

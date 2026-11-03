@@ -39,7 +39,9 @@ func _ready() -> void:
 	hide()
 
 func _on_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+	if not (event is InputEventMouseButton and event.pressed):
+		return
+	if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT:
 		menu_dialogo.abrir(self)
 
 
@@ -79,11 +81,17 @@ func fala_vida_aleatoria() -> Dictionary:
 
 func apliar_doenca(doenca_sorteada: Doenca) -> void:
 	doenca = doenca_sorteada
-	med_pressao_sistolica = _variar(doenca.med_pressao_sistolica)
-	med_pressao_diastolica = _variar(doenca.med_pressao_diastolica)
-	med_temperatura = _variar(doenca.med_temperatura)
-	med_saturacao = _variar(doenca.med_saturacao)
+	
+	med_pressao_sistolica = valor_na_faixa(doenca.faixa_pressao_sistolica())
+	med_pressao_diastolica = valor_na_faixa(doenca.faixa_pressao_diastolica())
+	med_temperatura = valor_na_faixa(doenca.faixa_temperatura())
+	med_saturacao = valor_na_faixa(doenca.faixa_saturacao())
+	
 	receita_cura = doenca.receita_cura
+	## print("Temperatura: %0.1f \nSaturação: %d \nPressão: %d/%d" % [med_temperatura, med_saturacao, med_pressao_sistolica, med_pressao_diastolica])
+
+func valor_na_faixa(faixa: Vector2) -> float:
+	return randf_range(faixa.x, faixa.y)
 
 func _variar(valor: float, margem: float = 0.05) -> float:
 	var variacao := valor * margem

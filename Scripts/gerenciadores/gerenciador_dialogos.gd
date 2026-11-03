@@ -17,13 +17,12 @@ var falas_protocolo_avulso := [
 	"Aqui está: %s.",
 ]
 
-var tempo_exibicao: float = 2.5
-var tempo_exibicao_2: float = tempo_exibicao / 2
+var tempo_exibicao: float = 4
 
 ## Emit para o UI_DIALOGO
 signal falar(quem: String, texto: String)
 signal informar(texto: String)
-
+signal limpar_dialogo
 
 func apresentar_paciente(paciente: Paciente) -> void:
 	await get_tree().create_timer(0.5).timeout
@@ -39,3 +38,7 @@ func apresentar_paciente(paciente: Paciente) -> void:
 func pedir_protocolo(paciente: Paciente) -> void:
 	var resposta: String = falas_protocolo_avulso[randi() % falas_protocolo_avulso.size()]
 	falar.emit(paciente.nome, resposta % paciente.protocolo)
+
+
+func limpar_dialogoUI() -> void:
+	pass

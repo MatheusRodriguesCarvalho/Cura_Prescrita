@@ -34,9 +34,11 @@ func _soltar() -> void:
 	var alvo := _buscar_alvo_sob_cursor()
 	if alvo is Lixeira:
 		GerenciadorAudio.tocar("lixo")
+		GerenciadorTempo.registrar_acao(5.0)
 		queue_free()
 	elif alvo is Paciente:
 		GerenciadorAla.entregar_remedio(self, alvo)
+		## GerenciadorTempo.registrar_acao(0.5)
 		TooltipInfo.esconder.emit()
 
 

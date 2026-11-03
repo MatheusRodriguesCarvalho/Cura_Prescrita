@@ -7,12 +7,14 @@ extends Node2D
 
 func _ready() -> void:
 	area_clique.input_event.connect(_on_area_clique_input_event)
-	
 
 func _on_area_clique_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		
-		GerenciadorTempo.registrar_acao(10.0)
+		produzir()
+
+func produzir() -> void:
+	
+		GerenciadorTempo.registrar_acao(5.0)
 		GerenciadorAudio.tocar("remedio")
 		
 		var quantidades := bandeja.obter_quantidades()

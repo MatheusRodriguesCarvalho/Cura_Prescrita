@@ -1,16 +1,27 @@
 extends Control
 
-@onready var opcao_dificuldade: OptionButton = $VBoxContainer/Dificuldade
-@onready var slider_geral: HSlider = $VBoxContainer/VolumeGeral
-@onready var slider_musica: HSlider = $VBoxContainer/VolumeMusica
-@onready var slider_efeitos: HSlider = $VBoxContainer/VolumeEfeitos
-@onready var botao_fechar: Button = $VBoxContainer/BotaoFechar
+@export var opcao_dificuldade: OptionButton
+@export var descricao_dificuldade: Label
+
+@export var slider_geral: HSlider
+@export var slider_musica: HSlider
+@export var slider_efeitos: HSlider
+@export var botao_fechar: Button
+
+@export var opcao_resolucao: OptionButton
+@export var check_tela_cheia: CheckButton
+
+var descricoes: Array[String] = [
+	"O tempo do expediente corre sozinho. Quem pensa e não age, perde tempo.",
+	"O tempo só passa quando você age. Dá para ler e pensar com calma, mas cada ação gasta estamina.",
+]
+
 
 func _ready() -> void:
 	opcao_dificuldade.add_item("Cronômetro")
 	opcao_dificuldade.add_item("Estamina")
-	opcao_dificuldade.selected = GerenciadorTempo.modo
-	opcao_dificuldade.item_selected.connect(_on_dificuldade_selected)
+	opcao_dificuldade.item_selected.connect(_atualizar_descricao)  ## escolher NÃO muda o modo ainda
+	preparar_dificuldade()
 	
 	for slider in [slider_geral, slider_musica, slider_efeitos]:
 		slider.min_value = 0.0
@@ -25,19 +36,39 @@ func _ready() -> void:
 	slider_musica.value_changed.connect(func(v): _definir_volume("Musica", v))
 	slider_efeitos.value_changed.connect(func(v): _definir_volume("Efeitos", v))
 	
-	botao_fechar.pressed.connect(hide)
+	
+	for nome in GerenciadorVideo.NOMES:
+		opcao_resolucao.add_item(nome)
+	opcao_resolucao.select(GerenciadorVideo.indice_atual)
+	check_tela_cheia.set_pressed_no_signal(GerenciadorVideo.tela_cheia)
+	opcao_resolucao.disabled = GerenciadorVideo.tela_cheia
+	
+	opcao_resolucao.item_selected.connect(func(i: int):
+		GerenciadorVideo.aplicar_resolucao(i)
+		GerenciadorVideo.salvar())
+	
+	check_tela_cheia.toggled.connect(func(ligado: bool):
+		GerenciadorVideo.definir_tela_cheia(ligado)
+		opcao_resolucao.disabled = ligado  ## a janela só tem tamanho próprio fora da tela cheia
+		GerenciadorVideo.salvar())
 
-func _on_dificuldade_selected(indice: int) -> void:
-	GerenciadorTempo.modo = indice as GerenciadorTempo.Modo
+## --- Dificuldade ---
+## Chamado pelo menu ao abrir o painel: mostra o modo atual e a descrição dele.
+func preparar_dificuldade() -> void:
+	opcao_dificuldade.select(GerenciadorTempo.modo)
+	_atualizar_descricao(opcao_dificuldade.selected)
+
+## Chamado ao confirmar: só aqui o modo muda de fato (cancelar não altera nada).
+func aplicar_dificuldade() -> void:
+	GerenciadorTempo.modo = opcao_dificuldade.selected as GerenciadorTempo.Modo
+
+func _atualizar_descricao(indice: int) -> void:
+	descricao_dificuldade.text = descricoes[indice]
 
 
-
+## --- Volume ---
 func _definir_volume(bus_nome: String, valor_linear: float) -> void:
 	var indice_bus := AudioServer.get_bus_index(bus_nome)
-	
-	## print("slider -> bus: ", bus_nome, " | índice: ", indice_bus, " | valor: ", valor_linear)
-	print("  bus ", bus_nome, " -> db: ", AudioServer.get_bus_volume_db(indice_bus), " | mudo: ", AudioServer.is_bus_mute(indice_bus))
-	
 	if indice_bus == -1:
 		return
 	AudioServer.set_bus_mute(indice_bus, valor_linear <= 0.0)

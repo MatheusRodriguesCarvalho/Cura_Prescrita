@@ -24,9 +24,20 @@ func habilitar(valor: bool) -> void:
 		_retomar()
 
 func _unhandled_input(event: InputEvent) -> void:
+	
 	if habilitado and event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
 		alternar()
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_F11 or (event.keycode == KEY_ENTER and event.alt_pressed):
+			var janela := DisplayServer.window_get_mode()
+			DisplayServer.window_set_mode(
+				DisplayServer.WINDOW_MODE_WINDOWED if janela == DisplayServer.WINDOW_MODE_FULLSCREEN
+				else DisplayServer.WINDOW_MODE_FULLSCREEN
+			)
+			get_viewport().set_input_as_handled()
 
 func alternar() -> void:
 	if get_tree().paused:
