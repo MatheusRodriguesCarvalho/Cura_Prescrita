@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventoSonoro" format=3 uid="uid://x3k18cerjfxg"]
+
+[ext_resource type="Script" uid="uid://bqlkn7n0x1nel" path="res://Scripts/bases/base_evento_sonoro.gd" id="1_n4882"]
+[ext_resource type="AudioStream" uid="uid://b4i1w1bgl2h5s" path="res://Sons/Efeitos/novo_atendimento/Beep_chamarvoz_1.mp3" id="2_gcwko"]
+[ext_resource type="AudioStream" uid="uid://cbxfx4l143kr4" path="res://Sons/Efeitos/novo_atendimento/Beep_chamar_1.mp3" id="3_qp0sx"]
+[ext_resource type="AudioStream" uid="uid://byfdcqe85m8xx" path="res://Sons/Efeitos/novo_atendimento/Beep_chamar_2.mp3" id="4_ynbru"]
+[ext_resource type="AudioStream" uid="uid://1k8ano7dn15s" path="res://Sons/Efeitos/novo_atendimento/Beep_chamar_3.mp3" id="5_2gmje"]
+
+[resource]
+script = ExtResource("1_n4882")
+nome = "novo_atendimento"
+variacoes = Array[AudioStream]([ExtResource("2_gcwko"), ExtResource("3_qp0sx"), ExtResource("4_ynbru"), ExtResource("5_2gmje")])
+metadata/_custom_type_script = "uid://bqlkn7n0x1nel"
