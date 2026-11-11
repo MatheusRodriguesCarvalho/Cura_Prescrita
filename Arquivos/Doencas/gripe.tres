@@ -10,9 +10,14 @@ script = ExtResource("1_pgdhx")
 id = "I101GRP-A"
 nome = "Gripe Aviaria"
 nome_popular = Array[String](["Franguespirro", "Galinopraga", "Penugem"])
+risco = 4
 descricao = "Doença originária de aves migratórias e transmitida às aves locais, o contato frequente ou íntimo com as aves infectadas ou os locais onde recém repousaram garantem que o indivíduo seja acometido."
 categoria = "Respiratória"
-sintomas = Array[String](["Coceira", "Espirros", "Secreções"])
+sintomas = Array[String](["Espirros", "Coriza", "Tosse", "Dor de garganta"])
+med_pressao_sistolica = 98.0
+med_pressao_diastolica = 62.0
+med_temperatura = 39.4
+med_saturacao = 88.0
 receita_cura = Dictionary[ExtResource("1_lfba4"), int]({
 ExtResource("2_lfba4"): 1,
 ExtResource("3_dtp5u"): 1

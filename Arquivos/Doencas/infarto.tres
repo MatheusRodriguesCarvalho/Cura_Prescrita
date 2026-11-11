@@ -14,10 +14,11 @@ nome_popular = Array[String](["Nome Popular"])
 risco = 5
 descricao = "Palpitação e dor intensa localizada no peito, o coração esforça tanto para bombear que em um momento falha."
 categoria = "Cardiovascular"
-sintomas = Array[String](["Dor no peito", "Falta de ar"])
-med_pressao_sistolica = 190.0
-med_pressao_diastolica = 120.0
-med_saturacao = 95.0
+sintomas = Array[String](["Aperto no peito", "Falta de ar", "Suor excessivo", "Tontura"])
+med_pressao_sistolica = 168.0
+med_pressao_diastolica = 104.0
+med_temperatura = 36.8
+med_saturacao = 91.0
 fase = 4
 receita_cura = Dictionary[ExtResource("1_hswcv"), int]({
 ExtResource("2_d58sd"): 2,

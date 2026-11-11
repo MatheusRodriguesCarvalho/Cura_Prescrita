@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://dvi3l7glr8g17"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_4g33g"]
+[ext_resource type="Resource" uid="uid://b0prxwh6t0avb" path="res://Arquivos/Ingredientes/lunaflora.tres" id="2_jvy3b"]
+[ext_resource type="Resource" uid="uid://dhj3mbn7ujj7s" path="res://Arquivos/Ingredientes/ervaBruxa.tres" id="3_bg0b6"]
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="4_5xnei"]
+[ext_resource type="Resource" uid="uid://12chkxqnr8wa" path="res://Arquivos/Ingredientes/raizLobo.tres" id="4_bg0b6"]
+
+[resource]
+script = ExtResource("4_5xnei")
+id = "I203PSN-2"
+nome = "Parasita Neural"
+nome_popular = Array[String](["Verme da mente", "Comedor de sinapses"])
+risco = 2
+descricao = "Parasita de aparência inofensiva e comportamento imperceptível, se instala no tecido nervoso e se alimenta das sinapses, mantendo-se vivo e se reproduzindo às custas dos neurônios. Libera seus ovos na forma de esporos que morrem se não encontrarem um novo hospedeiro imediatamente. Por isso o contágio exige proximidade, e o quadro evolui de forma lenta e silenciosa, com perda gradual de memória e coordenação."
+categoria = "Outra"
+sintomas = Array[String](["Dor de cabeça", "Formigamento", "Esquecimentos", "Fraqueza"])
+med_pressao_sistolica = 114.0
+med_pressao_diastolica = 72.0
+med_saturacao = 92.0
+fase = 3
+receita_cura = Dictionary[ExtResource("1_4g33g"), int]({
+ExtResource("2_jvy3b"): 1,
+ExtResource("3_bg0b6"): 1,
+ExtResource("4_bg0b6"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

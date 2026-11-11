@@ -13,11 +13,11 @@ nome_popular = Array[String](["Mal do peito"])
 risco = 3
 descricao = "A falta de hidratação e o consumo incorreto de alimentos abaixa a imunidade dos adultos que precisam se esforçar todos os dias até o emprego, em algum momento a garganta e pulmões pedem por socorro."
 categoria = "Respiratória"
-sintomas = Array[String](["Tosse persistente", "Fadiga", "Falta de apetite", "Sudorese noturna"])
-med_pressao_sistolica = 109.0
-med_pressao_diastolica = 75.0
-med_temperatura = 38.0
-med_saturacao = 95.0
+sintomas = Array[String](["Tosse", "Fadiga", "Falta de apetite", "Suor excessivo"])
+med_pressao_sistolica = 108.0
+med_pressao_diastolica = 66.0
+med_temperatura = 37.8
+med_saturacao = 91.0
 fase = 3
 receita_cura = Dictionary[ExtResource("1_rjq5m"), int]({
 ExtResource("2_wapyo"): 2,

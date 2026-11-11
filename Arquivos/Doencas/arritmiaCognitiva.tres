@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://cwt7i65x5hcek"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_0uj7q"]
+[ext_resource type="Resource" uid="uid://b0prxwh6t0avb" path="res://Arquivos/Ingredientes/lunaflora.tres" id="2_0uj7q"]
+[ext_resource type="Resource" uid="uid://o0hkqanocu20" path="res://Arquivos/Ingredientes/boldo.tres" id="3_7311m"]
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="4_m4orx"]
+
+[resource]
+script = ExtResource("4_m4orx")
+id = "I202ARC-7"
+nome = "Arritmia Cognitiva"
+nome_popular = Array[String](["Dual-Mente", "Duplipensar", "Fissão Hemisférica"])
+risco = 3
+descricao = "Condição onde os pensamentos perdem a sincronia e passam a divergir, como se a mente se dividisse em duas linhas paralelas e independentes. Associa-se ao estresse crônico e ao uso excessivo de implantes neurais, que podem operar propriamente como a mente paralela ou degradar as conexões entre os hemisférios cerebrais. Quanto mais tempo o quadro persiste, maior a dificuldade de sustentar um raciocínio estruturado e contínuo."
+categoria = "Outra"
+sintomas = Array[String](["Confusão mental", "Dor de cabeça", "Insônia", "Tontura"])
+med_pressao_diastolica = 94.0
+med_temperatura = 36.7
+med_saturacao = 99.0
+fase = 4
+receita_cura = Dictionary[ExtResource("1_0uj7q"), int]({
+ExtResource("2_0uj7q"): 2,
+ExtResource("3_7311m"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

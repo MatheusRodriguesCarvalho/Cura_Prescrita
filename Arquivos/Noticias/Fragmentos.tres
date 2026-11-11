@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Noticia" format=3 uid="uid://n07s510xd2n3"]
+
+[ext_resource type="Script" uid="uid://smyxvm5ki54q" path="res://Scripts/bases/base_noticia.gd" id="1_m3mvg"]
+
+[resource]
+script = ExtResource("1_m3mvg")
+dia = 4
+chamada = "Fragmento encontrados nas Fronteira"
+texto = "Militares em uma ronda noturna relataram a presença de fragmentos brilhosos flutuando acima de corpos d'água, entretanto, ao quando direcionavam a visão diretamente à luz, os fragmentos sumiam como se nunca estiveram lá.
+Ao ser alertado sobre isso, o General do distrito Nordeste-H23, exigiu uma investigação imediata, sob a suspeita de que fosse alguma arma ou dispositivo do pais vizinho."
+metadata/_custom_type_script = "uid://smyxvm5ki54q"

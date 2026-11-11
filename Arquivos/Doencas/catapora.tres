@@ -14,11 +14,11 @@ nome_popular = Array[String](["Nome Popular"])
 risco = 3
 descricao = "Bolhas na pele e intensa coceira acometem alguns adultos, a vacina tem sido questionada e por isso alguns casos voltaram a aparecer."
 categoria = "Infecciosa"
-sintomas = Array[String](["Febre", "Coceira intensa", "Mal-estar geral"])
-med_pressao_sistolica = 125.0
-med_pressao_diastolica = 86.0
-med_temperatura = 39.5
-med_saturacao = 95.0
+sintomas = Array[String](["Coceira pelo corpo", "Manchas na pele", "Febre", "Mal-estar"])
+med_pressao_sistolica = 114.0
+med_pressao_diastolica = 74.0
+med_temperatura = 38.2
+med_saturacao = 98.0
 fase = 3
 receita_cura = Dictionary[ExtResource("1_bukwu"), int]({
 ExtResource("2_cf46a"): 2,

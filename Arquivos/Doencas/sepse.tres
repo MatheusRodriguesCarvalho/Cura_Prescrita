@@ -12,11 +12,11 @@ nome_popular = Array[String](["Infecção generalizada"])
 risco = 5
 descricao = "Pela distância da cidade até a clínica e o hospital, muitos pacientes ignoram seus sintomas gripais ou de outras doenças até que seja uma urgência. Medique e encaminhe para o hospital o quanto antes."
 categoria = "Infecciosa"
-sintomas = Array[String](["Calafrios", "Extremidades arroxeadas", "Taquicardia"])
-med_pressao_sistolica = 95.0
-med_pressao_diastolica = 65.0
-med_temperatura = 39.5
-med_saturacao = 91.0
+sintomas = Array[String](["Calafrios", "Febre", "Coração acelerado", "Fraqueza"])
+med_pressao_sistolica = 80.0
+med_pressao_diastolica = 50.0
+med_temperatura = 38.6
+med_saturacao = 89.0
 fase = 2
 receita_cura = Dictionary[ExtResource("1_bu3f6"), int]({
 ExtResource("2_0qrf3"): 1

@@ -14,11 +14,11 @@ nome_popular = Array[String](["Cistite"])
 risco = 3
 descricao = "A combinação de clima seco com a falta de hidratação correta, acomete muitos trabalhadores urbanos que precisam atravessar Aresiens para chegarem em seus trabalhos."
 categoria = "Infecciosa"
-sintomas = Array[String](["Ardência ao urinar", "Sensação de bexiga cheia", "Sensação de areia ao urinar"])
-med_pressao_sistolica = 125.0
+sintomas = Array[String](["Desconforto ao urinar", "Dor abdominal", "Mal-estar"])
+med_pressao_sistolica = 134.0
 med_pressao_diastolica = 86.0
-med_temperatura = 36.0
-med_saturacao = 95.0
+med_temperatura = 37.2
+med_saturacao = 98.0
 fase = 2
 receita_cura = Dictionary[ExtResource("1_skm4h"), int]({
 ExtResource("2_6hx6e"): 2,

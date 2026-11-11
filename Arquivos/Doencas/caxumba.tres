@@ -12,12 +12,14 @@ id = "I303CXB-1"
 nome = "Caxumba"
 nome_popular = Array[String](["Papeira"])
 risco = 3
-descricao = "O uso exacerbado de venenos em plantações das poucas regiões úmidas próximas de Aresiens resulta em alimentos lindos, porém com efeitos colaterais desconhecidos."
-categoria = "Outra"
-sintomas = Array[String](["Inchaço na garganta", "Dor de cabeça", "Dor para engolir"])
-med_pressao_sistolica = 140.0
-med_pressao_diastolica = 90.0
-med_temperatura = 40.0
+descricao = "O uso desmedido de pesticidas em regiões mais úmidas próximas de Aresiens, resultou em alimentos lindos e com uma quantidade de nutrientes constantemente questionada por institutos de Saúde, porém pouco é sabido se há efeitos colaterais no consumo.
+Mas o que é muito bem conhecido e denunciado, é a água descartada nos rios por essas empresas alimentícias, água essa, que está carregada de toxínas e veneno... E por vezes mais frequente do que se é registrado, pessoas usam dessa água para o cultivo dos próprios alimentos, ou se estam no rio, pescam peixes que de pouco se assemelham à qualquer vida marinha."
+categoria = "Infecciosa"
+sintomas = Array[String](["Dor de cabeça", "Dor para engolir", "Inchaço no pescoço", "Febre"])
+med_pressao_sistolica = 124.0
+med_pressao_diastolica = 78.0
+med_temperatura = 39.2
+med_saturacao = 98.0
 fase = 3
 receita_cura = Dictionary[ExtResource("1_o3s7p"), int]({
 ExtResource("2_su0m1"): 2,

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://cpblw6eryjg5m"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_qauui"]
+[ext_resource type="Resource" uid="uid://c807ygh72pr8x" path="res://Arquivos/Ingredientes/rosaRetorcida.tres" id="2_qauui"]
+[ext_resource type="Resource" uid="uid://12chkxqnr8wa" path="res://Arquivos/Ingredientes/raizLobo.tres" id="3_412oy"]
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="4_7d0t6"]
+
+[resource]
+script = ExtResource("4_7d0t6")
+id = "I404FLD-6"
+nome = "Fluxo Disforme"
+nome_popular = Array[String](["Sangue torto", "Maré do sangue", "Revés-rubro"])
+risco = 4
+descricao = "Distúrbio cardiovascular de origem desconhecida, onde o fluxo sanguíneo pode se inverter, acelerar ou desacelerar de formas imprevisíveis. Cogita-se a ação de agentes patológicos indetectáveis ou de um fenômeno geológico anômalos, restrito a certas regiões por períodos limitados. Sem causa definida, o tratamento visa estabilizar a circulação e aliviar os sintomas."
+categoria = "Cardiovascular"
+sintomas = Array[String](["Tontura", "Coração acelerado", "Extremidades frias", "Falta de ar"])
+med_pressao_sistolica = 86.0
+med_pressao_diastolica = 54.0
+med_temperatura = 37.0
+med_saturacao = 99.0
+fase = 4
+receita_cura = Dictionary[ExtResource("1_qauui"), int]({
+ExtResource("2_qauui"): 2,
+ExtResource("3_412oy"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

@@ -12,9 +12,13 @@ id = "I501NFX"
 nome = "Anafilaxia"
 nome_popular = Array[String](["Alergia grave", "Fechamento da glote", "Choque alérgico"])
 risco = 5
-descricao = "Sem Descrição"
-categoria = "Outras"
-sintomas = Array[String](["Urticária generalizada", "Inchaço nos lábios/olhos/garganta", "Falta de ar severa", "Queda drástica da pressão", "Sensação de morte iminente"])
+descricao = "Reação alérgica sistêmica e de início rápido, desencadeada por alimentos, picadas de insetos ou pó de cinzas. O organismo libera mediadores inflamatórios em excesso, causando inchaço no rosto e na garganta, dificultando a respiração e acarretando na queda brusca da pressão. Em regiões isoladas como Aresiens, o atraso no socorro é o maior risco, e se o atraso não for o maior risco, a falta de recursos será."
+categoria = "Respiratória"
+sintomas = Array[String](["Coceira pelo corpo", "Inchaço no rosto", "Falta de ar", "Tontura"])
+med_pressao_sistolica = 82.0
+med_pressao_diastolica = 52.0
+med_temperatura = 36.8
+med_saturacao = 88.0
 receita_cura = Dictionary[ExtResource("1_uxkjy"), int]({
 ExtResource("2_kop6o"): 1,
 ExtResource("3_pl125"): 1,

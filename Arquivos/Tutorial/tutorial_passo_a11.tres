@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://bfjb4dmh6dids"]
+
+[ext_resource type="Texture2D" uid="uid://5vu6bo0a5r8" path="res://Sprites/Personagens/Minerva_0.png" id="1_7s03j"]
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="2_ga55l"]
+
+[resource]
+script = ExtResource("2_ga55l")
+narrador = "Minerva"
+texto = "Em suma, esse será a sua Rotina, bem exaustivo nas primeiras vezes, mas logo logo você pega o jeito e se acostuma :3"
+retrato = ExtResource("1_7s03j")
+narrar_primeiro = true
+metadata/_custom_type_script = "uid://inp00is72umr"

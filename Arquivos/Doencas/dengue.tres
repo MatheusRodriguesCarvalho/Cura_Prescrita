@@ -13,12 +13,12 @@ nome = "Dengue"
 nome_popular = Array[String](["Febre quebra ossos"])
 risco = 3
 descricao = "Ao transitar em áreas de água parada e perceber que ocorreu uma picada de mosquito, fique atento aos sintomas que surgirem após esse evento. Evitar o tratamento deles resulta em piora clínica."
-categoria = "Outra"
-sintomas = Array[String](["Dor muscular", "Manchas vermelhas", "Olhos ardendo atrás", "Mal estar"])
-med_pressao_sistolica = 90.0
-med_pressao_diastolica = 60.0
+categoria = "Infecciosa"
+sintomas = Array[String](["Dor no corpo", "Manchas na pele", "Dor nos olhos", "Febre"])
+med_pressao_sistolica = 92.0
+med_pressao_diastolica = 74.0
 med_temperatura = 40.0
-med_saturacao = 98.0
+med_saturacao = 95.0
 fase = 3
 receita_cura = Dictionary[ExtResource("1_mbu0y"), int]({
 ExtResource("2_30c1t"): 1,

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://cghng7k8y0tm3"]
+
+[ext_resource type="Texture2D" uid="uid://5vu6bo0a5r8" path="res://Sprites/Personagens/Minerva_0.png" id="1_skmeb"]
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="2_0wmay"]
+
+[resource]
+script = ExtResource("2_0wmay")
+narrador = "Minerva"
+texto = "Inspecione e selecione os ingredientes que farão o remedio, e posicione na Banjeda."
+retrato = ExtResource("1_skmeb")
+capturar_clique = true
+evento_conclusao = "bandeja_com_ingrediente"
+narrar_primeiro = true
+metadata/_custom_type_script = "uid://inp00is72umr"

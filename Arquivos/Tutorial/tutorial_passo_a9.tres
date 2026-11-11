@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://briwlsui65w8d"]
+
+[ext_resource type="Texture2D" uid="uid://5vu6bo0a5r8" path="res://Sprites/Personagens/Minerva_0.png" id="1_skmeb"]
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="2_0wmay"]
+
+[resource]
+script = ExtResource("2_0wmay")
+narrador = "Minerva"
+texto = "Após colocar tudo o que é necessário na bandeja, clique na [color=#9090d0]Almofariz[/color] para [color=#d8d900]PRODUZIR[/color] o remédio."
+retrato = ExtResource("1_skmeb")
+alvo = "AlaMedicacao/Mundo/Mesa/Produzir"
+capturar_clique = true
+evento_conclusao = "remedio_produzido"
+narrar_primeiro = true
+metadata/_custom_type_script = "uid://inp00is72umr"

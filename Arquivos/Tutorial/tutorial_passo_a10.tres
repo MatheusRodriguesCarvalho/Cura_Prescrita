@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://0jar8ut1xpti"]
+
+[ext_resource type="Texture2D" uid="uid://5vu6bo0a5r8" path="res://Sprites/Personagens/Minerva_0.png" id="1_c5613"]
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="2_1nan3"]
+
+[resource]
+script = ExtResource("2_1nan3")
+narrador = "Minerva"
+texto = "Entrege o remédio para o Paciente, assim ele poderá ir embora em paz, e você poderá chamar o próximo."
+retrato = ExtResource("1_c5613")
+capturar_clique = true
+evento_conclusao = "remedio_entregue"
+narrar_primeiro = true
+metadata/_custom_type_script = "uid://inp00is72umr"

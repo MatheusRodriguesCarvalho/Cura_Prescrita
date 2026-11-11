@@ -12,14 +12,13 @@ id = "I201VRM-A"
 nome = "Vermenideo"
 nome_popular = Array[String](["Lumbriga", "Minhoca"])
 risco = 2
-descricao = "Muito comum em Terras áridas, ou que foram desoladas por secas.
-São vermes que possuem uma alta resistência à secas, conseguindo sobreviver entre 6 meses à 1 ano sem contato com água, onde em um contato com uma fonte de umidade, desperta de sua imbernação."
+descricao = "Muito comum em Terras áridas, ou que foram desoladas por secas. São vermes que possuem uma alta resistência à secas, conseguindo sobreviver entre 6 meses à 1 ano sem contato com água, onde em um contato com uma fonte de umidade, desperta de sua imbernação."
 categoria = "Digestiva"
-sintomas = Array[String](["Enjoo", "Vomito", "Contrações Abdominal", "Fraqueza"])
-med_pressao_sistolica = 150.0
-med_pressao_diastolica = 90.0
-med_temperatura = 35.8
-med_saturacao = 90.0
+sintomas = Array[String](["Enjoo", "Dor abdominal", "Fraqueza", "Falta de apetite"])
+med_pressao_sistolica = 94.0
+med_pressao_diastolica = 60.0
+med_temperatura = 36.0
+med_saturacao = 95.0
 fase = 3
 receita_cura = Dictionary[ExtResource("1_dyalb"), int]({
 ExtResource("2_bohfe"): 2,

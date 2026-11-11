@@ -31,8 +31,8 @@ GerenciadorTutorial="*uid://dabakuj6oaonu"
 
 window/size/viewport_width=1024
 window/size/viewport_height=600
+window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
 
 [gui]
 

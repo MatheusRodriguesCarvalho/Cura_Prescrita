@@ -3,18 +3,9 @@ AJUSTAR: implementado e testado, mas falta melhorar
 OK: tudo ok
 
 Resumo de Alterações:
-Arte
-* Desenvolver Full-screen funcional (ultrawide opcional).
+AJUSTAR * Desenvolver Full-screen funcional (ultrawide opcional).
 * Trocar as setas do guia por "abinhas".
 * Arte da caixa de diálogo.
-
-
-Visual Novel:
-QUESTIONAR * VN, design, Alê fixa na direita, e os demais na esquerda alternando de acordo com a fala.
-
-Mecânica:
-AJUSTAR * Usar teclas no teclado (real) também para executar algumas funções, ex: espaco chama o paciente.
-VERIFICAR * Utilidade das medições / Relação dos ranges das medições do guia
 
 Outros:
 * Aviso Prévio, ou aviso sobre obra fictícia, retirar do guia, e incluir ao abrir o jogo, ou ao iniciar o Jogo.
@@ -29,15 +20,17 @@ AJUSTAR * Efeitos Sonoros das ferramentas.
 
 
 
-Proposta de implementação de mecânica:
-* Número definido de total de pacientes, que a alê, primeiro acolhe e depois medica
-* Pacientes aparecem, a Alê acessa o cadastro e imprime a ficha, e o paciente fica esperando o Médico senior diagnosticar.
-* Criar fila de pacientes esperando o Médico para serem atendidas.
-* Quebra do fluxo do jogo com um "almoço"
-* Após o almoço, os pacientes que foram atendidos por você, e já passaram pelo médico, agora possuem uma receita de medicação.
-* (Opcional) Apresenta a ficha com correções caso tenha ido errado.
-* A Alê lê a receita e prepara o remédio, e entrega para o paciente.
-
+A fazer / TODO:
+	MELHORAR cena de resultado
+	impeditivo de que o dia termine e o paciente em questão fique sem atendimento
+	
+	
+	ficha, melhora de aspectos visuais
+	debuffs in-game e post-game, Cansaço, LER e interferencia
+	ajustar relogio para o modo estamina, tween
+	
+	Shader, ou efeito visual de luz do dia no consultorio
+	efeito de carregamento no uso das ferramentas, mudar logica de segurar
 
 
 

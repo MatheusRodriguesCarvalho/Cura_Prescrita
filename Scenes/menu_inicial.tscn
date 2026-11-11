@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://dv1cv6jvaxt12" path="res://Sprites/Interface/Menu/bt-menu-inicia-opcoes.png" id="8_tlayu"]
 [ext_resource type="Texture2D" uid="uid://b6avjdleck8lg" path="res://Sprites/Interface/Menu/bt-menu-inicia-guia.png" id="9_m63mc"]
 [ext_resource type="Texture2D" uid="uid://cg31x211b7eth" path="res://Sprites/Interface/Menu/bt-menu-inicia-creditos.png" id="10_dcpcu"]
+[ext_resource type="LabelSettings" uid="uid://bgpmkytaro6wq" path="res://settingsConfig/Labels/Estilo_texto_menu_inicial.tres" id="11_f4p0k"]
 [ext_resource type="Script" uid="uid://croblyhlpyrvw" path="res://Scripts/menu_painel_opcoes.gd" id="11_rymy5"]
-[ext_resource type="LabelSettings" uid="uid://do8nnc3kjaxqw" path="res://settingsConfig/Labels/Label teste.tres" id="12_avhtn"]
+[ext_resource type="LabelSettings" uid="uid://b715884q2eya2" path="res://settingsConfig/Labels/Estilo_textos_fundo_branco.tres" id="12_14yo1"]
 [ext_resource type="Texture2D" uid="uid://ckw8gmkljuuvc" path="res://Sprites/Interface/Menu/bt-menu-inicia-sair.png" id="12_lrlit"]
+[ext_resource type="Texture2D" uid="uid://c7iws67ucecjl" path="res://Sprites/Misc/logoFatec.png" id="13_14yo1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3dsk0"]
 bg_color = Color(0.4754299, 0.6636825, 0.7152409, 0.69900006)
@@ -37,10 +39,15 @@ painel_creditos = NodePath("Paineis/Creditos")
 fundo = NodePath("Paineis/Fundo")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1611426711]
-layout_mode = 0
-offset_right = 1023.0
-offset_bottom = 605.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_dlygv")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Menu" type="Control" parent="." unique_id=1866555502]
 layout_mode = 1
@@ -95,7 +102,6 @@ texture_pressed = ExtResource("4_dm7th")
 texture_hover = ExtResource("4_dm7th")
 
 [node name="BotaoContinuar" type="TextureButton" parent="Menu/Botoes" unique_id=944017632]
-visible = false
 layout_mode = 2
 texture_normal = ExtResource("6_c8556")
 texture_pressed = ExtResource("6_c8556")
@@ -130,6 +136,17 @@ texture_normal = ExtResource("12_lrlit")
 texture_pressed = ExtResource("12_lrlit")
 texture_hover = ExtResource("12_lrlit")
 
+[node name="Label" type="Label" parent="." unique_id=228395080]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 36.0
+offset_right = 865.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 80
+text = "Cura Prescrita"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Paineis" type="Control" parent="." unique_id=3545084 node_paths=PackedStringArray("opcao_dificuldade", "descricao_dificuldade", "slider_geral", "slider_musica", "slider_efeitos", "botao_fechar", "opcao_resolucao", "check_tela_cheia")]
 layout_mode = 1
 anchors_preset = 8
@@ -154,7 +171,6 @@ opcao_resolucao = NodePath("Opcoes/VBoxContainer/Resolucao")
 check_tela_cheia = NodePath("Opcoes/VBoxContainer/TelaCheia")
 
 [node name="Fundo" type="ColorRect" parent="Paineis" unique_id=1623812905]
-visible = false
 custom_minimum_size = Vector2(1024, 600)
 layout_mode = 1
 anchors_preset = 15
@@ -162,7 +178,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.78300005)
+color = Color(0, 0, 0, 0.85)
 
 [node name="Dificuldade" type="Control" parent="Paineis" unique_id=1998108525]
 visible = false
@@ -197,16 +213,19 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dsk0")
 text = "Dificuldade"
-label_settings = ExtResource("12_avhtn")
+label_settings = ExtResource("11_f4p0k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Dificuldade" type="OptionButton" parent="Paineis/Dificuldade/VBoxContainer" unique_id=680034130]
 layout_mode = 2
+theme_override_font_sizes/font_size = 22
 
 [node name="Descricao" type="Label" parent="Paineis/Dificuldade/VBoxContainer" unique_id=1891658678]
 custom_minimum_size = Vector2(141.04, 0)
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
+label_settings = ExtResource("12_14yo1")
 autowrap_mode = 3
 
 [node name="Control" type="Control" parent="Paineis/Dificuldade/VBoxContainer" unique_id=1185404843]
@@ -259,44 +278,58 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dsk0")
 text = "Volume Geral"
-label_settings = ExtResource("12_avhtn")
+label_settings = ExtResource("11_f4p0k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VolumeGeral" type="HSlider" parent="Paineis/Opcoes/VBoxContainer" unique_id=1524560371]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [node name="Label3" type="Label" parent="Paineis/Opcoes/VBoxContainer" unique_id=318724803]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dsk0")
 text = "Musica"
-label_settings = ExtResource("12_avhtn")
+label_settings = ExtResource("11_f4p0k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VolumeMusica" type="HSlider" parent="Paineis/Opcoes/VBoxContainer" unique_id=1329592206]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [node name="Label4" type="Label" parent="Paineis/Opcoes/VBoxContainer" unique_id=1521381152]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_3dsk0")
 text = "Efeitos"
-label_settings = ExtResource("12_avhtn")
+label_settings = ExtResource("11_f4p0k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VolumeEfeitos" type="HSlider" parent="Paineis/Opcoes/VBoxContainer" unique_id=1682543474]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 
 [node name="Control2" type="Control" parent="Paineis/Opcoes/VBoxContainer" unique_id=695524845]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="Resolucao" type="OptionButton" parent="Paineis/Opcoes/VBoxContainer" unique_id=2055649137]
+[node name="Label5" type="Label" parent="Paineis/Opcoes/VBoxContainer" unique_id=2119077760]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_3dsk0")
+text = "Resoluções"
+label_settings = ExtResource("11_f4p0k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resolucao" type="OptionButton" parent="Paineis/Opcoes/VBoxContainer" unique_id=2055649137]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 
 [node name="TelaCheia" type="CheckButton" parent="Paineis/Opcoes/VBoxContainer" unique_id=1427627508]
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Full-Screen"
 
 [node name="Control3" type="Control" parent="Paineis/Opcoes/VBoxContainer" unique_id=823525233]
@@ -310,7 +343,7 @@ text = "Retornar"
 
 [node name="GuiaResumo" type="Control" parent="Paineis" unique_id=1794628392]
 visible = false
-custom_minimum_size = Vector2(500, 475)
+custom_minimum_size = Vector2(500, 370)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -325,7 +358,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextoResumo" type="RichTextLabel" parent="Paineis/GuiaResumo" unique_id=756933815]
-custom_minimum_size = Vector2(500, 400)
+custom_minimum_size = Vector2(500, 370)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -334,7 +367,7 @@ offset_left = -150.0
 offset_right = 150.0
 offset_bottom = 350.0
 grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/normal_font_size = 30
 text = "Roteiro para o Guia de instruções ao jogador:
 
 Aviso prévio: O conteúdo deste jogo é fictício, não repita nenhuma receita de medicamento ou se autodiagnosticar. Em caso de suspeita de alguma doença, procure orientações médicas.
@@ -371,14 +404,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -50.0
-offset_top = -50.0
+offset_top = 20.0
 offset_right = 50.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Retornar"
 
 [node name="Creditos" type="Control" parent="Paineis" unique_id=1526399903]
-visible = false
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -386,55 +419,100 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextoCredito" type="RichTextLabel" parent="Paineis/Creditos" unique_id=1288873853]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(500, 150)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_right = 0.5
+offset_left = -250.0
+offset_top = -113.04
+offset_right = 250.0
+offset_bottom = 36.960007
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 20
-text = "Gabriel Izidio: Audio e Som
-Jennifer Caroline: Artes
-Maria Eduarda: Game Design
-Matheus Rodrigues: Programação"
+theme_override_font_sizes/normal_font_size = 28
+text = "Gabriel Izidio: Audio e Som / RA: 0040962413047
+Jennifer Caroline: Artes / RA: 0040962413032
+Maria Eduarda: Game Design / RA: 0040962413007
+Matheus Rodrigues: Programação / RA: 0040962413019
+
+Prof.(a) Dra. Kellen Manoela Siqueira"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BotaoFechar" type="Button" parent="Paineis/Creditos" unique_id=711700003]
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(90, 35)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = -45.0
+offset_top = -35.0
+offset_right = 45.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Retornar"
 
+[node name="Disclaimer" type="Label" parent="Paineis/Creditos" unique_id=1490398947]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -292.0
+offset_top = 166.0
+offset_right = 388.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Este jogo foi desenvolvido como parte das exigências para a obtenção do título de Tecnólogo em Jogos Digitais pela Faculdade de Tecnologia de Americana (Fatec Americana). Seus autores o disponibilizam livre de direitos autorais para fins não comerciais."
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorLogo" type="ColorRect" parent="Paineis/Creditos" unique_id=1277692542]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 392.0
+offset_top = 140.0
+offset_right = 512.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LogoFatec" type="TextureRect" parent="Paineis/Creditos/ColorLogo" unique_id=445142098]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -25.0
+offset_right = 55.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_14yo1")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Audio" type="AudioStreamPlayer" parent="." unique_id=2006924936]
 autoplay = true
-
-[node name="Label" type="Label" parent="." unique_id=228395080]
-layout_mode = 0
-offset_left = 460.0
-offset_top = 24.0
-offset_right = 956.0
-offset_bottom = 120.0
-theme_override_font_sizes/font_size = 80
-text = "Cura Prescrita"

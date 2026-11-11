@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="TutorialSequencia" format=3 uid="uid://t4qb1tgt51rq"]
+
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="1_uptsx"]
+[ext_resource type="Resource" uid="uid://cjxhsdb5wjfpa" path="res://Arquivos/Tutorial/tutorial_passo_a1.tres" id="2_2ia7l"]
+[ext_resource type="Script" uid="uid://co7w3y4ikkxf1" path="res://Scripts/bases/base_tutorial_sequencia.gd" id="2_g82nn"]
+[ext_resource type="Resource" uid="uid://x21ckhu85vt3" path="res://Arquivos/Tutorial/tutorial_passo_a0.tres" id="2_usw3v"]
+[ext_resource type="Resource" uid="uid://c5vumnst8xpmf" path="res://Arquivos/Tutorial/tutorial_passo_a2.tres" id="3_2ia7l"]
+[ext_resource type="Resource" uid="uid://gp5qrheopydp" path="res://Arquivos/Tutorial/tutorial_passo_a3.tres" id="4_6et6e"]
+[ext_resource type="Resource" uid="uid://csk8sbvxsj5u6" path="res://Arquivos/Tutorial/tutorial_passo_a4.tres" id="6_ol40l"]
+[ext_resource type="Texture2D" uid="uid://5vu6bo0a5r8" path="res://Sprites/Personagens/Minerva_0.png" id="6_usw3v"]
+[ext_resource type="Resource" uid="uid://nlgm77g8065r" path="res://Arquivos/Tutorial/tutorial_passo_a5.tres" id="7_140xf"]
+[ext_resource type="Resource" uid="uid://cfn800tk1nj7g" path="res://Arquivos/Tutorial/tutorial_passo_a6.tres" id="8_d2oud"]
+[ext_resource type="Resource" uid="uid://tan2x8ixk1uu" path="res://Arquivos/Tutorial/tutorial_passo_a7.tres" id="9_w0f74"]
+[ext_resource type="Resource" uid="uid://cghng7k8y0tm3" path="res://Arquivos/Tutorial/tutorial_passo_a8.tres" id="10_kg41v"]
+[ext_resource type="Resource" uid="uid://briwlsui65w8d" path="res://Arquivos/Tutorial/tutorial_passo_a9.tres" id="11_csb3i"]
+[ext_resource type="Resource" uid="uid://0jar8ut1xpti" path="res://Arquivos/Tutorial/tutorial_passo_a10.tres" id="12_hy188"]
+[ext_resource type="Resource" uid="uid://bfjb4dmh6dids" path="res://Arquivos/Tutorial/tutorial_passo_a11.tres" id="13_n00st"]
+[ext_resource type="Resource" uid="uid://bmr07tnask1v7" path="res://Arquivos/Tutorial/tutorial_passo_a12.tres" id="14_140xf"]
+
+[resource]
+script = ExtResource("2_g82nn")
+id = "dia1"
+narrador_padrao = "Minerva"
+retrato_padrao = ExtResource("6_usw3v")
+passos = Array[ExtResource("1_uptsx")]([ExtResource("2_usw3v"), ExtResource("2_2ia7l"), ExtResource("3_2ia7l"), ExtResource("4_6et6e"), ExtResource("6_ol40l"), ExtResource("7_140xf"), ExtResource("8_d2oud"), ExtResource("9_w0f74"), ExtResource("10_kg41v"), ExtResource("11_csb3i"), ExtResource("12_hy188"), ExtResource("13_n00st"), ExtResource("14_140xf")])
+metadata/_custom_type_script = "uid://co7w3y4ikkxf1"

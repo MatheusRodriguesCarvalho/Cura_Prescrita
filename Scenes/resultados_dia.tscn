@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://2heoyx3ci8wh"]
 
 [ext_resource type="Script" uid="uid://dpvqgdfg6re7e" path="res://Scripts/gerenciadores/resultados_dia.gd" id="1_0tjqa"]
-[ext_resource type="Texture2D" uid="uid://cfe4bbekduqnj" path="res://Sprites/Asset-mesa-medicacao.png" id="1_hcaa7"]
+[ext_resource type="Texture2D" uid="uid://dx53pu6l5l4jj" path="res://Sprites/Interface/Menu/asset-prancheta-menu.png" id="2_0tjqa"]
+[ext_resource type="LabelSettings" uid="uid://b715884q2eya2" path="res://settingsConfig/Labels/Estilo_textos_fundo_branco.tres" id="3_20nkv"]
 
-[node name="ResultadosDia" type="Control" unique_id=514957226]
+[node name="ResultadosDia" type="Control" unique_id=514957226 node_paths=PackedStringArray("texto_resumo", "texto_detalhes", "label_meta", "label_total", "botao_continuar")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,93 +12,107 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0tjqa")
+texto_resumo = NodePath("VBox/Resumo")
+texto_detalhes = NodePath("VBox/ScrollDetalhes/Detalhes")
+label_meta = NodePath("VBox/LabelMeta")
+label_total = NodePath("VBox/LabelTotal")
+botao_continuar = NodePath("VBox/Botao")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=972614302]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=549889577]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_hcaa7")
+color = Color(0.29337206, 0.3491902, 0.42358288, 0.8)
 
-[node name="VBox" type="VBoxContainer" parent="." unique_id=689935064]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=972614302]
+modulate = Color(0.9063318, 0.9063318, 0.9063318, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0tjqa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1141916903]
+custom_minimum_size = Vector2(320, 400)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -103.0
-offset_top = -179.5
-offset_right = 103.0
-offset_bottom = 179.5
+offset_left = -20.0
+offset_top = -31.5
+offset_right = 20.0
+offset_bottom = 31.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TituloDia" type="Label" parent="VBox" unique_id=953144701]
+[node name="Resumo" type="RichTextLabel" parent="VBox" unique_id=521869939]
 layout_mode = 2
-text = "TituloDia"
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[font_size=26][color=#509070]Pacientes:[/color][/font_size] 4 atendidos / 4 chamados
 
-[node name="LabelPacientes" type="Label" parent="VBox" unique_id=937513629]
-layout_mode = 2
-text = "LabelPacientes"
+[font_size=26][color=#509070]Diagnósticos[/color][/font_size]
+    Corretos: 3 / 4
+[right][color=#c9b458]Subtotal: 130 pts[/color][/right]
+[font_size=26][color=#509070]Medições[/color][/font_size]
+    Temperatura: 2/4
+    Pressão: 2/4
+    Saturação: 2/4
+[right][color=#c9b458]Subtotal: 60 pts[/color][/right]
+[font_size=26][color=#509070]Remédios[/color][/font_size]
+    Corretos: 4 / 4
+[right][color=#c9b458]Subtotal: 120 pts[/color][/right]
+"
+fit_content = true
+scroll_active = false
 
-[node name="SecaoDiagnosticos" type="VBoxContainer" parent="VBox" unique_id=2001551566]
+[node name="ScrollDetalhes" type="ScrollContainer" parent="VBox" unique_id=1365535204]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
+scroll_hint_mode = 1
 
-[node name="LabelDiagnosticos" type="Label" parent="VBox/SecaoDiagnosticos" unique_id=171132015]
+[node name="Detalhes" type="RichTextLabel" parent="VBox/ScrollDetalhes" unique_id=1978051730]
+custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
-text = "LabelDiagnosticos"
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[color=#7fcf7f]✓[/color] Protocolo SP45S4
+> Doença: Anafilaxia | Digitado: ANAFILAXIA
 
-[node name="LabelSubtotalDiagnosticos" type="Label" parent="VBox/SecaoDiagnosticos" unique_id=913167170]
-layout_mode = 2
-text = "LabelSubtotalDiagnosticos"
+[color=#7fcf7f]✓[/color] Protocolo SP45S2
+> Doença: Conjuntivite | Digitado: CONJUNTIVITE
 
-[node name="SecaoMedicoes" type="VBoxContainer" parent="VBox" unique_id=1565359327]
-layout_mode = 2
+[color=#e07a7a]✗[/color] Protocolo SP45S7
+> Doença: Anafilaxia | Digitado: ANAFIAXIAAA"
+fit_content = true
+scroll_active = false
 
-[node name="LabelTemperatura" type="Label" parent="VBox/SecaoMedicoes" unique_id=1679512122]
+[node name="LabelMeta" type="Label" parent="VBox" unique_id=1665735238]
 layout_mode = 2
-text = "LabelTemperatura"
+text = "Meta do dia: 100 pts — Atingida"
+label_settings = ExtResource("3_20nkv")
 
-[node name="LabelPressao" type="Label" parent="VBox/SecaoMedicoes" unique_id=1659190730]
+[node name="LabelTotal" type="Label" parent="VBox" unique_id=38329148]
 layout_mode = 2
-text = "LabelPressao"
+text = "TOTAL: 120 pts"
+label_settings = ExtResource("3_20nkv")
+horizontal_alignment = 2
 
-[node name="LabelSaturacao" type="Label" parent="VBox/SecaoMedicoes" unique_id=1374356519]
+[node name="Control" type="Control" parent="VBox" unique_id=805871374]
 layout_mode = 2
-text = "LabelSaturacao"
+size_flags_vertical = 3
 
-[node name="LabelSubtotalMedicao" type="Label" parent="VBox/SecaoMedicoes" unique_id=303433600]
+[node name="Botao" type="Button" parent="VBox" unique_id=1138961311]
 layout_mode = 2
-text = "LabelSubtotalMedicao"
-
-[node name="SecaoRemedios" type="VBoxContainer" parent="VBox" unique_id=1693862544]
-layout_mode = 2
-
-[node name="LabelRemedios" type="Label" parent="VBox/SecaoRemedios" unique_id=43146458]
-layout_mode = 2
-text = "LabelRemedios"
-
-[node name="LabelSubtotalRemedios" type="Label" parent="VBox/SecaoRemedios" unique_id=1982692184]
-layout_mode = 2
-text = "LabelSubtotalRemedios"
-
-[node name="ScrollDetalhes" type="ScrollContainer" parent="VBox" unique_id=1369700278]
-layout_mode = 2
-
-[node name="ListaDetalhes" type="VBoxContainer" parent="VBox/ScrollDetalhes" unique_id=1798885801]
-layout_mode = 2
-
-[node name="LabelMeta" type="Label" parent="VBox" unique_id=524754841]
-layout_mode = 2
-text = "LabelMeta"
-
-[node name="LabelTotal" type="Label" parent="VBox" unique_id=1175235086]
-layout_mode = 2
-text = "LabelTotal"
-
-[node name="BotaoContinuar" type="Button" parent="VBox" unique_id=49958982]
-layout_mode = 2
-text = "prosseguir"
+text = "botao"

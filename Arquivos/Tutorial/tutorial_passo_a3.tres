@@ -1,11 +1,15 @@
 [gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://gp5qrheopydp"]
 
 [ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="1_iqtrw"]
+[ext_resource type="Texture2D" uid="uid://5vu6bo0a5r8" path="res://Sprites/Personagens/Minerva_0.png" id="1_mwwkk"]
 
 [resource]
 script = ExtResource("1_iqtrw")
-narrador = "teste"
-texto = "testes"
-alvo = "Consultorio/Mundo/Mesa/Gaveta"
+narrador = "Minerva"
+texto = "Clique na [color=#9090d0]tela do Computador[/color] para Abrir a Ficha, ou pressione a Tecla [color=#d80000]F[/color]."
+retrato = ExtResource("1_mwwkk")
+alvo = "Consultorio/Mundo/Mesa/Computador"
 capturar_clique = true
+evento_conclusao = "computador_aberto"
+narrar_primeiro = true
 metadata/_custom_type_script = "uid://inp00is72umr"

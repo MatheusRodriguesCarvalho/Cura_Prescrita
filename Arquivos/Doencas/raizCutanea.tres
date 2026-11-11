@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Doenca" format=3 uid="uid://biunxy2uimxwo"]
+
+[ext_resource type="Script" uid="uid://c7g5i5v76w58s" path="res://Scripts/bases/base_ingrediente.gd" id="1_m53f8"]
+[ext_resource type="Resource" uid="uid://b0prxwh6t0avb" path="res://Arquivos/Ingredientes/lunaflora.tres" id="2_ng5eg"]
+[ext_resource type="Script" uid="uid://dgcp3crb6w10n" path="res://Scripts/bases/base_doenca.gd" id="3_0x6ix"]
+
+[resource]
+script = ExtResource("3_0x6ix")
+id = "I503RZC-1"
+nome = "Raíz-Cutânea"
+nome_popular = Array[String](["Catapora"])
+risco = 5
+descricao = "Infecção causada por um patógeno presente em solos contaminados, que penetram pela pele e provocam enrijecimento progressivo. A rigidez avança da derme para os vasos sanguíneos, que perdem sua flexibilidade e mobilidade. O sangue passa a formar microcristais no sistema circulatório, com risco de ruptura de vasos, comprometimento cardíaco e disseminação para outros órgãos. Quanto mais tarde o tratamento, maior o dano às estruturas internas."
+categoria = "Cardiovascular"
+sintomas = Array[String](["Falta de ar", "Dor no pescoço", "Aperto no peito", "Perca de Mobilidade"])
+med_pressao_sistolica = 156.0
+med_pressao_diastolica = 70.0
+med_temperatura = 36.2
+med_saturacao = 93.0
+fase = 5
+receita_cura = Dictionary[ExtResource("1_m53f8"), int]({
+ExtResource("2_ng5eg"): 1
+})
+metadata/_custom_type_script = "uid://dgcp3crb6w10n"

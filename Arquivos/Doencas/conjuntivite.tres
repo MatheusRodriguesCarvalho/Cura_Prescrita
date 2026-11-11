@@ -11,9 +11,9 @@ id = "I102CJT"
 nome = "Conjuntivite"
 descricao = "Compartilhar toalhas é arriscado em terras áridas, por conta do vento facilitar a locomoção de irritantes oculares."
 categoria = "Infecciosa"
-sintomas = Array[String](["Ardencia Ocular", "Remela", "Irritação"])
-med_temperatura = 36.0
-med_saturacao = 50.0
+sintomas = Array[String](["Ardência nos olhos", "Irritação nos olhos", "Coceira", "Sensibilidade à luz"])
+med_temperatura = 36.4
+med_saturacao = 99.0
 receita_cura = Dictionary[ExtResource("1_pvlc2"), int]({
 ExtResource("2_nlt4k"): 1,
 ExtResource("3_pvlc2"): 1

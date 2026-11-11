@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dnhmdhfcmbv4t" path="res://Scripts/gerenciadores/gerenciador_visual_novel.gd" id="1_0b5eo"]
 [ext_resource type="Texture2D" uid="uid://ddh8arobmfwbr" path="res://Sprites/bg-vn.png" id="2_bhmqy"]
 [ext_resource type="Resource" uid="uid://bqxc4oo5mwtux" path="res://Arquivos/Cenas_VN_Abertura/cena_0_abertura.tres" id="2_wccqu"]
+[ext_resource type="Resource" uid="uid://cmywm23lsvwnb" path="res://Arquivos/Cenas VN/cena_0_finalbom.tres" id="3_oyjx1"]
+[ext_resource type="Resource" uid="uid://buq8ap6rqvxko" path="res://Arquivos/Cenas VN/cena_0_finalruim.tres" id="4_mtver"]
 [ext_resource type="Texture2D" uid="uid://yd0eqg12vp6x" path="res://Sprites/Personagens/Ale.png" id="4_wccqu"]
 [ext_resource type="Texture2D" uid="uid://c02ck5sin85cy" path="res://Sprites/Personagens/Franco.png" id="5_bhmqy"]
 [ext_resource type="Texture2D" uid="uid://bpkgwl7onosne" path="res://Sprites/Personagens/Laila.png" id="6_wccqu"]
@@ -12,29 +14,33 @@
 [node name="Casa" type="Node2D" unique_id=234272023]
 script = ExtResource("1_0b5eo")
 cena_abertura = ExtResource("2_wccqu")
+cena_final_bom = ExtResource("3_oyjx1")
+cena_final_ruim = ExtResource("4_mtver")
 
 [node name="Mundo" type="Node2D" parent="." unique_id=857493803]
 position = Vector2(512, 300)
 
 [node name="Local" type="Sprite2D" parent="Mundo" unique_id=472191779]
+position = Vector2(-2.670288e-05, -1.3669334e-05)
+scale = Vector2(1.0416666, 1.0416666)
 texture = ExtResource("2_bhmqy")
 
 [node name="Personagens" type="Node2D" parent="Mundo" unique_id=1290312717]
 
 [node name="Ale" type="Sprite2D" parent="Mundo/Personagens" unique_id=1617750934]
-position = Vector2(250, -50)
+position = Vector2(250, 0)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("4_wccqu")
 hframes = 2
 
 [node name="Franco" type="Sprite2D" parent="Mundo/Personagens" unique_id=1700117857]
-position = Vector2(-250, -50)
+position = Vector2(-250, 0)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("5_bhmqy")
 hframes = 2
 
 [node name="Laila" type="Sprite2D" parent="Mundo/Personagens" unique_id=1495813313]
-position = Vector2(-200, -50)
+position = Vector2(-200, 0)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("6_wccqu")
 hframes = 2
@@ -56,10 +62,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -450.0
-offset_top = -250.0
-offset_right = 450.0
-offset_bottom = -15.999573
+offset_left = -54.5
+offset_top = -88.0
+offset_right = 54.5
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -74,15 +79,15 @@ theme_override_font_sizes/font_size = 30
 text = "Nome"
 
 [node name="FundoFala" type="PanelContainer" parent="CanvasLayer/VisualNovel" unique_id=526057672]
+custom_minimum_size = Vector2(800, 150)
 layout_mode = 2
 theme_override_styles/panel = ExtResource("8_ifswf")
 
 [node name="Fala" type="RichTextLabel" parent="CanvasLayer/VisualNovel/FundoFala" unique_id=1532981044]
-custom_minimum_size = Vector2(850, 160)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
-text = "teste"
+text = "Texto"
 
 [node name="CardDia" type="Label" parent="CanvasLayer" unique_id=456796952]
 visible = false

@@ -14,11 +14,11 @@ nome_popular = Array[String](["Asma"])
 risco = 2
 descricao = "A poeira presente em todos ambientes da cidade acomete muitos adultos, sendo necessário fazer lavagem nasal com frequência, os que ignoram essa orientação acabam doentes."
 categoria = "Respiratória"
-sintomas = Array[String](["Peito chiando", "Tosse ", "Falta de ar", "Fadiga"])
-med_pressao_sistolica = 125.0
-med_pressao_diastolica = 86.0
-med_temperatura = 38.0
-med_saturacao = 93.0
+sintomas = Array[String](["Tosse", "Falta de ar", "Fadiga", "Aperto no peito"])
+med_pressao_sistolica = 130.0
+med_pressao_diastolica = 84.0
+med_temperatura = 37.6
+med_saturacao = 91.0
 fase = 2
 receita_cura = Dictionary[ExtResource("1_p8k31"), int]({
 ExtResource("2_6siwx"): 1,

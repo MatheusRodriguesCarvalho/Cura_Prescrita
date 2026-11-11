@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cw7t5fjp1tvsw"]
+
+[ext_resource type="Texture2D" uid="uid://5vu6bo0a5r8" path="res://Sprites/Personagens/Minerva_0.png" id="1_jgkyk"]
+[ext_resource type="StyleBox" uid="uid://xdvgke34vvx3" path="res://settingsConfig/Panel/caixa_texto.tres" id="1_ksww7"]
+
+[node name="TutorialUi" type="CanvasLayer" unique_id=153974195]
+layer = 100
+
+[node name="Bloqueio" type="ColorRect" parent="." unique_id=384608011]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.35000002)
+
+[node name="Retrato" type="TextureRect" parent="." unique_id=147874281]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -220.0
+offset_right = 258.0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("1_jgkyk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Margem" type="MarginContainer" parent="." unique_id=978166653]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 260
+
+[node name="Painel" type="PanelContainer" parent="Margem" unique_id=1206882254]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("1_ksww7")
+
+[node name="Caixa" type="VBoxContainer" parent="Margem/Painel" unique_id=1343190261]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Nome" type="Label" parent="Margem/Painel/Caixa" unique_id=2053103270]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+
+[node name="Texto" type="RichTextLabel" parent="Margem/Painel/Caixa" unique_id=1726873277]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Teste"
+fit_content = true
+scroll_active = false
+
+[node name="Dica" type="Label" parent="Margem/Painel/Caixa" unique_id=1495759470]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BotaoPular" type="Button" parent="." unique_id=1573618815]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 20)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 125.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 24
+text = "Pular Tutorial"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TutorialPasso" format=3 uid="uid://nlgm77g8065r"]
+
+[ext_resource type="Texture2D" uid="uid://5vu6bo0a5r8" path="res://Sprites/Personagens/Minerva_0.png" id="1_skmeb"]
+[ext_resource type="Script" uid="uid://inp00is72umr" path="res://Scripts/bases/base_tutorial_passo.gd" id="2_0wmay"]
+
+[resource]
+script = ExtResource("2_0wmay")
+narrador = "Minerva"
+texto = "Preenchido as informações, clique no [color=#80e080]botão[/color] para imprimir e enviar a Ficha para o sistema da Matriz."
+retrato = ExtResource("1_skmeb")
+alvo = "CanvasLayer/FichaPaciente/FichaPaginas/VBoxContainer/HBoxContainer/Imprimir"
+capturar_clique = true
+evento_conclusao = "ficha_impressa"
+narrar_primeiro = true
+metadata/_custom_type_script = "uid://inp00is72umr"
