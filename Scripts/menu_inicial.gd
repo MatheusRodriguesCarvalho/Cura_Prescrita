@@ -24,6 +24,7 @@ var _aviso_novo_jogo: Label
 
 
 func _ready() -> void:
+	
 	GerenciadorAudio.tocar_musica_cena("menu")
 	
 	## Continuar só existe se um jogo já foi iniciado nesta sessão.
@@ -53,6 +54,7 @@ func _ready() -> void:
 	## se esconde sozinho em menu_painel_opcoes.gd) e bloqueia os botões do menu.
 	for painel in [painel_opcoes, painel_guia, painel_creditos]:
 		painel.visibility_changed.connect(_atualizar_fundo)
+	print(get_viewport_rect().size)
 
 
 func _atualizar_fundo() -> void:

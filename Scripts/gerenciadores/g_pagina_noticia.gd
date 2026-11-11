@@ -1,7 +1,7 @@
 extends Control
 
-@export var noticia_atual: RichTextLabel
-@export var noticias_anteriores: RichTextLabel
+@export var noticia_atual: Label
+@export var noticias_anteriores: Label
 
 
 func popular() -> void:

@@ -1,23 +1,11 @@
 extends Control
 
-@onready var label_pacientes: Label = $VBox/LabelPacientes
 
-@onready var label_diagnosticos: Label = $VBox/SecaoDiagnosticos/LabelDiagnosticos
-@onready var label_subtotal_diagnostico: Label = $VBox/SecaoDiagnosticos/LabelSubtotalDiagnosticos
-
-@onready var label_temperatura: Label = $VBox/SecaoMedicoes/LabelTemperatura
-@onready var label_pressao: Label = $VBox/SecaoMedicoes/LabelPressao
-@onready var label_saturacao: Label = $VBox/SecaoMedicoes/LabelSaturacao
-@onready var label_subtotal_medicao: Label = $VBox/SecaoMedicoes/LabelSubtotalMedicao
-
-@onready var label_remedios: Label = $VBox/SecaoRemedios/LabelRemedios
-@onready var label_subtotal_remedio: Label = $VBox/SecaoRemedios/LabelSubtotalRemedios
-
-@onready var lista_detalhes: VBoxContainer = $VBox/ScrollDetalhes/ListaDetalhes
-
-@onready var label_meta: Label = $VBox/LabelMeta
-@onready var label_total: Label = $VBox/LabelTotal
-@onready var botao_continuar: Button = $VBox/BotaoContinuar
+@export var texto_resumo: RichTextLabel
+@export var texto_detalhes: RichTextLabel
+@export var label_meta: Label
+@export var label_total: Label
+@export var botao_continuar: Button
 
 var resumo: Dictionary
 var passou_da_meta: bool
@@ -31,39 +19,57 @@ func _ready() -> void:
 	passou_da_meta = resumo["pontos_total"] >= meta
 	
 	_popular(meta)
+	
+	botao_continuar.text = "Próximo Dia" if passou_da_meta else "Retornar ao menu"
 	botao_continuar.pressed.connect(_on_continuar_pressed)
 
+
 func _popular(meta: float) -> void:
-	label_pacientes.text = "Pacientes atendidos: %d / %d chamados" % [resumo["pacientes_atendidos"], resumo["pacientes_chamados"]]
-	
-	label_diagnosticos.text = "Diagnósticos corretos: %d / %d" % [resumo["diagnosticos_corretos"], resumo["diagnosticos_total"]]
-	label_subtotal_diagnostico.text = "Subtotal: %.0f pts" % resumo["pontos_diagnostico"]
-	
 	var med: Dictionary = resumo["medicoes"]
-	label_temperatura.text = "Temperatura: %d/%d corretas" % [med["temperatura"]["corretas"], med["temperatura"]["total"]]
-	label_pressao.text = "Pressão: %d/%d corretas" % [med["pressao"]["corretas"], med["pressao"]["total"]]
-	label_saturacao.text = "Saturação: %d/%d corretas" % [med["saturacao"]["corretas"], med["saturacao"]["total"]]
-	label_subtotal_medicao.text = "Subtotal: %.0f pts" % resumo["pontos_medicao"]
 	
-	label_remedios.text = "Remédios corretos: %d / %d" % [resumo["remedios_corretos"], resumo["remedios_total"]]
-	label_subtotal_remedio.text = "Subtotal: %.0f pts" % resumo["pontos_remedio"]
+	var t := "[font_size=26][color=#509070]Pacientes:[/color][/font_size] %d atendidos / %d chamados\n\n" % [
+		resumo["pacientes_atendidos"], resumo["pacientes_chamados"]]
+	
+	t += _secao("Diagnósticos",
+		["Corretos: %d / %d" % [resumo["diagnosticos_corretos"], resumo["diagnosticos_total"]]],
+		resumo["pontos_diagnostico"])
+	
+	t += _secao("Medições", [
+		"Temperatura: %d/%d" % [med["temperatura"]["corretas"], med["temperatura"]["total"]],
+		"Pressão: %d/%d" % [med["pressao"]["corretas"], med["pressao"]["total"]],
+		"Saturação: %d/%d" % [med["saturacao"]["corretas"], med["saturacao"]["total"]],
+	], resumo["pontos_medicao"])
+	
+	t += _secao("Remédios",
+		["Corretos: %d / %d" % [resumo["remedios_corretos"], resumo["remedios_total"]]],
+		resumo["pontos_remedio"])
+	
+	texto_resumo.text = t
+	
+	var d := ""
+	for item in resumo["detalhes"]:
+		var cor := "#7fcf7f" if item["acertou"] else "#e07a7a"
+		var marca := "✓" if item["acertou"] else "✗"
+		d += "[color=%s]%s[/color] Protocolo %s\n> Doença: %s | Digitado: %s\n\n" % [
+			cor, marca, item["protocolo"], item["doenca_real"], item["diagnostico_digitado"]]
+	texto_detalhes.text = d
 	
 	label_meta.text = "Meta do dia: %.0f pts — %s" % [meta, "Atingida" if passou_da_meta else "Não atingida"]
-	label_total.text = "TOTAL: %.0f pts" % resumo["pontos_total"]
-	
-	for filho in lista_detalhes.get_children():
-		filho.queue_free()
-	for item in resumo["detalhes"]:
-		var linha := Label.new()
-		var status := "✓" if item["acertou"] else "✗"
-		linha.text = "%s Protocolo %s — Real: %s | Digitado: %s" % [status, item["protocolo"], item["doenca_real"], item["diagnostico_digitado"]]
-		lista_detalhes.add_child(linha)
+	label_total.text = "Total: %.0f pts" % resumo["pontos_total"]
 
 
+## Título em negrito, linhas recuadas e subtotal alinhado à direita.
+func _secao(titulo: String, linhas: Array[String], subtotal: float) -> String:
+	var s := "[font_size=26][color=#509070]%s[/color][/font_size]\n" % titulo
+	for l in linhas:
+		s += "    %s\n" % l
+	s += "[right][color=#c9b458]Subtotal: %.0f pts[/color][/right]\n" % subtotal
+	return s
 
 
 func _on_continuar_pressed() -> void:
-	if passou_da_meta:
-		get_tree().change_scene_to_file("res://Scenes/visual_novel.tscn")
-	else:
-		get_tree().change_scene_to_file("res://Scenes/menu_inicial.tscn")
+	if not passou_da_meta:
+		GerenciadorPacientes.final_pendente = "ruim"
+	elif GerenciadorPacientes.e_ultimo_dia():
+		GerenciadorPacientes.final_pendente = "bom"
+	get_tree().change_scene_to_file("res://Scenes/visual_novel.tscn")

@@ -26,6 +26,8 @@ func total_ingredientes() -> int:
 	return total
 
 func adicionar(ingrediente: Ingrediente) -> bool:
+	GerenciadorTutorial.notificar("bandeja_com_ingrediente")
+	
 	if ingrediente == null or total_ingredientes() >= MAX_INGREDIENTES:
 		return false
 	

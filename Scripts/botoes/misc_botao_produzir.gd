@@ -14,19 +14,19 @@ func _on_area_clique_input_event(_viewport, event: InputEvent, _shape_idx: int) 
 
 func produzir() -> void:
 	
-		GerenciadorTempo.registrar_acao(5.0)
-		GerenciadorAudio.tocar("remedio")
-		
-		var quantidades := bandeja.obter_quantidades()
-		if quantidades.is_empty():
-			return
-		
-		
-		var cena := preload("res://Scenes/RemedioVisual.tscn")
-		var remedio: RemedioVisual = cena.instantiate()
-		get_tree().current_scene.add_child(remedio)
-		remedio.quantidades = quantidades
-		remedio.global_position = local_remedio.global_position
-		
-		GerenciadorAla.remedio_atual = remedio
-		bandeja.esvaziar()
+	GerenciadorTempo.registrar_acao(5.0)
+	GerenciadorAudio.tocar("remedio")
+	GerenciadorTutorial.notificar("remedio_produzido")
+	
+	var quantidades := bandeja.obter_quantidades()
+	if quantidades.is_empty():
+		return
+	
+	var cena := preload("res://Scenes/RemedioVisual.tscn")
+	var remedio: RemedioVisual = cena.instantiate()
+	get_tree().current_scene.add_child(remedio)
+	remedio.quantidades = quantidades
+	remedio.global_position = local_remedio.global_position
+	
+	GerenciadorAla.remedio_atual = remedio
+	bandeja.esvaziar()

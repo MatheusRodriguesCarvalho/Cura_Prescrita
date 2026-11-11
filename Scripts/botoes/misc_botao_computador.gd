@@ -27,10 +27,11 @@ func _on_area_clique_input_event(_viewport, event: InputEvent, _shape_idx: int) 
 	if not ligado:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		ficha.show()
+		abrir_ficha()
 		GerenciadorTempo.registrar_acao(1.0)
 
 func abrir_ficha() -> void:
+	GerenciadorTutorial.notificar("computador_aberto")
 	ficha.show()
 
 func _on_remedio_entregue(_var: bool) -> void:
@@ -67,8 +68,10 @@ func ligar() -> void:
 func _iniciar_piscar() -> void:
 	_piscando = true
 	_tween_piscar = create_tween().set_loops()
-	_tween_piscar.tween_property(sprite_desligar, "modulate:a", 0.3, 0.5)
-	_tween_piscar.tween_property(sprite_desligar, "modulate:a", 1.0, 0.5)
+	## _tween_piscar.tween_property(sprite_desligar, "modulate:a", 0.3, 0.5)
+	## _tween_piscar.tween_property(sprite_desligar, "modulate:a", 1.0, 0.5)
+	_tween_piscar.tween_property(sprite_desligar, "modulate", Color(1, 0, 0, 1), 0.5)
+	_tween_piscar.tween_property(sprite_desligar, "modulate", Color(1, 1, 1, 1), 0.5)
 
 func _parar_piscar() -> void:
 	_piscando = false

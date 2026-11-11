@@ -1,18 +1,13 @@
 extends Control
 
-@onready var campo_protocolo: LineEdit = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/CampoProtocolo
+@export var campo_protocolo: LineEdit
 
-@onready var label_nome: Label = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro/Nome
-@onready var label_idade: Label = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro/Idade
-@onready var label_tipo_sanguineo: Label = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro/TipoSangue
-@onready var label_implantes: Label = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro/Implantes
-@onready var label_transplantes: Label = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelCadastro/Transplantes
+@export var painel_cadastro: VBoxContainer
 
-@onready var campo_temperatura: LineEdit = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelQuadro/Temperatura
-@onready var campo_pressao: LineEdit = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelQuadro/Pressao
-@onready var campo_saturacao: LineEdit = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelQuadro/Saturacao
-@onready var lista_sintomas: VBoxContainer = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelQuadro/Sintomas
-@onready var campo_condicao: LineEdit = $FichaPaginas/VBoxContainer/ScrollContainer/VBoxContainer/PainelQuadro/Condicao
+@onready var campo_temperatura: LineEdit = %Temperatura
+@onready var campo_saturacao: LineEdit = %Saturacao
+@onready var campo_pressao: LineEdit = %Pressao
+@onready var campo_condicao: LineEdit = %Condicao
 
 @onready var botao_imprimir: TextureButton = $FichaPaginas/VBoxContainer/HBoxContainer/Imprimir
 @onready var botao_retornar: TextureButton = $FichaPaginas/VBoxContainer/HBoxContainer/Retornar
@@ -35,8 +30,6 @@ func _ready() -> void:
 	
 	GerenciadorAla.novo_paciente_chamado.connect(_limpar_quadro)
 	
-	for campo in [campo_temperatura, campo_pressao,campo_saturacao]:
-		campo.focus_entered.connect(_on_campo_medicao_focus.bind(campo))
 
 func abrir() -> void:
 	show()
@@ -67,50 +60,36 @@ func _on_protocolo_submetido_por_troca() -> void:
 	_preencher_cadastro(paciente)
 
 func _preencher_cadastro(paciente: Paciente) -> void:
-	label_nome.text = "Nome: " + paciente.nome
-	label_idade.text = "Idade: " + str(paciente.idade) + " anos"
-	label_tipo_sanguineo.text = "Tipo Sanguíneo: " + paciente.tipo_sanguineo
-	label_implantes.text = "Implantes: " + paciente.implantes
-	label_transplantes.text = "Transplantes: " + paciente.transplantes
+	GerenciadorTutorial.notificar("protocolo_digitado")
+	
+	_set_dado("Nome", paciente.nome)
+	_set_dado("Idade", "%d anos" % paciente.idade)
+	_set_dado("TipoSangue", paciente.tipo_sanguineo)
+	_set_dado("Implantes", paciente.implantes)
+	_set_dado("Transplantes", paciente.transplantes)
+
+func _set_dado(linha: String, valor: String) -> void:
+	var campo := painel_cadastro.get_node(linha).get_node("LineEdit") as LineEdit
+	campo.text = valor
 
 func _limpar_quadro() -> void:
 	campo_temperatura.clear()
 	campo_pressao.clear()
 	campo_saturacao.clear()
 	campo_condicao.clear()
-	for filho in lista_sintomas.get_children():
-		filho.queue_free()
 
 func limpar_informacoes() -> void:
 	_limpar_quadro()
 	
 	campo_protocolo.text = ""
-	label_nome.text = "Nome: --"
-	label_idade.text = "Idade: --"
-	label_tipo_sanguineo.text = "Tipo Sanguíneo: --"
-	label_implantes.text = "Implantes: --"
-	label_transplantes.text = "Transplantes: --"
+	for linha in painel_cadastro.get_children():
+		(linha.get_node("LineEdit") as LineEdit).text = ""
 	
 	if paciente_atual:
 		paciente_atual.ficha_impressa = false
 	
 	botao_imprimir.show()
 	botao_excluir.hide()
-
-func _on_campo_medicao_focus(campo: LineEdit) -> void:
-	if paciente_atual == null:
-		return
-	
-	var chave := ""
-	if campo == campo_temperatura: chave = "temperatura"
-	elif campo == campo_pressao: chave = "pressao"
-	elif campo == campo_saturacao: chave = "saturacao"
-	
-	if not paciente_atual.leitura_registradas.has(chave):
-		campo.modulate = Color(1.0, 0.7, 0.7, 1.0)
-	else:
-		campo.modulate = Color.WHITE
-
 
 
 ## --- Ações dos Botões ---
@@ -133,6 +112,7 @@ func _on_imprimir_pressed() -> void:
 	paciente_atual.ficha_impressa = true
 	
 	GerenciadorAudio.tocar("imprimir")
+	GerenciadorTutorial.notificar("ficha_impressa")
 	
 	## Signals
 	GerenciadorAla.ficha_finalizada.emit()

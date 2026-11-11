@@ -195,10 +195,11 @@ func _respirar(botao: Button) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible or _fechando:
 		return
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if not get_global_rect().has_point(get_global_mouse_position()):
-			GerenciadorAudio.tocar("dialogo")
-			_fechar()
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT:
+			if not get_global_rect().has_point(get_global_mouse_position()):
+				GerenciadorAudio.tocar("dialogo")
+				_fechar()
 
 func sair(_paciente: Paciente) -> void:
 	_fechar()

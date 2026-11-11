@@ -37,7 +37,8 @@ var abertura_pendente := false
 @export var tolerancia_pressao: float = 2.0
 @export var tolerancia_saturacao: float = 1.0
 
-
+const DIA_FINAL := 5
+var final_pendente := ""   ## "" | "bom" | "ruim"
 
 
 ## Carrega doenças, pacientes e notícias das pastas, e sorteia as doenças da Fase 1.
@@ -154,6 +155,7 @@ func reiniciar_jogo() -> void:
 	
 	jogo_iniciado = true
 	abertura_pendente = true
+	final_pendente = ""
 	
 	GerenciadorTutorial.concluidas.clear()
 	GerenciadorTutorial.ativo = false   # garantia, caso o jogador saia no meio do tutorial
@@ -167,6 +169,9 @@ func avancar_fase() -> void:
 func iniciar_novo_dia() -> void:
 	registros_do_dia.clear()
 	pacientes_chamados_hoje.clear()
+
+func e_ultimo_dia() -> bool:
+	return fase_atual >= DIA_FINAL
 
 
 ## --- Noticias ---

@@ -66,7 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if _em_transicao or not event.is_pressed() or event.is_echo():
 		return
 	
-	if event.is_action_pressed("alternar_sala"):
+	if event.is_action_pressed("alternar_sala") and false: ## TODO
 		_trocar_sala(not ala_medicacao.visible)
 	elif ala_medicacao.visible:
 		if event.is_action_pressed("produzir_remedio"):
@@ -149,6 +149,7 @@ func _on_botao_ir_consultorio_pressed() -> void:
 	ir_para_consultorio()
 
 func _on_botao_ir_medicacao_pressed() -> void:
+	GerenciadorTutorial.notificar("foi_para_medicacao")
 	ir_para_ala()
 
 

@@ -14,6 +14,7 @@ func _ready() -> void:
 func _on_area_clique_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		chamar()
+		## GerenciadorTempo.encerrar_fase()
 
 func chamar() -> void:
 	if GerenciadorPacientes.tem_atendimento_ativo():
@@ -25,7 +26,7 @@ func chamar() -> void:
 	if paciente == null:
 		return
 	
-	GerenciadorAudio.tocar("digitacao")
+	GerenciadorAudio.tocar("novo_atendimento")
 	## GerenciadorTempo.registrar_acao(15.0)
 	
 	if not dia_iniciado:

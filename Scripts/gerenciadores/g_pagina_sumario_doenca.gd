@@ -69,6 +69,10 @@ func _popular_doencas(filtro: String = "") -> void:
 		var fase: int = GerenciadorPacientes.doencas_desbloqueadas[doenca.id]
 		var botao := Button.new()
 		botao.text = "%s - Dia %d" % [doenca.nome, fase]
+		botao.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		botao.custom_minimum_size = Vector2(0, 35)
+		botao.add_theme_font_size_override("font_size", 24)
+		
 		botao.pressed.connect(func(): doenca_selecionada.emit(doenca))
 		lista_doencas_ui.add_child(botao)
 

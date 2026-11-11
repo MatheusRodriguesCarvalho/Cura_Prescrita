@@ -1,36 +1,52 @@
 extends Control
 
-@onready var label_nome: Label = $DivPagina/NomeDoenca
-@onready var label_descricao: Label = $DivPagina/DivPaginaScroll/VBoxContainer/Descricao
-@onready var label_risco: Label = $DivPagina/DivPaginaScroll/VBoxContainer/Risco
-@onready var label_id: Label = $DivPagina/DivPaginaScroll/VBoxContainer/Id
-@onready var label_nome_popular: Label = $DivPagina/DivPaginaScroll/VBoxContainer/NomePopular
-@onready var label_categoria: Label = $DivPagina/DivPaginaScroll/VBoxContainer/Categoria
-@onready var label_sintomas: Label = $DivPagina/DivPaginaScroll/VBoxContainer/Sintomas
-@onready var label_temperatura: Label = $DivPagina/DivPaginaScroll/VBoxContainer/Temperatura
-@onready var label_pressao: Label = $DivPagina/DivPaginaScroll/VBoxContainer/Pressao
-@onready var label_oxigenacao: Label = $DivPagina/DivPaginaScroll/VBoxContainer/Oxigenacao
-@onready var label_receita: Label = $DivPagina/DivPaginaScroll/VBoxContainer/Receita
+
+@export var label_nome: Label
+@export var texto: RichTextLabel
+
+const RISCOS := ["Não Preocupante", "Baixo", "Moderado", "Alto", "Grave"]
+const CORES_RISCO := ["#7fcf7f", "#b6d96a", "#e6c84a", "#e8964a", "#e07a7a"]
+const TAMANHO_FONT := 24
 
 func mostrar(doenca: Doenca) -> void:
 	label_nome.text = doenca.nome
-	label_descricao.text = doenca.descricao
-	label_risco.text = "Risco: " + ["Não Preocupante", "Baixo", "Moderado", "Alto", "Grave"][doenca.risco - 1]
-	label_id.text = "ID: " + doenca.id
-	label_nome_popular.text = "Também conhecida como: " + (", ".join(doenca.nome_popular) if not doenca.nome_popular.is_empty() else "—")
-	label_categoria.text = "Categoria: " + doenca.categoria
-	label_sintomas.text = "Sintomas: \n - " + "\n - ".join(doenca.sintomas)
 	
 	var f_sist := doenca.faixa_pressao_sistolica()
 	var f_diast := doenca.faixa_pressao_diastolica()
 	var f_temp := doenca.faixa_temperatura()
 	var f_sat := doenca.faixa_saturacao()
 	
-	label_temperatura.text = "Temperatura: %.1f–%.1f °C" % [f_temp.x, f_temp.y]
-	label_oxigenacao.text = "Saturação: %.0f–%.0f" % [f_sat.x, f_sat.y] + "%"
-	label_pressao.text = "Pressão: %.0f–%.0f / %.0f–%.0f mmHg" % [f_sist.x, f_sist.y, f_diast.x, f_diast.y]
+	var nomes_populares := ", ".join(doenca.nome_popular) if not doenca.nome_popular.is_empty() else "—"
+	var risco_i := clampi(doenca.risco - 1, 0, RISCOS.size() - 1)
 	
-	label_receita.text = "Receita: " + doenca.print_receita()
+	var t := "[font_size=24]"
+	t += "%s\n\n" % _esc(doenca.descricao)
+	t += _linha("Risco", "[color=%s]%s[/color]" % [CORES_RISCO[risco_i], RISCOS[risco_i]])
+	t += _linha("ID", _esc(doenca.id))
+	t += _linha("Também conhecida como", _esc(nomes_populares))
+	t += _linha("Categoria", _esc(doenca.categoria))
+	
+	t += "\n[b]Sintomas[/b]\n"
+	for s in doenca.sintomas:
+		t += "  • %s\n" % _esc(s)
+	
+	t += "\n[b]Medições esperadas[/b]\n"
+	t += _linha("Temperatura", "%.1f–%.1f °C" % [f_temp.x, f_temp.y])
+	t += _linha("Pressão", "%.0f–%.0f / %.0f–%.0f mmHg" % [f_sist.x, f_sist.y, f_diast.x, f_diast.y])
+	t += _linha("Saturação", "%.0f–%.0f%%" % [f_sat.x, f_sat.y])
+	
+	t += "\n" + _linha("Receita", _esc(doenca.print_receita())) + "[/font_size]"
+	
+	texto.text = t
+
+
+## "Rótulo: valor" com o rótulo em negrito.
+func _linha(rotulo: String, valor: String) -> String:
+	return "[b]%s:[/b] %s\n" % [rotulo, valor]
+
+## Texto vindo dos recursos pode ter colchetes; sem isso o BBCode quebraria.
+func _esc(s: String) -> String:
+	return s.replace("[", "[lb]")
 
 
 func _on_pbotao_voltar_pressed() -> void:

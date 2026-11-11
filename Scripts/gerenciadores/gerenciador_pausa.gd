@@ -1,11 +1,11 @@
 extends CanvasLayer
 ## Autoload: GerenciadorPausa
 ## Esc ou botão "II" pausam o jogo. Só funciona em cenas que chamarem habilitar(true).
- 
+
 const CENA_MENU := "res://Scenes/menu_inicial.tscn"  ## ajuste se o caminho for outro
- 
+
 var habilitado := false
- 
+
 var _overlay: ColorRect
 var _botao_pausar: Button
 var _sliders: Dictionary = {}  ## nome do bus -> HSlider

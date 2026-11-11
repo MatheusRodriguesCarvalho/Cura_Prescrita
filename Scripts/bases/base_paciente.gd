@@ -42,6 +42,7 @@ func _on_input_event(_viewport, event: InputEvent, _shape_idx: int) -> void:
 	if not (event is InputEventMouseButton and event.pressed):
 		return
 	if event.button_index == MOUSE_BUTTON_LEFT or event.button_index == MOUSE_BUTTON_RIGHT:
+		GerenciadorTutorial.notificar("dialogo_paciente")
 		menu_dialogo.abrir(self)
 
 

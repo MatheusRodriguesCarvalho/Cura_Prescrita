@@ -8,12 +8,15 @@ extends Node
 
 signal sequencia_iniciada(id: String)
 signal sequencia_concluida(id: String)
- 
+
 enum Fase { INATIVA, ESPERA, FALA }
- 
+
 const BRILHO := Color(1.8, 1.8, 1.8)
 const CARACTERES_POR_SEGUNDO := 45.0
 const SOM_FALA := "fala"
+
+const CENA_UI := preload("res://moldes/Instanciaveis/tutorial_ui.tscn")
+
  
 ## ids das sequências já vistas (vale para a sessão; entra no save/load quando existir).
 var concluidas: Dictionary = {}
@@ -55,16 +58,12 @@ var _botao_continuar: Button
 
 
 func _ready() -> void:
-	print("Tutorial: iniciado")
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	_construir_ui()
-	_camada.hide()
 	
 	## Eventos que já existem como sinais: nenhuma outra edição necessária.
 	GerenciadorAla.ficha_finalizada.connect(func(): notificar("ficha_finalizada"))
 	GerenciadorAla.novo_paciente_chamado.connect(func(): notificar("paciente_chamado"))
 	GerenciadorAla.remedio_entregue.connect(func(_correto): notificar("remedio_entregue"))
-	print("Tutorial: iniciado, fim")
 
 
 ## --- API pública ---
@@ -80,20 +79,21 @@ func iniciar(seq: TutorialSequencia, forcar: bool = false) -> void:
 	if seq.pausar_tempo:
 		GerenciadorTempo.pausar_tempo()
 	
+	if not is_instance_valid(_camada):
+		_construir_ui()
 	_camada.show()
 	_botao_pular.show()
+	
 	sequencia_iniciada.emit(seq.id)
 	_comecar_passo()
 
 
 ## O jogo avisa que algo aconteceu. Sem efeito se não houver espera por esse evento.
 func notificar(evento: String) -> void:
-	print("Tutorial: notificado")
+	
 	if not ativo or _fase != Fase.ESPERA or _sequencia == null:
-		print("Tutorial: notificacao ignorada")
 		return
 	if _passo().evento_conclusao == evento:
-		print("Tutorial: notificacao atendida")
 		_concluir_espera()
 
 
@@ -201,12 +201,25 @@ func _proximo() -> void:
 		return
 	_indice += 1
 	GerenciadorTempo.continuar_tempo()
-	if _indice >= _sequencia.passos.size():
+	print("indice: ", _indice)
+	print("tamanho sequencia: ", _sequencia.passos.size())
+	if _indice >= _sequencia.passos.size() - 1:
 		_finalizar()
 	else:
 		_comecar_passo()
  
  
+func _destruir_ui() -> void:
+	if is_instance_valid(_camada):
+		_camada.queue_free()
+	_camada = null
+	_bloqueio = null
+	_retrato = null
+	_painel = null
+	_label_nome = null
+	_texto = null
+	_dica = null
+	_botao_pular = null
 
 func _finalizar() -> void:
 	if not ativo or _sequencia == null:
@@ -228,7 +241,7 @@ func _finalizar() -> void:
 	## Esconde a camada depois do fade (se outra sequência não começou nesse meio tempo).
 	get_tree().create_timer(0.3, true).timeout.connect(func():
 		if not ativo:
-			_camada.hide())
+			_destruir_ui())
 	sequencia_concluida.emit(id)
 
 ## --- Brilho no alvo ---
@@ -301,110 +314,26 @@ func _input(event: InputEvent) -> void:
  
 ## Montada por código; estilize depois com um Theme.
 func _construir_ui() -> void:
-	_camada = CanvasLayer.new()
-	_camada.layer = 100  ## abaixo da pausa (110)
+	_camada = CENA_UI.instantiate()
 	add_child(_camada)
 	
-	## Escurece levemente e engole os cliques enquanto a personagem fala.
-	_bloqueio = ColorRect.new()
-	_bloqueio.color = Color(0, 0, 0, 0.35)
-	_bloqueio.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_bloqueio = _camada.get_node("%Bloqueio")
+	_retrato = _camada.get_node("%Retrato")
+	_painel = _camada.get_node("%Painel")
+	_label_nome = _camada.get_node("%Nome")
+	_texto = _camada.get_node("%Texto")
+	_dica = _camada.get_node("%Dica")
+	_botao_pular = _camada.get_node("%BotaoPular")
+	
+	## Estado inicial: tudo invisível; o script anima a entrada e a saída.
 	_bloqueio.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_bloqueio.modulate.a = 0.0
-	_bloqueio.gui_input.connect(_on_bloqueio_input)
-	_camada.add_child(_bloqueio)
-	
-	_retrato = TextureRect.new()
-	_retrato.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	_retrato.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	_retrato.custom_minimum_size = Vector2(220, 320)
-	_retrato.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_retrato.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT, Control.PRESET_MODE_MINSIZE, 20)
-	_retrato.modulate.a = 0.0
-	_camada.add_child(_retrato)
-	
-	var margem := MarginContainer.new()
-	margem.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE, Control.PRESET_MODE_MINSIZE)
-	margem.grow_vertical = Control.GROW_DIRECTION_BEGIN
-	margem.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	margem.add_theme_constant_override("margin_left", 260)
-	margem.add_theme_constant_override("margin_right", 30)
-	margem.add_theme_constant_override("margin_bottom", 30)
-	_camada.add_child(margem)
-	
-	_painel = PanelContainer.new()
-	_painel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_painel.modulate.a = 0.0
-	margem.add_child(_painel)
-	
-	var caixa := VBoxContainer.new()
-	caixa.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_painel.add_child(caixa)
-	
-	_label_nome = Label.new()
-	caixa.add_child(_label_nome)
-	
-	_texto = RichTextLabel.new()
-	_texto.bbcode_enabled = true
-	_texto.fit_content = true
-	_texto.scroll_active = false
-	_texto.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	caixa.add_child(_texto)
-	
-	_dica = Label.new()
-	_dica.text = "clique para continuar"
-	_dica.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	_dica.modulate = Color(1, 1, 1, 0.6)
-	caixa.add_child(_dica)
-	
-	## Saída de emergência: sempre visível enquanto o tutorial roda.
-	_botao_pular = Button.new()
-	_botao_pular.text = "Pular tutorial"
-	_botao_pular.focus_mode = Control.FOCUS_NONE
-	_botao_pular.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT, Control.PRESET_MODE_MINSIZE, 10)
-	_botao_pular.pressed.connect(_finalizar)
+	_retrato.modulate.a = 0.0
 	_botao_pular.hide()
-	_camada.add_child(_botao_pular)
 	
-	print("Tutorial: ui constituida")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	_bloqueio.gui_input.connect(_on_bloqueio_input)
+	_botao_pular.pressed.connect(_finalizar)
 
 
 
